@@ -4,7 +4,7 @@
 // - protoc             (unknown)
 // source: proto/v1/location.proto
 
-package eventseasev1
+package eventsease_v1
 
 import (
 	context "context"

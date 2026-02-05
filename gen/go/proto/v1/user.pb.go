@@ -4,7 +4,7 @@
 // 	protoc        (unknown)
 // source: proto/v1/user.proto
 
-package eventseasev1
+package eventsease_v1
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -403,7 +403,8 @@ const file_proto_v1_user_proto_rawDesc = "" +
 	"\x06source\x18\x04 \x01(\tR\x06source2\xb3\x01\n" +
 	"\vUserService\x12N\n" +
 	"\tCheckUser\x12\x1f.eventsease.v1.CheckUserRequest\x1a .eventsease.v1.CheckUserResponse\x12T\n" +
-	"\vRegisterFCM\x12!.eventsease.v1.RegisterFCMRequest\x1a\".eventsease.v1.RegisterFCMResponseB>Z<github.com/your-org/eventsease-protos/gen/go/v1;eventseasev1b\x06proto3"
+	"\vRegisterFCM\x12!.eventsease.v1.RegisterFCMRequest\x1a\".eventsease.v1.RegisterFCMResponseB_\n" +
+	"\x11com.eventsease.v1B\tUserProtoP\x01Z=github.com/your-org/eventsease-protos/gen/go/v1;eventsease_v1b\x06proto3"
 
 var (
 	file_proto_v1_user_proto_rawDescOnce sync.Once

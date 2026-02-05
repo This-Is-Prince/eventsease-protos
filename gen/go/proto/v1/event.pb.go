@@ -4,7 +4,7 @@
 // 	protoc        (unknown)
 // source: proto/v1/event.proto
 
-package eventseasev1
+package eventsease_v1
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -1397,7 +1397,9 @@ const file_proto_v1_event_proto_rawDesc = "" +
 	"\vCreateEvent\x12!.eventsease.v1.CreateEventRequest\x1a\".eventsease.v1.CreateEventResponse\x12V\n" +
 	"\rGetUserEvents\x12#.eventsease.v1.GetUserEventsRequest\x1a .eventsease.v1.GetEventsResponse\x12X\n" +
 	"\x0eGetSavedEvents\x12$.eventsease.v1.GetSavedEventsRequest\x1a .eventsease.v1.GetEventsResponse\x12c\n" +
-	"\x10ToggleSavedEvent\x12&.eventsease.v1.ToggleSavedEventRequest\x1a'.eventsease.v1.ToggleSavedEventResponseBDZBgithub.com/This-Is-Prince/eventsease-protos/gen/go/v1;eventseasev1b\x06proto3"
+	"\x10ToggleSavedEvent\x12&.eventsease.v1.ToggleSavedEventRequest\x1a'.eventsease.v1.ToggleSavedEventResponseBf\n" +
+	"\x11com.eventsease.v1B\n" +
+	"EventProtoP\x01ZCgithub.com/This-Is-Prince/eventsease-protos/gen/go/v1;eventsease_v1b\x06proto3"
 
 var (
 	file_proto_v1_event_proto_rawDescOnce sync.Once

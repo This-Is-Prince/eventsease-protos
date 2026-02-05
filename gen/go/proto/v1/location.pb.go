@@ -4,7 +4,7 @@
 // 	protoc        (unknown)
 // source: proto/v1/location.proto
 
-package eventseasev1
+package eventsease_v1
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -469,7 +469,8 @@ const file_proto_v1_location_proto_rawDesc = "" +
 	"\x0fLocationService\x12`\n" +
 	"\x0fGetPlaceDetails\x12%.eventsease.v1.GetPlaceDetailsRequest\x1a&.eventsease.v1.GetPlaceDetailsResponse\x12f\n" +
 	"\x11GetReverseGeocode\x12'.eventsease.v1.GetReverseGeocodeRequest\x1a(.eventsease.v1.GetReverseGeocodeResponse\x12W\n" +
-	"\fSearchPlaces\x12\".eventsease.v1.SearchPlacesRequest\x1a#.eventsease.v1.SearchPlacesResponseBDZBgithub.com/This-Is-Prince/eventsease-protos/gen/go/v1;eventseasev1b\x06proto3"
+	"\fSearchPlaces\x12\".eventsease.v1.SearchPlacesRequest\x1a#.eventsease.v1.SearchPlacesResponseBi\n" +
+	"\x11com.eventsease.v1B\rLocationProtoP\x01ZCgithub.com/This-Is-Prince/eventsease-protos/gen/go/v1;eventsease_v1b\x06proto3"
 
 var (
 	file_proto_v1_location_proto_rawDescOnce sync.Once
