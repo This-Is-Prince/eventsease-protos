@@ -8,7 +8,6 @@
 // For information on using the generated types, please see the documentation:
 //   https://github.com/apple/swift-protobuf/
 
-import Foundation
 import SwiftProtobuf
 
 // If the compiler emits an error on this type, it is because this file
@@ -647,64 +646,20 @@ struct Eventsease_V1_ToggleSavedEventResponse: Sendable {
 fileprivate let _protobuf_package = "eventsease.v1"
 
 extension Eventsease_V1_SortBy: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "SORT_BY_UNSPECIFIED"),
-    1: .same(proto: "SORT_BY_START_DATE"),
-    2: .same(proto: "SORT_BY_CREATED_DATE"),
-    3: .same(proto: "SORT_BY_HEART_COUNT"),
-    4: .same(proto: "SORT_BY_SAVED_COUNT"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0SORT_BY_UNSPECIFIED\0\u{1}SORT_BY_START_DATE\0\u{1}SORT_BY_CREATED_DATE\0\u{1}SORT_BY_HEART_COUNT\0\u{1}SORT_BY_SAVED_COUNT\0")
 }
 
 extension Eventsease_V1_SortDirection: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "SORT_DIRECTION_UNSPECIFIED"),
-    1: .same(proto: "SORT_DIRECTION_ASC"),
-    2: .same(proto: "SORT_DIRECTION_DESC"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0SORT_DIRECTION_UNSPECIFIED\0\u{1}SORT_DIRECTION_ASC\0\u{1}SORT_DIRECTION_DESC\0")
 }
 
 extension Eventsease_V1_SocialType: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "SOCIAL_TYPE_UNSPECIFIED"),
-    1: .same(proto: "SOCIAL_TYPE_PHONE"),
-    2: .same(proto: "SOCIAL_TYPE_INSTAGRAM"),
-    3: .same(proto: "SOCIAL_TYPE_FACEBOOK"),
-    4: .same(proto: "SOCIAL_TYPE_WHATSAPP"),
-    5: .same(proto: "SOCIAL_TYPE_WEBSITE"),
-    6: .same(proto: "SOCIAL_TYPE_EMAIL"),
-    7: .same(proto: "SOCIAL_TYPE_TWITTER"),
-    8: .same(proto: "SOCIAL_TYPE_LINKEDIN"),
-    9: .same(proto: "SOCIAL_TYPE_YOUTUBE"),
-    10: .same(proto: "SOCIAL_TYPE_OTHER"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0SOCIAL_TYPE_UNSPECIFIED\0\u{1}SOCIAL_TYPE_PHONE\0\u{1}SOCIAL_TYPE_INSTAGRAM\0\u{1}SOCIAL_TYPE_FACEBOOK\0\u{1}SOCIAL_TYPE_WHATSAPP\0\u{1}SOCIAL_TYPE_WEBSITE\0\u{1}SOCIAL_TYPE_EMAIL\0\u{1}SOCIAL_TYPE_TWITTER\0\u{1}SOCIAL_TYPE_LINKEDIN\0\u{1}SOCIAL_TYPE_YOUTUBE\0\u{1}SOCIAL_TYPE_OTHER\0")
 }
 
 extension Eventsease_V1_Event: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Event"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "id"),
-    2: .same(proto: "name"),
-    3: .same(proto: "description"),
-    4: .same(proto: "slug"),
-    5: .standard(proto: "start_date"),
-    6: .standard(proto: "end_date"),
-    7: .same(proto: "location"),
-    8: .standard(proto: "event_photos"),
-    9: .standard(proto: "user_id"),
-    10: .same(proto: "organizer"),
-    11: .same(proto: "category"),
-    12: .standard(proto: "ticket_info"),
-    13: .same(proto: "social"),
-    14: .standard(proto: "is_paid"),
-    15: .standard(proto: "is_approved"),
-    16: .standard(proto: "is_regular"),
-    17: .standard(proto: "heart_count"),
-    18: .standard(proto: "saved_count"),
-    19: .standard(proto: "created_at"),
-    20: .standard(proto: "updated_at"),
-    21: .standard(proto: "is_pinned"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{1}name\0\u{1}description\0\u{1}slug\0\u{3}start_date\0\u{3}end_date\0\u{1}location\0\u{3}event_photos\0\u{3}user_id\0\u{1}organizer\0\u{1}category\0\u{3}ticket_info\0\u{1}social\0\u{3}is_paid\0\u{3}is_approved\0\u{3}is_regular\0\u{3}heart_count\0\u{3}saved_count\0\u{3}created_at\0\u{3}updated_at\0\u{3}is_pinned\0")
 
   fileprivate class _StorageClass {
     var _id: String = String()
@@ -729,15 +684,11 @@ extension Eventsease_V1_Event: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     var _updatedAt: SwiftProtobuf.Google_Protobuf_Timestamp? = nil
     var _isPinned: String = String()
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -918,11 +869,7 @@ extension Eventsease_V1_Event: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
 
 extension Eventsease_V1_Location: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Location"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "address"),
-    2: .same(proto: "lat"),
-    3: .same(proto: "lng"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}address\0\u{1}lat\0\u{1}lng\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -962,12 +909,7 @@ extension Eventsease_V1_Location: SwiftProtobuf.Message, SwiftProtobuf._MessageI
 
 extension Eventsease_V1_TicketInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".TicketInfo"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "is_free"),
-    2: .standard(proto: "entry_fee"),
-    3: .standard(proto: "early_bird_fee"),
-    4: .standard(proto: "is_appointment_based"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}is_free\0\u{3}entry_fee\0\u{3}early_bird_fee\0\u{3}is_appointment_based\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1012,10 +954,7 @@ extension Eventsease_V1_TicketInfo: SwiftProtobuf.Message, SwiftProtobuf._Messag
 
 extension Eventsease_V1_SocialLink: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".SocialLink"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "type"),
-    2: .same(proto: "value"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}type\0\u{1}value\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1050,17 +989,7 @@ extension Eventsease_V1_SocialLink: SwiftProtobuf.Message, SwiftProtobuf._Messag
 
 extension Eventsease_V1_GetEventsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetEventsRequest"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "region"),
-    2: .same(proto: "categories"),
-    3: .same(proto: "date"),
-    4: .standard(proto: "sort_by"),
-    5: .standard(proto: "sort_direction"),
-    6: .standard(proto: "search_query"),
-    7: .standard(proto: "is_regular"),
-    8: .same(proto: "page"),
-    9: .same(proto: "limit"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}region\0\u{1}categories\0\u{1}date\0\u{3}sort_by\0\u{3}sort_direction\0\u{3}search_query\0\u{3}is_regular\0\u{1}page\0\u{1}limit\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1134,12 +1063,7 @@ extension Eventsease_V1_GetEventsRequest: SwiftProtobuf.Message, SwiftProtobuf._
 
 extension Eventsease_V1_Region: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".Region"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "latitude"),
-    2: .same(proto: "longitude"),
-    3: .standard(proto: "latitude_delta"),
-    4: .standard(proto: "longitude_delta"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}latitude\0\u{1}longitude\0\u{3}latitude_delta\0\u{3}longitude_delta\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1184,11 +1108,7 @@ extension Eventsease_V1_Region: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
 
 extension Eventsease_V1_GetEventsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetEventsResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "success"),
-    2: .same(proto: "data"),
-    3: .same(proto: "meta"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}success\0\u{1}data\0\u{1}meta\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1232,14 +1152,7 @@ extension Eventsease_V1_GetEventsResponse: SwiftProtobuf.Message, SwiftProtobuf.
 
 extension Eventsease_V1_MetaData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".MetaData"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "total_count"),
-    2: .standard(proto: "total_pages"),
-    3: .standard(proto: "current_page"),
-    4: .same(proto: "limit"),
-    5: .standard(proto: "has_next_page"),
-    6: .standard(proto: "has_previous_page"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}total_count\0\u{3}total_pages\0\u{3}current_page\0\u{1}limit\0\u{3}has_next_page\0\u{3}has_previous_page\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1294,9 +1207,7 @@ extension Eventsease_V1_MetaData: SwiftProtobuf.Message, SwiftProtobuf._MessageI
 
 extension Eventsease_V1_GetEventRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetEventRequest"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "id_or_slug"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}id_or_slug\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1326,10 +1237,7 @@ extension Eventsease_V1_GetEventRequest: SwiftProtobuf.Message, SwiftProtobuf._M
 
 extension Eventsease_V1_GetEventResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetEventResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "success"),
-    2: .same(proto: "data"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}success\0\u{1}data\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1368,9 +1276,7 @@ extension Eventsease_V1_GetEventResponse: SwiftProtobuf.Message, SwiftProtobuf._
 
 extension Eventsease_V1_CreateEventRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CreateEventRequest"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "event"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}event\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1404,11 +1310,7 @@ extension Eventsease_V1_CreateEventRequest: SwiftProtobuf.Message, SwiftProtobuf
 
 extension Eventsease_V1_CreateEventResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".CreateEventResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "success"),
-    2: .same(proto: "message"),
-    3: .same(proto: "data"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}success\0\u{1}message\0\u{1}data\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1452,9 +1354,7 @@ extension Eventsease_V1_CreateEventResponse: SwiftProtobuf.Message, SwiftProtobu
 
 extension Eventsease_V1_GetEventStatsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetEventStatsRequest"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "id"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1484,10 +1384,7 @@ extension Eventsease_V1_GetEventStatsRequest: SwiftProtobuf.Message, SwiftProtob
 
 extension Eventsease_V1_GetEventStatsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetEventStatsResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "success"),
-    2: .same(proto: "data"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}success\0\u{1}data\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1526,10 +1423,7 @@ extension Eventsease_V1_GetEventStatsResponse: SwiftProtobuf.Message, SwiftProto
 
 extension Eventsease_V1_EventStats: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".EventStats"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "heart_count"),
-    2: .standard(proto: "saved_count"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}heart_count\0\u{3}saved_count\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1564,13 +1458,7 @@ extension Eventsease_V1_EventStats: SwiftProtobuf.Message, SwiftProtobuf._Messag
 
 extension Eventsease_V1_GetUserEventsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".GetUserEventsRequest"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "page"),
-    2: .same(proto: "limit"),
-    3: .standard(proto: "search_query"),
-    4: .standard(proto: "sort_by"),
-    5: .standard(proto: "sort_direction"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}page\0\u{1}limit\0\u{3}search_query\0\u{3}sort_by\0\u{3}sort_direction\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1620,9 +1508,7 @@ extension Eventsease_V1_GetUserEventsRequest: SwiftProtobuf.Message, SwiftProtob
 
 extension Eventsease_V1_ToggleSavedEventRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ToggleSavedEventRequest"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "event_id"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}event_id\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1652,10 +1538,7 @@ extension Eventsease_V1_ToggleSavedEventRequest: SwiftProtobuf.Message, SwiftPro
 
 extension Eventsease_V1_ToggleSavedEventResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = _protobuf_package + ".ToggleSavedEventResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "success"),
-    2: .standard(proto: "is_saved"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}success\0\u{3}is_saved\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {

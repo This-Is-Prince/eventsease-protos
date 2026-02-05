@@ -17,7 +17,9 @@ plugins:
   - remote: buf.build/grpc/kotlin:v1.4.1
     out: gen/kotlin
 
-  - remote: buf.build/apple/swift:v1.28.0
+  - remote: buf.build/apple/swift:v1.33.3
     out: gen/swift
-  - remote: buf.build/grpc/swift:v1.23.0
+  - remote: buf.build/connectrpc/swift:v1.2.0 
+    out: gen/swift
+  - remote: buf.build/connectrpc/swift-mocks:v1.2.0
     out: gen/swift
