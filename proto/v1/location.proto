@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package eventsease.v1;
+
+option go_package = "github.com/This-Is-Prince/eventsease-protos/gen/go/v1;eventsease_v1";
+
+option java_multiple_files = true;
+option java_package = "com.eventsease.v1";
+option java_outer_classname = "LocationProto";
+
+service LocationService {
+  rpc GetPlaceDetails (GetPlaceDetailsRequest) returns (GetPlaceDetailsResponse);
+  rpc GetReverseGeocode (GetReverseGeocodeRequest) returns (GetReverseGeocodeResponse);
+  rpc SearchPlaces (SearchPlacesRequest) returns (SearchPlacesResponse);
+}
+
+message GetPlaceDetailsRequest {
+  string place_id = 1;
+}
+
+message GetPlaceDetailsResponse {
+  bool success = 1;
+  PlaceDetails data = 2;
+  string source = 3;
+}
+
+message PlaceDetails {
+  double lat = 1;
+  double lng = 2;
+}
+
+message GetReverseGeocodeRequest {
+  double lat = 1;
+  double lng = 2;
+}
+
+message GetReverseGeocodeResponse {
+  bool success = 1;
+  string city_name = 2;
+}
+
+message SearchPlacesRequest {
+  string query = 1;
+}
+
+message SearchPlacesResponse {
+  bool success = 1;
+  repeated PlacePrediction data = 2;
+}
+
+message PlacePrediction {
+  string place_id = 1;
+  string text = 2;
+  string secondary_text = 3;
+}

@@ -1,0 +1,13 @@
+/bin
+/dist
+
+.buf
+buf.lock
+
+.DS_Store
+Thumbs.db
+
+.idea/
+.vscode/
+*.swp
+*.iml

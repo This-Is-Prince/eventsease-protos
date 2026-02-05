@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package eventsease.v1;
+
+option go_package = "github.com/your-org/eventsease-protos/gen/go/v1;eventsease_v1";
+
+option java_multiple_files = true;
+option java_package = "com.eventsease.v1";
+option java_outer_classname = "UserProto";
+
+service UserService {
+  rpc CheckUser (CheckUserRequest) returns (CheckUserResponse);
+  rpc RegisterFCM (RegisterFCMRequest) returns (RegisterFCMResponse);
+}
+
+message CheckUserRequest {
+  string email = 1;
+}
+
+message CheckUserResponse {
+  bool success = 1;
+  bool exists = 2;
+}
+
+message RegisterFCMRequest {
+  string fcm_token = 1;
+  UserLocation location = 2;
+  UserLocation selected_location = 3;
+  string timezone = 4;
+}
+
+message UserLocation {
+  double lat = 1;
+  double lng = 2;
+  string name = 3;
+}
+
+message RegisterFCMResponse {
+  bool success = 1;
+  string message = 2;
+  FCMResponseData data = 3;
+}
+
+message FCMResponseData {
+  double lat = 1;
+  double lng = 2;
+  string city = 3;
+  string source = 4;
+}
