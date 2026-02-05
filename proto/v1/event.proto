@@ -5,7 +5,6 @@ package eventsease.v1;
 import "google/protobuf/timestamp.proto";
 
 option go_package = "github.com/This-Is-Prince/eventsease-protos/gen/go/v1;eventsease_v1";
-
 option java_multiple_files = true;
 option java_package = "com.eventsease.v1";
 option java_outer_classname = "EventProto";
@@ -17,8 +16,36 @@ service EventService {
 
   rpc CreateEvent (CreateEventRequest) returns (CreateEventResponse);
   rpc GetUserEvents (GetUserEventsRequest) returns (GetEventsResponse);
-  rpc GetSavedEvents (GetSavedEventsRequest) returns (GetEventsResponse);
+  rpc GetSavedEvents (GetUserEventsRequest) returns (GetEventsResponse);
   rpc ToggleSavedEvent (ToggleSavedEventRequest) returns (ToggleSavedEventResponse);
+}
+
+enum SortBy {
+  SORT_BY_UNSPECIFIED = 0;
+  SORT_BY_START_DATE = 1;
+  SORT_BY_CREATED_DATE = 2;
+  SORT_BY_HEART_COUNT = 3;
+  SORT_BY_SAVED_COUNT = 4;
+}
+
+enum SortDirection {
+  SORT_DIRECTION_UNSPECIFIED = 0;
+  SORT_DIRECTION_ASC = 1;
+  SORT_DIRECTION_DESC = 2;
+}
+
+enum SocialType {
+  SOCIAL_TYPE_UNSPECIFIED = 0;
+  SOCIAL_TYPE_PHONE = 1;
+  SOCIAL_TYPE_INSTAGRAM = 2;
+  SOCIAL_TYPE_FACEBOOK = 3;
+  SOCIAL_TYPE_WHATSAPP = 4;
+  SOCIAL_TYPE_WEBSITE = 5;
+  SOCIAL_TYPE_EMAIL = 6;
+  SOCIAL_TYPE_TWITTER = 7;
+  SOCIAL_TYPE_LINKEDIN = 8;
+  SOCIAL_TYPE_YOUTUBE = 9;
+  SOCIAL_TYPE_OTHER = 10;
 }
 
 message Event {
@@ -42,6 +69,7 @@ message Event {
   int32 saved_count = 18;
   google.protobuf.Timestamp created_at = 19;
   google.protobuf.Timestamp updated_at = 20;
+  string is_pinned = 21; 
 }
 
 message Location {
@@ -58,16 +86,16 @@ message TicketInfo {
 }
 
 message SocialLink {
-  string type = 1;
+  SocialType type = 1; 
   string value = 2;
 }
 
 message GetEventsRequest {
   Region region = 1;
   repeated string categories = 2;
-  string date = 3;
-  string sort_by = 4;
-  string sort_direction = 5;
+  string date = 3; 
+  SortBy sort_by = 4;
+  SortDirection sort_direction = 5;
   string search_query = 6;
   bool is_regular = 7;
   int32 page = 8;
@@ -132,12 +160,10 @@ message EventStats {
 message GetUserEventsRequest {
   int32 page = 1;
   int32 limit = 2;
-  string search = 3;
-  string sort_by = 4;
-  string sort_order = 5;
+  string search_query = 3;
+  SortBy sort_by = 4;
+  SortDirection sort_direction = 5;
 }
-
-message GetSavedEventsRequest {}
 
 message ToggleSavedEventRequest {
   string event_id = 1;
