@@ -22,6 +22,183 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type SortBy int32
+
+const (
+	SortBy_SORT_BY_UNSPECIFIED  SortBy = 0
+	SortBy_SORT_BY_START_DATE   SortBy = 1
+	SortBy_SORT_BY_CREATED_DATE SortBy = 2
+	SortBy_SORT_BY_HEART_COUNT  SortBy = 3
+	SortBy_SORT_BY_SAVED_COUNT  SortBy = 4
+)
+
+// Enum value maps for SortBy.
+var (
+	SortBy_name = map[int32]string{
+		0: "SORT_BY_UNSPECIFIED",
+		1: "SORT_BY_START_DATE",
+		2: "SORT_BY_CREATED_DATE",
+		3: "SORT_BY_HEART_COUNT",
+		4: "SORT_BY_SAVED_COUNT",
+	}
+	SortBy_value = map[string]int32{
+		"SORT_BY_UNSPECIFIED":  0,
+		"SORT_BY_START_DATE":   1,
+		"SORT_BY_CREATED_DATE": 2,
+		"SORT_BY_HEART_COUNT":  3,
+		"SORT_BY_SAVED_COUNT":  4,
+	}
+)
+
+func (x SortBy) Enum() *SortBy {
+	p := new(SortBy)
+	*p = x
+	return p
+}
+
+func (x SortBy) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (SortBy) Descriptor() protoreflect.EnumDescriptor {
+	return file_proto_v1_event_proto_enumTypes[0].Descriptor()
+}
+
+func (SortBy) Type() protoreflect.EnumType {
+	return &file_proto_v1_event_proto_enumTypes[0]
+}
+
+func (x SortBy) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use SortBy.Descriptor instead.
+func (SortBy) EnumDescriptor() ([]byte, []int) {
+	return file_proto_v1_event_proto_rawDescGZIP(), []int{0}
+}
+
+type SortDirection int32
+
+const (
+	SortDirection_SORT_DIRECTION_UNSPECIFIED SortDirection = 0
+	SortDirection_SORT_DIRECTION_ASC         SortDirection = 1
+	SortDirection_SORT_DIRECTION_DESC        SortDirection = 2
+)
+
+// Enum value maps for SortDirection.
+var (
+	SortDirection_name = map[int32]string{
+		0: "SORT_DIRECTION_UNSPECIFIED",
+		1: "SORT_DIRECTION_ASC",
+		2: "SORT_DIRECTION_DESC",
+	}
+	SortDirection_value = map[string]int32{
+		"SORT_DIRECTION_UNSPECIFIED": 0,
+		"SORT_DIRECTION_ASC":         1,
+		"SORT_DIRECTION_DESC":        2,
+	}
+)
+
+func (x SortDirection) Enum() *SortDirection {
+	p := new(SortDirection)
+	*p = x
+	return p
+}
+
+func (x SortDirection) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (SortDirection) Descriptor() protoreflect.EnumDescriptor {
+	return file_proto_v1_event_proto_enumTypes[1].Descriptor()
+}
+
+func (SortDirection) Type() protoreflect.EnumType {
+	return &file_proto_v1_event_proto_enumTypes[1]
+}
+
+func (x SortDirection) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use SortDirection.Descriptor instead.
+func (SortDirection) EnumDescriptor() ([]byte, []int) {
+	return file_proto_v1_event_proto_rawDescGZIP(), []int{1}
+}
+
+type SocialType int32
+
+const (
+	SocialType_SOCIAL_TYPE_UNSPECIFIED SocialType = 0
+	SocialType_SOCIAL_TYPE_PHONE       SocialType = 1
+	SocialType_SOCIAL_TYPE_INSTAGRAM   SocialType = 2
+	SocialType_SOCIAL_TYPE_FACEBOOK    SocialType = 3
+	SocialType_SOCIAL_TYPE_WHATSAPP    SocialType = 4
+	SocialType_SOCIAL_TYPE_WEBSITE     SocialType = 5
+	SocialType_SOCIAL_TYPE_EMAIL       SocialType = 6
+	SocialType_SOCIAL_TYPE_TWITTER     SocialType = 7
+	SocialType_SOCIAL_TYPE_LINKEDIN    SocialType = 8
+	SocialType_SOCIAL_TYPE_YOUTUBE     SocialType = 9
+	SocialType_SOCIAL_TYPE_OTHER       SocialType = 10
+)
+
+// Enum value maps for SocialType.
+var (
+	SocialType_name = map[int32]string{
+		0:  "SOCIAL_TYPE_UNSPECIFIED",
+		1:  "SOCIAL_TYPE_PHONE",
+		2:  "SOCIAL_TYPE_INSTAGRAM",
+		3:  "SOCIAL_TYPE_FACEBOOK",
+		4:  "SOCIAL_TYPE_WHATSAPP",
+		5:  "SOCIAL_TYPE_WEBSITE",
+		6:  "SOCIAL_TYPE_EMAIL",
+		7:  "SOCIAL_TYPE_TWITTER",
+		8:  "SOCIAL_TYPE_LINKEDIN",
+		9:  "SOCIAL_TYPE_YOUTUBE",
+		10: "SOCIAL_TYPE_OTHER",
+	}
+	SocialType_value = map[string]int32{
+		"SOCIAL_TYPE_UNSPECIFIED": 0,
+		"SOCIAL_TYPE_PHONE":       1,
+		"SOCIAL_TYPE_INSTAGRAM":   2,
+		"SOCIAL_TYPE_FACEBOOK":    3,
+		"SOCIAL_TYPE_WHATSAPP":    4,
+		"SOCIAL_TYPE_WEBSITE":     5,
+		"SOCIAL_TYPE_EMAIL":       6,
+		"SOCIAL_TYPE_TWITTER":     7,
+		"SOCIAL_TYPE_LINKEDIN":    8,
+		"SOCIAL_TYPE_YOUTUBE":     9,
+		"SOCIAL_TYPE_OTHER":       10,
+	}
+)
+
+func (x SocialType) Enum() *SocialType {
+	p := new(SocialType)
+	*p = x
+	return p
+}
+
+func (x SocialType) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (SocialType) Descriptor() protoreflect.EnumDescriptor {
+	return file_proto_v1_event_proto_enumTypes[2].Descriptor()
+}
+
+func (SocialType) Type() protoreflect.EnumType {
+	return &file_proto_v1_event_proto_enumTypes[2]
+}
+
+func (x SocialType) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use SocialType.Descriptor instead.
+func (SocialType) EnumDescriptor() ([]byte, []int) {
+	return file_proto_v1_event_proto_rawDescGZIP(), []int{2}
+}
+
 type Event struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -44,6 +221,7 @@ type Event struct {
 	SavedCount    int32                  `protobuf:"varint,18,opt,name=saved_count,json=savedCount,proto3" json:"saved_count,omitempty"`
 	CreatedAt     *timestamppb.Timestamp `protobuf:"bytes,19,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
 	UpdatedAt     *timestamppb.Timestamp `protobuf:"bytes,20,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	IsPinned      string                 `protobuf:"bytes,21,opt,name=is_pinned,json=isPinned,proto3" json:"is_pinned,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -218,6 +396,13 @@ func (x *Event) GetUpdatedAt() *timestamppb.Timestamp {
 	return nil
 }
 
+func (x *Event) GetIsPinned() string {
+	if x != nil {
+		return x.IsPinned
+	}
+	return ""
+}
+
 type Location struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Address       string                 `protobuf:"bytes,1,opt,name=address,proto3" json:"address,omitempty"`
@@ -348,7 +533,7 @@ func (x *TicketInfo) GetIsAppointmentBased() bool {
 
 type SocialLink struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Type          string                 `protobuf:"bytes,1,opt,name=type,proto3" json:"type,omitempty"`
+	Type          SocialType             `protobuf:"varint,1,opt,name=type,proto3,enum=eventsease.v1.SocialType" json:"type,omitempty"`
 	Value         string                 `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -384,11 +569,11 @@ func (*SocialLink) Descriptor() ([]byte, []int) {
 	return file_proto_v1_event_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *SocialLink) GetType() string {
+func (x *SocialLink) GetType() SocialType {
 	if x != nil {
 		return x.Type
 	}
-	return ""
+	return SocialType_SOCIAL_TYPE_UNSPECIFIED
 }
 
 func (x *SocialLink) GetValue() string {
@@ -403,8 +588,8 @@ type GetEventsRequest struct {
 	Region        *Region                `protobuf:"bytes,1,opt,name=region,proto3" json:"region,omitempty"`
 	Categories    []string               `protobuf:"bytes,2,rep,name=categories,proto3" json:"categories,omitempty"`
 	Date          string                 `protobuf:"bytes,3,opt,name=date,proto3" json:"date,omitempty"`
-	SortBy        string                 `protobuf:"bytes,4,opt,name=sort_by,json=sortBy,proto3" json:"sort_by,omitempty"`
-	SortDirection string                 `protobuf:"bytes,5,opt,name=sort_direction,json=sortDirection,proto3" json:"sort_direction,omitempty"`
+	SortBy        SortBy                 `protobuf:"varint,4,opt,name=sort_by,json=sortBy,proto3,enum=eventsease.v1.SortBy" json:"sort_by,omitempty"`
+	SortDirection SortDirection          `protobuf:"varint,5,opt,name=sort_direction,json=sortDirection,proto3,enum=eventsease.v1.SortDirection" json:"sort_direction,omitempty"`
 	SearchQuery   string                 `protobuf:"bytes,6,opt,name=search_query,json=searchQuery,proto3" json:"search_query,omitempty"`
 	IsRegular     bool                   `protobuf:"varint,7,opt,name=is_regular,json=isRegular,proto3" json:"is_regular,omitempty"`
 	Page          int32                  `protobuf:"varint,8,opt,name=page,proto3" json:"page,omitempty"`
@@ -464,18 +649,18 @@ func (x *GetEventsRequest) GetDate() string {
 	return ""
 }
 
-func (x *GetEventsRequest) GetSortBy() string {
+func (x *GetEventsRequest) GetSortBy() SortBy {
 	if x != nil {
 		return x.SortBy
 	}
-	return ""
+	return SortBy_SORT_BY_UNSPECIFIED
 }
 
-func (x *GetEventsRequest) GetSortDirection() string {
+func (x *GetEventsRequest) GetSortDirection() SortDirection {
 	if x != nil {
 		return x.SortDirection
 	}
-	return ""
+	return SortDirection_SORT_DIRECTION_UNSPECIFIED
 }
 
 func (x *GetEventsRequest) GetSearchQuery() string {
@@ -1070,9 +1255,9 @@ type GetUserEventsRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Page          int32                  `protobuf:"varint,1,opt,name=page,proto3" json:"page,omitempty"`
 	Limit         int32                  `protobuf:"varint,2,opt,name=limit,proto3" json:"limit,omitempty"`
-	Search        string                 `protobuf:"bytes,3,opt,name=search,proto3" json:"search,omitempty"`
-	SortBy        string                 `protobuf:"bytes,4,opt,name=sort_by,json=sortBy,proto3" json:"sort_by,omitempty"`
-	SortOrder     string                 `protobuf:"bytes,5,opt,name=sort_order,json=sortOrder,proto3" json:"sort_order,omitempty"`
+	SearchQuery   string                 `protobuf:"bytes,3,opt,name=search_query,json=searchQuery,proto3" json:"search_query,omitempty"`
+	SortBy        SortBy                 `protobuf:"varint,4,opt,name=sort_by,json=sortBy,proto3,enum=eventsease.v1.SortBy" json:"sort_by,omitempty"`
+	SortDirection SortDirection          `protobuf:"varint,5,opt,name=sort_direction,json=sortDirection,proto3,enum=eventsease.v1.SortDirection" json:"sort_direction,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1121,61 +1306,25 @@ func (x *GetUserEventsRequest) GetLimit() int32 {
 	return 0
 }
 
-func (x *GetUserEventsRequest) GetSearch() string {
+func (x *GetUserEventsRequest) GetSearchQuery() string {
 	if x != nil {
-		return x.Search
+		return x.SearchQuery
 	}
 	return ""
 }
 
-func (x *GetUserEventsRequest) GetSortBy() string {
+func (x *GetUserEventsRequest) GetSortBy() SortBy {
 	if x != nil {
 		return x.SortBy
 	}
-	return ""
+	return SortBy_SORT_BY_UNSPECIFIED
 }
 
-func (x *GetUserEventsRequest) GetSortOrder() string {
+func (x *GetUserEventsRequest) GetSortDirection() SortDirection {
 	if x != nil {
-		return x.SortOrder
+		return x.SortDirection
 	}
-	return ""
-}
-
-type GetSavedEventsRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *GetSavedEventsRequest) Reset() {
-	*x = GetSavedEventsRequest{}
-	mi := &file_proto_v1_event_proto_msgTypes[16]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *GetSavedEventsRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*GetSavedEventsRequest) ProtoMessage() {}
-
-func (x *GetSavedEventsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_v1_event_proto_msgTypes[16]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use GetSavedEventsRequest.ProtoReflect.Descriptor instead.
-func (*GetSavedEventsRequest) Descriptor() ([]byte, []int) {
-	return file_proto_v1_event_proto_rawDescGZIP(), []int{16}
+	return SortDirection_SORT_DIRECTION_UNSPECIFIED
 }
 
 type ToggleSavedEventRequest struct {
@@ -1187,7 +1336,7 @@ type ToggleSavedEventRequest struct {
 
 func (x *ToggleSavedEventRequest) Reset() {
 	*x = ToggleSavedEventRequest{}
-	mi := &file_proto_v1_event_proto_msgTypes[17]
+	mi := &file_proto_v1_event_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1199,7 +1348,7 @@ func (x *ToggleSavedEventRequest) String() string {
 func (*ToggleSavedEventRequest) ProtoMessage() {}
 
 func (x *ToggleSavedEventRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_v1_event_proto_msgTypes[17]
+	mi := &file_proto_v1_event_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1212,7 +1361,7 @@ func (x *ToggleSavedEventRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ToggleSavedEventRequest.ProtoReflect.Descriptor instead.
 func (*ToggleSavedEventRequest) Descriptor() ([]byte, []int) {
-	return file_proto_v1_event_proto_rawDescGZIP(), []int{17}
+	return file_proto_v1_event_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *ToggleSavedEventRequest) GetEventId() string {
@@ -1232,7 +1381,7 @@ type ToggleSavedEventResponse struct {
 
 func (x *ToggleSavedEventResponse) Reset() {
 	*x = ToggleSavedEventResponse{}
-	mi := &file_proto_v1_event_proto_msgTypes[18]
+	mi := &file_proto_v1_event_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1244,7 +1393,7 @@ func (x *ToggleSavedEventResponse) String() string {
 func (*ToggleSavedEventResponse) ProtoMessage() {}
 
 func (x *ToggleSavedEventResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_v1_event_proto_msgTypes[18]
+	mi := &file_proto_v1_event_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1257,7 +1406,7 @@ func (x *ToggleSavedEventResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ToggleSavedEventResponse.ProtoReflect.Descriptor instead.
 func (*ToggleSavedEventResponse) Descriptor() ([]byte, []int) {
-	return file_proto_v1_event_proto_rawDescGZIP(), []int{18}
+	return file_proto_v1_event_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *ToggleSavedEventResponse) GetSuccess() bool {
@@ -1278,7 +1427,7 @@ var File_proto_v1_event_proto protoreflect.FileDescriptor
 
 const file_proto_v1_event_proto_rawDesc = "" +
 	"\n" +
-	"\x14proto/v1/event.proto\x12\reventsease.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xfe\x05\n" +
+	"\x14proto/v1/event.proto\x12\reventsease.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\x9b\x06\n" +
 	"\x05Event\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12 \n" +
@@ -1308,7 +1457,8 @@ const file_proto_v1_event_proto_rawDesc = "" +
 	"\n" +
 	"created_at\x18\x13 \x01(\v2\x1a.google.protobuf.TimestampR\tcreatedAt\x129\n" +
 	"\n" +
-	"updated_at\x18\x14 \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\"H\n" +
+	"updated_at\x18\x14 \x01(\v2\x1a.google.protobuf.TimestampR\tupdatedAt\x12\x1b\n" +
+	"\tis_pinned\x18\x15 \x01(\tR\bisPinned\"H\n" +
 	"\bLocation\x12\x18\n" +
 	"\aaddress\x18\x01 \x01(\tR\aaddress\x12\x10\n" +
 	"\x03lat\x18\x02 \x01(\x01R\x03lat\x12\x10\n" +
@@ -1318,19 +1468,19 @@ const file_proto_v1_event_proto_rawDesc = "" +
 	"\ais_free\x18\x01 \x01(\bR\x06isFree\x12\x1b\n" +
 	"\tentry_fee\x18\x02 \x01(\x01R\bentryFee\x12$\n" +
 	"\x0eearly_bird_fee\x18\x03 \x01(\x01R\fearlyBirdFee\x120\n" +
-	"\x14is_appointment_based\x18\x04 \x01(\bR\x12isAppointmentBased\"6\n" +
+	"\x14is_appointment_based\x18\x04 \x01(\bR\x12isAppointmentBased\"Q\n" +
 	"\n" +
-	"SocialLink\x12\x12\n" +
-	"\x04type\x18\x01 \x01(\tR\x04type\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value\"\xa1\x02\n" +
+	"SocialLink\x12-\n" +
+	"\x04type\x18\x01 \x01(\x0e2\x19.eventsease.v1.SocialTypeR\x04type\x12\x14\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value\"\xd6\x02\n" +
 	"\x10GetEventsRequest\x12-\n" +
 	"\x06region\x18\x01 \x01(\v2\x15.eventsease.v1.RegionR\x06region\x12\x1e\n" +
 	"\n" +
 	"categories\x18\x02 \x03(\tR\n" +
 	"categories\x12\x12\n" +
-	"\x04date\x18\x03 \x01(\tR\x04date\x12\x17\n" +
-	"\asort_by\x18\x04 \x01(\tR\x06sortBy\x12%\n" +
-	"\x0esort_direction\x18\x05 \x01(\tR\rsortDirection\x12!\n" +
+	"\x04date\x18\x03 \x01(\tR\x04date\x12.\n" +
+	"\asort_by\x18\x04 \x01(\x0e2\x15.eventsease.v1.SortByR\x06sortBy\x12C\n" +
+	"\x0esort_direction\x18\x05 \x01(\x0e2\x1c.eventsease.v1.SortDirectionR\rsortDirection\x12!\n" +
 	"\fsearch_query\x18\x06 \x01(\tR\vsearchQuery\x12\x1d\n" +
 	"\n" +
 	"is_regular\x18\a \x01(\bR\tisRegular\x12\x12\n" +
@@ -1376,27 +1526,49 @@ const file_proto_v1_event_proto_rawDesc = "" +
 	"\vheart_count\x18\x01 \x01(\x05R\n" +
 	"heartCount\x12\x1f\n" +
 	"\vsaved_count\x18\x02 \x01(\x05R\n" +
-	"savedCount\"\x90\x01\n" +
+	"savedCount\"\xd8\x01\n" +
 	"\x14GetUserEventsRequest\x12\x12\n" +
 	"\x04page\x18\x01 \x01(\x05R\x04page\x12\x14\n" +
-	"\x05limit\x18\x02 \x01(\x05R\x05limit\x12\x16\n" +
-	"\x06search\x18\x03 \x01(\tR\x06search\x12\x17\n" +
-	"\asort_by\x18\x04 \x01(\tR\x06sortBy\x12\x1d\n" +
-	"\n" +
-	"sort_order\x18\x05 \x01(\tR\tsortOrder\"\x17\n" +
-	"\x15GetSavedEventsRequest\"4\n" +
+	"\x05limit\x18\x02 \x01(\x05R\x05limit\x12!\n" +
+	"\fsearch_query\x18\x03 \x01(\tR\vsearchQuery\x12.\n" +
+	"\asort_by\x18\x04 \x01(\x0e2\x15.eventsease.v1.SortByR\x06sortBy\x12C\n" +
+	"\x0esort_direction\x18\x05 \x01(\x0e2\x1c.eventsease.v1.SortDirectionR\rsortDirection\"4\n" +
 	"\x17ToggleSavedEventRequest\x12\x19\n" +
 	"\bevent_id\x18\x01 \x01(\tR\aeventId\"O\n" +
 	"\x18ToggleSavedEventResponse\x12\x18\n" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x19\n" +
-	"\bis_saved\x18\x02 \x01(\bR\aisSaved2\xf4\x04\n" +
+	"\bis_saved\x18\x02 \x01(\bR\aisSaved*\x85\x01\n" +
+	"\x06SortBy\x12\x17\n" +
+	"\x13SORT_BY_UNSPECIFIED\x10\x00\x12\x16\n" +
+	"\x12SORT_BY_START_DATE\x10\x01\x12\x18\n" +
+	"\x14SORT_BY_CREATED_DATE\x10\x02\x12\x17\n" +
+	"\x13SORT_BY_HEART_COUNT\x10\x03\x12\x17\n" +
+	"\x13SORT_BY_SAVED_COUNT\x10\x04*`\n" +
+	"\rSortDirection\x12\x1e\n" +
+	"\x1aSORT_DIRECTION_UNSPECIFIED\x10\x00\x12\x16\n" +
+	"\x12SORT_DIRECTION_ASC\x10\x01\x12\x17\n" +
+	"\x13SORT_DIRECTION_DESC\x10\x02*\xa2\x02\n" +
+	"\n" +
+	"SocialType\x12\x1b\n" +
+	"\x17SOCIAL_TYPE_UNSPECIFIED\x10\x00\x12\x15\n" +
+	"\x11SOCIAL_TYPE_PHONE\x10\x01\x12\x19\n" +
+	"\x15SOCIAL_TYPE_INSTAGRAM\x10\x02\x12\x18\n" +
+	"\x14SOCIAL_TYPE_FACEBOOK\x10\x03\x12\x18\n" +
+	"\x14SOCIAL_TYPE_WHATSAPP\x10\x04\x12\x17\n" +
+	"\x13SOCIAL_TYPE_WEBSITE\x10\x05\x12\x15\n" +
+	"\x11SOCIAL_TYPE_EMAIL\x10\x06\x12\x17\n" +
+	"\x13SOCIAL_TYPE_TWITTER\x10\a\x12\x18\n" +
+	"\x14SOCIAL_TYPE_LINKEDIN\x10\b\x12\x17\n" +
+	"\x13SOCIAL_TYPE_YOUTUBE\x10\t\x12\x15\n" +
+	"\x11SOCIAL_TYPE_OTHER\x10\n" +
+	"2\xf3\x04\n" +
 	"\fEventService\x12N\n" +
 	"\tGetEvents\x12\x1f.eventsease.v1.GetEventsRequest\x1a .eventsease.v1.GetEventsResponse\x12K\n" +
 	"\bGetEvent\x12\x1e.eventsease.v1.GetEventRequest\x1a\x1f.eventsease.v1.GetEventResponse\x12Z\n" +
 	"\rGetEventStats\x12#.eventsease.v1.GetEventStatsRequest\x1a$.eventsease.v1.GetEventStatsResponse\x12T\n" +
 	"\vCreateEvent\x12!.eventsease.v1.CreateEventRequest\x1a\".eventsease.v1.CreateEventResponse\x12V\n" +
-	"\rGetUserEvents\x12#.eventsease.v1.GetUserEventsRequest\x1a .eventsease.v1.GetEventsResponse\x12X\n" +
-	"\x0eGetSavedEvents\x12$.eventsease.v1.GetSavedEventsRequest\x1a .eventsease.v1.GetEventsResponse\x12c\n" +
+	"\rGetUserEvents\x12#.eventsease.v1.GetUserEventsRequest\x1a .eventsease.v1.GetEventsResponse\x12W\n" +
+	"\x0eGetSavedEvents\x12#.eventsease.v1.GetUserEventsRequest\x1a .eventsease.v1.GetEventsResponse\x12c\n" +
 	"\x10ToggleSavedEvent\x12&.eventsease.v1.ToggleSavedEventRequest\x1a'.eventsease.v1.ToggleSavedEventResponseBf\n" +
 	"\x11com.eventsease.v1B\n" +
 	"EventProtoP\x01ZCgithub.com/This-Is-Prince/eventsease-protos/gen/go/v1;eventsease_v1b\x06proto3"
@@ -1413,63 +1585,71 @@ func file_proto_v1_event_proto_rawDescGZIP() []byte {
 	return file_proto_v1_event_proto_rawDescData
 }
 
-var file_proto_v1_event_proto_msgTypes = make([]protoimpl.MessageInfo, 19)
+var file_proto_v1_event_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
+var file_proto_v1_event_proto_msgTypes = make([]protoimpl.MessageInfo, 18)
 var file_proto_v1_event_proto_goTypes = []any{
-	(*Event)(nil),                    // 0: eventsease.v1.Event
-	(*Location)(nil),                 // 1: eventsease.v1.Location
-	(*TicketInfo)(nil),               // 2: eventsease.v1.TicketInfo
-	(*SocialLink)(nil),               // 3: eventsease.v1.SocialLink
-	(*GetEventsRequest)(nil),         // 4: eventsease.v1.GetEventsRequest
-	(*Region)(nil),                   // 5: eventsease.v1.Region
-	(*GetEventsResponse)(nil),        // 6: eventsease.v1.GetEventsResponse
-	(*MetaData)(nil),                 // 7: eventsease.v1.MetaData
-	(*GetEventRequest)(nil),          // 8: eventsease.v1.GetEventRequest
-	(*GetEventResponse)(nil),         // 9: eventsease.v1.GetEventResponse
-	(*CreateEventRequest)(nil),       // 10: eventsease.v1.CreateEventRequest
-	(*CreateEventResponse)(nil),      // 11: eventsease.v1.CreateEventResponse
-	(*GetEventStatsRequest)(nil),     // 12: eventsease.v1.GetEventStatsRequest
-	(*GetEventStatsResponse)(nil),    // 13: eventsease.v1.GetEventStatsResponse
-	(*EventStats)(nil),               // 14: eventsease.v1.EventStats
-	(*GetUserEventsRequest)(nil),     // 15: eventsease.v1.GetUserEventsRequest
-	(*GetSavedEventsRequest)(nil),    // 16: eventsease.v1.GetSavedEventsRequest
-	(*ToggleSavedEventRequest)(nil),  // 17: eventsease.v1.ToggleSavedEventRequest
-	(*ToggleSavedEventResponse)(nil), // 18: eventsease.v1.ToggleSavedEventResponse
-	(*timestamppb.Timestamp)(nil),    // 19: google.protobuf.Timestamp
+	(SortBy)(0),                      // 0: eventsease.v1.SortBy
+	(SortDirection)(0),               // 1: eventsease.v1.SortDirection
+	(SocialType)(0),                  // 2: eventsease.v1.SocialType
+	(*Event)(nil),                    // 3: eventsease.v1.Event
+	(*Location)(nil),                 // 4: eventsease.v1.Location
+	(*TicketInfo)(nil),               // 5: eventsease.v1.TicketInfo
+	(*SocialLink)(nil),               // 6: eventsease.v1.SocialLink
+	(*GetEventsRequest)(nil),         // 7: eventsease.v1.GetEventsRequest
+	(*Region)(nil),                   // 8: eventsease.v1.Region
+	(*GetEventsResponse)(nil),        // 9: eventsease.v1.GetEventsResponse
+	(*MetaData)(nil),                 // 10: eventsease.v1.MetaData
+	(*GetEventRequest)(nil),          // 11: eventsease.v1.GetEventRequest
+	(*GetEventResponse)(nil),         // 12: eventsease.v1.GetEventResponse
+	(*CreateEventRequest)(nil),       // 13: eventsease.v1.CreateEventRequest
+	(*CreateEventResponse)(nil),      // 14: eventsease.v1.CreateEventResponse
+	(*GetEventStatsRequest)(nil),     // 15: eventsease.v1.GetEventStatsRequest
+	(*GetEventStatsResponse)(nil),    // 16: eventsease.v1.GetEventStatsResponse
+	(*EventStats)(nil),               // 17: eventsease.v1.EventStats
+	(*GetUserEventsRequest)(nil),     // 18: eventsease.v1.GetUserEventsRequest
+	(*ToggleSavedEventRequest)(nil),  // 19: eventsease.v1.ToggleSavedEventRequest
+	(*ToggleSavedEventResponse)(nil), // 20: eventsease.v1.ToggleSavedEventResponse
+	(*timestamppb.Timestamp)(nil),    // 21: google.protobuf.Timestamp
 }
 var file_proto_v1_event_proto_depIdxs = []int32{
-	19, // 0: eventsease.v1.Event.start_date:type_name -> google.protobuf.Timestamp
-	19, // 1: eventsease.v1.Event.end_date:type_name -> google.protobuf.Timestamp
-	1,  // 2: eventsease.v1.Event.location:type_name -> eventsease.v1.Location
-	2,  // 3: eventsease.v1.Event.ticket_info:type_name -> eventsease.v1.TicketInfo
-	3,  // 4: eventsease.v1.Event.social:type_name -> eventsease.v1.SocialLink
-	19, // 5: eventsease.v1.Event.created_at:type_name -> google.protobuf.Timestamp
-	19, // 6: eventsease.v1.Event.updated_at:type_name -> google.protobuf.Timestamp
-	5,  // 7: eventsease.v1.GetEventsRequest.region:type_name -> eventsease.v1.Region
-	0,  // 8: eventsease.v1.GetEventsResponse.data:type_name -> eventsease.v1.Event
-	7,  // 9: eventsease.v1.GetEventsResponse.meta:type_name -> eventsease.v1.MetaData
-	0,  // 10: eventsease.v1.GetEventResponse.data:type_name -> eventsease.v1.Event
-	0,  // 11: eventsease.v1.CreateEventRequest.event:type_name -> eventsease.v1.Event
-	0,  // 12: eventsease.v1.CreateEventResponse.data:type_name -> eventsease.v1.Event
-	14, // 13: eventsease.v1.GetEventStatsResponse.data:type_name -> eventsease.v1.EventStats
-	4,  // 14: eventsease.v1.EventService.GetEvents:input_type -> eventsease.v1.GetEventsRequest
-	8,  // 15: eventsease.v1.EventService.GetEvent:input_type -> eventsease.v1.GetEventRequest
-	12, // 16: eventsease.v1.EventService.GetEventStats:input_type -> eventsease.v1.GetEventStatsRequest
-	10, // 17: eventsease.v1.EventService.CreateEvent:input_type -> eventsease.v1.CreateEventRequest
-	15, // 18: eventsease.v1.EventService.GetUserEvents:input_type -> eventsease.v1.GetUserEventsRequest
-	16, // 19: eventsease.v1.EventService.GetSavedEvents:input_type -> eventsease.v1.GetSavedEventsRequest
-	17, // 20: eventsease.v1.EventService.ToggleSavedEvent:input_type -> eventsease.v1.ToggleSavedEventRequest
-	6,  // 21: eventsease.v1.EventService.GetEvents:output_type -> eventsease.v1.GetEventsResponse
-	9,  // 22: eventsease.v1.EventService.GetEvent:output_type -> eventsease.v1.GetEventResponse
-	13, // 23: eventsease.v1.EventService.GetEventStats:output_type -> eventsease.v1.GetEventStatsResponse
-	11, // 24: eventsease.v1.EventService.CreateEvent:output_type -> eventsease.v1.CreateEventResponse
-	6,  // 25: eventsease.v1.EventService.GetUserEvents:output_type -> eventsease.v1.GetEventsResponse
-	6,  // 26: eventsease.v1.EventService.GetSavedEvents:output_type -> eventsease.v1.GetEventsResponse
-	18, // 27: eventsease.v1.EventService.ToggleSavedEvent:output_type -> eventsease.v1.ToggleSavedEventResponse
-	21, // [21:28] is the sub-list for method output_type
-	14, // [14:21] is the sub-list for method input_type
-	14, // [14:14] is the sub-list for extension type_name
-	14, // [14:14] is the sub-list for extension extendee
-	0,  // [0:14] is the sub-list for field type_name
+	21, // 0: eventsease.v1.Event.start_date:type_name -> google.protobuf.Timestamp
+	21, // 1: eventsease.v1.Event.end_date:type_name -> google.protobuf.Timestamp
+	4,  // 2: eventsease.v1.Event.location:type_name -> eventsease.v1.Location
+	5,  // 3: eventsease.v1.Event.ticket_info:type_name -> eventsease.v1.TicketInfo
+	6,  // 4: eventsease.v1.Event.social:type_name -> eventsease.v1.SocialLink
+	21, // 5: eventsease.v1.Event.created_at:type_name -> google.protobuf.Timestamp
+	21, // 6: eventsease.v1.Event.updated_at:type_name -> google.protobuf.Timestamp
+	2,  // 7: eventsease.v1.SocialLink.type:type_name -> eventsease.v1.SocialType
+	8,  // 8: eventsease.v1.GetEventsRequest.region:type_name -> eventsease.v1.Region
+	0,  // 9: eventsease.v1.GetEventsRequest.sort_by:type_name -> eventsease.v1.SortBy
+	1,  // 10: eventsease.v1.GetEventsRequest.sort_direction:type_name -> eventsease.v1.SortDirection
+	3,  // 11: eventsease.v1.GetEventsResponse.data:type_name -> eventsease.v1.Event
+	10, // 12: eventsease.v1.GetEventsResponse.meta:type_name -> eventsease.v1.MetaData
+	3,  // 13: eventsease.v1.GetEventResponse.data:type_name -> eventsease.v1.Event
+	3,  // 14: eventsease.v1.CreateEventRequest.event:type_name -> eventsease.v1.Event
+	3,  // 15: eventsease.v1.CreateEventResponse.data:type_name -> eventsease.v1.Event
+	17, // 16: eventsease.v1.GetEventStatsResponse.data:type_name -> eventsease.v1.EventStats
+	0,  // 17: eventsease.v1.GetUserEventsRequest.sort_by:type_name -> eventsease.v1.SortBy
+	1,  // 18: eventsease.v1.GetUserEventsRequest.sort_direction:type_name -> eventsease.v1.SortDirection
+	7,  // 19: eventsease.v1.EventService.GetEvents:input_type -> eventsease.v1.GetEventsRequest
+	11, // 20: eventsease.v1.EventService.GetEvent:input_type -> eventsease.v1.GetEventRequest
+	15, // 21: eventsease.v1.EventService.GetEventStats:input_type -> eventsease.v1.GetEventStatsRequest
+	13, // 22: eventsease.v1.EventService.CreateEvent:input_type -> eventsease.v1.CreateEventRequest
+	18, // 23: eventsease.v1.EventService.GetUserEvents:input_type -> eventsease.v1.GetUserEventsRequest
+	18, // 24: eventsease.v1.EventService.GetSavedEvents:input_type -> eventsease.v1.GetUserEventsRequest
+	19, // 25: eventsease.v1.EventService.ToggleSavedEvent:input_type -> eventsease.v1.ToggleSavedEventRequest
+	9,  // 26: eventsease.v1.EventService.GetEvents:output_type -> eventsease.v1.GetEventsResponse
+	12, // 27: eventsease.v1.EventService.GetEvent:output_type -> eventsease.v1.GetEventResponse
+	16, // 28: eventsease.v1.EventService.GetEventStats:output_type -> eventsease.v1.GetEventStatsResponse
+	14, // 29: eventsease.v1.EventService.CreateEvent:output_type -> eventsease.v1.CreateEventResponse
+	9,  // 30: eventsease.v1.EventService.GetUserEvents:output_type -> eventsease.v1.GetEventsResponse
+	9,  // 31: eventsease.v1.EventService.GetSavedEvents:output_type -> eventsease.v1.GetEventsResponse
+	20, // 32: eventsease.v1.EventService.ToggleSavedEvent:output_type -> eventsease.v1.ToggleSavedEventResponse
+	26, // [26:33] is the sub-list for method output_type
+	19, // [19:26] is the sub-list for method input_type
+	19, // [19:19] is the sub-list for extension type_name
+	19, // [19:19] is the sub-list for extension extendee
+	0,  // [0:19] is the sub-list for field type_name
 }
 
 func init() { file_proto_v1_event_proto_init() }
@@ -1482,13 +1662,14 @@ func file_proto_v1_event_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_v1_event_proto_rawDesc), len(file_proto_v1_event_proto_rawDesc)),
-			NumEnums:      0,
-			NumMessages:   19,
+			NumEnums:      3,
+			NumMessages:   18,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
 		GoTypes:           file_proto_v1_event_proto_goTypes,
 		DependencyIndexes: file_proto_v1_event_proto_depIdxs,
+		EnumInfos:         file_proto_v1_event_proto_enumTypes,
 		MessageInfos:      file_proto_v1_event_proto_msgTypes,
 	}.Build()
 	File_proto_v1_event_proto = out.File
