@@ -9,7 +9,7 @@ import Connect
 import Foundation
 import SwiftProtobuf
 
-internal protocol Eventsease_V1_EventServiceClientInterface: Sendable {
+public protocol Eventsease_V1_EventServiceClientInterface: Sendable {
 
     @available(iOS 13, *)
     func `getEvents`(request: Eventsease_V1_GetEventsRequest, headers: Connect.Headers) async -> ResponseMessage<Eventsease_V1_GetEventsResponse>
@@ -34,57 +34,57 @@ internal protocol Eventsease_V1_EventServiceClientInterface: Sendable {
 }
 
 /// Concrete implementation of `Eventsease_V1_EventServiceClientInterface`.
-internal final class Eventsease_V1_EventServiceClient: Eventsease_V1_EventServiceClientInterface, Sendable {
+public final class Eventsease_V1_EventServiceClient: Eventsease_V1_EventServiceClientInterface, Sendable {
     private let client: Connect.ProtocolClientInterface
 
-    internal init(client: Connect.ProtocolClientInterface) {
+    public init(client: Connect.ProtocolClientInterface) {
         self.client = client
     }
 
     @available(iOS 13, *)
-    internal func `getEvents`(request: Eventsease_V1_GetEventsRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_GetEventsResponse> {
+    public func `getEvents`(request: Eventsease_V1_GetEventsRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_GetEventsResponse> {
         return await self.client.unary(path: "/eventsease.v1.EventService/GetEvents", idempotencyLevel: .unknown, request: request, headers: headers)
     }
 
     @available(iOS 13, *)
-    internal func `getEvent`(request: Eventsease_V1_GetEventRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_GetEventResponse> {
+    public func `getEvent`(request: Eventsease_V1_GetEventRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_GetEventResponse> {
         return await self.client.unary(path: "/eventsease.v1.EventService/GetEvent", idempotencyLevel: .unknown, request: request, headers: headers)
     }
 
     @available(iOS 13, *)
-    internal func `getEventStats`(request: Eventsease_V1_GetEventStatsRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_GetEventStatsResponse> {
+    public func `getEventStats`(request: Eventsease_V1_GetEventStatsRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_GetEventStatsResponse> {
         return await self.client.unary(path: "/eventsease.v1.EventService/GetEventStats", idempotencyLevel: .unknown, request: request, headers: headers)
     }
 
     @available(iOS 13, *)
-    internal func `createEvent`(request: Eventsease_V1_CreateEventRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_CreateEventResponse> {
+    public func `createEvent`(request: Eventsease_V1_CreateEventRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_CreateEventResponse> {
         return await self.client.unary(path: "/eventsease.v1.EventService/CreateEvent", idempotencyLevel: .unknown, request: request, headers: headers)
     }
 
     @available(iOS 13, *)
-    internal func `getUserEvents`(request: Eventsease_V1_GetUserEventsRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_GetEventsResponse> {
+    public func `getUserEvents`(request: Eventsease_V1_GetUserEventsRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_GetEventsResponse> {
         return await self.client.unary(path: "/eventsease.v1.EventService/GetUserEvents", idempotencyLevel: .unknown, request: request, headers: headers)
     }
 
     @available(iOS 13, *)
-    internal func `getSavedEvents`(request: Eventsease_V1_GetUserEventsRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_GetEventsResponse> {
+    public func `getSavedEvents`(request: Eventsease_V1_GetUserEventsRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_GetEventsResponse> {
         return await self.client.unary(path: "/eventsease.v1.EventService/GetSavedEvents", idempotencyLevel: .unknown, request: request, headers: headers)
     }
 
     @available(iOS 13, *)
-    internal func `toggleSavedEvent`(request: Eventsease_V1_ToggleSavedEventRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_ToggleSavedEventResponse> {
+    public func `toggleSavedEvent`(request: Eventsease_V1_ToggleSavedEventRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_ToggleSavedEventResponse> {
         return await self.client.unary(path: "/eventsease.v1.EventService/ToggleSavedEvent", idempotencyLevel: .unknown, request: request, headers: headers)
     }
 
-    internal enum Metadata {
-        internal enum Methods {
-            internal static let getEvents = Connect.MethodSpec(name: "GetEvents", service: "eventsease.v1.EventService", type: .unary)
-            internal static let getEvent = Connect.MethodSpec(name: "GetEvent", service: "eventsease.v1.EventService", type: .unary)
-            internal static let getEventStats = Connect.MethodSpec(name: "GetEventStats", service: "eventsease.v1.EventService", type: .unary)
-            internal static let createEvent = Connect.MethodSpec(name: "CreateEvent", service: "eventsease.v1.EventService", type: .unary)
-            internal static let getUserEvents = Connect.MethodSpec(name: "GetUserEvents", service: "eventsease.v1.EventService", type: .unary)
-            internal static let getSavedEvents = Connect.MethodSpec(name: "GetSavedEvents", service: "eventsease.v1.EventService", type: .unary)
-            internal static let toggleSavedEvent = Connect.MethodSpec(name: "ToggleSavedEvent", service: "eventsease.v1.EventService", type: .unary)
+    public enum Metadata {
+        public enum Methods {
+            public static let getEvents = Connect.MethodSpec(name: "GetEvents", service: "eventsease.v1.EventService", type: .unary)
+            public static let getEvent = Connect.MethodSpec(name: "GetEvent", service: "eventsease.v1.EventService", type: .unary)
+            public static let getEventStats = Connect.MethodSpec(name: "GetEventStats", service: "eventsease.v1.EventService", type: .unary)
+            public static let createEvent = Connect.MethodSpec(name: "CreateEvent", service: "eventsease.v1.EventService", type: .unary)
+            public static let getUserEvents = Connect.MethodSpec(name: "GetUserEvents", service: "eventsease.v1.EventService", type: .unary)
+            public static let getSavedEvents = Connect.MethodSpec(name: "GetSavedEvents", service: "eventsease.v1.EventService", type: .unary)
+            public static let toggleSavedEvent = Connect.MethodSpec(name: "ToggleSavedEvent", service: "eventsease.v1.EventService", type: .unary)
         }
     }
 }

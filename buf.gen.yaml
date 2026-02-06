@@ -19,7 +19,12 @@ plugins:
 
   - remote: buf.build/apple/swift:v1.33.3
     out: gen/swift
-  - remote: buf.build/connectrpc/swift:v1.2.0 
+    opt:
+      - Visibility=Public
+
+  - remote: buf.build/connectrpc/swift:v1.2.0
     out: gen/swift
-  - remote: buf.build/connectrpc/swift-mocks:v1.2.0
-    out: gen/swift
+    opt:
+      - GenerateAsyncMethods=true
+      - GenerateCallbackMethods=false
+      - Visibility=Public

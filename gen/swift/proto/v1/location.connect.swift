@@ -9,7 +9,7 @@ import Connect
 import Foundation
 import SwiftProtobuf
 
-internal protocol Eventsease_V1_LocationServiceClientInterface: Sendable {
+public protocol Eventsease_V1_LocationServiceClientInterface: Sendable {
 
     @available(iOS 13, *)
     func `getPlaceDetails`(request: Eventsease_V1_GetPlaceDetailsRequest, headers: Connect.Headers) async -> ResponseMessage<Eventsease_V1_GetPlaceDetailsResponse>
@@ -22,33 +22,33 @@ internal protocol Eventsease_V1_LocationServiceClientInterface: Sendable {
 }
 
 /// Concrete implementation of `Eventsease_V1_LocationServiceClientInterface`.
-internal final class Eventsease_V1_LocationServiceClient: Eventsease_V1_LocationServiceClientInterface, Sendable {
+public final class Eventsease_V1_LocationServiceClient: Eventsease_V1_LocationServiceClientInterface, Sendable {
     private let client: Connect.ProtocolClientInterface
 
-    internal init(client: Connect.ProtocolClientInterface) {
+    public init(client: Connect.ProtocolClientInterface) {
         self.client = client
     }
 
     @available(iOS 13, *)
-    internal func `getPlaceDetails`(request: Eventsease_V1_GetPlaceDetailsRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_GetPlaceDetailsResponse> {
+    public func `getPlaceDetails`(request: Eventsease_V1_GetPlaceDetailsRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_GetPlaceDetailsResponse> {
         return await self.client.unary(path: "/eventsease.v1.LocationService/GetPlaceDetails", idempotencyLevel: .unknown, request: request, headers: headers)
     }
 
     @available(iOS 13, *)
-    internal func `getReverseGeocode`(request: Eventsease_V1_GetReverseGeocodeRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_GetReverseGeocodeResponse> {
+    public func `getReverseGeocode`(request: Eventsease_V1_GetReverseGeocodeRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_GetReverseGeocodeResponse> {
         return await self.client.unary(path: "/eventsease.v1.LocationService/GetReverseGeocode", idempotencyLevel: .unknown, request: request, headers: headers)
     }
 
     @available(iOS 13, *)
-    internal func `searchPlaces`(request: Eventsease_V1_SearchPlacesRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_SearchPlacesResponse> {
+    public func `searchPlaces`(request: Eventsease_V1_SearchPlacesRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_SearchPlacesResponse> {
         return await self.client.unary(path: "/eventsease.v1.LocationService/SearchPlaces", idempotencyLevel: .unknown, request: request, headers: headers)
     }
 
-    internal enum Metadata {
-        internal enum Methods {
-            internal static let getPlaceDetails = Connect.MethodSpec(name: "GetPlaceDetails", service: "eventsease.v1.LocationService", type: .unary)
-            internal static let getReverseGeocode = Connect.MethodSpec(name: "GetReverseGeocode", service: "eventsease.v1.LocationService", type: .unary)
-            internal static let searchPlaces = Connect.MethodSpec(name: "SearchPlaces", service: "eventsease.v1.LocationService", type: .unary)
+    public enum Metadata {
+        public enum Methods {
+            public static let getPlaceDetails = Connect.MethodSpec(name: "GetPlaceDetails", service: "eventsease.v1.LocationService", type: .unary)
+            public static let getReverseGeocode = Connect.MethodSpec(name: "GetReverseGeocode", service: "eventsease.v1.LocationService", type: .unary)
+            public static let searchPlaces = Connect.MethodSpec(name: "SearchPlaces", service: "eventsease.v1.LocationService", type: .unary)
         }
     }
 }

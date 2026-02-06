@@ -9,7 +9,7 @@ import Connect
 import Foundation
 import SwiftProtobuf
 
-internal protocol Eventsease_V1_UserServiceClientInterface: Sendable {
+public protocol Eventsease_V1_UserServiceClientInterface: Sendable {
 
     @available(iOS 13, *)
     func `checkUser`(request: Eventsease_V1_CheckUserRequest, headers: Connect.Headers) async -> ResponseMessage<Eventsease_V1_CheckUserResponse>
@@ -19,27 +19,27 @@ internal protocol Eventsease_V1_UserServiceClientInterface: Sendable {
 }
 
 /// Concrete implementation of `Eventsease_V1_UserServiceClientInterface`.
-internal final class Eventsease_V1_UserServiceClient: Eventsease_V1_UserServiceClientInterface, Sendable {
+public final class Eventsease_V1_UserServiceClient: Eventsease_V1_UserServiceClientInterface, Sendable {
     private let client: Connect.ProtocolClientInterface
 
-    internal init(client: Connect.ProtocolClientInterface) {
+    public init(client: Connect.ProtocolClientInterface) {
         self.client = client
     }
 
     @available(iOS 13, *)
-    internal func `checkUser`(request: Eventsease_V1_CheckUserRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_CheckUserResponse> {
+    public func `checkUser`(request: Eventsease_V1_CheckUserRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_CheckUserResponse> {
         return await self.client.unary(path: "/eventsease.v1.UserService/CheckUser", idempotencyLevel: .unknown, request: request, headers: headers)
     }
 
     @available(iOS 13, *)
-    internal func `registerFcm`(request: Eventsease_V1_RegisterFCMRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_RegisterFCMResponse> {
+    public func `registerFcm`(request: Eventsease_V1_RegisterFCMRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_RegisterFCMResponse> {
         return await self.client.unary(path: "/eventsease.v1.UserService/RegisterFCM", idempotencyLevel: .unknown, request: request, headers: headers)
     }
 
-    internal enum Metadata {
-        internal enum Methods {
-            internal static let checkUser = Connect.MethodSpec(name: "CheckUser", service: "eventsease.v1.UserService", type: .unary)
-            internal static let registerFcm = Connect.MethodSpec(name: "RegisterFCM", service: "eventsease.v1.UserService", type: .unary)
+    public enum Metadata {
+        public enum Methods {
+            public static let checkUser = Connect.MethodSpec(name: "CheckUser", service: "eventsease.v1.UserService", type: .unary)
+            public static let registerFcm = Connect.MethodSpec(name: "RegisterFCM", service: "eventsease.v1.UserService", type: .unary)
         }
     }
 }

@@ -20,8 +20,8 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-enum Eventsease_V1_SortBy: SwiftProtobuf.Enum, Swift.CaseIterable {
-  typealias RawValue = Int
+public enum Eventsease_V1_SortBy: SwiftProtobuf.Enum, Swift.CaseIterable {
+  public typealias RawValue = Int
   case unspecified // = 0
   case startDate // = 1
   case createdDate // = 2
@@ -29,11 +29,11 @@ enum Eventsease_V1_SortBy: SwiftProtobuf.Enum, Swift.CaseIterable {
   case savedCount // = 4
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .unspecified
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .unspecified
     case 1: self = .startDate
@@ -44,7 +44,7 @@ enum Eventsease_V1_SortBy: SwiftProtobuf.Enum, Swift.CaseIterable {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .unspecified: return 0
     case .startDate: return 1
@@ -56,7 +56,7 @@ enum Eventsease_V1_SortBy: SwiftProtobuf.Enum, Swift.CaseIterable {
   }
 
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static let allCases: [Eventsease_V1_SortBy] = [
+  public static let allCases: [Eventsease_V1_SortBy] = [
     .unspecified,
     .startDate,
     .createdDate,
@@ -66,18 +66,18 @@ enum Eventsease_V1_SortBy: SwiftProtobuf.Enum, Swift.CaseIterable {
 
 }
 
-enum Eventsease_V1_SortDirection: SwiftProtobuf.Enum, Swift.CaseIterable {
-  typealias RawValue = Int
+public enum Eventsease_V1_SortDirection: SwiftProtobuf.Enum, Swift.CaseIterable {
+  public typealias RawValue = Int
   case unspecified // = 0
   case asc // = 1
   case desc // = 2
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .unspecified
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .unspecified
     case 1: self = .asc
@@ -86,7 +86,7 @@ enum Eventsease_V1_SortDirection: SwiftProtobuf.Enum, Swift.CaseIterable {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .unspecified: return 0
     case .asc: return 1
@@ -96,7 +96,7 @@ enum Eventsease_V1_SortDirection: SwiftProtobuf.Enum, Swift.CaseIterable {
   }
 
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static let allCases: [Eventsease_V1_SortDirection] = [
+  public static let allCases: [Eventsease_V1_SortDirection] = [
     .unspecified,
     .asc,
     .desc,
@@ -104,8 +104,8 @@ enum Eventsease_V1_SortDirection: SwiftProtobuf.Enum, Swift.CaseIterable {
 
 }
 
-enum Eventsease_V1_SocialType: SwiftProtobuf.Enum, Swift.CaseIterable {
-  typealias RawValue = Int
+public enum Eventsease_V1_SocialType: SwiftProtobuf.Enum, Swift.CaseIterable {
+  public typealias RawValue = Int
   case unspecified // = 0
   case phone // = 1
   case instagram // = 2
@@ -119,11 +119,11 @@ enum Eventsease_V1_SocialType: SwiftProtobuf.Enum, Swift.CaseIterable {
   case other // = 10
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .unspecified
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .unspecified
     case 1: self = .phone
@@ -140,7 +140,7 @@ enum Eventsease_V1_SocialType: SwiftProtobuf.Enum, Swift.CaseIterable {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .unspecified: return 0
     case .phone: return 1
@@ -158,7 +158,7 @@ enum Eventsease_V1_SocialType: SwiftProtobuf.Enum, Swift.CaseIterable {
   }
 
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static let allCases: [Eventsease_V1_SocialType] = [
+  public static let allCases: [Eventsease_V1_SocialType] = [
     .unspecified,
     .phone,
     .instagram,
@@ -174,471 +174,471 @@ enum Eventsease_V1_SocialType: SwiftProtobuf.Enum, Swift.CaseIterable {
 
 }
 
-struct Eventsease_V1_Event: @unchecked Sendable {
+public struct Eventsease_V1_Event: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var id: String {
+  public var id: String {
     get {return _storage._id}
     set {_uniqueStorage()._id = newValue}
   }
 
-  var name: String {
+  public var name: String {
     get {return _storage._name}
     set {_uniqueStorage()._name = newValue}
   }
 
-  var description_p: String {
+  public var description_p: String {
     get {return _storage._description_p}
     set {_uniqueStorage()._description_p = newValue}
   }
 
-  var slug: String {
+  public var slug: String {
     get {return _storage._slug}
     set {_uniqueStorage()._slug = newValue}
   }
 
-  var startDate: SwiftProtobuf.Google_Protobuf_Timestamp {
+  public var startDate: SwiftProtobuf.Google_Protobuf_Timestamp {
     get {return _storage._startDate ?? SwiftProtobuf.Google_Protobuf_Timestamp()}
     set {_uniqueStorage()._startDate = newValue}
   }
   /// Returns true if `startDate` has been explicitly set.
-  var hasStartDate: Bool {return _storage._startDate != nil}
+  public var hasStartDate: Bool {return _storage._startDate != nil}
   /// Clears the value of `startDate`. Subsequent reads from it will return its default value.
-  mutating func clearStartDate() {_uniqueStorage()._startDate = nil}
+  public mutating func clearStartDate() {_uniqueStorage()._startDate = nil}
 
-  var endDate: SwiftProtobuf.Google_Protobuf_Timestamp {
+  public var endDate: SwiftProtobuf.Google_Protobuf_Timestamp {
     get {return _storage._endDate ?? SwiftProtobuf.Google_Protobuf_Timestamp()}
     set {_uniqueStorage()._endDate = newValue}
   }
   /// Returns true if `endDate` has been explicitly set.
-  var hasEndDate: Bool {return _storage._endDate != nil}
+  public var hasEndDate: Bool {return _storage._endDate != nil}
   /// Clears the value of `endDate`. Subsequent reads from it will return its default value.
-  mutating func clearEndDate() {_uniqueStorage()._endDate = nil}
+  public mutating func clearEndDate() {_uniqueStorage()._endDate = nil}
 
-  var location: Eventsease_V1_Location {
+  public var location: Eventsease_V1_Location {
     get {return _storage._location ?? Eventsease_V1_Location()}
     set {_uniqueStorage()._location = newValue}
   }
   /// Returns true if `location` has been explicitly set.
-  var hasLocation: Bool {return _storage._location != nil}
+  public var hasLocation: Bool {return _storage._location != nil}
   /// Clears the value of `location`. Subsequent reads from it will return its default value.
-  mutating func clearLocation() {_uniqueStorage()._location = nil}
+  public mutating func clearLocation() {_uniqueStorage()._location = nil}
 
-  var eventPhotos: [String] {
+  public var eventPhotos: [String] {
     get {return _storage._eventPhotos}
     set {_uniqueStorage()._eventPhotos = newValue}
   }
 
-  var userID: String {
+  public var userID: String {
     get {return _storage._userID}
     set {_uniqueStorage()._userID = newValue}
   }
 
-  var organizer: String {
+  public var organizer: String {
     get {return _storage._organizer}
     set {_uniqueStorage()._organizer = newValue}
   }
 
-  var category: String {
+  public var category: String {
     get {return _storage._category}
     set {_uniqueStorage()._category = newValue}
   }
 
-  var ticketInfo: Eventsease_V1_TicketInfo {
+  public var ticketInfo: Eventsease_V1_TicketInfo {
     get {return _storage._ticketInfo ?? Eventsease_V1_TicketInfo()}
     set {_uniqueStorage()._ticketInfo = newValue}
   }
   /// Returns true if `ticketInfo` has been explicitly set.
-  var hasTicketInfo: Bool {return _storage._ticketInfo != nil}
+  public var hasTicketInfo: Bool {return _storage._ticketInfo != nil}
   /// Clears the value of `ticketInfo`. Subsequent reads from it will return its default value.
-  mutating func clearTicketInfo() {_uniqueStorage()._ticketInfo = nil}
+  public mutating func clearTicketInfo() {_uniqueStorage()._ticketInfo = nil}
 
-  var social: [Eventsease_V1_SocialLink] {
+  public var social: [Eventsease_V1_SocialLink] {
     get {return _storage._social}
     set {_uniqueStorage()._social = newValue}
   }
 
-  var isPaid: Bool {
+  public var isPaid: Bool {
     get {return _storage._isPaid}
     set {_uniqueStorage()._isPaid = newValue}
   }
 
-  var isApproved: Bool {
+  public var isApproved: Bool {
     get {return _storage._isApproved}
     set {_uniqueStorage()._isApproved = newValue}
   }
 
-  var isRegular: Bool {
+  public var isRegular: Bool {
     get {return _storage._isRegular}
     set {_uniqueStorage()._isRegular = newValue}
   }
 
-  var heartCount: Int32 {
+  public var heartCount: Int32 {
     get {return _storage._heartCount}
     set {_uniqueStorage()._heartCount = newValue}
   }
 
-  var savedCount: Int32 {
+  public var savedCount: Int32 {
     get {return _storage._savedCount}
     set {_uniqueStorage()._savedCount = newValue}
   }
 
-  var createdAt: SwiftProtobuf.Google_Protobuf_Timestamp {
+  public var createdAt: SwiftProtobuf.Google_Protobuf_Timestamp {
     get {return _storage._createdAt ?? SwiftProtobuf.Google_Protobuf_Timestamp()}
     set {_uniqueStorage()._createdAt = newValue}
   }
   /// Returns true if `createdAt` has been explicitly set.
-  var hasCreatedAt: Bool {return _storage._createdAt != nil}
+  public var hasCreatedAt: Bool {return _storage._createdAt != nil}
   /// Clears the value of `createdAt`. Subsequent reads from it will return its default value.
-  mutating func clearCreatedAt() {_uniqueStorage()._createdAt = nil}
+  public mutating func clearCreatedAt() {_uniqueStorage()._createdAt = nil}
 
-  var updatedAt: SwiftProtobuf.Google_Protobuf_Timestamp {
+  public var updatedAt: SwiftProtobuf.Google_Protobuf_Timestamp {
     get {return _storage._updatedAt ?? SwiftProtobuf.Google_Protobuf_Timestamp()}
     set {_uniqueStorage()._updatedAt = newValue}
   }
   /// Returns true if `updatedAt` has been explicitly set.
-  var hasUpdatedAt: Bool {return _storage._updatedAt != nil}
+  public var hasUpdatedAt: Bool {return _storage._updatedAt != nil}
   /// Clears the value of `updatedAt`. Subsequent reads from it will return its default value.
-  mutating func clearUpdatedAt() {_uniqueStorage()._updatedAt = nil}
+  public mutating func clearUpdatedAt() {_uniqueStorage()._updatedAt = nil}
 
-  var isPinned: String {
+  public var isPinned: String {
     get {return _storage._isPinned}
     set {_uniqueStorage()._isPinned = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct Eventsease_V1_Location: Sendable {
+public struct Eventsease_V1_Location: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var address: String = String()
+  public var address: String = String()
 
-  var lat: Double = 0
+  public var lat: Double = 0
 
-  var lng: Double = 0
+  public var lng: Double = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Eventsease_V1_TicketInfo: Sendable {
+public struct Eventsease_V1_TicketInfo: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var isFree: Bool = false
+  public var isFree: Bool = false
 
-  var entryFee: Double = 0
+  public var entryFee: Double = 0
 
-  var earlyBirdFee: Double = 0
+  public var earlyBirdFee: Double = 0
 
-  var isAppointmentBased: Bool = false
+  public var isAppointmentBased: Bool = false
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Eventsease_V1_SocialLink: Sendable {
+public struct Eventsease_V1_SocialLink: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var type: Eventsease_V1_SocialType = .unspecified
+  public var type: Eventsease_V1_SocialType = .unspecified
 
-  var value: String = String()
+  public var value: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Eventsease_V1_GetEventsRequest: Sendable {
+public struct Eventsease_V1_GetEventsRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var region: Eventsease_V1_Region {
+  public var region: Eventsease_V1_Region {
     get {return _region ?? Eventsease_V1_Region()}
     set {_region = newValue}
   }
   /// Returns true if `region` has been explicitly set.
-  var hasRegion: Bool {return self._region != nil}
+  public var hasRegion: Bool {return self._region != nil}
   /// Clears the value of `region`. Subsequent reads from it will return its default value.
-  mutating func clearRegion() {self._region = nil}
+  public mutating func clearRegion() {self._region = nil}
 
-  var categories: [String] = []
+  public var categories: [String] = []
 
-  var date: String = String()
+  public var date: String = String()
 
-  var sortBy: Eventsease_V1_SortBy = .unspecified
+  public var sortBy: Eventsease_V1_SortBy = .unspecified
 
-  var sortDirection: Eventsease_V1_SortDirection = .unspecified
+  public var sortDirection: Eventsease_V1_SortDirection = .unspecified
 
-  var searchQuery: String = String()
+  public var searchQuery: String = String()
 
-  var isRegular: Bool = false
+  public var isRegular: Bool = false
 
-  var page: Int32 = 0
+  public var page: Int32 = 0
 
-  var limit: Int32 = 0
+  public var limit: Int32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _region: Eventsease_V1_Region? = nil
 }
 
-struct Eventsease_V1_Region: Sendable {
+public struct Eventsease_V1_Region: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var latitude: Double = 0
+  public var latitude: Double = 0
 
-  var longitude: Double = 0
+  public var longitude: Double = 0
 
-  var latitudeDelta: Double = 0
+  public var latitudeDelta: Double = 0
 
-  var longitudeDelta: Double = 0
+  public var longitudeDelta: Double = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Eventsease_V1_GetEventsResponse: Sendable {
+public struct Eventsease_V1_GetEventsResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var success: Bool = false
+  public var success: Bool = false
 
-  var data: [Eventsease_V1_Event] = []
+  public var data: [Eventsease_V1_Event] = []
 
-  var meta: Eventsease_V1_MetaData {
+  public var meta: Eventsease_V1_MetaData {
     get {return _meta ?? Eventsease_V1_MetaData()}
     set {_meta = newValue}
   }
   /// Returns true if `meta` has been explicitly set.
-  var hasMeta: Bool {return self._meta != nil}
+  public var hasMeta: Bool {return self._meta != nil}
   /// Clears the value of `meta`. Subsequent reads from it will return its default value.
-  mutating func clearMeta() {self._meta = nil}
+  public mutating func clearMeta() {self._meta = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _meta: Eventsease_V1_MetaData? = nil
 }
 
-struct Eventsease_V1_MetaData: Sendable {
+public struct Eventsease_V1_MetaData: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var totalCount: Int64 = 0
+  public var totalCount: Int64 = 0
 
-  var totalPages: Int64 = 0
+  public var totalPages: Int64 = 0
 
-  var currentPage: Int32 = 0
+  public var currentPage: Int32 = 0
 
-  var limit: Int32 = 0
+  public var limit: Int32 = 0
 
-  var hasNextPage_p: Bool = false
+  public var hasNextPage_p: Bool = false
 
-  var hasPreviousPage_p: Bool = false
+  public var hasPreviousPage_p: Bool = false
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Eventsease_V1_GetEventRequest: Sendable {
+public struct Eventsease_V1_GetEventRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var idOrSlug: String = String()
+  public var idOrSlug: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Eventsease_V1_GetEventResponse: Sendable {
+public struct Eventsease_V1_GetEventResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var success: Bool = false
+  public var success: Bool = false
 
-  var data: Eventsease_V1_Event {
+  public var data: Eventsease_V1_Event {
     get {return _data ?? Eventsease_V1_Event()}
     set {_data = newValue}
   }
   /// Returns true if `data` has been explicitly set.
-  var hasData: Bool {return self._data != nil}
+  public var hasData: Bool {return self._data != nil}
   /// Clears the value of `data`. Subsequent reads from it will return its default value.
-  mutating func clearData() {self._data = nil}
+  public mutating func clearData() {self._data = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _data: Eventsease_V1_Event? = nil
 }
 
-struct Eventsease_V1_CreateEventRequest: Sendable {
+public struct Eventsease_V1_CreateEventRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var event: Eventsease_V1_Event {
+  public var event: Eventsease_V1_Event {
     get {return _event ?? Eventsease_V1_Event()}
     set {_event = newValue}
   }
   /// Returns true if `event` has been explicitly set.
-  var hasEvent: Bool {return self._event != nil}
+  public var hasEvent: Bool {return self._event != nil}
   /// Clears the value of `event`. Subsequent reads from it will return its default value.
-  mutating func clearEvent() {self._event = nil}
+  public mutating func clearEvent() {self._event = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _event: Eventsease_V1_Event? = nil
 }
 
-struct Eventsease_V1_CreateEventResponse: Sendable {
+public struct Eventsease_V1_CreateEventResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var success: Bool = false
+  public var success: Bool = false
 
-  var message: String = String()
+  public var message: String = String()
 
-  var data: Eventsease_V1_Event {
+  public var data: Eventsease_V1_Event {
     get {return _data ?? Eventsease_V1_Event()}
     set {_data = newValue}
   }
   /// Returns true if `data` has been explicitly set.
-  var hasData: Bool {return self._data != nil}
+  public var hasData: Bool {return self._data != nil}
   /// Clears the value of `data`. Subsequent reads from it will return its default value.
-  mutating func clearData() {self._data = nil}
+  public mutating func clearData() {self._data = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _data: Eventsease_V1_Event? = nil
 }
 
-struct Eventsease_V1_GetEventStatsRequest: Sendable {
+public struct Eventsease_V1_GetEventStatsRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var id: String = String()
+  public var id: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Eventsease_V1_GetEventStatsResponse: Sendable {
+public struct Eventsease_V1_GetEventStatsResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var success: Bool = false
+  public var success: Bool = false
 
-  var data: Eventsease_V1_EventStats {
+  public var data: Eventsease_V1_EventStats {
     get {return _data ?? Eventsease_V1_EventStats()}
     set {_data = newValue}
   }
   /// Returns true if `data` has been explicitly set.
-  var hasData: Bool {return self._data != nil}
+  public var hasData: Bool {return self._data != nil}
   /// Clears the value of `data`. Subsequent reads from it will return its default value.
-  mutating func clearData() {self._data = nil}
+  public mutating func clearData() {self._data = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _data: Eventsease_V1_EventStats? = nil
 }
 
-struct Eventsease_V1_EventStats: Sendable {
+public struct Eventsease_V1_EventStats: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var heartCount: Int32 = 0
+  public var heartCount: Int32 = 0
 
-  var savedCount: Int32 = 0
+  public var savedCount: Int32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Eventsease_V1_GetUserEventsRequest: Sendable {
+public struct Eventsease_V1_GetUserEventsRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var page: Int32 = 0
+  public var page: Int32 = 0
 
-  var limit: Int32 = 0
+  public var limit: Int32 = 0
 
-  var searchQuery: String = String()
+  public var searchQuery: String = String()
 
-  var sortBy: Eventsease_V1_SortBy = .unspecified
+  public var sortBy: Eventsease_V1_SortBy = .unspecified
 
-  var sortDirection: Eventsease_V1_SortDirection = .unspecified
+  public var sortDirection: Eventsease_V1_SortDirection = .unspecified
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Eventsease_V1_ToggleSavedEventRequest: Sendable {
+public struct Eventsease_V1_ToggleSavedEventRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var eventID: String = String()
+  public var eventID: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct Eventsease_V1_ToggleSavedEventResponse: Sendable {
+public struct Eventsease_V1_ToggleSavedEventResponse: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var success: Bool = false
+  public var success: Bool = false
 
-  var isSaved: Bool = false
+  public var isSaved: Bool = false
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -646,20 +646,20 @@ struct Eventsease_V1_ToggleSavedEventResponse: Sendable {
 fileprivate let _protobuf_package = "eventsease.v1"
 
 extension Eventsease_V1_SortBy: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0SORT_BY_UNSPECIFIED\0\u{1}SORT_BY_START_DATE\0\u{1}SORT_BY_CREATED_DATE\0\u{1}SORT_BY_HEART_COUNT\0\u{1}SORT_BY_SAVED_COUNT\0")
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0SORT_BY_UNSPECIFIED\0\u{1}SORT_BY_START_DATE\0\u{1}SORT_BY_CREATED_DATE\0\u{1}SORT_BY_HEART_COUNT\0\u{1}SORT_BY_SAVED_COUNT\0")
 }
 
 extension Eventsease_V1_SortDirection: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0SORT_DIRECTION_UNSPECIFIED\0\u{1}SORT_DIRECTION_ASC\0\u{1}SORT_DIRECTION_DESC\0")
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0SORT_DIRECTION_UNSPECIFIED\0\u{1}SORT_DIRECTION_ASC\0\u{1}SORT_DIRECTION_DESC\0")
 }
 
 extension Eventsease_V1_SocialType: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0SOCIAL_TYPE_UNSPECIFIED\0\u{1}SOCIAL_TYPE_PHONE\0\u{1}SOCIAL_TYPE_INSTAGRAM\0\u{1}SOCIAL_TYPE_FACEBOOK\0\u{1}SOCIAL_TYPE_WHATSAPP\0\u{1}SOCIAL_TYPE_WEBSITE\0\u{1}SOCIAL_TYPE_EMAIL\0\u{1}SOCIAL_TYPE_TWITTER\0\u{1}SOCIAL_TYPE_LINKEDIN\0\u{1}SOCIAL_TYPE_YOUTUBE\0\u{1}SOCIAL_TYPE_OTHER\0")
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0SOCIAL_TYPE_UNSPECIFIED\0\u{1}SOCIAL_TYPE_PHONE\0\u{1}SOCIAL_TYPE_INSTAGRAM\0\u{1}SOCIAL_TYPE_FACEBOOK\0\u{1}SOCIAL_TYPE_WHATSAPP\0\u{1}SOCIAL_TYPE_WEBSITE\0\u{1}SOCIAL_TYPE_EMAIL\0\u{1}SOCIAL_TYPE_TWITTER\0\u{1}SOCIAL_TYPE_LINKEDIN\0\u{1}SOCIAL_TYPE_YOUTUBE\0\u{1}SOCIAL_TYPE_OTHER\0")
 }
 
 extension Eventsease_V1_Event: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Event"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{1}name\0\u{1}description\0\u{1}slug\0\u{3}start_date\0\u{3}end_date\0\u{1}location\0\u{3}event_photos\0\u{3}user_id\0\u{1}organizer\0\u{1}category\0\u{3}ticket_info\0\u{1}social\0\u{3}is_paid\0\u{3}is_approved\0\u{3}is_regular\0\u{3}heart_count\0\u{3}saved_count\0\u{3}created_at\0\u{3}updated_at\0\u{3}is_pinned\0")
+  public static let protoMessageName: String = _protobuf_package + ".Event"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{1}name\0\u{1}description\0\u{1}slug\0\u{3}start_date\0\u{3}end_date\0\u{1}location\0\u{3}event_photos\0\u{3}user_id\0\u{1}organizer\0\u{1}category\0\u{3}ticket_info\0\u{1}social\0\u{3}is_paid\0\u{3}is_approved\0\u{3}is_regular\0\u{3}heart_count\0\u{3}saved_count\0\u{3}created_at\0\u{3}updated_at\0\u{3}is_pinned\0")
 
   fileprivate class _StorageClass {
     var _id: String = String()
@@ -724,7 +724,7 @@ extension Eventsease_V1_Event: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -759,7 +759,7 @@ extension Eventsease_V1_Event: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       // The use of inline closures is to circumvent an issue where the compiler
       // allocates stack space for every if/case branch local when no optimizations
@@ -832,7 +832,7 @@ extension Eventsease_V1_Event: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Eventsease_V1_Event, rhs: Eventsease_V1_Event) -> Bool {
+  public static func ==(lhs: Eventsease_V1_Event, rhs: Eventsease_V1_Event) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -868,10 +868,10 @@ extension Eventsease_V1_Event: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
 }
 
 extension Eventsease_V1_Location: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Location"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}address\0\u{1}lat\0\u{1}lng\0")
+  public static let protoMessageName: String = _protobuf_package + ".Location"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}address\0\u{1}lat\0\u{1}lng\0")
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       // The use of inline closures is to circumvent an issue where the compiler
       // allocates stack space for every case branch when no optimizations are
@@ -885,7 +885,7 @@ extension Eventsease_V1_Location: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.address.isEmpty {
       try visitor.visitSingularStringField(value: self.address, fieldNumber: 1)
     }
@@ -898,7 +898,7 @@ extension Eventsease_V1_Location: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Eventsease_V1_Location, rhs: Eventsease_V1_Location) -> Bool {
+  public static func ==(lhs: Eventsease_V1_Location, rhs: Eventsease_V1_Location) -> Bool {
     if lhs.address != rhs.address {return false}
     if lhs.lat != rhs.lat {return false}
     if lhs.lng != rhs.lng {return false}
@@ -908,10 +908,10 @@ extension Eventsease_V1_Location: SwiftProtobuf.Message, SwiftProtobuf._MessageI
 }
 
 extension Eventsease_V1_TicketInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".TicketInfo"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}is_free\0\u{3}entry_fee\0\u{3}early_bird_fee\0\u{3}is_appointment_based\0")
+  public static let protoMessageName: String = _protobuf_package + ".TicketInfo"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}is_free\0\u{3}entry_fee\0\u{3}early_bird_fee\0\u{3}is_appointment_based\0")
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       // The use of inline closures is to circumvent an issue where the compiler
       // allocates stack space for every case branch when no optimizations are
@@ -926,7 +926,7 @@ extension Eventsease_V1_TicketInfo: SwiftProtobuf.Message, SwiftProtobuf._Messag
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.isFree != false {
       try visitor.visitSingularBoolField(value: self.isFree, fieldNumber: 1)
     }
@@ -942,7 +942,7 @@ extension Eventsease_V1_TicketInfo: SwiftProtobuf.Message, SwiftProtobuf._Messag
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Eventsease_V1_TicketInfo, rhs: Eventsease_V1_TicketInfo) -> Bool {
+  public static func ==(lhs: Eventsease_V1_TicketInfo, rhs: Eventsease_V1_TicketInfo) -> Bool {
     if lhs.isFree != rhs.isFree {return false}
     if lhs.entryFee != rhs.entryFee {return false}
     if lhs.earlyBirdFee != rhs.earlyBirdFee {return false}
@@ -953,10 +953,10 @@ extension Eventsease_V1_TicketInfo: SwiftProtobuf.Message, SwiftProtobuf._Messag
 }
 
 extension Eventsease_V1_SocialLink: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".SocialLink"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}type\0\u{1}value\0")
+  public static let protoMessageName: String = _protobuf_package + ".SocialLink"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}type\0\u{1}value\0")
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       // The use of inline closures is to circumvent an issue where the compiler
       // allocates stack space for every case branch when no optimizations are
@@ -969,7 +969,7 @@ extension Eventsease_V1_SocialLink: SwiftProtobuf.Message, SwiftProtobuf._Messag
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.type != .unspecified {
       try visitor.visitSingularEnumField(value: self.type, fieldNumber: 1)
     }
@@ -979,7 +979,7 @@ extension Eventsease_V1_SocialLink: SwiftProtobuf.Message, SwiftProtobuf._Messag
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Eventsease_V1_SocialLink, rhs: Eventsease_V1_SocialLink) -> Bool {
+  public static func ==(lhs: Eventsease_V1_SocialLink, rhs: Eventsease_V1_SocialLink) -> Bool {
     if lhs.type != rhs.type {return false}
     if lhs.value != rhs.value {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -988,10 +988,10 @@ extension Eventsease_V1_SocialLink: SwiftProtobuf.Message, SwiftProtobuf._Messag
 }
 
 extension Eventsease_V1_GetEventsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GetEventsRequest"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}region\0\u{1}categories\0\u{1}date\0\u{3}sort_by\0\u{3}sort_direction\0\u{3}search_query\0\u{3}is_regular\0\u{1}page\0\u{1}limit\0")
+  public static let protoMessageName: String = _protobuf_package + ".GetEventsRequest"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}region\0\u{1}categories\0\u{1}date\0\u{3}sort_by\0\u{3}sort_direction\0\u{3}search_query\0\u{3}is_regular\0\u{1}page\0\u{1}limit\0")
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       // The use of inline closures is to circumvent an issue where the compiler
       // allocates stack space for every case branch when no optimizations are
@@ -1011,7 +1011,7 @@ extension Eventsease_V1_GetEventsRequest: SwiftProtobuf.Message, SwiftProtobuf._
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     // The use of inline closures is to circumvent an issue where the compiler
     // allocates stack space for every if/case branch local when no optimizations
     // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
@@ -1046,7 +1046,7 @@ extension Eventsease_V1_GetEventsRequest: SwiftProtobuf.Message, SwiftProtobuf._
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Eventsease_V1_GetEventsRequest, rhs: Eventsease_V1_GetEventsRequest) -> Bool {
+  public static func ==(lhs: Eventsease_V1_GetEventsRequest, rhs: Eventsease_V1_GetEventsRequest) -> Bool {
     if lhs._region != rhs._region {return false}
     if lhs.categories != rhs.categories {return false}
     if lhs.date != rhs.date {return false}
@@ -1062,10 +1062,10 @@ extension Eventsease_V1_GetEventsRequest: SwiftProtobuf.Message, SwiftProtobuf._
 }
 
 extension Eventsease_V1_Region: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Region"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}latitude\0\u{1}longitude\0\u{3}latitude_delta\0\u{3}longitude_delta\0")
+  public static let protoMessageName: String = _protobuf_package + ".Region"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}latitude\0\u{1}longitude\0\u{3}latitude_delta\0\u{3}longitude_delta\0")
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       // The use of inline closures is to circumvent an issue where the compiler
       // allocates stack space for every case branch when no optimizations are
@@ -1080,7 +1080,7 @@ extension Eventsease_V1_Region: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.latitude.bitPattern != 0 {
       try visitor.visitSingularDoubleField(value: self.latitude, fieldNumber: 1)
     }
@@ -1096,7 +1096,7 @@ extension Eventsease_V1_Region: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Eventsease_V1_Region, rhs: Eventsease_V1_Region) -> Bool {
+  public static func ==(lhs: Eventsease_V1_Region, rhs: Eventsease_V1_Region) -> Bool {
     if lhs.latitude != rhs.latitude {return false}
     if lhs.longitude != rhs.longitude {return false}
     if lhs.latitudeDelta != rhs.latitudeDelta {return false}
@@ -1107,10 +1107,10 @@ extension Eventsease_V1_Region: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
 }
 
 extension Eventsease_V1_GetEventsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GetEventsResponse"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}success\0\u{1}data\0\u{1}meta\0")
+  public static let protoMessageName: String = _protobuf_package + ".GetEventsResponse"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}success\0\u{1}data\0\u{1}meta\0")
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       // The use of inline closures is to circumvent an issue where the compiler
       // allocates stack space for every case branch when no optimizations are
@@ -1124,7 +1124,7 @@ extension Eventsease_V1_GetEventsResponse: SwiftProtobuf.Message, SwiftProtobuf.
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     // The use of inline closures is to circumvent an issue where the compiler
     // allocates stack space for every if/case branch local when no optimizations
     // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
@@ -1141,7 +1141,7 @@ extension Eventsease_V1_GetEventsResponse: SwiftProtobuf.Message, SwiftProtobuf.
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Eventsease_V1_GetEventsResponse, rhs: Eventsease_V1_GetEventsResponse) -> Bool {
+  public static func ==(lhs: Eventsease_V1_GetEventsResponse, rhs: Eventsease_V1_GetEventsResponse) -> Bool {
     if lhs.success != rhs.success {return false}
     if lhs.data != rhs.data {return false}
     if lhs._meta != rhs._meta {return false}
@@ -1151,10 +1151,10 @@ extension Eventsease_V1_GetEventsResponse: SwiftProtobuf.Message, SwiftProtobuf.
 }
 
 extension Eventsease_V1_MetaData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".MetaData"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}total_count\0\u{3}total_pages\0\u{3}current_page\0\u{1}limit\0\u{3}has_next_page\0\u{3}has_previous_page\0")
+  public static let protoMessageName: String = _protobuf_package + ".MetaData"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}total_count\0\u{3}total_pages\0\u{3}current_page\0\u{1}limit\0\u{3}has_next_page\0\u{3}has_previous_page\0")
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       // The use of inline closures is to circumvent an issue where the compiler
       // allocates stack space for every case branch when no optimizations are
@@ -1171,7 +1171,7 @@ extension Eventsease_V1_MetaData: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.totalCount != 0 {
       try visitor.visitSingularInt64Field(value: self.totalCount, fieldNumber: 1)
     }
@@ -1193,7 +1193,7 @@ extension Eventsease_V1_MetaData: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Eventsease_V1_MetaData, rhs: Eventsease_V1_MetaData) -> Bool {
+  public static func ==(lhs: Eventsease_V1_MetaData, rhs: Eventsease_V1_MetaData) -> Bool {
     if lhs.totalCount != rhs.totalCount {return false}
     if lhs.totalPages != rhs.totalPages {return false}
     if lhs.currentPage != rhs.currentPage {return false}
@@ -1206,10 +1206,10 @@ extension Eventsease_V1_MetaData: SwiftProtobuf.Message, SwiftProtobuf._MessageI
 }
 
 extension Eventsease_V1_GetEventRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GetEventRequest"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}id_or_slug\0")
+  public static let protoMessageName: String = _protobuf_package + ".GetEventRequest"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}id_or_slug\0")
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       // The use of inline closures is to circumvent an issue where the compiler
       // allocates stack space for every case branch when no optimizations are
@@ -1221,14 +1221,14 @@ extension Eventsease_V1_GetEventRequest: SwiftProtobuf.Message, SwiftProtobuf._M
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.idOrSlug.isEmpty {
       try visitor.visitSingularStringField(value: self.idOrSlug, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Eventsease_V1_GetEventRequest, rhs: Eventsease_V1_GetEventRequest) -> Bool {
+  public static func ==(lhs: Eventsease_V1_GetEventRequest, rhs: Eventsease_V1_GetEventRequest) -> Bool {
     if lhs.idOrSlug != rhs.idOrSlug {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -1236,10 +1236,10 @@ extension Eventsease_V1_GetEventRequest: SwiftProtobuf.Message, SwiftProtobuf._M
 }
 
 extension Eventsease_V1_GetEventResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GetEventResponse"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}success\0\u{1}data\0")
+  public static let protoMessageName: String = _protobuf_package + ".GetEventResponse"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}success\0\u{1}data\0")
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       // The use of inline closures is to circumvent an issue where the compiler
       // allocates stack space for every case branch when no optimizations are
@@ -1252,7 +1252,7 @@ extension Eventsease_V1_GetEventResponse: SwiftProtobuf.Message, SwiftProtobuf._
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     // The use of inline closures is to circumvent an issue where the compiler
     // allocates stack space for every if/case branch local when no optimizations
     // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
@@ -1266,7 +1266,7 @@ extension Eventsease_V1_GetEventResponse: SwiftProtobuf.Message, SwiftProtobuf._
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Eventsease_V1_GetEventResponse, rhs: Eventsease_V1_GetEventResponse) -> Bool {
+  public static func ==(lhs: Eventsease_V1_GetEventResponse, rhs: Eventsease_V1_GetEventResponse) -> Bool {
     if lhs.success != rhs.success {return false}
     if lhs._data != rhs._data {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -1275,10 +1275,10 @@ extension Eventsease_V1_GetEventResponse: SwiftProtobuf.Message, SwiftProtobuf._
 }
 
 extension Eventsease_V1_CreateEventRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".CreateEventRequest"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}event\0")
+  public static let protoMessageName: String = _protobuf_package + ".CreateEventRequest"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}event\0")
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       // The use of inline closures is to circumvent an issue where the compiler
       // allocates stack space for every case branch when no optimizations are
@@ -1290,7 +1290,7 @@ extension Eventsease_V1_CreateEventRequest: SwiftProtobuf.Message, SwiftProtobuf
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     // The use of inline closures is to circumvent an issue where the compiler
     // allocates stack space for every if/case branch local when no optimizations
     // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
@@ -1301,7 +1301,7 @@ extension Eventsease_V1_CreateEventRequest: SwiftProtobuf.Message, SwiftProtobuf
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Eventsease_V1_CreateEventRequest, rhs: Eventsease_V1_CreateEventRequest) -> Bool {
+  public static func ==(lhs: Eventsease_V1_CreateEventRequest, rhs: Eventsease_V1_CreateEventRequest) -> Bool {
     if lhs._event != rhs._event {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -1309,10 +1309,10 @@ extension Eventsease_V1_CreateEventRequest: SwiftProtobuf.Message, SwiftProtobuf
 }
 
 extension Eventsease_V1_CreateEventResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".CreateEventResponse"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}success\0\u{1}message\0\u{1}data\0")
+  public static let protoMessageName: String = _protobuf_package + ".CreateEventResponse"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}success\0\u{1}message\0\u{1}data\0")
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       // The use of inline closures is to circumvent an issue where the compiler
       // allocates stack space for every case branch when no optimizations are
@@ -1326,7 +1326,7 @@ extension Eventsease_V1_CreateEventResponse: SwiftProtobuf.Message, SwiftProtobu
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     // The use of inline closures is to circumvent an issue where the compiler
     // allocates stack space for every if/case branch local when no optimizations
     // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
@@ -1343,7 +1343,7 @@ extension Eventsease_V1_CreateEventResponse: SwiftProtobuf.Message, SwiftProtobu
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Eventsease_V1_CreateEventResponse, rhs: Eventsease_V1_CreateEventResponse) -> Bool {
+  public static func ==(lhs: Eventsease_V1_CreateEventResponse, rhs: Eventsease_V1_CreateEventResponse) -> Bool {
     if lhs.success != rhs.success {return false}
     if lhs.message != rhs.message {return false}
     if lhs._data != rhs._data {return false}
@@ -1353,10 +1353,10 @@ extension Eventsease_V1_CreateEventResponse: SwiftProtobuf.Message, SwiftProtobu
 }
 
 extension Eventsease_V1_GetEventStatsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GetEventStatsRequest"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0")
+  public static let protoMessageName: String = _protobuf_package + ".GetEventStatsRequest"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0")
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       // The use of inline closures is to circumvent an issue where the compiler
       // allocates stack space for every case branch when no optimizations are
@@ -1368,14 +1368,14 @@ extension Eventsease_V1_GetEventStatsRequest: SwiftProtobuf.Message, SwiftProtob
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.id.isEmpty {
       try visitor.visitSingularStringField(value: self.id, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Eventsease_V1_GetEventStatsRequest, rhs: Eventsease_V1_GetEventStatsRequest) -> Bool {
+  public static func ==(lhs: Eventsease_V1_GetEventStatsRequest, rhs: Eventsease_V1_GetEventStatsRequest) -> Bool {
     if lhs.id != rhs.id {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -1383,10 +1383,10 @@ extension Eventsease_V1_GetEventStatsRequest: SwiftProtobuf.Message, SwiftProtob
 }
 
 extension Eventsease_V1_GetEventStatsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GetEventStatsResponse"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}success\0\u{1}data\0")
+  public static let protoMessageName: String = _protobuf_package + ".GetEventStatsResponse"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}success\0\u{1}data\0")
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       // The use of inline closures is to circumvent an issue where the compiler
       // allocates stack space for every case branch when no optimizations are
@@ -1399,7 +1399,7 @@ extension Eventsease_V1_GetEventStatsResponse: SwiftProtobuf.Message, SwiftProto
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     // The use of inline closures is to circumvent an issue where the compiler
     // allocates stack space for every if/case branch local when no optimizations
     // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
@@ -1413,7 +1413,7 @@ extension Eventsease_V1_GetEventStatsResponse: SwiftProtobuf.Message, SwiftProto
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Eventsease_V1_GetEventStatsResponse, rhs: Eventsease_V1_GetEventStatsResponse) -> Bool {
+  public static func ==(lhs: Eventsease_V1_GetEventStatsResponse, rhs: Eventsease_V1_GetEventStatsResponse) -> Bool {
     if lhs.success != rhs.success {return false}
     if lhs._data != rhs._data {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -1422,10 +1422,10 @@ extension Eventsease_V1_GetEventStatsResponse: SwiftProtobuf.Message, SwiftProto
 }
 
 extension Eventsease_V1_EventStats: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".EventStats"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}heart_count\0\u{3}saved_count\0")
+  public static let protoMessageName: String = _protobuf_package + ".EventStats"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}heart_count\0\u{3}saved_count\0")
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       // The use of inline closures is to circumvent an issue where the compiler
       // allocates stack space for every case branch when no optimizations are
@@ -1438,7 +1438,7 @@ extension Eventsease_V1_EventStats: SwiftProtobuf.Message, SwiftProtobuf._Messag
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.heartCount != 0 {
       try visitor.visitSingularInt32Field(value: self.heartCount, fieldNumber: 1)
     }
@@ -1448,7 +1448,7 @@ extension Eventsease_V1_EventStats: SwiftProtobuf.Message, SwiftProtobuf._Messag
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Eventsease_V1_EventStats, rhs: Eventsease_V1_EventStats) -> Bool {
+  public static func ==(lhs: Eventsease_V1_EventStats, rhs: Eventsease_V1_EventStats) -> Bool {
     if lhs.heartCount != rhs.heartCount {return false}
     if lhs.savedCount != rhs.savedCount {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -1457,10 +1457,10 @@ extension Eventsease_V1_EventStats: SwiftProtobuf.Message, SwiftProtobuf._Messag
 }
 
 extension Eventsease_V1_GetUserEventsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GetUserEventsRequest"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}page\0\u{1}limit\0\u{3}search_query\0\u{3}sort_by\0\u{3}sort_direction\0")
+  public static let protoMessageName: String = _protobuf_package + ".GetUserEventsRequest"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}page\0\u{1}limit\0\u{3}search_query\0\u{3}sort_by\0\u{3}sort_direction\0")
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       // The use of inline closures is to circumvent an issue where the compiler
       // allocates stack space for every case branch when no optimizations are
@@ -1476,7 +1476,7 @@ extension Eventsease_V1_GetUserEventsRequest: SwiftProtobuf.Message, SwiftProtob
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.page != 0 {
       try visitor.visitSingularInt32Field(value: self.page, fieldNumber: 1)
     }
@@ -1495,7 +1495,7 @@ extension Eventsease_V1_GetUserEventsRequest: SwiftProtobuf.Message, SwiftProtob
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Eventsease_V1_GetUserEventsRequest, rhs: Eventsease_V1_GetUserEventsRequest) -> Bool {
+  public static func ==(lhs: Eventsease_V1_GetUserEventsRequest, rhs: Eventsease_V1_GetUserEventsRequest) -> Bool {
     if lhs.page != rhs.page {return false}
     if lhs.limit != rhs.limit {return false}
     if lhs.searchQuery != rhs.searchQuery {return false}
@@ -1507,10 +1507,10 @@ extension Eventsease_V1_GetUserEventsRequest: SwiftProtobuf.Message, SwiftProtob
 }
 
 extension Eventsease_V1_ToggleSavedEventRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ToggleSavedEventRequest"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}event_id\0")
+  public static let protoMessageName: String = _protobuf_package + ".ToggleSavedEventRequest"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}event_id\0")
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       // The use of inline closures is to circumvent an issue where the compiler
       // allocates stack space for every case branch when no optimizations are
@@ -1522,14 +1522,14 @@ extension Eventsease_V1_ToggleSavedEventRequest: SwiftProtobuf.Message, SwiftPro
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.eventID.isEmpty {
       try visitor.visitSingularStringField(value: self.eventID, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Eventsease_V1_ToggleSavedEventRequest, rhs: Eventsease_V1_ToggleSavedEventRequest) -> Bool {
+  public static func ==(lhs: Eventsease_V1_ToggleSavedEventRequest, rhs: Eventsease_V1_ToggleSavedEventRequest) -> Bool {
     if lhs.eventID != rhs.eventID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -1537,10 +1537,10 @@ extension Eventsease_V1_ToggleSavedEventRequest: SwiftProtobuf.Message, SwiftPro
 }
 
 extension Eventsease_V1_ToggleSavedEventResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ToggleSavedEventResponse"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}success\0\u{3}is_saved\0")
+  public static let protoMessageName: String = _protobuf_package + ".ToggleSavedEventResponse"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}success\0\u{3}is_saved\0")
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       // The use of inline closures is to circumvent an issue where the compiler
       // allocates stack space for every case branch when no optimizations are
@@ -1553,7 +1553,7 @@ extension Eventsease_V1_ToggleSavedEventResponse: SwiftProtobuf.Message, SwiftPr
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.success != false {
       try visitor.visitSingularBoolField(value: self.success, fieldNumber: 1)
     }
@@ -1563,7 +1563,7 @@ extension Eventsease_V1_ToggleSavedEventResponse: SwiftProtobuf.Message, SwiftPr
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: Eventsease_V1_ToggleSavedEventResponse, rhs: Eventsease_V1_ToggleSavedEventResponse) -> Bool {
+  public static func ==(lhs: Eventsease_V1_ToggleSavedEventResponse, rhs: Eventsease_V1_ToggleSavedEventResponse) -> Bool {
     if lhs.success != rhs.success {return false}
     if lhs.isSaved != rhs.isSaved {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
