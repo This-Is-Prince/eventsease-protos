@@ -16,6 +16,7 @@ service LocationService {
 
 message GetPlaceDetailsRequest {
   string place_id = 1;
+  string session_token = 2;
 }
 
 message GetPlaceDetailsResponse {
@@ -41,6 +42,7 @@ message GetReverseGeocodeResponse {
 
 message SearchPlacesRequest {
   string query = 1;
+  string session_token = 2;
 }
 
 message SearchPlacesResponse {
