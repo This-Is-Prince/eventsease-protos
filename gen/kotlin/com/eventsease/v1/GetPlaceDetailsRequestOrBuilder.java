@@ -20,4 +20,16 @@ public interface GetPlaceDetailsRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getPlaceIdBytes();
+
+  /**
+   * <code>string session_token = 2 [json_name = "sessionToken"];</code>
+   * @return The sessionToken.
+   */
+  java.lang.String getSessionToken();
+  /**
+   * <code>string session_token = 2 [json_name = "sessionToken"];</code>
+   * @return The bytes for sessionToken.
+   */
+  com.google.protobuf.ByteString
+      getSessionTokenBytes();
 }

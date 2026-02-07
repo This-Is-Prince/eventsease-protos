@@ -27,6 +27,8 @@ public struct Eventsease_V1_GetPlaceDetailsRequest: Sendable {
 
   public var placeID: String = String()
 
+  public var sessionToken: String = String()
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -106,6 +108,8 @@ public struct Eventsease_V1_SearchPlacesRequest: Sendable {
 
   public var query: String = String()
 
+  public var sessionToken: String = String()
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -147,7 +151,7 @@ fileprivate let _protobuf_package = "eventsease.v1"
 
 extension Eventsease_V1_GetPlaceDetailsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".GetPlaceDetailsRequest"
-  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}place_id\0")
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}place_id\0\u{3}session_token\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -156,6 +160,7 @@ extension Eventsease_V1_GetPlaceDetailsRequest: SwiftProtobuf.Message, SwiftProt
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularStringField(value: &self.placeID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.sessionToken) }()
       default: break
       }
     }
@@ -165,11 +170,15 @@ extension Eventsease_V1_GetPlaceDetailsRequest: SwiftProtobuf.Message, SwiftProt
     if !self.placeID.isEmpty {
       try visitor.visitSingularStringField(value: self.placeID, fieldNumber: 1)
     }
+    if !self.sessionToken.isEmpty {
+      try visitor.visitSingularStringField(value: self.sessionToken, fieldNumber: 2)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: Eventsease_V1_GetPlaceDetailsRequest, rhs: Eventsease_V1_GetPlaceDetailsRequest) -> Bool {
     if lhs.placeID != rhs.placeID {return false}
+    if lhs.sessionToken != rhs.sessionToken {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -326,7 +335,7 @@ extension Eventsease_V1_GetReverseGeocodeResponse: SwiftProtobuf.Message, SwiftP
 
 extension Eventsease_V1_SearchPlacesRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SearchPlacesRequest"
-  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}query\0")
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}query\0\u{3}session_token\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -335,6 +344,7 @@ extension Eventsease_V1_SearchPlacesRequest: SwiftProtobuf.Message, SwiftProtobu
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularStringField(value: &self.query) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.sessionToken) }()
       default: break
       }
     }
@@ -344,11 +354,15 @@ extension Eventsease_V1_SearchPlacesRequest: SwiftProtobuf.Message, SwiftProtobu
     if !self.query.isEmpty {
       try visitor.visitSingularStringField(value: self.query, fieldNumber: 1)
     }
+    if !self.sessionToken.isEmpty {
+      try visitor.visitSingularStringField(value: self.sessionToken, fieldNumber: 2)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: Eventsease_V1_SearchPlacesRequest, rhs: Eventsease_V1_SearchPlacesRequest) -> Bool {
     if lhs.query != rhs.query {return false}
+    if lhs.sessionToken != rhs.sessionToken {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

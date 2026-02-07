@@ -44,6 +44,23 @@ public object GetPlaceDetailsRequestKt {
     public fun clearPlaceId() {
       _builder.clearPlaceId()
     }
+
+    /**
+     * `string session_token = 2 [json_name = "sessionToken"];`
+     */
+    public var sessionToken: kotlin.String
+      @JvmName("getSessionToken")
+      get() = _builder.sessionToken
+      @JvmName("setSessionToken")
+      set(value) {
+        _builder.sessionToken = value
+      }
+    /**
+     * `string session_token = 2 [json_name = "sessionToken"];`
+     */
+    public fun clearSessionToken() {
+      _builder.clearSessionToken()
+    }
   }
 }
 @kotlin.jvm.JvmSynthetic

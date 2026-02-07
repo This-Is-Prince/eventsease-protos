@@ -75,33 +75,35 @@ public final class LocationProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\027proto/v1/location.proto\022\reventsease.v1" +
-      "\"3\n\026GetPlaceDetailsRequest\022\031\n\010place_id\030\001" +
-      " \001(\tR\007placeId\"|\n\027GetPlaceDetailsResponse" +
-      "\022\030\n\007success\030\001 \001(\010R\007success\022/\n\004data\030\002 \001(\013" +
-      "2\033.eventsease.v1.PlaceDetailsR\004data\022\026\n\006s" +
-      "ource\030\003 \001(\tR\006source\"2\n\014PlaceDetails\022\020\n\003l" +
-      "at\030\001 \001(\001R\003lat\022\020\n\003lng\030\002 \001(\001R\003lng\">\n\030GetRe" +
-      "verseGeocodeRequest\022\020\n\003lat\030\001 \001(\001R\003lat\022\020\n" +
-      "\003lng\030\002 \001(\001R\003lng\"R\n\031GetReverseGeocodeResp" +
-      "onse\022\030\n\007success\030\001 \001(\010R\007success\022\033\n\tcity_n" +
-      "ame\030\002 \001(\tR\010cityName\"+\n\023SearchPlacesReque" +
-      "st\022\024\n\005query\030\001 \001(\tR\005query\"d\n\024SearchPlaces" +
-      "Response\022\030\n\007success\030\001 \001(\010R\007success\0222\n\004da" +
-      "ta\030\002 \003(\0132\036.eventsease.v1.PlacePrediction" +
-      "R\004data\"g\n\017PlacePrediction\022\031\n\010place_id\030\001 " +
-      "\001(\tR\007placeId\022\022\n\004text\030\002 \001(\tR\004text\022%\n\016seco" +
-      "ndary_text\030\003 \001(\tR\rsecondaryText2\264\002\n\017Loca" +
-      "tionService\022`\n\017GetPlaceDetails\022%.eventse" +
-      "ase.v1.GetPlaceDetailsRequest\032&.eventsea" +
-      "se.v1.GetPlaceDetailsResponse\022f\n\021GetReve" +
-      "rseGeocode\022\'.eventsease.v1.GetReverseGeo" +
-      "codeRequest\032(.eventsease.v1.GetReverseGe" +
-      "ocodeResponse\022W\n\014SearchPlaces\022\".eventsea" +
-      "se.v1.SearchPlacesRequest\032#.eventsease.v" +
-      "1.SearchPlacesResponseBi\n\021com.eventsease" +
-      ".v1B\rLocationProtoP\001ZCgithub.com/This-Is" +
-      "-Prince/eventsease-protos/gen/go/v1;even" +
-      "tsease_v1b\006proto3"
+      "\"X\n\026GetPlaceDetailsRequest\022\031\n\010place_id\030\001" +
+      " \001(\tR\007placeId\022#\n\rsession_token\030\002 \001(\tR\014se" +
+      "ssionToken\"|\n\027GetPlaceDetailsResponse\022\030\n" +
+      "\007success\030\001 \001(\010R\007success\022/\n\004data\030\002 \001(\0132\033." +
+      "eventsease.v1.PlaceDetailsR\004data\022\026\n\006sour" +
+      "ce\030\003 \001(\tR\006source\"2\n\014PlaceDetails\022\020\n\003lat\030" +
+      "\001 \001(\001R\003lat\022\020\n\003lng\030\002 \001(\001R\003lng\">\n\030GetRever" +
+      "seGeocodeRequest\022\020\n\003lat\030\001 \001(\001R\003lat\022\020\n\003ln" +
+      "g\030\002 \001(\001R\003lng\"R\n\031GetReverseGeocodeRespons" +
+      "e\022\030\n\007success\030\001 \001(\010R\007success\022\033\n\tcity_name" +
+      "\030\002 \001(\tR\010cityName\"P\n\023SearchPlacesRequest\022" +
+      "\024\n\005query\030\001 \001(\tR\005query\022#\n\rsession_token\030\002" +
+      " \001(\tR\014sessionToken\"d\n\024SearchPlacesRespon" +
+      "se\022\030\n\007success\030\001 \001(\010R\007success\0222\n\004data\030\002 \003" +
+      "(\0132\036.eventsease.v1.PlacePredictionR\004data" +
+      "\"g\n\017PlacePrediction\022\031\n\010place_id\030\001 \001(\tR\007p" +
+      "laceId\022\022\n\004text\030\002 \001(\tR\004text\022%\n\016secondary_" +
+      "text\030\003 \001(\tR\rsecondaryText2\264\002\n\017LocationSe" +
+      "rvice\022`\n\017GetPlaceDetails\022%.eventsease.v1" +
+      ".GetPlaceDetailsRequest\032&.eventsease.v1." +
+      "GetPlaceDetailsResponse\022f\n\021GetReverseGeo" +
+      "code\022\'.eventsease.v1.GetReverseGeocodeRe" +
+      "quest\032(.eventsease.v1.GetReverseGeocodeR" +
+      "esponse\022W\n\014SearchPlaces\022\".eventsease.v1." +
+      "SearchPlacesRequest\032#.eventsease.v1.Sear" +
+      "chPlacesResponseBi\n\021com.eventsease.v1B\rL" +
+      "ocationProtoP\001ZCgithub.com/This-Is-Princ" +
+      "e/eventsease-protos/gen/go/v1;eventsease" +
+      "_v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -112,7 +114,7 @@ public final class LocationProto {
     internal_static_eventsease_v1_GetPlaceDetailsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_eventsease_v1_GetPlaceDetailsRequest_descriptor,
-        new java.lang.String[] { "PlaceId", });
+        new java.lang.String[] { "PlaceId", "SessionToken", });
     internal_static_eventsease_v1_GetPlaceDetailsResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_eventsease_v1_GetPlaceDetailsResponse_fieldAccessorTable = new
@@ -142,7 +144,7 @@ public final class LocationProto {
     internal_static_eventsease_v1_SearchPlacesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_eventsease_v1_SearchPlacesRequest_descriptor,
-        new java.lang.String[] { "Query", });
+        new java.lang.String[] { "Query", "SessionToken", });
     internal_static_eventsease_v1_SearchPlacesResponse_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_eventsease_v1_SearchPlacesResponse_fieldAccessorTable = new
