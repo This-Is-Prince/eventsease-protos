@@ -8,13 +8,12 @@ plugins:
     out: gen/go
     opt: paths=source_relative
 
-  - remote: buf.build/protocolbuffers/java:v29.1
+  - remote: buf.build/protocolbuffers/java
     out: gen/kotlin
-  - remote: buf.build/protocolbuffers/kotlin:v29.1
-    out: gen/kotlin
-  - remote: buf.build/grpc/java:v1.69.0
-    out: gen/kotlin
-  - remote: buf.build/grpc/kotlin:v1.4.1
+    opt:
+      - lite
+
+  - remote: buf.build/connectrpc/kotlin
     out: gen/kotlin
 
   - remote: buf.build/apple/swift:v1.33.3
