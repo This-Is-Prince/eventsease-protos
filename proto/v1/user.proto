@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package eventsease.v1;
 
+import "google/protobuf/timestamp.proto";
+
 option go_package = "github.com/This-Is-Prince/eventsease-protos/gen/go/proto/v1;eventsease_v1";
 
 option java_multiple_files = true;
@@ -11,6 +13,8 @@ option java_outer_classname = "UserProto";
 service UserService {
   rpc CheckUser (CheckUserRequest) returns (CheckUserResponse);
   rpc RegisterFCM (RegisterFCMRequest) returns (RegisterFCMResponse);
+  rpc GetProfile (GetProfileRequest) returns (GetProfileResponse);
+  rpc UpdateProfile (UpdateProfileRequest) returns (UpdateProfileResponse);
 }
 
 message CheckUserRequest {
@@ -46,4 +50,65 @@ message FCMResponseData {
   double lng = 2;
   string city = 3;
   string source = 4;
+}
+
+enum ProfileSocialType {
+  PROFILE_SOCIAL_TYPE_UNSPECIFIED = 0;
+  PROFILE_SOCIAL_TYPE_PHONE = 1;
+  PROFILE_SOCIAL_TYPE_INSTAGRAM = 2;
+  PROFILE_SOCIAL_TYPE_FACEBOOK = 3;
+  PROFILE_SOCIAL_TYPE_WHATSAPP = 4;
+  PROFILE_SOCIAL_TYPE_WEBSITE = 5;
+  PROFILE_SOCIAL_TYPE_EMAIL = 6;
+  PROFILE_SOCIAL_TYPE_TWITTER = 7;
+  PROFILE_SOCIAL_TYPE_LINKEDIN = 8;
+  PROFILE_SOCIAL_TYPE_YOUTUBE = 9;
+  PROFILE_SOCIAL_TYPE_OTHER = 10;
+}
+
+message ProfileSocialLink {
+  ProfileSocialType type = 1;
+  string value = 2;
+}
+
+message UserProfile {
+  string id = 1;
+  string uid = 2;
+  string email = 3;
+  string display_name = 4;
+  string photo_url = 5;
+  string provider = 6;
+  repeated string photos = 7;
+  repeated string background_photos = 8;
+  string about = 9;
+  string name = 10;
+  repeated ProfileSocialLink social_links = 11;
+  string location = 12;
+  google.protobuf.Timestamp created_at = 13;
+  google.protobuf.Timestamp updated_at = 14;
+  bool is_deleted = 15;
+}
+
+message GetProfileRequest {
+  
+}
+
+message GetProfileResponse {
+  bool success = 1;
+  UserProfile data = 2;
+}
+
+message UpdateProfileRequest {
+  repeated string photos = 1;
+  repeated string background_photos = 2;
+  string about = 3;
+  string name = 4;
+  repeated ProfileSocialLink social_links = 5;
+  string location = 6;
+}
+
+message UpdateProfileResponse {
+  bool success = 1;
+  string message = 2;
+  UserProfile data = 3;
 }

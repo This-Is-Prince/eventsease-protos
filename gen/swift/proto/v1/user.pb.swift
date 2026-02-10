@@ -20,6 +20,76 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
+public enum Eventsease_V1_ProfileSocialType: SwiftProtobuf.Enum, Swift.CaseIterable {
+  public typealias RawValue = Int
+  case unspecified // = 0
+  case phone // = 1
+  case instagram // = 2
+  case facebook // = 3
+  case whatsapp // = 4
+  case website // = 5
+  case email // = 6
+  case twitter // = 7
+  case linkedin // = 8
+  case youtube // = 9
+  case other // = 10
+  case UNRECOGNIZED(Int)
+
+  public init() {
+    self = .unspecified
+  }
+
+  public init?(rawValue: Int) {
+    switch rawValue {
+    case 0: self = .unspecified
+    case 1: self = .phone
+    case 2: self = .instagram
+    case 3: self = .facebook
+    case 4: self = .whatsapp
+    case 5: self = .website
+    case 6: self = .email
+    case 7: self = .twitter
+    case 8: self = .linkedin
+    case 9: self = .youtube
+    case 10: self = .other
+    default: self = .UNRECOGNIZED(rawValue)
+    }
+  }
+
+  public var rawValue: Int {
+    switch self {
+    case .unspecified: return 0
+    case .phone: return 1
+    case .instagram: return 2
+    case .facebook: return 3
+    case .whatsapp: return 4
+    case .website: return 5
+    case .email: return 6
+    case .twitter: return 7
+    case .linkedin: return 8
+    case .youtube: return 9
+    case .other: return 10
+    case .UNRECOGNIZED(let i): return i
+    }
+  }
+
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  public static let allCases: [Eventsease_V1_ProfileSocialType] = [
+    .unspecified,
+    .phone,
+    .instagram,
+    .facebook,
+    .whatsapp,
+    .website,
+    .email,
+    .twitter,
+    .linkedin,
+    .youtube,
+    .other,
+  ]
+
+}
+
 public struct Eventsease_V1_CheckUserRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -140,9 +210,202 @@ public struct Eventsease_V1_FCMResponseData: Sendable {
   public init() {}
 }
 
+public struct Eventsease_V1_ProfileSocialLink: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var type: Eventsease_V1_ProfileSocialType = .unspecified
+
+  public var value: String = String()
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+public struct Eventsease_V1_UserProfile: @unchecked Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var id: String {
+    get {return _storage._id}
+    set {_uniqueStorage()._id = newValue}
+  }
+
+  public var uid: String {
+    get {return _storage._uid}
+    set {_uniqueStorage()._uid = newValue}
+  }
+
+  public var email: String {
+    get {return _storage._email}
+    set {_uniqueStorage()._email = newValue}
+  }
+
+  public var displayName: String {
+    get {return _storage._displayName}
+    set {_uniqueStorage()._displayName = newValue}
+  }
+
+  public var photoURL: String {
+    get {return _storage._photoURL}
+    set {_uniqueStorage()._photoURL = newValue}
+  }
+
+  public var provider: String {
+    get {return _storage._provider}
+    set {_uniqueStorage()._provider = newValue}
+  }
+
+  public var photos: [String] {
+    get {return _storage._photos}
+    set {_uniqueStorage()._photos = newValue}
+  }
+
+  public var backgroundPhotos: [String] {
+    get {return _storage._backgroundPhotos}
+    set {_uniqueStorage()._backgroundPhotos = newValue}
+  }
+
+  public var about: String {
+    get {return _storage._about}
+    set {_uniqueStorage()._about = newValue}
+  }
+
+  public var name: String {
+    get {return _storage._name}
+    set {_uniqueStorage()._name = newValue}
+  }
+
+  public var socialLinks: [Eventsease_V1_ProfileSocialLink] {
+    get {return _storage._socialLinks}
+    set {_uniqueStorage()._socialLinks = newValue}
+  }
+
+  public var location: String {
+    get {return _storage._location}
+    set {_uniqueStorage()._location = newValue}
+  }
+
+  public var createdAt: SwiftProtobuf.Google_Protobuf_Timestamp {
+    get {return _storage._createdAt ?? SwiftProtobuf.Google_Protobuf_Timestamp()}
+    set {_uniqueStorage()._createdAt = newValue}
+  }
+  /// Returns true if `createdAt` has been explicitly set.
+  public var hasCreatedAt: Bool {return _storage._createdAt != nil}
+  /// Clears the value of `createdAt`. Subsequent reads from it will return its default value.
+  public mutating func clearCreatedAt() {_uniqueStorage()._createdAt = nil}
+
+  public var updatedAt: SwiftProtobuf.Google_Protobuf_Timestamp {
+    get {return _storage._updatedAt ?? SwiftProtobuf.Google_Protobuf_Timestamp()}
+    set {_uniqueStorage()._updatedAt = newValue}
+  }
+  /// Returns true if `updatedAt` has been explicitly set.
+  public var hasUpdatedAt: Bool {return _storage._updatedAt != nil}
+  /// Clears the value of `updatedAt`. Subsequent reads from it will return its default value.
+  public mutating func clearUpdatedAt() {_uniqueStorage()._updatedAt = nil}
+
+  public var isDeleted: Bool {
+    get {return _storage._isDeleted}
+    set {_uniqueStorage()._isDeleted = newValue}
+  }
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+
+  fileprivate var _storage = _StorageClass.defaultInstance
+}
+
+public struct Eventsease_V1_GetProfileRequest: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+public struct Eventsease_V1_GetProfileResponse: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var success: Bool = false
+
+  public var data: Eventsease_V1_UserProfile {
+    get {return _data ?? Eventsease_V1_UserProfile()}
+    set {_data = newValue}
+  }
+  /// Returns true if `data` has been explicitly set.
+  public var hasData: Bool {return self._data != nil}
+  /// Clears the value of `data`. Subsequent reads from it will return its default value.
+  public mutating func clearData() {self._data = nil}
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+
+  fileprivate var _data: Eventsease_V1_UserProfile? = nil
+}
+
+public struct Eventsease_V1_UpdateProfileRequest: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var photos: [String] = []
+
+  public var backgroundPhotos: [String] = []
+
+  public var about: String = String()
+
+  public var name: String = String()
+
+  public var socialLinks: [Eventsease_V1_ProfileSocialLink] = []
+
+  public var location: String = String()
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+public struct Eventsease_V1_UpdateProfileResponse: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var success: Bool = false
+
+  public var message: String = String()
+
+  public var data: Eventsease_V1_UserProfile {
+    get {return _data ?? Eventsease_V1_UserProfile()}
+    set {_data = newValue}
+  }
+  /// Returns true if `data` has been explicitly set.
+  public var hasData: Bool {return self._data != nil}
+  /// Clears the value of `data`. Subsequent reads from it will return its default value.
+  public mutating func clearData() {self._data = nil}
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+
+  fileprivate var _data: Eventsease_V1_UserProfile? = nil
+}
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "eventsease.v1"
+
+extension Eventsease_V1_ProfileSocialType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0PROFILE_SOCIAL_TYPE_UNSPECIFIED\0\u{1}PROFILE_SOCIAL_TYPE_PHONE\0\u{1}PROFILE_SOCIAL_TYPE_INSTAGRAM\0\u{1}PROFILE_SOCIAL_TYPE_FACEBOOK\0\u{1}PROFILE_SOCIAL_TYPE_WHATSAPP\0\u{1}PROFILE_SOCIAL_TYPE_WEBSITE\0\u{1}PROFILE_SOCIAL_TYPE_EMAIL\0\u{1}PROFILE_SOCIAL_TYPE_TWITTER\0\u{1}PROFILE_SOCIAL_TYPE_LINKEDIN\0\u{1}PROFILE_SOCIAL_TYPE_YOUTUBE\0\u{1}PROFILE_SOCIAL_TYPE_OTHER\0")
+}
 
 extension Eventsease_V1_CheckUserRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CheckUserRequest"
@@ -382,6 +645,366 @@ extension Eventsease_V1_FCMResponseData: SwiftProtobuf.Message, SwiftProtobuf._M
     if lhs.lng != rhs.lng {return false}
     if lhs.city != rhs.city {return false}
     if lhs.source != rhs.source {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Eventsease_V1_ProfileSocialLink: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".ProfileSocialLink"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}type\0\u{1}value\0")
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularEnumField(value: &self.type) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.value) }()
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.type != .unspecified {
+      try visitor.visitSingularEnumField(value: self.type, fieldNumber: 1)
+    }
+    if !self.value.isEmpty {
+      try visitor.visitSingularStringField(value: self.value, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Eventsease_V1_ProfileSocialLink, rhs: Eventsease_V1_ProfileSocialLink) -> Bool {
+    if lhs.type != rhs.type {return false}
+    if lhs.value != rhs.value {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Eventsease_V1_UserProfile: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".UserProfile"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{1}uid\0\u{1}email\0\u{3}display_name\0\u{3}photo_url\0\u{1}provider\0\u{1}photos\0\u{3}background_photos\0\u{1}about\0\u{1}name\0\u{3}social_links\0\u{1}location\0\u{3}created_at\0\u{3}updated_at\0\u{3}is_deleted\0")
+
+  fileprivate class _StorageClass {
+    var _id: String = String()
+    var _uid: String = String()
+    var _email: String = String()
+    var _displayName: String = String()
+    var _photoURL: String = String()
+    var _provider: String = String()
+    var _photos: [String] = []
+    var _backgroundPhotos: [String] = []
+    var _about: String = String()
+    var _name: String = String()
+    var _socialLinks: [Eventsease_V1_ProfileSocialLink] = []
+    var _location: String = String()
+    var _createdAt: SwiftProtobuf.Google_Protobuf_Timestamp? = nil
+    var _updatedAt: SwiftProtobuf.Google_Protobuf_Timestamp? = nil
+    var _isDeleted: Bool = false
+
+      // This property is used as the initial default value for new instances of the type.
+      // The type itself is protecting the reference to its storage via CoW semantics.
+      // This will force a copy to be made of this reference when the first mutation occurs;
+      // hence, it is safe to mark this as `nonisolated(unsafe)`.
+      static nonisolated(unsafe) let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _id = source._id
+      _uid = source._uid
+      _email = source._email
+      _displayName = source._displayName
+      _photoURL = source._photoURL
+      _provider = source._provider
+      _photos = source._photos
+      _backgroundPhotos = source._backgroundPhotos
+      _about = source._about
+      _name = source._name
+      _socialLinks = source._socialLinks
+      _location = source._location
+      _createdAt = source._createdAt
+      _updatedAt = source._updatedAt
+      _isDeleted = source._isDeleted
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        // The use of inline closures is to circumvent an issue where the compiler
+        // allocates stack space for every case branch when no optimizations are
+        // enabled. https://github.com/apple/swift-protobuf/issues/1034
+        switch fieldNumber {
+        case 1: try { try decoder.decodeSingularStringField(value: &_storage._id) }()
+        case 2: try { try decoder.decodeSingularStringField(value: &_storage._uid) }()
+        case 3: try { try decoder.decodeSingularStringField(value: &_storage._email) }()
+        case 4: try { try decoder.decodeSingularStringField(value: &_storage._displayName) }()
+        case 5: try { try decoder.decodeSingularStringField(value: &_storage._photoURL) }()
+        case 6: try { try decoder.decodeSingularStringField(value: &_storage._provider) }()
+        case 7: try { try decoder.decodeRepeatedStringField(value: &_storage._photos) }()
+        case 8: try { try decoder.decodeRepeatedStringField(value: &_storage._backgroundPhotos) }()
+        case 9: try { try decoder.decodeSingularStringField(value: &_storage._about) }()
+        case 10: try { try decoder.decodeSingularStringField(value: &_storage._name) }()
+        case 11: try { try decoder.decodeRepeatedMessageField(value: &_storage._socialLinks) }()
+        case 12: try { try decoder.decodeSingularStringField(value: &_storage._location) }()
+        case 13: try { try decoder.decodeSingularMessageField(value: &_storage._createdAt) }()
+        case 14: try { try decoder.decodeSingularMessageField(value: &_storage._updatedAt) }()
+        case 15: try { try decoder.decodeSingularBoolField(value: &_storage._isDeleted) }()
+        default: break
+        }
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every if/case branch local when no optimizations
+      // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+      // https://github.com/apple/swift-protobuf/issues/1182
+      if !_storage._id.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._id, fieldNumber: 1)
+      }
+      if !_storage._uid.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._uid, fieldNumber: 2)
+      }
+      if !_storage._email.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._email, fieldNumber: 3)
+      }
+      if !_storage._displayName.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._displayName, fieldNumber: 4)
+      }
+      if !_storage._photoURL.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._photoURL, fieldNumber: 5)
+      }
+      if !_storage._provider.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._provider, fieldNumber: 6)
+      }
+      if !_storage._photos.isEmpty {
+        try visitor.visitRepeatedStringField(value: _storage._photos, fieldNumber: 7)
+      }
+      if !_storage._backgroundPhotos.isEmpty {
+        try visitor.visitRepeatedStringField(value: _storage._backgroundPhotos, fieldNumber: 8)
+      }
+      if !_storage._about.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._about, fieldNumber: 9)
+      }
+      if !_storage._name.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._name, fieldNumber: 10)
+      }
+      if !_storage._socialLinks.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._socialLinks, fieldNumber: 11)
+      }
+      if !_storage._location.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._location, fieldNumber: 12)
+      }
+      try { if let v = _storage._createdAt {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 13)
+      } }()
+      try { if let v = _storage._updatedAt {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 14)
+      } }()
+      if _storage._isDeleted != false {
+        try visitor.visitSingularBoolField(value: _storage._isDeleted, fieldNumber: 15)
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Eventsease_V1_UserProfile, rhs: Eventsease_V1_UserProfile) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._id != rhs_storage._id {return false}
+        if _storage._uid != rhs_storage._uid {return false}
+        if _storage._email != rhs_storage._email {return false}
+        if _storage._displayName != rhs_storage._displayName {return false}
+        if _storage._photoURL != rhs_storage._photoURL {return false}
+        if _storage._provider != rhs_storage._provider {return false}
+        if _storage._photos != rhs_storage._photos {return false}
+        if _storage._backgroundPhotos != rhs_storage._backgroundPhotos {return false}
+        if _storage._about != rhs_storage._about {return false}
+        if _storage._name != rhs_storage._name {return false}
+        if _storage._socialLinks != rhs_storage._socialLinks {return false}
+        if _storage._location != rhs_storage._location {return false}
+        if _storage._createdAt != rhs_storage._createdAt {return false}
+        if _storage._updatedAt != rhs_storage._updatedAt {return false}
+        if _storage._isDeleted != rhs_storage._isDeleted {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Eventsease_V1_GetProfileRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".GetProfileRequest"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    // Load everything into unknown fields
+    while try decoder.nextFieldNumber() != nil {}
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Eventsease_V1_GetProfileRequest, rhs: Eventsease_V1_GetProfileRequest) -> Bool {
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Eventsease_V1_GetProfileResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".GetProfileResponse"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}success\0\u{1}data\0")
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularBoolField(value: &self.success) }()
+      case 2: try { try decoder.decodeSingularMessageField(value: &self._data) }()
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    if self.success != false {
+      try visitor.visitSingularBoolField(value: self.success, fieldNumber: 1)
+    }
+    try { if let v = self._data {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Eventsease_V1_GetProfileResponse, rhs: Eventsease_V1_GetProfileResponse) -> Bool {
+    if lhs.success != rhs.success {return false}
+    if lhs._data != rhs._data {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Eventsease_V1_UpdateProfileRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".UpdateProfileRequest"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}photos\0\u{3}background_photos\0\u{1}about\0\u{1}name\0\u{3}social_links\0\u{1}location\0")
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeRepeatedStringField(value: &self.photos) }()
+      case 2: try { try decoder.decodeRepeatedStringField(value: &self.backgroundPhotos) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.about) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.name) }()
+      case 5: try { try decoder.decodeRepeatedMessageField(value: &self.socialLinks) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.location) }()
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.photos.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.photos, fieldNumber: 1)
+    }
+    if !self.backgroundPhotos.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.backgroundPhotos, fieldNumber: 2)
+    }
+    if !self.about.isEmpty {
+      try visitor.visitSingularStringField(value: self.about, fieldNumber: 3)
+    }
+    if !self.name.isEmpty {
+      try visitor.visitSingularStringField(value: self.name, fieldNumber: 4)
+    }
+    if !self.socialLinks.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.socialLinks, fieldNumber: 5)
+    }
+    if !self.location.isEmpty {
+      try visitor.visitSingularStringField(value: self.location, fieldNumber: 6)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Eventsease_V1_UpdateProfileRequest, rhs: Eventsease_V1_UpdateProfileRequest) -> Bool {
+    if lhs.photos != rhs.photos {return false}
+    if lhs.backgroundPhotos != rhs.backgroundPhotos {return false}
+    if lhs.about != rhs.about {return false}
+    if lhs.name != rhs.name {return false}
+    if lhs.socialLinks != rhs.socialLinks {return false}
+    if lhs.location != rhs.location {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Eventsease_V1_UpdateProfileResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".UpdateProfileResponse"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}success\0\u{1}message\0\u{1}data\0")
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularBoolField(value: &self.success) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.message) }()
+      case 3: try { try decoder.decodeSingularMessageField(value: &self._data) }()
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    if self.success != false {
+      try visitor.visitSingularBoolField(value: self.success, fieldNumber: 1)
+    }
+    if !self.message.isEmpty {
+      try visitor.visitSingularStringField(value: self.message, fieldNumber: 2)
+    }
+    try { if let v = self._data {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Eventsease_V1_UpdateProfileResponse, rhs: Eventsease_V1_UpdateProfileResponse) -> Bool {
+    if lhs.success != rhs.success {return false}
+    if lhs.message != rhs.message {return false}
+    if lhs._data != rhs._data {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

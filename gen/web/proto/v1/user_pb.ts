@@ -2,15 +2,17 @@
 // @generated from file proto/v1/user.proto (package eventsease.v1, syntax proto3)
 /* eslint-disable */
 
-import type { GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
-import { fileDesc, messageDesc, serviceDesc } from "@bufbuild/protobuf/codegenv2";
+import type { GenEnum, GenFile, GenMessage, GenService } from "@bufbuild/protobuf/codegenv2";
+import { enumDesc, fileDesc, messageDesc, serviceDesc } from "@bufbuild/protobuf/codegenv2";
+import type { Timestamp } from "@bufbuild/protobuf/wkt";
+import { file_google_protobuf_timestamp } from "@bufbuild/protobuf/wkt";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file proto/v1/user.proto.
  */
 export const file_proto_v1_user: GenFile = /*@__PURE__*/
-  fileDesc("ChNwcm90by92MS91c2VyLnByb3RvEg1ldmVudHNlYXNlLnYxIiEKEENoZWNrVXNlclJlcXVlc3QSDQoFZW1haWwYASABKAkiNAoRQ2hlY2tVc2VyUmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCBIOCgZleGlzdHMYAiABKAgioAEKElJlZ2lzdGVyRkNNUmVxdWVzdBIRCglmY21fdG9rZW4YASABKAkSLQoIbG9jYXRpb24YAiABKAsyGy5ldmVudHNlYXNlLnYxLlVzZXJMb2NhdGlvbhI2ChFzZWxlY3RlZF9sb2NhdGlvbhgDIAEoCzIbLmV2ZW50c2Vhc2UudjEuVXNlckxvY2F0aW9uEhAKCHRpbWV6b25lGAQgASgJIjYKDFVzZXJMb2NhdGlvbhILCgNsYXQYASABKAESCwoDbG5nGAIgASgBEgwKBG5hbWUYAyABKAkiZQoTUmVnaXN0ZXJGQ01SZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEg8KB21lc3NhZ2UYAiABKAkSLAoEZGF0YRgDIAEoCzIeLmV2ZW50c2Vhc2UudjEuRkNNUmVzcG9uc2VEYXRhIkkKD0ZDTVJlc3BvbnNlRGF0YRILCgNsYXQYASABKAESCwoDbG5nGAIgASgBEgwKBGNpdHkYAyABKAkSDgoGc291cmNlGAQgASgJMrMBCgtVc2VyU2VydmljZRJOCglDaGVja1VzZXISHy5ldmVudHNlYXNlLnYxLkNoZWNrVXNlclJlcXVlc3QaIC5ldmVudHNlYXNlLnYxLkNoZWNrVXNlclJlc3BvbnNlElQKC1JlZ2lzdGVyRkNNEiEuZXZlbnRzZWFzZS52MS5SZWdpc3RlckZDTVJlcXVlc3QaIi5ldmVudHNlYXNlLnYxLlJlZ2lzdGVyRkNNUmVzcG9uc2VCawoRY29tLmV2ZW50c2Vhc2UudjFCCVVzZXJQcm90b1ABWklnaXRodWIuY29tL1RoaXMtSXMtUHJpbmNlL2V2ZW50c2Vhc2UtcHJvdG9zL2dlbi9nby9wcm90by92MTtldmVudHNlYXNlX3YxYgZwcm90bzM");
+  fileDesc("ChNwcm90by92MS91c2VyLnByb3RvEg1ldmVudHNlYXNlLnYxIiEKEENoZWNrVXNlclJlcXVlc3QSDQoFZW1haWwYASABKAkiNAoRQ2hlY2tVc2VyUmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCBIOCgZleGlzdHMYAiABKAgioAEKElJlZ2lzdGVyRkNNUmVxdWVzdBIRCglmY21fdG9rZW4YASABKAkSLQoIbG9jYXRpb24YAiABKAsyGy5ldmVudHNlYXNlLnYxLlVzZXJMb2NhdGlvbhI2ChFzZWxlY3RlZF9sb2NhdGlvbhgDIAEoCzIbLmV2ZW50c2Vhc2UudjEuVXNlckxvY2F0aW9uEhAKCHRpbWV6b25lGAQgASgJIjYKDFVzZXJMb2NhdGlvbhILCgNsYXQYASABKAESCwoDbG5nGAIgASgBEgwKBG5hbWUYAyABKAkiZQoTUmVnaXN0ZXJGQ01SZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEg8KB21lc3NhZ2UYAiABKAkSLAoEZGF0YRgDIAEoCzIeLmV2ZW50c2Vhc2UudjEuRkNNUmVzcG9uc2VEYXRhIkkKD0ZDTVJlc3BvbnNlRGF0YRILCgNsYXQYASABKAESCwoDbG5nGAIgASgBEgwKBGNpdHkYAyABKAkSDgoGc291cmNlGAQgASgJIlIKEVByb2ZpbGVTb2NpYWxMaW5rEi4KBHR5cGUYASABKA4yIC5ldmVudHNlYXNlLnYxLlByb2ZpbGVTb2NpYWxUeXBlEg0KBXZhbHVlGAIgASgJIvYCCgtVc2VyUHJvZmlsZRIKCgJpZBgBIAEoCRILCgN1aWQYAiABKAkSDQoFZW1haWwYAyABKAkSFAoMZGlzcGxheV9uYW1lGAQgASgJEhEKCXBob3RvX3VybBgFIAEoCRIQCghwcm92aWRlchgGIAEoCRIOCgZwaG90b3MYByADKAkSGQoRYmFja2dyb3VuZF9waG90b3MYCCADKAkSDQoFYWJvdXQYCSABKAkSDAoEbmFtZRgKIAEoCRI2Cgxzb2NpYWxfbGlua3MYCyADKAsyIC5ldmVudHNlYXNlLnYxLlByb2ZpbGVTb2NpYWxMaW5rEhAKCGxvY2F0aW9uGAwgASgJEi4KCmNyZWF0ZWRfYXQYDSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEi4KCnVwZGF0ZWRfYXQYDiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEhIKCmlzX2RlbGV0ZWQYDyABKAgiEwoRR2V0UHJvZmlsZVJlcXVlc3QiTwoSR2V0UHJvZmlsZVJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSKAoEZGF0YRgCIAEoCzIaLmV2ZW50c2Vhc2UudjEuVXNlclByb2ZpbGUiqAEKFFVwZGF0ZVByb2ZpbGVSZXF1ZXN0Eg4KBnBob3RvcxgBIAMoCRIZChFiYWNrZ3JvdW5kX3Bob3RvcxgCIAMoCRINCgVhYm91dBgDIAEoCRIMCgRuYW1lGAQgASgJEjYKDHNvY2lhbF9saW5rcxgFIAMoCzIgLmV2ZW50c2Vhc2UudjEuUHJvZmlsZVNvY2lhbExpbmsSEAoIbG9jYXRpb24YBiABKAkiYwoVVXBkYXRlUHJvZmlsZVJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCRIoCgRkYXRhGAMgASgLMhouZXZlbnRzZWFzZS52MS5Vc2VyUHJvZmlsZSqBAwoRUHJvZmlsZVNvY2lhbFR5cGUSIwofUFJPRklMRV9TT0NJQUxfVFlQRV9VTlNQRUNJRklFRBAAEh0KGVBST0ZJTEVfU09DSUFMX1RZUEVfUEhPTkUQARIhCh1QUk9GSUxFX1NPQ0lBTF9UWVBFX0lOU1RBR1JBTRACEiAKHFBST0ZJTEVfU09DSUFMX1RZUEVfRkFDRUJPT0sQAxIgChxQUk9GSUxFX1NPQ0lBTF9UWVBFX1dIQVRTQVBQEAQSHwobUFJPRklMRV9TT0NJQUxfVFlQRV9XRUJTSVRFEAUSHQoZUFJPRklMRV9TT0NJQUxfVFlQRV9FTUFJTBAGEh8KG1BST0ZJTEVfU09DSUFMX1RZUEVfVFdJVFRFUhAHEiAKHFBST0ZJTEVfU09DSUFMX1RZUEVfTElOS0VESU4QCBIfChtQUk9GSUxFX1NPQ0lBTF9UWVBFX1lPVVRVQkUQCRIdChlQUk9GSUxFX1NPQ0lBTF9UWVBFX09USEVSEAoy4gIKC1VzZXJTZXJ2aWNlEk4KCUNoZWNrVXNlchIfLmV2ZW50c2Vhc2UudjEuQ2hlY2tVc2VyUmVxdWVzdBogLmV2ZW50c2Vhc2UudjEuQ2hlY2tVc2VyUmVzcG9uc2USVAoLUmVnaXN0ZXJGQ00SIS5ldmVudHNlYXNlLnYxLlJlZ2lzdGVyRkNNUmVxdWVzdBoiLmV2ZW50c2Vhc2UudjEuUmVnaXN0ZXJGQ01SZXNwb25zZRJRCgpHZXRQcm9maWxlEiAuZXZlbnRzZWFzZS52MS5HZXRQcm9maWxlUmVxdWVzdBohLmV2ZW50c2Vhc2UudjEuR2V0UHJvZmlsZVJlc3BvbnNlEloKDVVwZGF0ZVByb2ZpbGUSIy5ldmVudHNlYXNlLnYxLlVwZGF0ZVByb2ZpbGVSZXF1ZXN0GiQuZXZlbnRzZWFzZS52MS5VcGRhdGVQcm9maWxlUmVzcG9uc2VCawoRY29tLmV2ZW50c2Vhc2UudjFCCVVzZXJQcm90b1ABWklnaXRodWIuY29tL1RoaXMtSXMtUHJpbmNlL2V2ZW50c2Vhc2UtcHJvdG9zL2dlbi9nby9wcm90by92MTtldmVudHNlYXNlX3YxYgZwcm90bzM", [file_google_protobuf_timestamp]);
 
 /**
  * @generated from message eventsease.v1.CheckUserRequest
@@ -170,6 +172,285 @@ export const FCMResponseDataSchema: GenMessage<FCMResponseData> = /*@__PURE__*/
   messageDesc(file_proto_v1_user, 5);
 
 /**
+ * @generated from message eventsease.v1.ProfileSocialLink
+ */
+export type ProfileSocialLink = Message<"eventsease.v1.ProfileSocialLink"> & {
+  /**
+   * @generated from field: eventsease.v1.ProfileSocialType type = 1;
+   */
+  type: ProfileSocialType;
+
+  /**
+   * @generated from field: string value = 2;
+   */
+  value: string;
+};
+
+/**
+ * Describes the message eventsease.v1.ProfileSocialLink.
+ * Use `create(ProfileSocialLinkSchema)` to create a new message.
+ */
+export const ProfileSocialLinkSchema: GenMessage<ProfileSocialLink> = /*@__PURE__*/
+  messageDesc(file_proto_v1_user, 6);
+
+/**
+ * @generated from message eventsease.v1.UserProfile
+ */
+export type UserProfile = Message<"eventsease.v1.UserProfile"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
+
+  /**
+   * @generated from field: string uid = 2;
+   */
+  uid: string;
+
+  /**
+   * @generated from field: string email = 3;
+   */
+  email: string;
+
+  /**
+   * @generated from field: string display_name = 4;
+   */
+  displayName: string;
+
+  /**
+   * @generated from field: string photo_url = 5;
+   */
+  photoUrl: string;
+
+  /**
+   * @generated from field: string provider = 6;
+   */
+  provider: string;
+
+  /**
+   * @generated from field: repeated string photos = 7;
+   */
+  photos: string[];
+
+  /**
+   * @generated from field: repeated string background_photos = 8;
+   */
+  backgroundPhotos: string[];
+
+  /**
+   * @generated from field: string about = 9;
+   */
+  about: string;
+
+  /**
+   * @generated from field: string name = 10;
+   */
+  name: string;
+
+  /**
+   * @generated from field: repeated eventsease.v1.ProfileSocialLink social_links = 11;
+   */
+  socialLinks: ProfileSocialLink[];
+
+  /**
+   * @generated from field: string location = 12;
+   */
+  location: string;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 13;
+   */
+  createdAt?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp updated_at = 14;
+   */
+  updatedAt?: Timestamp;
+
+  /**
+   * @generated from field: bool is_deleted = 15;
+   */
+  isDeleted: boolean;
+};
+
+/**
+ * Describes the message eventsease.v1.UserProfile.
+ * Use `create(UserProfileSchema)` to create a new message.
+ */
+export const UserProfileSchema: GenMessage<UserProfile> = /*@__PURE__*/
+  messageDesc(file_proto_v1_user, 7);
+
+/**
+ * @generated from message eventsease.v1.GetProfileRequest
+ */
+export type GetProfileRequest = Message<"eventsease.v1.GetProfileRequest"> & {
+};
+
+/**
+ * Describes the message eventsease.v1.GetProfileRequest.
+ * Use `create(GetProfileRequestSchema)` to create a new message.
+ */
+export const GetProfileRequestSchema: GenMessage<GetProfileRequest> = /*@__PURE__*/
+  messageDesc(file_proto_v1_user, 8);
+
+/**
+ * @generated from message eventsease.v1.GetProfileResponse
+ */
+export type GetProfileResponse = Message<"eventsease.v1.GetProfileResponse"> & {
+  /**
+   * @generated from field: bool success = 1;
+   */
+  success: boolean;
+
+  /**
+   * @generated from field: eventsease.v1.UserProfile data = 2;
+   */
+  data?: UserProfile;
+};
+
+/**
+ * Describes the message eventsease.v1.GetProfileResponse.
+ * Use `create(GetProfileResponseSchema)` to create a new message.
+ */
+export const GetProfileResponseSchema: GenMessage<GetProfileResponse> = /*@__PURE__*/
+  messageDesc(file_proto_v1_user, 9);
+
+/**
+ * @generated from message eventsease.v1.UpdateProfileRequest
+ */
+export type UpdateProfileRequest = Message<"eventsease.v1.UpdateProfileRequest"> & {
+  /**
+   * @generated from field: repeated string photos = 1;
+   */
+  photos: string[];
+
+  /**
+   * @generated from field: repeated string background_photos = 2;
+   */
+  backgroundPhotos: string[];
+
+  /**
+   * @generated from field: string about = 3;
+   */
+  about: string;
+
+  /**
+   * @generated from field: string name = 4;
+   */
+  name: string;
+
+  /**
+   * @generated from field: repeated eventsease.v1.ProfileSocialLink social_links = 5;
+   */
+  socialLinks: ProfileSocialLink[];
+
+  /**
+   * @generated from field: string location = 6;
+   */
+  location: string;
+};
+
+/**
+ * Describes the message eventsease.v1.UpdateProfileRequest.
+ * Use `create(UpdateProfileRequestSchema)` to create a new message.
+ */
+export const UpdateProfileRequestSchema: GenMessage<UpdateProfileRequest> = /*@__PURE__*/
+  messageDesc(file_proto_v1_user, 10);
+
+/**
+ * @generated from message eventsease.v1.UpdateProfileResponse
+ */
+export type UpdateProfileResponse = Message<"eventsease.v1.UpdateProfileResponse"> & {
+  /**
+   * @generated from field: bool success = 1;
+   */
+  success: boolean;
+
+  /**
+   * @generated from field: string message = 2;
+   */
+  message: string;
+
+  /**
+   * @generated from field: eventsease.v1.UserProfile data = 3;
+   */
+  data?: UserProfile;
+};
+
+/**
+ * Describes the message eventsease.v1.UpdateProfileResponse.
+ * Use `create(UpdateProfileResponseSchema)` to create a new message.
+ */
+export const UpdateProfileResponseSchema: GenMessage<UpdateProfileResponse> = /*@__PURE__*/
+  messageDesc(file_proto_v1_user, 11);
+
+/**
+ * @generated from enum eventsease.v1.ProfileSocialType
+ */
+export enum ProfileSocialType {
+  /**
+   * @generated from enum value: PROFILE_SOCIAL_TYPE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: PROFILE_SOCIAL_TYPE_PHONE = 1;
+   */
+  PHONE = 1,
+
+  /**
+   * @generated from enum value: PROFILE_SOCIAL_TYPE_INSTAGRAM = 2;
+   */
+  INSTAGRAM = 2,
+
+  /**
+   * @generated from enum value: PROFILE_SOCIAL_TYPE_FACEBOOK = 3;
+   */
+  FACEBOOK = 3,
+
+  /**
+   * @generated from enum value: PROFILE_SOCIAL_TYPE_WHATSAPP = 4;
+   */
+  WHATSAPP = 4,
+
+  /**
+   * @generated from enum value: PROFILE_SOCIAL_TYPE_WEBSITE = 5;
+   */
+  WEBSITE = 5,
+
+  /**
+   * @generated from enum value: PROFILE_SOCIAL_TYPE_EMAIL = 6;
+   */
+  EMAIL = 6,
+
+  /**
+   * @generated from enum value: PROFILE_SOCIAL_TYPE_TWITTER = 7;
+   */
+  TWITTER = 7,
+
+  /**
+   * @generated from enum value: PROFILE_SOCIAL_TYPE_LINKEDIN = 8;
+   */
+  LINKEDIN = 8,
+
+  /**
+   * @generated from enum value: PROFILE_SOCIAL_TYPE_YOUTUBE = 9;
+   */
+  YOUTUBE = 9,
+
+  /**
+   * @generated from enum value: PROFILE_SOCIAL_TYPE_OTHER = 10;
+   */
+  OTHER = 10,
+}
+
+/**
+ * Describes the enum eventsease.v1.ProfileSocialType.
+ */
+export const ProfileSocialTypeSchema: GenEnum<ProfileSocialType> = /*@__PURE__*/
+  enumDesc(file_proto_v1_user, 0);
+
+/**
  * @generated from service eventsease.v1.UserService
  */
 export const UserService: GenService<{
@@ -188,6 +469,22 @@ export const UserService: GenService<{
     methodKind: "unary";
     input: typeof RegisterFCMRequestSchema;
     output: typeof RegisterFCMResponseSchema;
+  },
+  /**
+   * @generated from rpc eventsease.v1.UserService.GetProfile
+   */
+  getProfile: {
+    methodKind: "unary";
+    input: typeof GetProfileRequestSchema;
+    output: typeof GetProfileResponseSchema;
+  },
+  /**
+   * @generated from rpc eventsease.v1.UserService.UpdateProfile
+   */
+  updateProfile: {
+    methodKind: "unary";
+    input: typeof UpdateProfileRequestSchema;
+    output: typeof UpdateProfileResponseSchema;
   },
 }> = /*@__PURE__*/
   serviceDesc(file_proto_v1_user, 0);

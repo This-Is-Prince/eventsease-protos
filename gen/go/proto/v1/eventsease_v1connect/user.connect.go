@@ -37,12 +37,19 @@ const (
 	UserServiceCheckUserProcedure = "/eventsease.v1.UserService/CheckUser"
 	// UserServiceRegisterFCMProcedure is the fully-qualified name of the UserService's RegisterFCM RPC.
 	UserServiceRegisterFCMProcedure = "/eventsease.v1.UserService/RegisterFCM"
+	// UserServiceGetProfileProcedure is the fully-qualified name of the UserService's GetProfile RPC.
+	UserServiceGetProfileProcedure = "/eventsease.v1.UserService/GetProfile"
+	// UserServiceUpdateProfileProcedure is the fully-qualified name of the UserService's UpdateProfile
+	// RPC.
+	UserServiceUpdateProfileProcedure = "/eventsease.v1.UserService/UpdateProfile"
 )
 
 // UserServiceClient is a client for the eventsease.v1.UserService service.
 type UserServiceClient interface {
 	CheckUser(context.Context, *connect.Request[v1.CheckUserRequest]) (*connect.Response[v1.CheckUserResponse], error)
 	RegisterFCM(context.Context, *connect.Request[v1.RegisterFCMRequest]) (*connect.Response[v1.RegisterFCMResponse], error)
+	GetProfile(context.Context, *connect.Request[v1.GetProfileRequest]) (*connect.Response[v1.GetProfileResponse], error)
+	UpdateProfile(context.Context, *connect.Request[v1.UpdateProfileRequest]) (*connect.Response[v1.UpdateProfileResponse], error)
 }
 
 // NewUserServiceClient constructs a client for the eventsease.v1.UserService service. By default,
@@ -68,13 +75,27 @@ func NewUserServiceClient(httpClient connect.HTTPClient, baseURL string, opts ..
 			connect.WithSchema(userServiceMethods.ByName("RegisterFCM")),
 			connect.WithClientOptions(opts...),
 		),
+		getProfile: connect.NewClient[v1.GetProfileRequest, v1.GetProfileResponse](
+			httpClient,
+			baseURL+UserServiceGetProfileProcedure,
+			connect.WithSchema(userServiceMethods.ByName("GetProfile")),
+			connect.WithClientOptions(opts...),
+		),
+		updateProfile: connect.NewClient[v1.UpdateProfileRequest, v1.UpdateProfileResponse](
+			httpClient,
+			baseURL+UserServiceUpdateProfileProcedure,
+			connect.WithSchema(userServiceMethods.ByName("UpdateProfile")),
+			connect.WithClientOptions(opts...),
+		),
 	}
 }
 
 // userServiceClient implements UserServiceClient.
 type userServiceClient struct {
-	checkUser   *connect.Client[v1.CheckUserRequest, v1.CheckUserResponse]
-	registerFCM *connect.Client[v1.RegisterFCMRequest, v1.RegisterFCMResponse]
+	checkUser     *connect.Client[v1.CheckUserRequest, v1.CheckUserResponse]
+	registerFCM   *connect.Client[v1.RegisterFCMRequest, v1.RegisterFCMResponse]
+	getProfile    *connect.Client[v1.GetProfileRequest, v1.GetProfileResponse]
+	updateProfile *connect.Client[v1.UpdateProfileRequest, v1.UpdateProfileResponse]
 }
 
 // CheckUser calls eventsease.v1.UserService.CheckUser.
@@ -87,10 +108,22 @@ func (c *userServiceClient) RegisterFCM(ctx context.Context, req *connect.Reques
 	return c.registerFCM.CallUnary(ctx, req)
 }
 
+// GetProfile calls eventsease.v1.UserService.GetProfile.
+func (c *userServiceClient) GetProfile(ctx context.Context, req *connect.Request[v1.GetProfileRequest]) (*connect.Response[v1.GetProfileResponse], error) {
+	return c.getProfile.CallUnary(ctx, req)
+}
+
+// UpdateProfile calls eventsease.v1.UserService.UpdateProfile.
+func (c *userServiceClient) UpdateProfile(ctx context.Context, req *connect.Request[v1.UpdateProfileRequest]) (*connect.Response[v1.UpdateProfileResponse], error) {
+	return c.updateProfile.CallUnary(ctx, req)
+}
+
 // UserServiceHandler is an implementation of the eventsease.v1.UserService service.
 type UserServiceHandler interface {
 	CheckUser(context.Context, *connect.Request[v1.CheckUserRequest]) (*connect.Response[v1.CheckUserResponse], error)
 	RegisterFCM(context.Context, *connect.Request[v1.RegisterFCMRequest]) (*connect.Response[v1.RegisterFCMResponse], error)
+	GetProfile(context.Context, *connect.Request[v1.GetProfileRequest]) (*connect.Response[v1.GetProfileResponse], error)
+	UpdateProfile(context.Context, *connect.Request[v1.UpdateProfileRequest]) (*connect.Response[v1.UpdateProfileResponse], error)
 }
 
 // NewUserServiceHandler builds an HTTP handler from the service implementation. It returns the path
@@ -112,12 +145,28 @@ func NewUserServiceHandler(svc UserServiceHandler, opts ...connect.HandlerOption
 		connect.WithSchema(userServiceMethods.ByName("RegisterFCM")),
 		connect.WithHandlerOptions(opts...),
 	)
+	userServiceGetProfileHandler := connect.NewUnaryHandler(
+		UserServiceGetProfileProcedure,
+		svc.GetProfile,
+		connect.WithSchema(userServiceMethods.ByName("GetProfile")),
+		connect.WithHandlerOptions(opts...),
+	)
+	userServiceUpdateProfileHandler := connect.NewUnaryHandler(
+		UserServiceUpdateProfileProcedure,
+		svc.UpdateProfile,
+		connect.WithSchema(userServiceMethods.ByName("UpdateProfile")),
+		connect.WithHandlerOptions(opts...),
+	)
 	return "/eventsease.v1.UserService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		switch r.URL.Path {
 		case UserServiceCheckUserProcedure:
 			userServiceCheckUserHandler.ServeHTTP(w, r)
 		case UserServiceRegisterFCMProcedure:
 			userServiceRegisterFCMHandler.ServeHTTP(w, r)
+		case UserServiceGetProfileProcedure:
+			userServiceGetProfileHandler.ServeHTTP(w, r)
+		case UserServiceUpdateProfileProcedure:
+			userServiceUpdateProfileHandler.ServeHTTP(w, r)
 		default:
 			http.NotFound(w, r)
 		}
@@ -133,4 +182,12 @@ func (UnimplementedUserServiceHandler) CheckUser(context.Context, *connect.Reque
 
 func (UnimplementedUserServiceHandler) RegisterFCM(context.Context, *connect.Request[v1.RegisterFCMRequest]) (*connect.Response[v1.RegisterFCMResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("eventsease.v1.UserService.RegisterFCM is not implemented"))
+}
+
+func (UnimplementedUserServiceHandler) GetProfile(context.Context, *connect.Request[v1.GetProfileRequest]) (*connect.Response[v1.GetProfileResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("eventsease.v1.UserService.GetProfile is not implemented"))
+}
+
+func (UnimplementedUserServiceHandler) UpdateProfile(context.Context, *connect.Request[v1.UpdateProfileRequest]) (*connect.Response[v1.UpdateProfileResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("eventsease.v1.UserService.UpdateProfile is not implemented"))
 }

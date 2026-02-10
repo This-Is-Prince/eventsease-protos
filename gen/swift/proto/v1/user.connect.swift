@@ -16,6 +16,12 @@ public protocol Eventsease_V1_UserServiceClientInterface: Sendable {
 
     @available(iOS 13, *)
     func `registerFcm`(request: Eventsease_V1_RegisterFCMRequest, headers: Connect.Headers) async -> ResponseMessage<Eventsease_V1_RegisterFCMResponse>
+
+    @available(iOS 13, *)
+    func `getProfile`(request: Eventsease_V1_GetProfileRequest, headers: Connect.Headers) async -> ResponseMessage<Eventsease_V1_GetProfileResponse>
+
+    @available(iOS 13, *)
+    func `updateProfile`(request: Eventsease_V1_UpdateProfileRequest, headers: Connect.Headers) async -> ResponseMessage<Eventsease_V1_UpdateProfileResponse>
 }
 
 /// Concrete implementation of `Eventsease_V1_UserServiceClientInterface`.
@@ -36,10 +42,22 @@ public final class Eventsease_V1_UserServiceClient: Eventsease_V1_UserServiceCli
         return await self.client.unary(path: "/eventsease.v1.UserService/RegisterFCM", idempotencyLevel: .unknown, request: request, headers: headers)
     }
 
+    @available(iOS 13, *)
+    public func `getProfile`(request: Eventsease_V1_GetProfileRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_GetProfileResponse> {
+        return await self.client.unary(path: "/eventsease.v1.UserService/GetProfile", idempotencyLevel: .unknown, request: request, headers: headers)
+    }
+
+    @available(iOS 13, *)
+    public func `updateProfile`(request: Eventsease_V1_UpdateProfileRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_UpdateProfileResponse> {
+        return await self.client.unary(path: "/eventsease.v1.UserService/UpdateProfile", idempotencyLevel: .unknown, request: request, headers: headers)
+    }
+
     public enum Metadata {
         public enum Methods {
             public static let checkUser = Connect.MethodSpec(name: "CheckUser", service: "eventsease.v1.UserService", type: .unary)
             public static let registerFcm = Connect.MethodSpec(name: "RegisterFCM", service: "eventsease.v1.UserService", type: .unary)
+            public static let getProfile = Connect.MethodSpec(name: "GetProfile", service: "eventsease.v1.UserService", type: .unary)
+            public static let updateProfile = Connect.MethodSpec(name: "UpdateProfile", service: "eventsease.v1.UserService", type: .unary)
         }
     }
 }

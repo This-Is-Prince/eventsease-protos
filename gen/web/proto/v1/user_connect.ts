@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CheckUserRequest, CheckUserResponse, RegisterFCMRequest, RegisterFCMResponse } from "./user_pb";
+import { CheckUserRequest, CheckUserResponse, GetProfileRequest, GetProfileResponse, RegisterFCMRequest, RegisterFCMResponse, UpdateProfileRequest, UpdateProfileResponse } from "./user_pb";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -28,6 +28,24 @@ export const UserService = {
       name: "RegisterFCM",
       I: RegisterFCMRequest,
       O: RegisterFCMResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc eventsease.v1.UserService.GetProfile
+     */
+    getProfile: {
+      name: "GetProfile",
+      I: GetProfileRequest,
+      O: GetProfileResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc eventsease.v1.UserService.UpdateProfile
+     */
+    updateProfile: {
+      name: "UpdateProfile",
+      I: UpdateProfileRequest,
+      O: UpdateProfileResponse,
       kind: MethodKind.Unary,
     },
   }

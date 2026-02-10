@@ -36,4 +36,28 @@ public class UserServiceClient(
     ),
   )
 
+
+  override suspend fun getProfile(request: GetProfileRequest, headers: Headers): ResponseMessage<GetProfileResponse> = client.unary(
+    request,
+    headers,
+    MethodSpec(
+    "eventsease.v1.UserService/GetProfile",
+      com.eventsease.v1.GetProfileRequest::class,
+      com.eventsease.v1.GetProfileResponse::class,
+      StreamType.UNARY,
+    ),
+  )
+
+
+  override suspend fun updateProfile(request: UpdateProfileRequest, headers: Headers): ResponseMessage<UpdateProfileResponse> = client.unary(
+    request,
+    headers,
+    MethodSpec(
+    "eventsease.v1.UserService/UpdateProfile",
+      com.eventsease.v1.UpdateProfileRequest::class,
+      com.eventsease.v1.UpdateProfileResponse::class,
+      StreamType.UNARY,
+    ),
+  )
+
 }

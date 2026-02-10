@@ -11,4 +11,8 @@ public interface UserServiceClientInterface {
   public suspend fun checkUser(request: CheckUserRequest, headers: Headers = emptyMap()): ResponseMessage<CheckUserResponse>
 
   public suspend fun registerFCM(request: RegisterFCMRequest, headers: Headers = emptyMap()): ResponseMessage<RegisterFCMResponse>
+
+  public suspend fun getProfile(request: GetProfileRequest, headers: Headers = emptyMap()): ResponseMessage<GetProfileResponse>
+
+  public suspend fun updateProfile(request: UpdateProfileRequest, headers: Headers = emptyMap()): ResponseMessage<UpdateProfileResponse>
 }
