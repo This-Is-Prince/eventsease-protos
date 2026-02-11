@@ -308,6 +308,15 @@ public struct Eventsease_V1_Event: @unchecked Sendable {
     set {_uniqueStorage()._isPinned = newValue}
   }
 
+  public var organizerDetail: Eventsease_V1_UserProfile {
+    get {return _storage._organizerDetail ?? Eventsease_V1_UserProfile()}
+    set {_uniqueStorage()._organizerDetail = newValue}
+  }
+  /// Returns true if `organizerDetail` has been explicitly set.
+  public var hasOrganizerDetail: Bool {return _storage._organizerDetail != nil}
+  /// Clears the value of `organizerDetail`. Subsequent reads from it will return its default value.
+  public mutating func clearOrganizerDetail() {_uniqueStorage()._organizerDetail = nil}
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -659,7 +668,7 @@ extension Eventsease_V1_SocialType: SwiftProtobuf._ProtoNameProviding {
 
 extension Eventsease_V1_Event: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Event"
-  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{1}name\0\u{1}description\0\u{1}slug\0\u{3}start_date\0\u{3}end_date\0\u{1}location\0\u{3}event_photos\0\u{3}user_id\0\u{1}organizer\0\u{1}category\0\u{3}ticket_info\0\u{1}social\0\u{3}is_paid\0\u{3}is_approved\0\u{3}is_regular\0\u{3}heart_count\0\u{3}saved_count\0\u{3}created_at\0\u{3}updated_at\0\u{3}is_pinned\0")
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{1}name\0\u{1}description\0\u{1}slug\0\u{3}start_date\0\u{3}end_date\0\u{1}location\0\u{3}event_photos\0\u{3}user_id\0\u{1}organizer\0\u{1}category\0\u{3}ticket_info\0\u{1}social\0\u{3}is_paid\0\u{3}is_approved\0\u{3}is_regular\0\u{3}heart_count\0\u{3}saved_count\0\u{3}created_at\0\u{3}updated_at\0\u{3}is_pinned\0\u{3}organizer_detail\0")
 
   fileprivate class _StorageClass {
     var _id: String = String()
@@ -683,6 +692,7 @@ extension Eventsease_V1_Event: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     var _createdAt: SwiftProtobuf.Google_Protobuf_Timestamp? = nil
     var _updatedAt: SwiftProtobuf.Google_Protobuf_Timestamp? = nil
     var _isPinned: String = String()
+    var _organizerDetail: Eventsease_V1_UserProfile? = nil
 
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
@@ -714,6 +724,7 @@ extension Eventsease_V1_Event: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
       _createdAt = source._createdAt
       _updatedAt = source._updatedAt
       _isPinned = source._isPinned
+      _organizerDetail = source._organizerDetail
     }
   }
 
@@ -753,6 +764,7 @@ extension Eventsease_V1_Event: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
         case 19: try { try decoder.decodeSingularMessageField(value: &_storage._createdAt) }()
         case 20: try { try decoder.decodeSingularMessageField(value: &_storage._updatedAt) }()
         case 21: try { try decoder.decodeSingularStringField(value: &_storage._isPinned) }()
+        case 22: try { try decoder.decodeSingularMessageField(value: &_storage._organizerDetail) }()
         default: break
         }
       }
@@ -828,6 +840,9 @@ extension Eventsease_V1_Event: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
       if !_storage._isPinned.isEmpty {
         try visitor.visitSingularStringField(value: _storage._isPinned, fieldNumber: 21)
       }
+      try { if let v = _storage._organizerDetail {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 22)
+      } }()
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -858,6 +873,7 @@ extension Eventsease_V1_Event: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
         if _storage._createdAt != rhs_storage._createdAt {return false}
         if _storage._updatedAt != rhs_storage._updatedAt {return false}
         if _storage._isPinned != rhs_storage._isPinned {return false}
+        if _storage._organizerDetail != rhs_storage._organizerDetail {return false}
         return true
       }
       if !storagesAreEqual {return false}

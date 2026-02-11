@@ -1021,6 +1021,54 @@ public  final class Event extends
 
   }
 
+  public static final int ORGANIZER_DETAIL_FIELD_NUMBER = 22;
+  private com.eventsease.v1.UserProfile organizerDetail_;
+  /**
+   * <code>.eventsease.v1.UserProfile organizer_detail = 22 [json_name = "organizerDetail"];</code>
+   */
+  @java.lang.Override
+  public boolean hasOrganizerDetail() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   * <code>.eventsease.v1.UserProfile organizer_detail = 22 [json_name = "organizerDetail"];</code>
+   */
+  @java.lang.Override
+  public com.eventsease.v1.UserProfile getOrganizerDetail() {
+    return organizerDetail_ == null ? com.eventsease.v1.UserProfile.getDefaultInstance() : organizerDetail_;
+  }
+  /**
+   * <code>.eventsease.v1.UserProfile organizer_detail = 22 [json_name = "organizerDetail"];</code>
+   */
+  @java.lang.SuppressWarnings("ReturnValueIgnored")
+  private void setOrganizerDetail(com.eventsease.v1.UserProfile value) {
+    value.getClass();  // minimal bytecode null check
+    organizerDetail_ = value;
+    bitField0_ |= 0x00000040;
+  }
+  /**
+   * <code>.eventsease.v1.UserProfile organizer_detail = 22 [json_name = "organizerDetail"];</code>
+   */
+  @java.lang.SuppressWarnings({"ReferenceEquality", "ReturnValueIgnored"})
+  private void mergeOrganizerDetail(com.eventsease.v1.UserProfile value) {
+    value.getClass();  // minimal bytecode null check
+    if (organizerDetail_ != null &&
+        organizerDetail_ != com.eventsease.v1.UserProfile.getDefaultInstance()) {
+      organizerDetail_ =
+        com.eventsease.v1.UserProfile.newBuilder(organizerDetail_).mergeFrom(value).buildPartial();
+    } else {
+      organizerDetail_ = value;
+    }
+    bitField0_ |= 0x00000040;
+  }
+  /**
+   * <code>.eventsease.v1.UserProfile organizer_detail = 22 [json_name = "organizerDetail"];</code>
+   */
+  private void clearOrganizerDetail() {
+    organizerDetail_ = null;
+    bitField0_ = (bitField0_ & ~0x00000040);
+  }
+
   public static com.eventsease.v1.Event parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2126,6 +2174,53 @@ public  final class Event extends
       return this;
     }
 
+    /**
+     * <code>.eventsease.v1.UserProfile organizer_detail = 22 [json_name = "organizerDetail"];</code>
+     */
+    @java.lang.Override
+    public boolean hasOrganizerDetail() {
+      return instance.hasOrganizerDetail();
+    }
+    /**
+     * <code>.eventsease.v1.UserProfile organizer_detail = 22 [json_name = "organizerDetail"];</code>
+     */
+    @java.lang.Override
+    public com.eventsease.v1.UserProfile getOrganizerDetail() {
+      return instance.getOrganizerDetail();
+    }
+    /**
+     * <code>.eventsease.v1.UserProfile organizer_detail = 22 [json_name = "organizerDetail"];</code>
+     */
+    public Builder setOrganizerDetail(com.eventsease.v1.UserProfile value) {
+      copyOnWrite();
+      instance.setOrganizerDetail(value);
+      return this;
+      }
+    /**
+     * <code>.eventsease.v1.UserProfile organizer_detail = 22 [json_name = "organizerDetail"];</code>
+     */
+    public Builder setOrganizerDetail(
+        com.eventsease.v1.UserProfile.Builder builderForValue) {
+      copyOnWrite();
+      instance.setOrganizerDetail(builderForValue.build());
+      return this;
+    }
+    /**
+     * <code>.eventsease.v1.UserProfile organizer_detail = 22 [json_name = "organizerDetail"];</code>
+     */
+    public Builder mergeOrganizerDetail(com.eventsease.v1.UserProfile value) {
+      copyOnWrite();
+      instance.mergeOrganizerDetail(value);
+      return this;
+    }
+    /**
+     * <code>.eventsease.v1.UserProfile organizer_detail = 22 [json_name = "organizerDetail"];</code>
+     */
+    public Builder clearOrganizerDetail() {  copyOnWrite();
+      instance.clearOrganizerDetail();
+      return this;
+    }
+
     // @@protoc_insertion_point(builder_scope:eventsease.v1.Event)
   }
   @java.lang.Override
@@ -2165,13 +2260,14 @@ public  final class Event extends
             "createdAt_",
             "updatedAt_",
             "isPinned_",
+            "organizerDetail_",
           };
           java.lang.String info =
-              "\u0000\u0015\u0000\u0001\u0001\u0015\u0015\u0000\u0002\u0000\u0001\u0208\u0002\u0208" +
+              "\u0000\u0016\u0000\u0001\u0001\u0016\u0016\u0000\u0002\u0000\u0001\u0208\u0002\u0208" +
               "\u0003\u0208\u0004\u0208\u0005\u1009\u0000\u0006\u1009\u0001\u0007\u1009\u0002\b" +
               "\u021a\t\u0208\n\u0208\u000b\u0208\f\u1009\u0003\r\u001b\u000e\u0007\u000f\u0007" +
               "\u0010\u0007\u0011\u0004\u0012\u0004\u0013\u1009\u0004\u0014\u1009\u0005\u0015\u0208" +
-              "";
+              "\u0016\u1009\u0006";
           return newMessageInfo(DEFAULT_INSTANCE, info, objects);
       }
       case GET_DEFAULT_INSTANCE: {

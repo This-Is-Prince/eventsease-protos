@@ -240,4 +240,15 @@ public interface EventOrBuilder extends
    */
   com.google.protobuf.ByteString
       getIsPinnedBytes();
+
+  /**
+   * <code>.eventsease.v1.UserProfile organizer_detail = 22 [json_name = "organizerDetail"];</code>
+   * @return Whether the organizerDetail field is set.
+   */
+  boolean hasOrganizerDetail();
+  /**
+   * <code>.eventsease.v1.UserProfile organizer_detail = 22 [json_name = "organizerDetail"];</code>
+   * @return The organizerDetail.
+   */
+  com.eventsease.v1.UserProfile getOrganizerDetail();
 }
