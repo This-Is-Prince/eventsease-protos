@@ -21,6 +21,7 @@ public  final class UpdateProfileRequest extends
     name_ = "";
     socialLinks_ = emptyProtobufList();
     location_ = "";
+    username_ = "";
   }
   public static final int PHOTOS_FIELD_NUMBER = 1;
   private com.google.protobuf.Internal.ProtobufList<java.lang.String> photos_;
@@ -450,6 +451,54 @@ public  final class UpdateProfileRequest extends
       com.google.protobuf.ByteString value) {
     checkByteStringIsUtf8(value);
     location_ = value.toStringUtf8();
+
+  }
+
+  public static final int USERNAME_FIELD_NUMBER = 7;
+  private java.lang.String username_;
+  /**
+   * <code>string username = 7 [json_name = "username"];</code>
+   * @return The username.
+   */
+  @java.lang.Override
+  public java.lang.String getUsername() {
+    return username_;
+  }
+  /**
+   * <code>string username = 7 [json_name = "username"];</code>
+   * @return The bytes for username.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getUsernameBytes() {
+    return com.google.protobuf.ByteString.copyFromUtf8(username_);
+  }
+  /**
+   * <code>string username = 7 [json_name = "username"];</code>
+   * @param value The username to set.
+   */
+  @java.lang.SuppressWarnings("ReturnValueIgnored")
+  private void setUsername(
+      java.lang.String value) {
+    value.getClass();  // minimal bytecode null check
+
+    username_ = value;
+  }
+  /**
+   * <code>string username = 7 [json_name = "username"];</code>
+   */
+  private void clearUsername() {
+
+    username_ = getDefaultInstance().getUsername();
+  }
+  /**
+   * <code>string username = 7 [json_name = "username"];</code>
+   * @param value The bytes for username to set.
+   */
+  private void setUsernameBytes(
+      com.google.protobuf.ByteString value) {
+    checkByteStringIsUtf8(value);
+    username_ = value.toStringUtf8();
 
   }
 
@@ -983,6 +1032,55 @@ public  final class UpdateProfileRequest extends
       return this;
     }
 
+    /**
+     * <code>string username = 7 [json_name = "username"];</code>
+     * @return The username.
+     */
+    @java.lang.Override
+    public java.lang.String getUsername() {
+      return instance.getUsername();
+    }
+    /**
+     * <code>string username = 7 [json_name = "username"];</code>
+     * @return The bytes for username.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUsernameBytes() {
+      return instance.getUsernameBytes();
+    }
+    /**
+     * <code>string username = 7 [json_name = "username"];</code>
+     * @param value The username to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUsername(
+        java.lang.String value) {
+      copyOnWrite();
+      instance.setUsername(value);
+      return this;
+    }
+    /**
+     * <code>string username = 7 [json_name = "username"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUsername() {
+      copyOnWrite();
+      instance.clearUsername();
+      return this;
+    }
+    /**
+     * <code>string username = 7 [json_name = "username"];</code>
+     * @param value The bytes for username to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUsernameBytes(
+        com.google.protobuf.ByteString value) {
+      copyOnWrite();
+      instance.setUsernameBytes(value);
+      return this;
+    }
+
     // @@protoc_insertion_point(builder_scope:eventsease.v1.UpdateProfileRequest)
   }
   @java.lang.Override
@@ -1006,10 +1104,11 @@ public  final class UpdateProfileRequest extends
             "socialLinks_",
             com.eventsease.v1.ProfileSocialLink.class,
             "location_",
+            "username_",
           };
           java.lang.String info =
-              "\u0000\u0006\u0000\u0000\u0001\u0006\u0006\u0000\u0003\u0000\u0001\u021a\u0002\u021a" +
-              "\u0003\u0208\u0004\u0208\u0005\u001b\u0006\u0208";
+              "\u0000\u0007\u0000\u0000\u0001\u0007\u0007\u0000\u0003\u0000\u0001\u021a\u0002\u021a" +
+              "\u0003\u0208\u0004\u0208\u0005\u001b\u0006\u0208\u0007\u0208";
           return newMessageInfo(DEFAULT_INSTANCE, info, objects);
       }
       case GET_DEFAULT_INSTANCE: {

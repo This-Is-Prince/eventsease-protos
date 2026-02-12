@@ -109,4 +109,16 @@ public interface UpdateProfileRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getLocationBytes();
+
+  /**
+   * <code>string username = 7 [json_name = "username"];</code>
+   * @return The username.
+   */
+  java.lang.String getUsername();
+  /**
+   * <code>string username = 7 [json_name = "username"];</code>
+   * @return The bytes for username.
+   */
+  com.google.protobuf.ByteString
+      getUsernameBytes();
 }

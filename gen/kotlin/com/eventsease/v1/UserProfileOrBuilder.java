@@ -209,4 +209,22 @@ public interface UserProfileOrBuilder extends
    * @return The isDeleted.
    */
   boolean getIsDeleted();
+
+  /**
+   * <code>string username = 16 [json_name = "username"];</code>
+   * @return The username.
+   */
+  java.lang.String getUsername();
+  /**
+   * <code>string username = 16 [json_name = "username"];</code>
+   * @return The bytes for username.
+   */
+  com.google.protobuf.ByteString
+      getUsernameBytes();
+
+  /**
+   * <code>bool is_own_profile = 17 [json_name = "isOwnProfile"];</code>
+   * @return The isOwnProfile.
+   */
+  boolean getIsOwnProfile();
 }

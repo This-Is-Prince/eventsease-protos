@@ -9,4 +9,16 @@ package com.eventsease.v1;
 public interface GetProfileRequestOrBuilder extends
     // @@protoc_insertion_point(interface_extends:eventsease.v1.GetProfileRequest)
     com.google.protobuf.MessageLiteOrBuilder {
+
+  /**
+   * <code>string username = 1 [json_name = "username"];</code>
+   * @return The username.
+   */
+  java.lang.String getUsername();
+  /**
+   * <code>string username = 1 [json_name = "username"];</code>
+   * @return The bytes for username.
+   */
+  com.google.protobuf.ByteString
+      getUsernameBytes();
 }

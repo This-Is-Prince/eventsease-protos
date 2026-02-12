@@ -312,6 +312,16 @@ public struct Eventsease_V1_UserProfile: @unchecked Sendable {
     set {_uniqueStorage()._isDeleted = newValue}
   }
 
+  public var username: String {
+    get {return _storage._username}
+    set {_uniqueStorage()._username = newValue}
+  }
+
+  public var isOwnProfile: Bool {
+    get {return _storage._isOwnProfile}
+    set {_uniqueStorage()._isOwnProfile = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -323,6 +333,8 @@ public struct Eventsease_V1_GetProfileRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
+
+  public var username: String = String()
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -368,6 +380,8 @@ public struct Eventsease_V1_UpdateProfileRequest: Sendable {
   public var socialLinks: [Eventsease_V1_ProfileSocialLink] = []
 
   public var location: String = String()
+
+  public var username: String = String()
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -687,7 +701,7 @@ extension Eventsease_V1_ProfileSocialLink: SwiftProtobuf.Message, SwiftProtobuf.
 
 extension Eventsease_V1_UserProfile: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".UserProfile"
-  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{1}uid\0\u{1}email\0\u{3}display_name\0\u{3}photo_url\0\u{1}provider\0\u{1}photos\0\u{3}background_photos\0\u{1}about\0\u{1}name\0\u{3}social_links\0\u{1}location\0\u{3}created_at\0\u{3}updated_at\0\u{3}is_deleted\0")
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{1}uid\0\u{1}email\0\u{3}display_name\0\u{3}photo_url\0\u{1}provider\0\u{1}photos\0\u{3}background_photos\0\u{1}about\0\u{1}name\0\u{3}social_links\0\u{1}location\0\u{3}created_at\0\u{3}updated_at\0\u{3}is_deleted\0\u{1}username\0\u{3}is_own_profile\0")
 
   fileprivate class _StorageClass {
     var _id: String = String()
@@ -705,6 +719,8 @@ extension Eventsease_V1_UserProfile: SwiftProtobuf.Message, SwiftProtobuf._Messa
     var _createdAt: SwiftProtobuf.Google_Protobuf_Timestamp? = nil
     var _updatedAt: SwiftProtobuf.Google_Protobuf_Timestamp? = nil
     var _isDeleted: Bool = false
+    var _username: String = String()
+    var _isOwnProfile: Bool = false
 
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
@@ -730,6 +746,8 @@ extension Eventsease_V1_UserProfile: SwiftProtobuf.Message, SwiftProtobuf._Messa
       _createdAt = source._createdAt
       _updatedAt = source._updatedAt
       _isDeleted = source._isDeleted
+      _username = source._username
+      _isOwnProfile = source._isOwnProfile
     }
   }
 
@@ -763,6 +781,8 @@ extension Eventsease_V1_UserProfile: SwiftProtobuf.Message, SwiftProtobuf._Messa
         case 13: try { try decoder.decodeSingularMessageField(value: &_storage._createdAt) }()
         case 14: try { try decoder.decodeSingularMessageField(value: &_storage._updatedAt) }()
         case 15: try { try decoder.decodeSingularBoolField(value: &_storage._isDeleted) }()
+        case 16: try { try decoder.decodeSingularStringField(value: &_storage._username) }()
+        case 17: try { try decoder.decodeSingularBoolField(value: &_storage._isOwnProfile) }()
         default: break
         }
       }
@@ -820,6 +840,12 @@ extension Eventsease_V1_UserProfile: SwiftProtobuf.Message, SwiftProtobuf._Messa
       if _storage._isDeleted != false {
         try visitor.visitSingularBoolField(value: _storage._isDeleted, fieldNumber: 15)
       }
+      if !_storage._username.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._username, fieldNumber: 16)
+      }
+      if _storage._isOwnProfile != false {
+        try visitor.visitSingularBoolField(value: _storage._isOwnProfile, fieldNumber: 17)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -844,6 +870,8 @@ extension Eventsease_V1_UserProfile: SwiftProtobuf.Message, SwiftProtobuf._Messa
         if _storage._createdAt != rhs_storage._createdAt {return false}
         if _storage._updatedAt != rhs_storage._updatedAt {return false}
         if _storage._isDeleted != rhs_storage._isDeleted {return false}
+        if _storage._username != rhs_storage._username {return false}
+        if _storage._isOwnProfile != rhs_storage._isOwnProfile {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -855,18 +883,29 @@ extension Eventsease_V1_UserProfile: SwiftProtobuf.Message, SwiftProtobuf._Messa
 
 extension Eventsease_V1_GetProfileRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".GetProfileRequest"
-  public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}username\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    // Load everything into unknown fields
-    while try decoder.nextFieldNumber() != nil {}
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.username) }()
+      default: break
+      }
+    }
   }
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.username.isEmpty {
+      try visitor.visitSingularStringField(value: self.username, fieldNumber: 1)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: Eventsease_V1_GetProfileRequest, rhs: Eventsease_V1_GetProfileRequest) -> Bool {
+    if lhs.username != rhs.username {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -913,7 +952,7 @@ extension Eventsease_V1_GetProfileResponse: SwiftProtobuf.Message, SwiftProtobuf
 
 extension Eventsease_V1_UpdateProfileRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".UpdateProfileRequest"
-  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}photos\0\u{3}background_photos\0\u{1}about\0\u{1}name\0\u{3}social_links\0\u{1}location\0")
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}photos\0\u{3}background_photos\0\u{1}about\0\u{1}name\0\u{3}social_links\0\u{1}location\0\u{1}username\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -927,6 +966,7 @@ extension Eventsease_V1_UpdateProfileRequest: SwiftProtobuf.Message, SwiftProtob
       case 4: try { try decoder.decodeSingularStringField(value: &self.name) }()
       case 5: try { try decoder.decodeRepeatedMessageField(value: &self.socialLinks) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.location) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self.username) }()
       default: break
       }
     }
@@ -951,6 +991,9 @@ extension Eventsease_V1_UpdateProfileRequest: SwiftProtobuf.Message, SwiftProtob
     if !self.location.isEmpty {
       try visitor.visitSingularStringField(value: self.location, fieldNumber: 6)
     }
+    if !self.username.isEmpty {
+      try visitor.visitSingularStringField(value: self.username, fieldNumber: 7)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -961,6 +1004,7 @@ extension Eventsease_V1_UpdateProfileRequest: SwiftProtobuf.Message, SwiftProtob
     if lhs.name != rhs.name {return false}
     if lhs.socialLinks != rhs.socialLinks {return false}
     if lhs.location != rhs.location {return false}
+    if lhs.username != rhs.username {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

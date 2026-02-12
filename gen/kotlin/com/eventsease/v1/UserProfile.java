@@ -27,6 +27,7 @@ public  final class UserProfile extends
     name_ = "";
     socialLinks_ = emptyProtobufList();
     location_ = "";
+    username_ = "";
   }
   private int bitField0_;
   public static final int ID_FIELD_NUMBER = 1;
@@ -868,6 +869,80 @@ public  final class UserProfile extends
   private void clearIsDeleted() {
 
     isDeleted_ = false;
+  }
+
+  public static final int USERNAME_FIELD_NUMBER = 16;
+  private java.lang.String username_;
+  /**
+   * <code>string username = 16 [json_name = "username"];</code>
+   * @return The username.
+   */
+  @java.lang.Override
+  public java.lang.String getUsername() {
+    return username_;
+  }
+  /**
+   * <code>string username = 16 [json_name = "username"];</code>
+   * @return The bytes for username.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getUsernameBytes() {
+    return com.google.protobuf.ByteString.copyFromUtf8(username_);
+  }
+  /**
+   * <code>string username = 16 [json_name = "username"];</code>
+   * @param value The username to set.
+   */
+  @java.lang.SuppressWarnings("ReturnValueIgnored")
+  private void setUsername(
+      java.lang.String value) {
+    value.getClass();  // minimal bytecode null check
+
+    username_ = value;
+  }
+  /**
+   * <code>string username = 16 [json_name = "username"];</code>
+   */
+  private void clearUsername() {
+
+    username_ = getDefaultInstance().getUsername();
+  }
+  /**
+   * <code>string username = 16 [json_name = "username"];</code>
+   * @param value The bytes for username to set.
+   */
+  private void setUsernameBytes(
+      com.google.protobuf.ByteString value) {
+    checkByteStringIsUtf8(value);
+    username_ = value.toStringUtf8();
+
+  }
+
+  public static final int IS_OWN_PROFILE_FIELD_NUMBER = 17;
+  private boolean isOwnProfile_;
+  /**
+   * <code>bool is_own_profile = 17 [json_name = "isOwnProfile"];</code>
+   * @return The isOwnProfile.
+   */
+  @java.lang.Override
+  public boolean getIsOwnProfile() {
+    return isOwnProfile_;
+  }
+  /**
+   * <code>bool is_own_profile = 17 [json_name = "isOwnProfile"];</code>
+   * @param value The isOwnProfile to set.
+   */
+  private void setIsOwnProfile(boolean value) {
+    
+    isOwnProfile_ = value;
+  }
+  /**
+   * <code>bool is_own_profile = 17 [json_name = "isOwnProfile"];</code>
+   */
+  private void clearIsOwnProfile() {
+
+    isOwnProfile_ = false;
   }
 
   public static com.eventsease.v1.UserProfile parseFrom(
@@ -1816,6 +1891,83 @@ public  final class UserProfile extends
       return this;
     }
 
+    /**
+     * <code>string username = 16 [json_name = "username"];</code>
+     * @return The username.
+     */
+    @java.lang.Override
+    public java.lang.String getUsername() {
+      return instance.getUsername();
+    }
+    /**
+     * <code>string username = 16 [json_name = "username"];</code>
+     * @return The bytes for username.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUsernameBytes() {
+      return instance.getUsernameBytes();
+    }
+    /**
+     * <code>string username = 16 [json_name = "username"];</code>
+     * @param value The username to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUsername(
+        java.lang.String value) {
+      copyOnWrite();
+      instance.setUsername(value);
+      return this;
+    }
+    /**
+     * <code>string username = 16 [json_name = "username"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUsername() {
+      copyOnWrite();
+      instance.clearUsername();
+      return this;
+    }
+    /**
+     * <code>string username = 16 [json_name = "username"];</code>
+     * @param value The bytes for username to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUsernameBytes(
+        com.google.protobuf.ByteString value) {
+      copyOnWrite();
+      instance.setUsernameBytes(value);
+      return this;
+    }
+
+    /**
+     * <code>bool is_own_profile = 17 [json_name = "isOwnProfile"];</code>
+     * @return The isOwnProfile.
+     */
+    @java.lang.Override
+    public boolean getIsOwnProfile() {
+      return instance.getIsOwnProfile();
+    }
+    /**
+     * <code>bool is_own_profile = 17 [json_name = "isOwnProfile"];</code>
+     * @param value The isOwnProfile to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsOwnProfile(boolean value) {
+      copyOnWrite();
+      instance.setIsOwnProfile(value);
+      return this;
+    }
+    /**
+     * <code>bool is_own_profile = 17 [json_name = "isOwnProfile"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsOwnProfile() {
+      copyOnWrite();
+      instance.clearIsOwnProfile();
+      return this;
+    }
+
     // @@protoc_insertion_point(builder_scope:eventsease.v1.UserProfile)
   }
   @java.lang.Override
@@ -1849,11 +2001,14 @@ public  final class UserProfile extends
             "createdAt_",
             "updatedAt_",
             "isDeleted_",
+            "username_",
+            "isOwnProfile_",
           };
           java.lang.String info =
-              "\u0000\u000f\u0000\u0001\u0001\u000f\u000f\u0000\u0003\u0000\u0001\u0208\u0002\u0208" +
+              "\u0000\u0011\u0000\u0001\u0001\u0011\u0011\u0000\u0003\u0000\u0001\u0208\u0002\u0208" +
               "\u0003\u0208\u0004\u0208\u0005\u0208\u0006\u0208\u0007\u021a\b\u021a\t\u0208\n\u0208" +
-              "\u000b\u001b\f\u0208\r\u1009\u0000\u000e\u1009\u0001\u000f\u0007";
+              "\u000b\u001b\f\u0208\r\u1009\u0000\u000e\u1009\u0001\u000f\u0007\u0010\u0208\u0011" +
+              "\u0007";
           return newMessageInfo(DEFAULT_INSTANCE, info, objects);
       }
       case GET_DEFAULT_INSTANCE: {
