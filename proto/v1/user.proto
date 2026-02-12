@@ -87,10 +87,12 @@ message UserProfile {
   google.protobuf.Timestamp created_at = 13;
   google.protobuf.Timestamp updated_at = 14;
   bool is_deleted = 15;
+  string username = 16;
+  bool is_own_profile = 17;
 }
 
 message GetProfileRequest {
-  
+  string username = 1;
 }
 
 message GetProfileResponse {
@@ -105,6 +107,7 @@ message UpdateProfileRequest {
   string name = 4;
   repeated ProfileSocialLink social_links = 5;
   string location = 6;
+  string username = 7;
 }
 
 message UpdateProfileResponse {
