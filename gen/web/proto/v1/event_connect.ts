@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateEventRequest, CreateEventResponse, GetEventRequest, GetEventResponse, GetEventsRequest, GetEventsResponse, GetEventStatsRequest, GetEventStatsResponse, GetUserEventsRequest, ToggleSavedEventRequest, ToggleSavedEventResponse } from "./event_pb";
+import { CreateEventRequest, CreateEventResponse, GetEventRequest, GetEventResponse, GetEventsRequest, GetEventsResponse, GetEventStatsRequest, GetEventStatsResponse, GetSavedEventsRequest, GetUserEventsRequest, ToggleSavedEventRequest, ToggleSavedEventResponse } from "./event_pb";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -62,7 +62,7 @@ export const EventService = {
      */
     getSavedEvents: {
       name: "GetSavedEvents",
-      I: GetUserEventsRequest,
+      I: GetSavedEventsRequest,
       O: GetEventsResponse,
       kind: MethodKind.Unary,
     },

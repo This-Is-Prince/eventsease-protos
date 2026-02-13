@@ -18,7 +18,7 @@ public interface EventServiceClientInterface {
 
   public suspend fun getUserEvents(request: GetUserEventsRequest, headers: Headers = emptyMap()): ResponseMessage<GetEventsResponse>
 
-  public suspend fun getSavedEvents(request: GetUserEventsRequest, headers: Headers = emptyMap()): ResponseMessage<GetEventsResponse>
+  public suspend fun getSavedEvents(request: GetSavedEventsRequest, headers: Headers = emptyMap()): ResponseMessage<GetEventsResponse>
 
   public suspend fun toggleSavedEvent(request: ToggleSavedEventRequest, headers: Headers = emptyMap()): ResponseMessage<ToggleSavedEventResponse>
 }

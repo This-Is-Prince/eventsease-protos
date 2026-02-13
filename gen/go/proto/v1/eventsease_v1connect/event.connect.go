@@ -61,7 +61,7 @@ type EventServiceClient interface {
 	GetEventStats(context.Context, *connect.Request[v1.GetEventStatsRequest]) (*connect.Response[v1.GetEventStatsResponse], error)
 	CreateEvent(context.Context, *connect.Request[v1.CreateEventRequest]) (*connect.Response[v1.CreateEventResponse], error)
 	GetUserEvents(context.Context, *connect.Request[v1.GetUserEventsRequest]) (*connect.Response[v1.GetEventsResponse], error)
-	GetSavedEvents(context.Context, *connect.Request[v1.GetUserEventsRequest]) (*connect.Response[v1.GetEventsResponse], error)
+	GetSavedEvents(context.Context, *connect.Request[v1.GetSavedEventsRequest]) (*connect.Response[v1.GetEventsResponse], error)
 	ToggleSavedEvent(context.Context, *connect.Request[v1.ToggleSavedEventRequest]) (*connect.Response[v1.ToggleSavedEventResponse], error)
 }
 
@@ -106,7 +106,7 @@ func NewEventServiceClient(httpClient connect.HTTPClient, baseURL string, opts .
 			connect.WithSchema(eventServiceMethods.ByName("GetUserEvents")),
 			connect.WithClientOptions(opts...),
 		),
-		getSavedEvents: connect.NewClient[v1.GetUserEventsRequest, v1.GetEventsResponse](
+		getSavedEvents: connect.NewClient[v1.GetSavedEventsRequest, v1.GetEventsResponse](
 			httpClient,
 			baseURL+EventServiceGetSavedEventsProcedure,
 			connect.WithSchema(eventServiceMethods.ByName("GetSavedEvents")),
@@ -128,7 +128,7 @@ type eventServiceClient struct {
 	getEventStats    *connect.Client[v1.GetEventStatsRequest, v1.GetEventStatsResponse]
 	createEvent      *connect.Client[v1.CreateEventRequest, v1.CreateEventResponse]
 	getUserEvents    *connect.Client[v1.GetUserEventsRequest, v1.GetEventsResponse]
-	getSavedEvents   *connect.Client[v1.GetUserEventsRequest, v1.GetEventsResponse]
+	getSavedEvents   *connect.Client[v1.GetSavedEventsRequest, v1.GetEventsResponse]
 	toggleSavedEvent *connect.Client[v1.ToggleSavedEventRequest, v1.ToggleSavedEventResponse]
 }
 
@@ -158,7 +158,7 @@ func (c *eventServiceClient) GetUserEvents(ctx context.Context, req *connect.Req
 }
 
 // GetSavedEvents calls eventsease.v1.EventService.GetSavedEvents.
-func (c *eventServiceClient) GetSavedEvents(ctx context.Context, req *connect.Request[v1.GetUserEventsRequest]) (*connect.Response[v1.GetEventsResponse], error) {
+func (c *eventServiceClient) GetSavedEvents(ctx context.Context, req *connect.Request[v1.GetSavedEventsRequest]) (*connect.Response[v1.GetEventsResponse], error) {
 	return c.getSavedEvents.CallUnary(ctx, req)
 }
 
@@ -174,7 +174,7 @@ type EventServiceHandler interface {
 	GetEventStats(context.Context, *connect.Request[v1.GetEventStatsRequest]) (*connect.Response[v1.GetEventStatsResponse], error)
 	CreateEvent(context.Context, *connect.Request[v1.CreateEventRequest]) (*connect.Response[v1.CreateEventResponse], error)
 	GetUserEvents(context.Context, *connect.Request[v1.GetUserEventsRequest]) (*connect.Response[v1.GetEventsResponse], error)
-	GetSavedEvents(context.Context, *connect.Request[v1.GetUserEventsRequest]) (*connect.Response[v1.GetEventsResponse], error)
+	GetSavedEvents(context.Context, *connect.Request[v1.GetSavedEventsRequest]) (*connect.Response[v1.GetEventsResponse], error)
 	ToggleSavedEvent(context.Context, *connect.Request[v1.ToggleSavedEventRequest]) (*connect.Response[v1.ToggleSavedEventResponse], error)
 }
 
@@ -272,7 +272,7 @@ func (UnimplementedEventServiceHandler) GetUserEvents(context.Context, *connect.
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("eventsease.v1.EventService.GetUserEvents is not implemented"))
 }
 
-func (UnimplementedEventServiceHandler) GetSavedEvents(context.Context, *connect.Request[v1.GetUserEventsRequest]) (*connect.Response[v1.GetEventsResponse], error) {
+func (UnimplementedEventServiceHandler) GetSavedEvents(context.Context, *connect.Request[v1.GetSavedEventsRequest]) (*connect.Response[v1.GetEventsResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("eventsease.v1.EventService.GetSavedEvents is not implemented"))
 }
 

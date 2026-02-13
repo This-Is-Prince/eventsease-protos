@@ -27,7 +27,7 @@ public protocol Eventsease_V1_EventServiceClientInterface: Sendable {
     func `getUserEvents`(request: Eventsease_V1_GetUserEventsRequest, headers: Connect.Headers) async -> ResponseMessage<Eventsease_V1_GetEventsResponse>
 
     @available(iOS 13, *)
-    func `getSavedEvents`(request: Eventsease_V1_GetUserEventsRequest, headers: Connect.Headers) async -> ResponseMessage<Eventsease_V1_GetEventsResponse>
+    func `getSavedEvents`(request: Eventsease_V1_GetSavedEventsRequest, headers: Connect.Headers) async -> ResponseMessage<Eventsease_V1_GetEventsResponse>
 
     @available(iOS 13, *)
     func `toggleSavedEvent`(request: Eventsease_V1_ToggleSavedEventRequest, headers: Connect.Headers) async -> ResponseMessage<Eventsease_V1_ToggleSavedEventResponse>
@@ -67,7 +67,7 @@ public final class Eventsease_V1_EventServiceClient: Eventsease_V1_EventServiceC
     }
 
     @available(iOS 13, *)
-    public func `getSavedEvents`(request: Eventsease_V1_GetUserEventsRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_GetEventsResponse> {
+    public func `getSavedEvents`(request: Eventsease_V1_GetSavedEventsRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_GetEventsResponse> {
         return await self.client.unary(path: "/eventsease.v1.EventService/GetSavedEvents", idempotencyLevel: .unknown, request: request, headers: headers)
     }
 

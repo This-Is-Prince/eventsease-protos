@@ -619,6 +619,28 @@ public struct Eventsease_V1_GetUserEventsRequest: Sendable {
 
   public var sortDirection: Eventsease_V1_SortDirection = .unspecified
 
+  public var username: String = String()
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+public struct Eventsease_V1_GetSavedEventsRequest: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var page: Int32 = 0
+
+  public var limit: Int32 = 0
+
+  public var searchQuery: String = String()
+
+  public var sortBy: Eventsease_V1_SortBy = .unspecified
+
+  public var sortDirection: Eventsease_V1_SortDirection = .unspecified
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -1474,6 +1496,61 @@ extension Eventsease_V1_EventStats: SwiftProtobuf.Message, SwiftProtobuf._Messag
 
 extension Eventsease_V1_GetUserEventsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".GetUserEventsRequest"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}page\0\u{1}limit\0\u{3}search_query\0\u{3}sort_by\0\u{3}sort_direction\0\u{1}username\0")
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularInt32Field(value: &self.page) }()
+      case 2: try { try decoder.decodeSingularInt32Field(value: &self.limit) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.searchQuery) }()
+      case 4: try { try decoder.decodeSingularEnumField(value: &self.sortBy) }()
+      case 5: try { try decoder.decodeSingularEnumField(value: &self.sortDirection) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self.username) }()
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.page != 0 {
+      try visitor.visitSingularInt32Field(value: self.page, fieldNumber: 1)
+    }
+    if self.limit != 0 {
+      try visitor.visitSingularInt32Field(value: self.limit, fieldNumber: 2)
+    }
+    if !self.searchQuery.isEmpty {
+      try visitor.visitSingularStringField(value: self.searchQuery, fieldNumber: 3)
+    }
+    if self.sortBy != .unspecified {
+      try visitor.visitSingularEnumField(value: self.sortBy, fieldNumber: 4)
+    }
+    if self.sortDirection != .unspecified {
+      try visitor.visitSingularEnumField(value: self.sortDirection, fieldNumber: 5)
+    }
+    if !self.username.isEmpty {
+      try visitor.visitSingularStringField(value: self.username, fieldNumber: 6)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Eventsease_V1_GetUserEventsRequest, rhs: Eventsease_V1_GetUserEventsRequest) -> Bool {
+    if lhs.page != rhs.page {return false}
+    if lhs.limit != rhs.limit {return false}
+    if lhs.searchQuery != rhs.searchQuery {return false}
+    if lhs.sortBy != rhs.sortBy {return false}
+    if lhs.sortDirection != rhs.sortDirection {return false}
+    if lhs.username != rhs.username {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Eventsease_V1_GetSavedEventsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".GetSavedEventsRequest"
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}page\0\u{1}limit\0\u{3}search_query\0\u{3}sort_by\0\u{3}sort_direction\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1511,7 +1588,7 @@ extension Eventsease_V1_GetUserEventsRequest: SwiftProtobuf.Message, SwiftProtob
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  public static func ==(lhs: Eventsease_V1_GetUserEventsRequest, rhs: Eventsease_V1_GetUserEventsRequest) -> Bool {
+  public static func ==(lhs: Eventsease_V1_GetSavedEventsRequest, rhs: Eventsease_V1_GetSavedEventsRequest) -> Bool {
     if lhs.page != rhs.page {return false}
     if lhs.limit != rhs.limit {return false}
     if lhs.searchQuery != rhs.searchQuery {return false}

@@ -6,17 +6,16 @@
 package com.eventsease.v1;
 
 /**
- * Protobuf type {@code eventsease.v1.GetUserEventsRequest}
+ * Protobuf type {@code eventsease.v1.GetSavedEventsRequest}
  */
 @com.google.protobuf.Generated
-public  final class GetUserEventsRequest extends
+public  final class GetSavedEventsRequest extends
     com.google.protobuf.GeneratedMessageLite<
-        GetUserEventsRequest, GetUserEventsRequest.Builder> implements
-    // @@protoc_insertion_point(message_implements:eventsease.v1.GetUserEventsRequest)
-    GetUserEventsRequestOrBuilder {
-  private GetUserEventsRequest() {
+        GetSavedEventsRequest, GetSavedEventsRequest.Builder> implements
+    // @@protoc_insertion_point(message_implements:eventsease.v1.GetSavedEventsRequest)
+    GetSavedEventsRequestOrBuilder {
+  private GetSavedEventsRequest() {
     searchQuery_ = "";
-    username_ = "";
   }
   public static final int PAGE_FIELD_NUMBER = 1;
   private int page_;
@@ -202,98 +201,50 @@ public  final class GetUserEventsRequest extends
     sortDirection_ = 0;
   }
 
-  public static final int USERNAME_FIELD_NUMBER = 6;
-  private java.lang.String username_;
-  /**
-   * <code>string username = 6 [json_name = "username"];</code>
-   * @return The username.
-   */
-  @java.lang.Override
-  public java.lang.String getUsername() {
-    return username_;
-  }
-  /**
-   * <code>string username = 6 [json_name = "username"];</code>
-   * @return The bytes for username.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getUsernameBytes() {
-    return com.google.protobuf.ByteString.copyFromUtf8(username_);
-  }
-  /**
-   * <code>string username = 6 [json_name = "username"];</code>
-   * @param value The username to set.
-   */
-  @java.lang.SuppressWarnings("ReturnValueIgnored")
-  private void setUsername(
-      java.lang.String value) {
-    value.getClass();  // minimal bytecode null check
-
-    username_ = value;
-  }
-  /**
-   * <code>string username = 6 [json_name = "username"];</code>
-   */
-  private void clearUsername() {
-
-    username_ = getDefaultInstance().getUsername();
-  }
-  /**
-   * <code>string username = 6 [json_name = "username"];</code>
-   * @param value The bytes for username to set.
-   */
-  private void setUsernameBytes(
-      com.google.protobuf.ByteString value) {
-    checkByteStringIsUtf8(value);
-    username_ = value.toStringUtf8();
-
-  }
-
-  public static com.eventsease.v1.GetUserEventsRequest parseFrom(
+  public static com.eventsease.v1.GetSavedEventsRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return com.google.protobuf.GeneratedMessageLite.parseFrom(
         DEFAULT_INSTANCE, data);
   }
-  public static com.eventsease.v1.GetUserEventsRequest parseFrom(
+  public static com.eventsease.v1.GetSavedEventsRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return com.google.protobuf.GeneratedMessageLite.parseFrom(
         DEFAULT_INSTANCE, data, extensionRegistry);
   }
-  public static com.eventsease.v1.GetUserEventsRequest parseFrom(
+  public static com.eventsease.v1.GetSavedEventsRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return com.google.protobuf.GeneratedMessageLite.parseFrom(
         DEFAULT_INSTANCE, data);
   }
-  public static com.eventsease.v1.GetUserEventsRequest parseFrom(
+  public static com.eventsease.v1.GetSavedEventsRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return com.google.protobuf.GeneratedMessageLite.parseFrom(
         DEFAULT_INSTANCE, data, extensionRegistry);
   }
-  public static com.eventsease.v1.GetUserEventsRequest parseFrom(byte[] data)
+  public static com.eventsease.v1.GetSavedEventsRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return com.google.protobuf.GeneratedMessageLite.parseFrom(
         DEFAULT_INSTANCE, data);
   }
-  public static com.eventsease.v1.GetUserEventsRequest parseFrom(
+  public static com.eventsease.v1.GetSavedEventsRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return com.google.protobuf.GeneratedMessageLite.parseFrom(
         DEFAULT_INSTANCE, data, extensionRegistry);
   }
-  public static com.eventsease.v1.GetUserEventsRequest parseFrom(java.io.InputStream input)
+  public static com.eventsease.v1.GetSavedEventsRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageLite.parseFrom(
         DEFAULT_INSTANCE, input);
   }
-  public static com.eventsease.v1.GetUserEventsRequest parseFrom(
+  public static com.eventsease.v1.GetSavedEventsRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -301,24 +252,24 @@ public  final class GetUserEventsRequest extends
         DEFAULT_INSTANCE, input, extensionRegistry);
   }
 
-  public static com.eventsease.v1.GetUserEventsRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.eventsease.v1.GetSavedEventsRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return parseDelimitedFrom(DEFAULT_INSTANCE, input);
   }
 
-  public static com.eventsease.v1.GetUserEventsRequest parseDelimitedFrom(
+  public static com.eventsease.v1.GetSavedEventsRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return parseDelimitedFrom(DEFAULT_INSTANCE, input, extensionRegistry);
   }
-  public static com.eventsease.v1.GetUserEventsRequest parseFrom(
+  public static com.eventsease.v1.GetSavedEventsRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageLite.parseFrom(
         DEFAULT_INSTANCE, input);
   }
-  public static com.eventsease.v1.GetUserEventsRequest parseFrom(
+  public static com.eventsease.v1.GetSavedEventsRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -329,19 +280,19 @@ public  final class GetUserEventsRequest extends
   public static Builder newBuilder() {
     return (Builder) DEFAULT_INSTANCE.createBuilder();
   }
-  public static Builder newBuilder(com.eventsease.v1.GetUserEventsRequest prototype) {
+  public static Builder newBuilder(com.eventsease.v1.GetSavedEventsRequest prototype) {
     return DEFAULT_INSTANCE.createBuilder(prototype);
   }
 
   /**
-   * Protobuf type {@code eventsease.v1.GetUserEventsRequest}
+   * Protobuf type {@code eventsease.v1.GetSavedEventsRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageLite.Builder<
-        com.eventsease.v1.GetUserEventsRequest, Builder> implements
-      // @@protoc_insertion_point(builder_implements:eventsease.v1.GetUserEventsRequest)
-      com.eventsease.v1.GetUserEventsRequestOrBuilder {
-    // Construct using com.eventsease.v1.GetUserEventsRequest.newBuilder()
+        com.eventsease.v1.GetSavedEventsRequest, Builder> implements
+      // @@protoc_insertion_point(builder_implements:eventsease.v1.GetSavedEventsRequest)
+      com.eventsease.v1.GetSavedEventsRequestOrBuilder {
+    // Construct using com.eventsease.v1.GetSavedEventsRequest.newBuilder()
     private Builder() {
       super(DEFAULT_INSTANCE);
     }
@@ -544,56 +495,7 @@ public  final class GetUserEventsRequest extends
       return this;
     }
 
-    /**
-     * <code>string username = 6 [json_name = "username"];</code>
-     * @return The username.
-     */
-    @java.lang.Override
-    public java.lang.String getUsername() {
-      return instance.getUsername();
-    }
-    /**
-     * <code>string username = 6 [json_name = "username"];</code>
-     * @return The bytes for username.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getUsernameBytes() {
-      return instance.getUsernameBytes();
-    }
-    /**
-     * <code>string username = 6 [json_name = "username"];</code>
-     * @param value The username to set.
-     * @return This builder for chaining.
-     */
-    public Builder setUsername(
-        java.lang.String value) {
-      copyOnWrite();
-      instance.setUsername(value);
-      return this;
-    }
-    /**
-     * <code>string username = 6 [json_name = "username"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearUsername() {
-      copyOnWrite();
-      instance.clearUsername();
-      return this;
-    }
-    /**
-     * <code>string username = 6 [json_name = "username"];</code>
-     * @param value The bytes for username to set.
-     * @return This builder for chaining.
-     */
-    public Builder setUsernameBytes(
-        com.google.protobuf.ByteString value) {
-      copyOnWrite();
-      instance.setUsernameBytes(value);
-      return this;
-    }
-
-    // @@protoc_insertion_point(builder_scope:eventsease.v1.GetUserEventsRequest)
+    // @@protoc_insertion_point(builder_scope:eventsease.v1.GetSavedEventsRequest)
   }
   @java.lang.Override
   @java.lang.SuppressWarnings({"ThrowNull"})
@@ -602,7 +504,7 @@ public  final class GetUserEventsRequest extends
       java.lang.Object arg0, java.lang.Object arg1) {
     switch (method) {
       case NEW_MUTABLE_INSTANCE: {
-        return new com.eventsease.v1.GetUserEventsRequest();
+        return new com.eventsease.v1.GetSavedEventsRequest();
       }
       case NEW_BUILDER: {
         return new Builder();
@@ -614,24 +516,23 @@ public  final class GetUserEventsRequest extends
             "searchQuery_",
             "sortBy_",
             "sortDirection_",
-            "username_",
           };
           java.lang.String info =
-              "\u0000\u0006\u0000\u0000\u0001\u0006\u0006\u0000\u0000\u0000\u0001\u0004\u0002\u0004" +
-              "\u0003\u0208\u0004\f\u0005\f\u0006\u0208";
+              "\u0000\u0005\u0000\u0000\u0001\u0005\u0005\u0000\u0000\u0000\u0001\u0004\u0002\u0004" +
+              "\u0003\u0208\u0004\f\u0005\f";
           return newMessageInfo(DEFAULT_INSTANCE, info, objects);
       }
       case GET_DEFAULT_INSTANCE: {
         return DEFAULT_INSTANCE;
       }
       case GET_PARSER: {
-        com.google.protobuf.Parser<com.eventsease.v1.GetUserEventsRequest> parser = PARSER;
+        com.google.protobuf.Parser<com.eventsease.v1.GetSavedEventsRequest> parser = PARSER;
         if (parser == null) {
-          synchronized (com.eventsease.v1.GetUserEventsRequest.class) {
+          synchronized (com.eventsease.v1.GetSavedEventsRequest.class) {
             parser = PARSER;
             if (parser == null) {
               parser =
-                  new DefaultInstanceBasedParser<com.eventsease.v1.GetUserEventsRequest>(
+                  new DefaultInstanceBasedParser<com.eventsease.v1.GetSavedEventsRequest>(
                       DEFAULT_INSTANCE);
               PARSER = parser;
             }
@@ -651,24 +552,24 @@ public  final class GetUserEventsRequest extends
   }
 
 
-  // @@protoc_insertion_point(class_scope:eventsease.v1.GetUserEventsRequest)
-  private static final com.eventsease.v1.GetUserEventsRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:eventsease.v1.GetSavedEventsRequest)
+  private static final com.eventsease.v1.GetSavedEventsRequest DEFAULT_INSTANCE;
   static {
-    GetUserEventsRequest defaultInstance = new GetUserEventsRequest();
+    GetSavedEventsRequest defaultInstance = new GetSavedEventsRequest();
     // New instances are implicitly immutable so no need to make
     // immutable.
     DEFAULT_INSTANCE = defaultInstance;
     com.google.protobuf.GeneratedMessageLite.registerDefaultInstance(
-      GetUserEventsRequest.class, defaultInstance);
+      GetSavedEventsRequest.class, defaultInstance);
   }
 
-  public static com.eventsease.v1.GetUserEventsRequest getDefaultInstance() {
+  public static com.eventsease.v1.GetSavedEventsRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static volatile com.google.protobuf.Parser<GetUserEventsRequest> PARSER;
+  private static volatile com.google.protobuf.Parser<GetSavedEventsRequest> PARSER;
 
-  public static com.google.protobuf.Parser<GetUserEventsRequest> parser() {
+  public static com.google.protobuf.Parser<GetSavedEventsRequest> parser() {
     return DEFAULT_INSTANCE.getParserForType();
   }
 }

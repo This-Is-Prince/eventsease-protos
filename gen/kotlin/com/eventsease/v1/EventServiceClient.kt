@@ -73,12 +73,12 @@ public class EventServiceClient(
   )
 
 
-  override suspend fun getSavedEvents(request: GetUserEventsRequest, headers: Headers): ResponseMessage<GetEventsResponse> = client.unary(
+  override suspend fun getSavedEvents(request: GetSavedEventsRequest, headers: Headers): ResponseMessage<GetEventsResponse> = client.unary(
     request,
     headers,
     MethodSpec(
     "eventsease.v1.EventService/GetSavedEvents",
-      com.eventsease.v1.GetUserEventsRequest::class,
+      com.eventsease.v1.GetSavedEventsRequest::class,
       com.eventsease.v1.GetEventsResponse::class,
       StreamType.UNARY,
     ),

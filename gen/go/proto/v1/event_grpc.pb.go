@@ -37,7 +37,7 @@ type EventServiceClient interface {
 	GetEventStats(ctx context.Context, in *GetEventStatsRequest, opts ...grpc.CallOption) (*GetEventStatsResponse, error)
 	CreateEvent(ctx context.Context, in *CreateEventRequest, opts ...grpc.CallOption) (*CreateEventResponse, error)
 	GetUserEvents(ctx context.Context, in *GetUserEventsRequest, opts ...grpc.CallOption) (*GetEventsResponse, error)
-	GetSavedEvents(ctx context.Context, in *GetUserEventsRequest, opts ...grpc.CallOption) (*GetEventsResponse, error)
+	GetSavedEvents(ctx context.Context, in *GetSavedEventsRequest, opts ...grpc.CallOption) (*GetEventsResponse, error)
 	ToggleSavedEvent(ctx context.Context, in *ToggleSavedEventRequest, opts ...grpc.CallOption) (*ToggleSavedEventResponse, error)
 }
 
@@ -99,7 +99,7 @@ func (c *eventServiceClient) GetUserEvents(ctx context.Context, in *GetUserEvent
 	return out, nil
 }
 
-func (c *eventServiceClient) GetSavedEvents(ctx context.Context, in *GetUserEventsRequest, opts ...grpc.CallOption) (*GetEventsResponse, error) {
+func (c *eventServiceClient) GetSavedEvents(ctx context.Context, in *GetSavedEventsRequest, opts ...grpc.CallOption) (*GetEventsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetEventsResponse)
 	err := c.cc.Invoke(ctx, EventService_GetSavedEvents_FullMethodName, in, out, cOpts...)
@@ -128,7 +128,7 @@ type EventServiceServer interface {
 	GetEventStats(context.Context, *GetEventStatsRequest) (*GetEventStatsResponse, error)
 	CreateEvent(context.Context, *CreateEventRequest) (*CreateEventResponse, error)
 	GetUserEvents(context.Context, *GetUserEventsRequest) (*GetEventsResponse, error)
-	GetSavedEvents(context.Context, *GetUserEventsRequest) (*GetEventsResponse, error)
+	GetSavedEvents(context.Context, *GetSavedEventsRequest) (*GetEventsResponse, error)
 	ToggleSavedEvent(context.Context, *ToggleSavedEventRequest) (*ToggleSavedEventResponse, error)
 	mustEmbedUnimplementedEventServiceServer()
 }
@@ -155,7 +155,7 @@ func (UnimplementedEventServiceServer) CreateEvent(context.Context, *CreateEvent
 func (UnimplementedEventServiceServer) GetUserEvents(context.Context, *GetUserEventsRequest) (*GetEventsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUserEvents not implemented")
 }
-func (UnimplementedEventServiceServer) GetSavedEvents(context.Context, *GetUserEventsRequest) (*GetEventsResponse, error) {
+func (UnimplementedEventServiceServer) GetSavedEvents(context.Context, *GetSavedEventsRequest) (*GetEventsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSavedEvents not implemented")
 }
 func (UnimplementedEventServiceServer) ToggleSavedEvent(context.Context, *ToggleSavedEventRequest) (*ToggleSavedEventResponse, error) {
@@ -273,7 +273,7 @@ func _EventService_GetUserEvents_Handler(srv interface{}, ctx context.Context, d
 }
 
 func _EventService_GetSavedEvents_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetUserEventsRequest)
+	in := new(GetSavedEventsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -285,7 +285,7 @@ func _EventService_GetSavedEvents_Handler(srv interface{}, ctx context.Context, 
 		FullMethod: EventService_GetSavedEvents_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(EventServiceServer).GetSavedEvents(ctx, req.(*GetUserEventsRequest))
+		return srv.(EventServiceServer).GetSavedEvents(ctx, req.(*GetSavedEventsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }

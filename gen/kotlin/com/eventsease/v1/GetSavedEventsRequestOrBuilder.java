@@ -6,8 +6,8 @@
 package com.eventsease.v1;
 
 @com.google.protobuf.Generated
-public interface GetUserEventsRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:eventsease.v1.GetUserEventsRequest)
+public interface GetSavedEventsRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:eventsease.v1.GetSavedEventsRequest)
     com.google.protobuf.MessageLiteOrBuilder {
 
   /**
@@ -55,16 +55,4 @@ public interface GetUserEventsRequestOrBuilder extends
    * @return The sortDirection.
    */
   com.eventsease.v1.SortDirection getSortDirection();
-
-  /**
-   * <code>string username = 6 [json_name = "username"];</code>
-   * @return The username.
-   */
-  java.lang.String getUsername();
-  /**
-   * <code>string username = 6 [json_name = "username"];</code>
-   * @return The bytes for username.
-   */
-  com.google.protobuf.ByteString
-      getUsernameBytes();
 }
