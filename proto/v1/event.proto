@@ -17,7 +17,7 @@ service EventService {
 
   rpc CreateEvent (CreateEventRequest) returns (CreateEventResponse);
   rpc GetUserEvents (GetUserEventsRequest) returns (GetEventsResponse);
-  rpc GetSavedEvents (GetUserEventsRequest) returns (GetEventsResponse);
+  rpc GetSavedEvents (GetSavedEventsRequest) returns (GetEventsResponse);
   rpc ToggleSavedEvent (ToggleSavedEventRequest) returns (ToggleSavedEventResponse);
 }
 
@@ -160,6 +160,15 @@ message EventStats {
 }
 
 message GetUserEventsRequest {
+  int32 page = 1;
+  int32 limit = 2;
+  string search_query = 3;
+  SortBy sort_by = 4;
+  SortDirection sort_direction = 5;
+  string username = 6;
+}
+
+message GetSavedEventsRequest {
   int32 page = 1;
   int32 limit = 2;
   string search_query = 3;
