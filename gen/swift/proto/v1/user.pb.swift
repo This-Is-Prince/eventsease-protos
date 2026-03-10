@@ -90,6 +90,72 @@ public enum Eventsease_V1_ProfileSocialType: SwiftProtobuf.Enum, Swift.CaseItera
 
 }
 
+public enum Eventsease_V1_UserRole: SwiftProtobuf.Enum, Swift.CaseIterable {
+  public typealias RawValue = Int
+  case unspecified // = 0
+  case normal // = 1
+  case artist // = 2
+  case organizer // = 3
+  case eventManager // = 4
+  case vendor // = 5
+  case sponsor // = 6
+  case venuePartner // = 7
+  case volunteer // = 8
+  case other // = 9
+  case UNRECOGNIZED(Int)
+
+  public init() {
+    self = .unspecified
+  }
+
+  public init?(rawValue: Int) {
+    switch rawValue {
+    case 0: self = .unspecified
+    case 1: self = .normal
+    case 2: self = .artist
+    case 3: self = .organizer
+    case 4: self = .eventManager
+    case 5: self = .vendor
+    case 6: self = .sponsor
+    case 7: self = .venuePartner
+    case 8: self = .volunteer
+    case 9: self = .other
+    default: self = .UNRECOGNIZED(rawValue)
+    }
+  }
+
+  public var rawValue: Int {
+    switch self {
+    case .unspecified: return 0
+    case .normal: return 1
+    case .artist: return 2
+    case .organizer: return 3
+    case .eventManager: return 4
+    case .vendor: return 5
+    case .sponsor: return 6
+    case .venuePartner: return 7
+    case .volunteer: return 8
+    case .other: return 9
+    case .UNRECOGNIZED(let i): return i
+    }
+  }
+
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  public static let allCases: [Eventsease_V1_UserRole] = [
+    .unspecified,
+    .normal,
+    .artist,
+    .organizer,
+    .eventManager,
+    .vendor,
+    .sponsor,
+    .venuePartner,
+    .volunteer,
+    .other,
+  ]
+
+}
+
 public struct Eventsease_V1_CheckUserRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -327,6 +393,21 @@ public struct Eventsease_V1_UserProfile: @unchecked Sendable {
     set {_uniqueStorage()._isVerified = newValue}
   }
 
+  public var roles: [Eventsease_V1_UserRole] {
+    get {return _storage._roles}
+    set {_uniqueStorage()._roles = newValue}
+  }
+
+  public var isEventCreationBlocked: Bool {
+    get {return _storage._isEventCreationBlocked}
+    set {_uniqueStorage()._isEventCreationBlocked = newValue}
+  }
+
+  public var isFraudOrganizer: Bool {
+    get {return _storage._isFraudOrganizer}
+    set {_uniqueStorage()._isFraudOrganizer = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -388,6 +469,8 @@ public struct Eventsease_V1_UpdateProfileRequest: Sendable {
 
   public var username: String = String()
 
+  public var roles: [Eventsease_V1_UserRole] = []
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -424,6 +507,10 @@ fileprivate let _protobuf_package = "eventsease.v1"
 
 extension Eventsease_V1_ProfileSocialType: SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0PROFILE_SOCIAL_TYPE_UNSPECIFIED\0\u{1}PROFILE_SOCIAL_TYPE_PHONE\0\u{1}PROFILE_SOCIAL_TYPE_INSTAGRAM\0\u{1}PROFILE_SOCIAL_TYPE_FACEBOOK\0\u{1}PROFILE_SOCIAL_TYPE_WHATSAPP\0\u{1}PROFILE_SOCIAL_TYPE_WEBSITE\0\u{1}PROFILE_SOCIAL_TYPE_EMAIL\0\u{1}PROFILE_SOCIAL_TYPE_TWITTER\0\u{1}PROFILE_SOCIAL_TYPE_LINKEDIN\0\u{1}PROFILE_SOCIAL_TYPE_YOUTUBE\0\u{1}PROFILE_SOCIAL_TYPE_OTHER\0")
+}
+
+extension Eventsease_V1_UserRole: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0USER_ROLE_UNSPECIFIED\0\u{1}USER_ROLE_NORMAL\0\u{1}USER_ROLE_ARTIST\0\u{1}USER_ROLE_ORGANIZER\0\u{1}USER_ROLE_EVENT_MANAGER\0\u{1}USER_ROLE_VENDOR\0\u{1}USER_ROLE_SPONSOR\0\u{1}USER_ROLE_VENUE_PARTNER\0\u{1}USER_ROLE_VOLUNTEER\0\u{1}USER_ROLE_OTHER\0")
 }
 
 extension Eventsease_V1_CheckUserRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
@@ -706,7 +793,7 @@ extension Eventsease_V1_ProfileSocialLink: SwiftProtobuf.Message, SwiftProtobuf.
 
 extension Eventsease_V1_UserProfile: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".UserProfile"
-  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{1}uid\0\u{1}email\0\u{3}display_name\0\u{3}photo_url\0\u{1}provider\0\u{1}photos\0\u{3}background_photos\0\u{1}about\0\u{1}name\0\u{3}social_links\0\u{1}location\0\u{3}created_at\0\u{3}updated_at\0\u{3}is_deleted\0\u{1}username\0\u{3}is_own_profile\0\u{3}is_verified\0")
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{1}uid\0\u{1}email\0\u{3}display_name\0\u{3}photo_url\0\u{1}provider\0\u{1}photos\0\u{3}background_photos\0\u{1}about\0\u{1}name\0\u{3}social_links\0\u{1}location\0\u{3}created_at\0\u{3}updated_at\0\u{3}is_deleted\0\u{1}username\0\u{3}is_own_profile\0\u{3}is_verified\0\u{1}roles\0\u{3}is_event_creation_blocked\0\u{3}is_fraud_organizer\0")
 
   fileprivate class _StorageClass {
     var _id: String = String()
@@ -727,6 +814,9 @@ extension Eventsease_V1_UserProfile: SwiftProtobuf.Message, SwiftProtobuf._Messa
     var _username: String = String()
     var _isOwnProfile: Bool = false
     var _isVerified: Bool = false
+    var _roles: [Eventsease_V1_UserRole] = []
+    var _isEventCreationBlocked: Bool = false
+    var _isFraudOrganizer: Bool = false
 
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
@@ -755,6 +845,9 @@ extension Eventsease_V1_UserProfile: SwiftProtobuf.Message, SwiftProtobuf._Messa
       _username = source._username
       _isOwnProfile = source._isOwnProfile
       _isVerified = source._isVerified
+      _roles = source._roles
+      _isEventCreationBlocked = source._isEventCreationBlocked
+      _isFraudOrganizer = source._isFraudOrganizer
     }
   }
 
@@ -791,6 +884,9 @@ extension Eventsease_V1_UserProfile: SwiftProtobuf.Message, SwiftProtobuf._Messa
         case 16: try { try decoder.decodeSingularStringField(value: &_storage._username) }()
         case 17: try { try decoder.decodeSingularBoolField(value: &_storage._isOwnProfile) }()
         case 18: try { try decoder.decodeSingularBoolField(value: &_storage._isVerified) }()
+        case 19: try { try decoder.decodeRepeatedEnumField(value: &_storage._roles) }()
+        case 20: try { try decoder.decodeSingularBoolField(value: &_storage._isEventCreationBlocked) }()
+        case 21: try { try decoder.decodeSingularBoolField(value: &_storage._isFraudOrganizer) }()
         default: break
         }
       }
@@ -857,6 +953,15 @@ extension Eventsease_V1_UserProfile: SwiftProtobuf.Message, SwiftProtobuf._Messa
       if _storage._isVerified != false {
         try visitor.visitSingularBoolField(value: _storage._isVerified, fieldNumber: 18)
       }
+      if !_storage._roles.isEmpty {
+        try visitor.visitPackedEnumField(value: _storage._roles, fieldNumber: 19)
+      }
+      if _storage._isEventCreationBlocked != false {
+        try visitor.visitSingularBoolField(value: _storage._isEventCreationBlocked, fieldNumber: 20)
+      }
+      if _storage._isFraudOrganizer != false {
+        try visitor.visitSingularBoolField(value: _storage._isFraudOrganizer, fieldNumber: 21)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -884,6 +989,9 @@ extension Eventsease_V1_UserProfile: SwiftProtobuf.Message, SwiftProtobuf._Messa
         if _storage._username != rhs_storage._username {return false}
         if _storage._isOwnProfile != rhs_storage._isOwnProfile {return false}
         if _storage._isVerified != rhs_storage._isVerified {return false}
+        if _storage._roles != rhs_storage._roles {return false}
+        if _storage._isEventCreationBlocked != rhs_storage._isEventCreationBlocked {return false}
+        if _storage._isFraudOrganizer != rhs_storage._isFraudOrganizer {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -964,7 +1072,7 @@ extension Eventsease_V1_GetProfileResponse: SwiftProtobuf.Message, SwiftProtobuf
 
 extension Eventsease_V1_UpdateProfileRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".UpdateProfileRequest"
-  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}photos\0\u{3}background_photos\0\u{1}about\0\u{1}name\0\u{3}social_links\0\u{1}location\0\u{1}username\0")
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}photos\0\u{3}background_photos\0\u{1}about\0\u{1}name\0\u{3}social_links\0\u{1}location\0\u{1}username\0\u{1}roles\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -979,6 +1087,7 @@ extension Eventsease_V1_UpdateProfileRequest: SwiftProtobuf.Message, SwiftProtob
       case 5: try { try decoder.decodeRepeatedMessageField(value: &self.socialLinks) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self.location) }()
       case 7: try { try decoder.decodeSingularStringField(value: &self.username) }()
+      case 8: try { try decoder.decodeRepeatedEnumField(value: &self.roles) }()
       default: break
       }
     }
@@ -1006,6 +1115,9 @@ extension Eventsease_V1_UpdateProfileRequest: SwiftProtobuf.Message, SwiftProtob
     if !self.username.isEmpty {
       try visitor.visitSingularStringField(value: self.username, fieldNumber: 7)
     }
+    if !self.roles.isEmpty {
+      try visitor.visitPackedEnumField(value: self.roles, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1017,6 +1129,7 @@ extension Eventsease_V1_UpdateProfileRequest: SwiftProtobuf.Message, SwiftProtob
     if lhs.socialLinks != rhs.socialLinks {return false}
     if lhs.location != rhs.location {return false}
     if lhs.username != rhs.username {return false}
+    if lhs.roles != rhs.roles {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -121,4 +121,33 @@ public interface UpdateProfileRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getUsernameBytes();
+
+  /**
+   * <code>repeated .eventsease.v1.UserRole roles = 8 [json_name = "roles"];</code>
+   * @return A list containing the roles.
+   */
+  java.util.List<com.eventsease.v1.UserRole> getRolesList();
+  /**
+   * <code>repeated .eventsease.v1.UserRole roles = 8 [json_name = "roles"];</code>
+   * @return The count of roles.
+   */
+  int getRolesCount();
+  /**
+   * <code>repeated .eventsease.v1.UserRole roles = 8 [json_name = "roles"];</code>
+   * @param index The index of the element to return.
+   * @return The roles at the given index.
+   */
+  com.eventsease.v1.UserRole getRoles(int index);
+  /**
+   * <code>repeated .eventsease.v1.UserRole roles = 8 [json_name = "roles"];</code>
+   * @return A list containing the enum numeric values on the wire for roles.
+   */
+  java.util.List<java.lang.Integer>
+  getRolesValueList();
+  /**
+   * <code>repeated .eventsease.v1.UserRole roles = 8 [json_name = "roles"];</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of roles at the given index.
+   */
+  int getRolesValue(int index);
 }

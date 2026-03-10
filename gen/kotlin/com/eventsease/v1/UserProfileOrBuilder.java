@@ -233,4 +233,45 @@ public interface UserProfileOrBuilder extends
    * @return The isVerified.
    */
   boolean getIsVerified();
+
+  /**
+   * <code>repeated .eventsease.v1.UserRole roles = 19 [json_name = "roles"];</code>
+   * @return A list containing the roles.
+   */
+  java.util.List<com.eventsease.v1.UserRole> getRolesList();
+  /**
+   * <code>repeated .eventsease.v1.UserRole roles = 19 [json_name = "roles"];</code>
+   * @return The count of roles.
+   */
+  int getRolesCount();
+  /**
+   * <code>repeated .eventsease.v1.UserRole roles = 19 [json_name = "roles"];</code>
+   * @param index The index of the element to return.
+   * @return The roles at the given index.
+   */
+  com.eventsease.v1.UserRole getRoles(int index);
+  /**
+   * <code>repeated .eventsease.v1.UserRole roles = 19 [json_name = "roles"];</code>
+   * @return A list containing the enum numeric values on the wire for roles.
+   */
+  java.util.List<java.lang.Integer>
+  getRolesValueList();
+  /**
+   * <code>repeated .eventsease.v1.UserRole roles = 19 [json_name = "roles"];</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of roles at the given index.
+   */
+  int getRolesValue(int index);
+
+  /**
+   * <code>bool is_event_creation_blocked = 20 [json_name = "isEventCreationBlocked"];</code>
+   * @return The isEventCreationBlocked.
+   */
+  boolean getIsEventCreationBlocked();
+
+  /**
+   * <code>bool is_fraud_organizer = 21 [json_name = "isFraudOrganizer"];</code>
+   * @return The isFraudOrganizer.
+   */
+  boolean getIsFraudOrganizer();
 }

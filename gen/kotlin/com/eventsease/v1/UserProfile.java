@@ -28,6 +28,7 @@ public  final class UserProfile extends
     socialLinks_ = emptyProtobufList();
     location_ = "";
     username_ = "";
+    roles_ = emptyIntList();
   }
   private int bitField0_;
   public static final int ID_FIELD_NUMBER = 1;
@@ -969,6 +970,194 @@ public  final class UserProfile extends
   private void clearIsVerified() {
 
     isVerified_ = false;
+  }
+
+  public static final int ROLES_FIELD_NUMBER = 19;
+  private com.google.protobuf.Internal.IntList roles_;
+  private static final com.google.protobuf.Internal.IntListAdapter.IntConverter<
+      com.eventsease.v1.UserRole> roles_converter_ =
+          new com.google.protobuf.Internal.IntListAdapter.IntConverter<
+              com.eventsease.v1.UserRole>() {
+            @java.lang.Override
+            public com.eventsease.v1.UserRole convert(int from) {
+              com.eventsease.v1.UserRole result = com.eventsease.v1.UserRole.forNumber(from);
+              return result == null ? com.eventsease.v1.UserRole.UNRECOGNIZED : result;
+            }
+          };
+  /**
+   * <code>repeated .eventsease.v1.UserRole roles = 19 [json_name = "roles"];</code>
+   * @return A list containing the roles.
+   */
+  @java.lang.Override
+  public java.util.List<com.eventsease.v1.UserRole> getRolesList() {
+    return new com.google.protobuf.Internal.IntListAdapter<
+        com.eventsease.v1.UserRole>(roles_, roles_converter_);
+  }
+  /**
+   * <code>repeated .eventsease.v1.UserRole roles = 19 [json_name = "roles"];</code>
+   * @return The count of roles.
+   */
+  @java.lang.Override
+  public int getRolesCount() {
+    return roles_.size();
+  }
+  /**
+   * <code>repeated .eventsease.v1.UserRole roles = 19 [json_name = "roles"];</code>
+   * @param index The index of the element to return.
+   * @return The roles at the given index.
+   */
+  @java.lang.Override
+  public com.eventsease.v1.UserRole getRoles(int index) {
+    com.eventsease.v1.UserRole result = com.eventsease.v1.UserRole.forNumber(roles_.getInt(index));
+    return result == null ? com.eventsease.v1.UserRole.UNRECOGNIZED : result;
+  }
+  /**
+   * <code>repeated .eventsease.v1.UserRole roles = 19 [json_name = "roles"];</code>
+   * @return A list containing the enum numeric values on the wire for roles.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer>
+  getRolesValueList() {
+    return roles_;
+  }
+  /**
+   * <code>repeated .eventsease.v1.UserRole roles = 19 [json_name = "roles"];</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of roles at the given index.
+   */
+  @java.lang.Override
+  public int getRolesValue(int index) {
+    return roles_.getInt(index);
+  }
+  private int rolesMemoizedSerializedSize;
+  private void ensureRolesIsMutable() {
+    com.google.protobuf.Internal.IntList tmp = roles_;
+    if (!tmp.isModifiable()) {
+      roles_ =
+          com.google.protobuf.GeneratedMessageLite.mutableCopy(tmp);
+    }
+  }
+  /**
+   * <code>repeated .eventsease.v1.UserRole roles = 19 [json_name = "roles"];</code>
+   * @param index The index to set the value at.
+   * @param value The roles to set.
+   */
+  @java.lang.SuppressWarnings("ReturnValueIgnored")
+  private void setRoles(
+      int index, com.eventsease.v1.UserRole value) {
+    value.getClass();  // minimal bytecode null check
+    ensureRolesIsMutable();
+    roles_.setInt(index, value.getNumber());
+  }
+  /**
+   * <code>repeated .eventsease.v1.UserRole roles = 19 [json_name = "roles"];</code>
+   * @param value The roles to add.
+   */
+  @java.lang.SuppressWarnings("ReturnValueIgnored")
+  private void addRoles(com.eventsease.v1.UserRole value) {
+    value.getClass();  // minimal bytecode null check
+    ensureRolesIsMutable();
+    roles_.addInt(value.getNumber());
+  }
+  /**
+   * <code>repeated .eventsease.v1.UserRole roles = 19 [json_name = "roles"];</code>
+   * @param values The roles to add.
+   */
+  private void addAllRoles(
+      java.lang.Iterable<? extends com.eventsease.v1.UserRole> values) {
+    ensureRolesIsMutable();
+    for (com.eventsease.v1.UserRole value : values) {
+      roles_.addInt(value.getNumber());
+    }
+  }
+  /**
+   * `repeated .eventsease.v1.UserRole roles = 19 [json_name = "roles"];`
+   */
+  private void clearRoles() {
+    roles_ = emptyIntList();
+  }
+  /**
+   * <code>repeated .eventsease.v1.UserRole roles = 19 [json_name = "roles"];</code>
+   * @param value The enum numeric value on the wire for roles to set.
+   * @throws IllegalArgumentException if UNRECOGNIZED is provided.
+   */
+  private void setRolesValue(
+      int index, int value) {
+    ensureRolesIsMutable();
+    roles_.setInt(index, value);
+  }
+  /**
+   * <code>repeated .eventsease.v1.UserRole roles = 19 [json_name = "roles"];</code>
+   * @param value The enum numeric value on the wire for roles to add.
+   * @throws IllegalArgumentException if UNRECOGNIZED is provided.
+   */
+  private void addRolesValue(int value) {
+    ensureRolesIsMutable();
+    roles_.addInt(value);
+  }
+  /**
+   * <code>repeated .eventsease.v1.UserRole roles = 19 [json_name = "roles"];</code>
+   * @param values The enum numeric values on the wire for roles to add.
+   * @throws IllegalArgumentException if UNRECOGNIZED is provided.
+   */
+  private void addAllRolesValue(
+      java.lang.Iterable<java.lang.Integer> values) {
+    ensureRolesIsMutable();
+    for (int value : values) {
+      roles_.addInt(value);
+    }
+  }
+
+  public static final int IS_EVENT_CREATION_BLOCKED_FIELD_NUMBER = 20;
+  private boolean isEventCreationBlocked_;
+  /**
+   * <code>bool is_event_creation_blocked = 20 [json_name = "isEventCreationBlocked"];</code>
+   * @return The isEventCreationBlocked.
+   */
+  @java.lang.Override
+  public boolean getIsEventCreationBlocked() {
+    return isEventCreationBlocked_;
+  }
+  /**
+   * <code>bool is_event_creation_blocked = 20 [json_name = "isEventCreationBlocked"];</code>
+   * @param value The isEventCreationBlocked to set.
+   */
+  private void setIsEventCreationBlocked(boolean value) {
+    
+    isEventCreationBlocked_ = value;
+  }
+  /**
+   * <code>bool is_event_creation_blocked = 20 [json_name = "isEventCreationBlocked"];</code>
+   */
+  private void clearIsEventCreationBlocked() {
+
+    isEventCreationBlocked_ = false;
+  }
+
+  public static final int IS_FRAUD_ORGANIZER_FIELD_NUMBER = 21;
+  private boolean isFraudOrganizer_;
+  /**
+   * <code>bool is_fraud_organizer = 21 [json_name = "isFraudOrganizer"];</code>
+   * @return The isFraudOrganizer.
+   */
+  @java.lang.Override
+  public boolean getIsFraudOrganizer() {
+    return isFraudOrganizer_;
+  }
+  /**
+   * <code>bool is_fraud_organizer = 21 [json_name = "isFraudOrganizer"];</code>
+   * @param value The isFraudOrganizer to set.
+   */
+  private void setIsFraudOrganizer(boolean value) {
+    
+    isFraudOrganizer_ = value;
+  }
+  /**
+   * <code>bool is_fraud_organizer = 21 [json_name = "isFraudOrganizer"];</code>
+   */
+  private void clearIsFraudOrganizer() {
+
+    isFraudOrganizer_ = false;
   }
 
   public static com.eventsease.v1.UserProfile parseFrom(
@@ -2022,6 +2211,183 @@ public  final class UserProfile extends
       return this;
     }
 
+    /**
+     * <code>repeated .eventsease.v1.UserRole roles = 19 [json_name = "roles"];</code>
+     * @return A list containing the roles.
+     */
+    @java.lang.Override
+    public java.util.List<com.eventsease.v1.UserRole> getRolesList() {
+      return instance.getRolesList();
+    }
+    /**
+     * <code>repeated .eventsease.v1.UserRole roles = 19 [json_name = "roles"];</code>
+     * @return The count of roles.
+     */
+    @java.lang.Override
+    public int getRolesCount() {
+      return instance.getRolesCount();
+    }
+    /**
+     * <code>repeated .eventsease.v1.UserRole roles = 19 [json_name = "roles"];</code>
+     * @param index The index of the element to return.
+     * @return The roles at the given index.
+     */
+    @java.lang.Override
+    public com.eventsease.v1.UserRole getRoles(int index) {
+      return instance.getRoles(index);
+    }
+    /**
+     * <code>repeated .eventsease.v1.UserRole roles = 19 [json_name = "roles"];</code>
+     * @param index The index to set the value at.
+     * @param value The roles to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoles(
+        int index, com.eventsease.v1.UserRole value) {
+      copyOnWrite();
+      instance.setRoles(index, value);
+      return this;
+    }
+    /**
+     * <code>repeated .eventsease.v1.UserRole roles = 19 [json_name = "roles"];</code>
+     * @param value The roles to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRoles(com.eventsease.v1.UserRole value) {
+      copyOnWrite();
+      instance.addRoles(value);
+      return this;
+    }
+    /**
+     * <code>repeated .eventsease.v1.UserRole roles = 19 [json_name = "roles"];</code>
+     * @param values The roles to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllRoles(
+        java.lang.Iterable<? extends com.eventsease.v1.UserRole> values) {
+      copyOnWrite();
+      instance.addAllRoles(values);  return this;
+    }
+    /**
+     * <code>repeated .eventsease.v1.UserRole roles = 19 [json_name = "roles"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRoles() {
+      copyOnWrite();
+      instance.clearRoles();
+      return this;
+    }
+    /**
+     * <code>repeated .eventsease.v1.UserRole roles = 19 [json_name = "roles"];</code>
+     * @return A list containing the enum numeric values on the wire for roles.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer>
+    getRolesValueList() {
+      return java.util.Collections.unmodifiableList(
+          instance.getRolesValueList());
+    }
+    /**
+     * <code>repeated .eventsease.v1.UserRole roles = 19 [json_name = "roles"];</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of roles at the given index.
+     */
+    @java.lang.Override
+    public int getRolesValue(int index) {
+      return instance.getRolesValue(index);
+    }
+    /**
+     * <code>repeated .eventsease.v1.UserRole roles = 19 [json_name = "roles"];</code>
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for roles to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRolesValue(
+        int index, int value) {
+      copyOnWrite();
+      instance.setRolesValue(index, value);
+      return this;
+    }
+    /**
+     * <code>repeated .eventsease.v1.UserRole roles = 19 [json_name = "roles"];</code>
+     * @param value The enum numeric value on the wire for roles to add.
+     * @throws IllegalArgumentException if UNRECOGNIZED is provided.
+     * @return This builder for chaining.
+     */
+    public Builder addRolesValue(int value) {
+      copyOnWrite();
+      instance.addRolesValue(value);
+      return this;
+    }
+    /**
+     * <code>repeated .eventsease.v1.UserRole roles = 19 [json_name = "roles"];</code>
+     * @param values The enum numeric values on the wire for roles to add.
+     * @throws IllegalArgumentException if UNRECOGNIZED is provided.
+     * @return This builder for chaining.
+     */
+    public Builder addAllRolesValue(
+        java.lang.Iterable<java.lang.Integer> values) {
+      copyOnWrite();
+      instance.addAllRolesValue(values);
+      return this;
+    }
+
+    /**
+     * <code>bool is_event_creation_blocked = 20 [json_name = "isEventCreationBlocked"];</code>
+     * @return The isEventCreationBlocked.
+     */
+    @java.lang.Override
+    public boolean getIsEventCreationBlocked() {
+      return instance.getIsEventCreationBlocked();
+    }
+    /**
+     * <code>bool is_event_creation_blocked = 20 [json_name = "isEventCreationBlocked"];</code>
+     * @param value The isEventCreationBlocked to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsEventCreationBlocked(boolean value) {
+      copyOnWrite();
+      instance.setIsEventCreationBlocked(value);
+      return this;
+    }
+    /**
+     * <code>bool is_event_creation_blocked = 20 [json_name = "isEventCreationBlocked"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsEventCreationBlocked() {
+      copyOnWrite();
+      instance.clearIsEventCreationBlocked();
+      return this;
+    }
+
+    /**
+     * <code>bool is_fraud_organizer = 21 [json_name = "isFraudOrganizer"];</code>
+     * @return The isFraudOrganizer.
+     */
+    @java.lang.Override
+    public boolean getIsFraudOrganizer() {
+      return instance.getIsFraudOrganizer();
+    }
+    /**
+     * <code>bool is_fraud_organizer = 21 [json_name = "isFraudOrganizer"];</code>
+     * @param value The isFraudOrganizer to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsFraudOrganizer(boolean value) {
+      copyOnWrite();
+      instance.setIsFraudOrganizer(value);
+      return this;
+    }
+    /**
+     * <code>bool is_fraud_organizer = 21 [json_name = "isFraudOrganizer"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsFraudOrganizer() {
+      copyOnWrite();
+      instance.clearIsFraudOrganizer();
+      return this;
+    }
+
     // @@protoc_insertion_point(builder_scope:eventsease.v1.UserProfile)
   }
   @java.lang.Override
@@ -2058,12 +2424,15 @@ public  final class UserProfile extends
             "username_",
             "isOwnProfile_",
             "isVerified_",
+            "roles_",
+            "isEventCreationBlocked_",
+            "isFraudOrganizer_",
           };
           java.lang.String info =
-              "\u0000\u0012\u0000\u0001\u0001\u0012\u0012\u0000\u0003\u0000\u0001\u0208\u0002\u0208" +
+              "\u0000\u0015\u0000\u0001\u0001\u0015\u0015\u0000\u0004\u0000\u0001\u0208\u0002\u0208" +
               "\u0003\u0208\u0004\u0208\u0005\u0208\u0006\u0208\u0007\u021a\b\u021a\t\u0208\n\u0208" +
               "\u000b\u001b\f\u0208\r\u1009\u0000\u000e\u1009\u0001\u000f\u0007\u0010\u0208\u0011" +
-              "\u0007\u0012\u0007";
+              "\u0007\u0012\u0007\u0013,\u0014\u0007\u0015\u0007";
           return newMessageInfo(DEFAULT_INSTANCE, info, objects);
       }
       case GET_DEFAULT_INSTANCE: {
