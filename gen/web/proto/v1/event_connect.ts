@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateEventRequest, CreateEventResponse, GetEventRequest, GetEventResponse, GetEventsRequest, GetEventsResponse, GetEventStatsRequest, GetEventStatsResponse, GetSavedEventsRequest, GetUserEventsRequest, ToggleSavedEventRequest, ToggleSavedEventResponse } from "./event_pb";
+import { CreateEventRequest, CreateEventResponse, DeleteEventRequest, DeleteEventResponse, GetEventRequest, GetEventResponse, GetEventsRequest, GetEventsResponse, GetEventStatsRequest, GetEventStatsResponse, GetSavedEventsRequest, GetUserEventsRequest, ToggleSavedEventRequest, ToggleSavedEventResponse, UpdateEventRequest, UpdateEventResponse } from "./event_pb";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -46,6 +46,24 @@ export const EventService = {
       name: "CreateEvent",
       I: CreateEventRequest,
       O: CreateEventResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc eventsease.v1.EventService.UpdateEvent
+     */
+    updateEvent: {
+      name: "UpdateEvent",
+      I: UpdateEventRequest,
+      O: UpdateEventResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc eventsease.v1.EventService.DeleteEvent
+     */
+    deleteEvent: {
+      name: "DeleteEvent",
+      I: DeleteEventRequest,
+      O: DeleteEventResponse,
       kind: MethodKind.Unary,
     },
     /**

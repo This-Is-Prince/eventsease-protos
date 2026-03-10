@@ -43,6 +43,12 @@ const (
 	// EventServiceCreateEventProcedure is the fully-qualified name of the EventService's CreateEvent
 	// RPC.
 	EventServiceCreateEventProcedure = "/eventsease.v1.EventService/CreateEvent"
+	// EventServiceUpdateEventProcedure is the fully-qualified name of the EventService's UpdateEvent
+	// RPC.
+	EventServiceUpdateEventProcedure = "/eventsease.v1.EventService/UpdateEvent"
+	// EventServiceDeleteEventProcedure is the fully-qualified name of the EventService's DeleteEvent
+	// RPC.
+	EventServiceDeleteEventProcedure = "/eventsease.v1.EventService/DeleteEvent"
 	// EventServiceGetUserEventsProcedure is the fully-qualified name of the EventService's
 	// GetUserEvents RPC.
 	EventServiceGetUserEventsProcedure = "/eventsease.v1.EventService/GetUserEvents"
@@ -60,6 +66,8 @@ type EventServiceClient interface {
 	GetEvent(context.Context, *connect.Request[v1.GetEventRequest]) (*connect.Response[v1.GetEventResponse], error)
 	GetEventStats(context.Context, *connect.Request[v1.GetEventStatsRequest]) (*connect.Response[v1.GetEventStatsResponse], error)
 	CreateEvent(context.Context, *connect.Request[v1.CreateEventRequest]) (*connect.Response[v1.CreateEventResponse], error)
+	UpdateEvent(context.Context, *connect.Request[v1.UpdateEventRequest]) (*connect.Response[v1.UpdateEventResponse], error)
+	DeleteEvent(context.Context, *connect.Request[v1.DeleteEventRequest]) (*connect.Response[v1.DeleteEventResponse], error)
 	GetUserEvents(context.Context, *connect.Request[v1.GetUserEventsRequest]) (*connect.Response[v1.GetEventsResponse], error)
 	GetSavedEvents(context.Context, *connect.Request[v1.GetSavedEventsRequest]) (*connect.Response[v1.GetEventsResponse], error)
 	ToggleSavedEvent(context.Context, *connect.Request[v1.ToggleSavedEventRequest]) (*connect.Response[v1.ToggleSavedEventResponse], error)
@@ -100,6 +108,18 @@ func NewEventServiceClient(httpClient connect.HTTPClient, baseURL string, opts .
 			connect.WithSchema(eventServiceMethods.ByName("CreateEvent")),
 			connect.WithClientOptions(opts...),
 		),
+		updateEvent: connect.NewClient[v1.UpdateEventRequest, v1.UpdateEventResponse](
+			httpClient,
+			baseURL+EventServiceUpdateEventProcedure,
+			connect.WithSchema(eventServiceMethods.ByName("UpdateEvent")),
+			connect.WithClientOptions(opts...),
+		),
+		deleteEvent: connect.NewClient[v1.DeleteEventRequest, v1.DeleteEventResponse](
+			httpClient,
+			baseURL+EventServiceDeleteEventProcedure,
+			connect.WithSchema(eventServiceMethods.ByName("DeleteEvent")),
+			connect.WithClientOptions(opts...),
+		),
 		getUserEvents: connect.NewClient[v1.GetUserEventsRequest, v1.GetEventsResponse](
 			httpClient,
 			baseURL+EventServiceGetUserEventsProcedure,
@@ -127,6 +147,8 @@ type eventServiceClient struct {
 	getEvent         *connect.Client[v1.GetEventRequest, v1.GetEventResponse]
 	getEventStats    *connect.Client[v1.GetEventStatsRequest, v1.GetEventStatsResponse]
 	createEvent      *connect.Client[v1.CreateEventRequest, v1.CreateEventResponse]
+	updateEvent      *connect.Client[v1.UpdateEventRequest, v1.UpdateEventResponse]
+	deleteEvent      *connect.Client[v1.DeleteEventRequest, v1.DeleteEventResponse]
 	getUserEvents    *connect.Client[v1.GetUserEventsRequest, v1.GetEventsResponse]
 	getSavedEvents   *connect.Client[v1.GetSavedEventsRequest, v1.GetEventsResponse]
 	toggleSavedEvent *connect.Client[v1.ToggleSavedEventRequest, v1.ToggleSavedEventResponse]
@@ -152,6 +174,16 @@ func (c *eventServiceClient) CreateEvent(ctx context.Context, req *connect.Reque
 	return c.createEvent.CallUnary(ctx, req)
 }
 
+// UpdateEvent calls eventsease.v1.EventService.UpdateEvent.
+func (c *eventServiceClient) UpdateEvent(ctx context.Context, req *connect.Request[v1.UpdateEventRequest]) (*connect.Response[v1.UpdateEventResponse], error) {
+	return c.updateEvent.CallUnary(ctx, req)
+}
+
+// DeleteEvent calls eventsease.v1.EventService.DeleteEvent.
+func (c *eventServiceClient) DeleteEvent(ctx context.Context, req *connect.Request[v1.DeleteEventRequest]) (*connect.Response[v1.DeleteEventResponse], error) {
+	return c.deleteEvent.CallUnary(ctx, req)
+}
+
 // GetUserEvents calls eventsease.v1.EventService.GetUserEvents.
 func (c *eventServiceClient) GetUserEvents(ctx context.Context, req *connect.Request[v1.GetUserEventsRequest]) (*connect.Response[v1.GetEventsResponse], error) {
 	return c.getUserEvents.CallUnary(ctx, req)
@@ -173,6 +205,8 @@ type EventServiceHandler interface {
 	GetEvent(context.Context, *connect.Request[v1.GetEventRequest]) (*connect.Response[v1.GetEventResponse], error)
 	GetEventStats(context.Context, *connect.Request[v1.GetEventStatsRequest]) (*connect.Response[v1.GetEventStatsResponse], error)
 	CreateEvent(context.Context, *connect.Request[v1.CreateEventRequest]) (*connect.Response[v1.CreateEventResponse], error)
+	UpdateEvent(context.Context, *connect.Request[v1.UpdateEventRequest]) (*connect.Response[v1.UpdateEventResponse], error)
+	DeleteEvent(context.Context, *connect.Request[v1.DeleteEventRequest]) (*connect.Response[v1.DeleteEventResponse], error)
 	GetUserEvents(context.Context, *connect.Request[v1.GetUserEventsRequest]) (*connect.Response[v1.GetEventsResponse], error)
 	GetSavedEvents(context.Context, *connect.Request[v1.GetSavedEventsRequest]) (*connect.Response[v1.GetEventsResponse], error)
 	ToggleSavedEvent(context.Context, *connect.Request[v1.ToggleSavedEventRequest]) (*connect.Response[v1.ToggleSavedEventResponse], error)
@@ -209,6 +243,18 @@ func NewEventServiceHandler(svc EventServiceHandler, opts ...connect.HandlerOpti
 		connect.WithSchema(eventServiceMethods.ByName("CreateEvent")),
 		connect.WithHandlerOptions(opts...),
 	)
+	eventServiceUpdateEventHandler := connect.NewUnaryHandler(
+		EventServiceUpdateEventProcedure,
+		svc.UpdateEvent,
+		connect.WithSchema(eventServiceMethods.ByName("UpdateEvent")),
+		connect.WithHandlerOptions(opts...),
+	)
+	eventServiceDeleteEventHandler := connect.NewUnaryHandler(
+		EventServiceDeleteEventProcedure,
+		svc.DeleteEvent,
+		connect.WithSchema(eventServiceMethods.ByName("DeleteEvent")),
+		connect.WithHandlerOptions(opts...),
+	)
 	eventServiceGetUserEventsHandler := connect.NewUnaryHandler(
 		EventServiceGetUserEventsProcedure,
 		svc.GetUserEvents,
@@ -237,6 +283,10 @@ func NewEventServiceHandler(svc EventServiceHandler, opts ...connect.HandlerOpti
 			eventServiceGetEventStatsHandler.ServeHTTP(w, r)
 		case EventServiceCreateEventProcedure:
 			eventServiceCreateEventHandler.ServeHTTP(w, r)
+		case EventServiceUpdateEventProcedure:
+			eventServiceUpdateEventHandler.ServeHTTP(w, r)
+		case EventServiceDeleteEventProcedure:
+			eventServiceDeleteEventHandler.ServeHTTP(w, r)
 		case EventServiceGetUserEventsProcedure:
 			eventServiceGetUserEventsHandler.ServeHTTP(w, r)
 		case EventServiceGetSavedEventsProcedure:
@@ -266,6 +316,14 @@ func (UnimplementedEventServiceHandler) GetEventStats(context.Context, *connect.
 
 func (UnimplementedEventServiceHandler) CreateEvent(context.Context, *connect.Request[v1.CreateEventRequest]) (*connect.Response[v1.CreateEventResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("eventsease.v1.EventService.CreateEvent is not implemented"))
+}
+
+func (UnimplementedEventServiceHandler) UpdateEvent(context.Context, *connect.Request[v1.UpdateEventRequest]) (*connect.Response[v1.UpdateEventResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("eventsease.v1.EventService.UpdateEvent is not implemented"))
+}
+
+func (UnimplementedEventServiceHandler) DeleteEvent(context.Context, *connect.Request[v1.DeleteEventRequest]) (*connect.Response[v1.DeleteEventResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("eventsease.v1.EventService.DeleteEvent is not implemented"))
 }
 
 func (UnimplementedEventServiceHandler) GetUserEvents(context.Context, *connect.Request[v1.GetUserEventsRequest]) (*connect.Response[v1.GetEventsResponse], error) {

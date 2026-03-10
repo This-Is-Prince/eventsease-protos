@@ -251,4 +251,65 @@ public interface EventOrBuilder extends
    * @return The organizerDetail.
    */
   com.eventsease.v1.UserProfile getOrganizerDetail();
+
+  /**
+   * <code>repeated string categories = 23 [json_name = "categories"];</code>
+   * @return A list containing the categories.
+   */
+  java.util.List<java.lang.String>
+      getCategoriesList();
+  /**
+   * <code>repeated string categories = 23 [json_name = "categories"];</code>
+   * @return The count of categories.
+   */
+  int getCategoriesCount();
+  /**
+   * <code>repeated string categories = 23 [json_name = "categories"];</code>
+   * @param index The index of the element to return.
+   * @return The categories at the given index.
+   */
+  java.lang.String getCategories(int index);
+  /**
+   * <code>repeated string categories = 23 [json_name = "categories"];</code>
+   * @param index The index of the element to return.
+   * @return The categories at the given index.
+   */
+  com.google.protobuf.ByteString
+      getCategoriesBytes(int index);
+
+  /**
+   * <code>repeated string tags = 24 [json_name = "tags"];</code>
+   * @return A list containing the tags.
+   */
+  java.util.List<java.lang.String>
+      getTagsList();
+  /**
+   * <code>repeated string tags = 24 [json_name = "tags"];</code>
+   * @return The count of tags.
+   */
+  int getTagsCount();
+  /**
+   * <code>repeated string tags = 24 [json_name = "tags"];</code>
+   * @param index The index of the element to return.
+   * @return The tags at the given index.
+   */
+  java.lang.String getTags(int index);
+  /**
+   * <code>repeated string tags = 24 [json_name = "tags"];</code>
+   * @param index The index of the element to return.
+   * @return The tags at the given index.
+   */
+  com.google.protobuf.ByteString
+      getTagsBytes(int index);
+
+  /**
+   * <code>.eventsease.v1.EventVerificationStatus verification_status = 25 [json_name = "verificationStatus"];</code>
+   * @return The enum numeric value on the wire for verificationStatus.
+   */
+  int getVerificationStatusValue();
+  /**
+   * <code>.eventsease.v1.EventVerificationStatus verification_status = 25 [json_name = "verificationStatus"];</code>
+   * @return The verificationStatus.
+   */
+  com.eventsease.v1.EventVerificationStatus getVerificationStatus();
 }

@@ -61,6 +61,30 @@ public class EventServiceClient(
   )
 
 
+  override suspend fun updateEvent(request: UpdateEventRequest, headers: Headers): ResponseMessage<UpdateEventResponse> = client.unary(
+    request,
+    headers,
+    MethodSpec(
+    "eventsease.v1.EventService/UpdateEvent",
+      com.eventsease.v1.UpdateEventRequest::class,
+      com.eventsease.v1.UpdateEventResponse::class,
+      StreamType.UNARY,
+    ),
+  )
+
+
+  override suspend fun deleteEvent(request: DeleteEventRequest, headers: Headers): ResponseMessage<DeleteEventResponse> = client.unary(
+    request,
+    headers,
+    MethodSpec(
+    "eventsease.v1.EventService/DeleteEvent",
+      com.eventsease.v1.DeleteEventRequest::class,
+      com.eventsease.v1.DeleteEventResponse::class,
+      StreamType.UNARY,
+    ),
+  )
+
+
   override suspend fun getUserEvents(request: GetUserEventsRequest, headers: Headers): ResponseMessage<GetEventsResponse> = client.unary(
     request,
     headers,

@@ -16,6 +16,10 @@ public interface EventServiceClientInterface {
 
   public suspend fun createEvent(request: CreateEventRequest, headers: Headers = emptyMap()): ResponseMessage<CreateEventResponse>
 
+  public suspend fun updateEvent(request: UpdateEventRequest, headers: Headers = emptyMap()): ResponseMessage<UpdateEventResponse>
+
+  public suspend fun deleteEvent(request: DeleteEventRequest, headers: Headers = emptyMap()): ResponseMessage<DeleteEventResponse>
+
   public suspend fun getUserEvents(request: GetUserEventsRequest, headers: Headers = emptyMap()): ResponseMessage<GetEventsResponse>
 
   public suspend fun getSavedEvents(request: GetSavedEventsRequest, headers: Headers = emptyMap()): ResponseMessage<GetEventsResponse>

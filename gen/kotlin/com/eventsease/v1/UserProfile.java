@@ -945,6 +945,32 @@ public  final class UserProfile extends
     isOwnProfile_ = false;
   }
 
+  public static final int IS_VERIFIED_FIELD_NUMBER = 18;
+  private boolean isVerified_;
+  /**
+   * <code>bool is_verified = 18 [json_name = "isVerified"];</code>
+   * @return The isVerified.
+   */
+  @java.lang.Override
+  public boolean getIsVerified() {
+    return isVerified_;
+  }
+  /**
+   * <code>bool is_verified = 18 [json_name = "isVerified"];</code>
+   * @param value The isVerified to set.
+   */
+  private void setIsVerified(boolean value) {
+    
+    isVerified_ = value;
+  }
+  /**
+   * <code>bool is_verified = 18 [json_name = "isVerified"];</code>
+   */
+  private void clearIsVerified() {
+
+    isVerified_ = false;
+  }
+
   public static com.eventsease.v1.UserProfile parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1968,6 +1994,34 @@ public  final class UserProfile extends
       return this;
     }
 
+    /**
+     * <code>bool is_verified = 18 [json_name = "isVerified"];</code>
+     * @return The isVerified.
+     */
+    @java.lang.Override
+    public boolean getIsVerified() {
+      return instance.getIsVerified();
+    }
+    /**
+     * <code>bool is_verified = 18 [json_name = "isVerified"];</code>
+     * @param value The isVerified to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsVerified(boolean value) {
+      copyOnWrite();
+      instance.setIsVerified(value);
+      return this;
+    }
+    /**
+     * <code>bool is_verified = 18 [json_name = "isVerified"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsVerified() {
+      copyOnWrite();
+      instance.clearIsVerified();
+      return this;
+    }
+
     // @@protoc_insertion_point(builder_scope:eventsease.v1.UserProfile)
   }
   @java.lang.Override
@@ -2003,12 +2057,13 @@ public  final class UserProfile extends
             "isDeleted_",
             "username_",
             "isOwnProfile_",
+            "isVerified_",
           };
           java.lang.String info =
-              "\u0000\u0011\u0000\u0001\u0001\u0011\u0011\u0000\u0003\u0000\u0001\u0208\u0002\u0208" +
+              "\u0000\u0012\u0000\u0001\u0001\u0012\u0012\u0000\u0003\u0000\u0001\u0208\u0002\u0208" +
               "\u0003\u0208\u0004\u0208\u0005\u0208\u0006\u0208\u0007\u021a\b\u021a\t\u0208\n\u0208" +
               "\u000b\u001b\f\u0208\r\u1009\u0000\u000e\u1009\u0001\u000f\u0007\u0010\u0208\u0011" +
-              "\u0007";
+              "\u0007\u0012\u0007";
           return newMessageInfo(DEFAULT_INSTANCE, info, objects);
       }
       case GET_DEFAULT_INSTANCE: {

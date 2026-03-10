@@ -89,6 +89,7 @@ message UserProfile {
   bool is_deleted = 15;
   string username = 16;
   bool is_own_profile = 17;
+  bool is_verified = 18;
 }
 
 message GetProfileRequest {

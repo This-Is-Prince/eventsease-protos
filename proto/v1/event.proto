@@ -16,6 +16,8 @@ service EventService {
   rpc GetEventStats (GetEventStatsRequest) returns (GetEventStatsResponse);
 
   rpc CreateEvent (CreateEventRequest) returns (CreateEventResponse);
+  rpc UpdateEvent (UpdateEventRequest) returns (UpdateEventResponse);
+  rpc DeleteEvent (DeleteEventRequest) returns (DeleteEventResponse);
   rpc GetUserEvents (GetUserEventsRequest) returns (GetEventsResponse);
   rpc GetSavedEvents (GetSavedEventsRequest) returns (GetEventsResponse);
   rpc ToggleSavedEvent (ToggleSavedEventRequest) returns (ToggleSavedEventResponse);
@@ -49,6 +51,14 @@ enum SocialType {
   SOCIAL_TYPE_OTHER = 10;
 }
 
+enum EventVerificationStatus {
+  EVENT_VERIFICATION_STATUS_UNSPECIFIED = 0;
+  EVENT_VERIFICATION_STATUS_VERIFIED = 1;
+  EVENT_VERIFICATION_STATUS_UNVERIFIED = 2;
+  EVENT_VERIFICATION_STATUS_IN_REVIEW = 3;
+  EVENT_VERIFICATION_STATUS_FAILED = 4;
+}
+
 message Event {
   string id = 1;
   string name = 2;
@@ -72,6 +82,9 @@ message Event {
   google.protobuf.Timestamp updated_at = 20;
   string is_pinned = 21; 
   UserProfile organizer_detail = 22;
+  repeated string categories = 23;
+  repeated string tags = 24;
+  EventVerificationStatus verification_status = 25;
 }
 
 message Location {
@@ -143,6 +156,26 @@ message CreateEventResponse {
   bool success = 1;
   string message = 2;
   Event data = 3;
+}
+
+message UpdateEventRequest {
+  string id = 1;
+  Event event = 2;
+}
+
+message UpdateEventResponse {
+  bool success = 1;
+  string message = 2;
+  Event data = 3;
+}
+
+message DeleteEventRequest {
+  string id = 1;
+}
+
+message DeleteEventResponse {
+  bool success = 1;
+  string message = 2;
 }
 
 message GetEventStatsRequest {

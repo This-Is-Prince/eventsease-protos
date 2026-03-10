@@ -227,4 +227,10 @@ public interface UserProfileOrBuilder extends
    * @return The isOwnProfile.
    */
   boolean getIsOwnProfile();
+
+  /**
+   * <code>bool is_verified = 18 [json_name = "isVerified"];</code>
+   * @return The isVerified.
+   */
+  boolean getIsVerified();
 }

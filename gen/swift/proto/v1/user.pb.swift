@@ -322,6 +322,11 @@ public struct Eventsease_V1_UserProfile: @unchecked Sendable {
     set {_uniqueStorage()._isOwnProfile = newValue}
   }
 
+  public var isVerified: Bool {
+    get {return _storage._isVerified}
+    set {_uniqueStorage()._isVerified = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -701,7 +706,7 @@ extension Eventsease_V1_ProfileSocialLink: SwiftProtobuf.Message, SwiftProtobuf.
 
 extension Eventsease_V1_UserProfile: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".UserProfile"
-  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{1}uid\0\u{1}email\0\u{3}display_name\0\u{3}photo_url\0\u{1}provider\0\u{1}photos\0\u{3}background_photos\0\u{1}about\0\u{1}name\0\u{3}social_links\0\u{1}location\0\u{3}created_at\0\u{3}updated_at\0\u{3}is_deleted\0\u{1}username\0\u{3}is_own_profile\0")
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{1}uid\0\u{1}email\0\u{3}display_name\0\u{3}photo_url\0\u{1}provider\0\u{1}photos\0\u{3}background_photos\0\u{1}about\0\u{1}name\0\u{3}social_links\0\u{1}location\0\u{3}created_at\0\u{3}updated_at\0\u{3}is_deleted\0\u{1}username\0\u{3}is_own_profile\0\u{3}is_verified\0")
 
   fileprivate class _StorageClass {
     var _id: String = String()
@@ -721,6 +726,7 @@ extension Eventsease_V1_UserProfile: SwiftProtobuf.Message, SwiftProtobuf._Messa
     var _isDeleted: Bool = false
     var _username: String = String()
     var _isOwnProfile: Bool = false
+    var _isVerified: Bool = false
 
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
@@ -748,6 +754,7 @@ extension Eventsease_V1_UserProfile: SwiftProtobuf.Message, SwiftProtobuf._Messa
       _isDeleted = source._isDeleted
       _username = source._username
       _isOwnProfile = source._isOwnProfile
+      _isVerified = source._isVerified
     }
   }
 
@@ -783,6 +790,7 @@ extension Eventsease_V1_UserProfile: SwiftProtobuf.Message, SwiftProtobuf._Messa
         case 15: try { try decoder.decodeSingularBoolField(value: &_storage._isDeleted) }()
         case 16: try { try decoder.decodeSingularStringField(value: &_storage._username) }()
         case 17: try { try decoder.decodeSingularBoolField(value: &_storage._isOwnProfile) }()
+        case 18: try { try decoder.decodeSingularBoolField(value: &_storage._isVerified) }()
         default: break
         }
       }
@@ -846,6 +854,9 @@ extension Eventsease_V1_UserProfile: SwiftProtobuf.Message, SwiftProtobuf._Messa
       if _storage._isOwnProfile != false {
         try visitor.visitSingularBoolField(value: _storage._isOwnProfile, fieldNumber: 17)
       }
+      if _storage._isVerified != false {
+        try visitor.visitSingularBoolField(value: _storage._isVerified, fieldNumber: 18)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -872,6 +883,7 @@ extension Eventsease_V1_UserProfile: SwiftProtobuf.Message, SwiftProtobuf._Messa
         if _storage._isDeleted != rhs_storage._isDeleted {return false}
         if _storage._username != rhs_storage._username {return false}
         if _storage._isOwnProfile != rhs_storage._isOwnProfile {return false}
+        if _storage._isVerified != rhs_storage._isVerified {return false}
         return true
       }
       if !storagesAreEqual {return false}

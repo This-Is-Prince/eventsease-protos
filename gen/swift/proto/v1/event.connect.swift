@@ -24,6 +24,12 @@ public protocol Eventsease_V1_EventServiceClientInterface: Sendable {
     func `createEvent`(request: Eventsease_V1_CreateEventRequest, headers: Connect.Headers) async -> ResponseMessage<Eventsease_V1_CreateEventResponse>
 
     @available(iOS 13, *)
+    func `updateEvent`(request: Eventsease_V1_UpdateEventRequest, headers: Connect.Headers) async -> ResponseMessage<Eventsease_V1_UpdateEventResponse>
+
+    @available(iOS 13, *)
+    func `deleteEvent`(request: Eventsease_V1_DeleteEventRequest, headers: Connect.Headers) async -> ResponseMessage<Eventsease_V1_DeleteEventResponse>
+
+    @available(iOS 13, *)
     func `getUserEvents`(request: Eventsease_V1_GetUserEventsRequest, headers: Connect.Headers) async -> ResponseMessage<Eventsease_V1_GetEventsResponse>
 
     @available(iOS 13, *)
@@ -62,6 +68,16 @@ public final class Eventsease_V1_EventServiceClient: Eventsease_V1_EventServiceC
     }
 
     @available(iOS 13, *)
+    public func `updateEvent`(request: Eventsease_V1_UpdateEventRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_UpdateEventResponse> {
+        return await self.client.unary(path: "/eventsease.v1.EventService/UpdateEvent", idempotencyLevel: .unknown, request: request, headers: headers)
+    }
+
+    @available(iOS 13, *)
+    public func `deleteEvent`(request: Eventsease_V1_DeleteEventRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_DeleteEventResponse> {
+        return await self.client.unary(path: "/eventsease.v1.EventService/DeleteEvent", idempotencyLevel: .unknown, request: request, headers: headers)
+    }
+
+    @available(iOS 13, *)
     public func `getUserEvents`(request: Eventsease_V1_GetUserEventsRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_GetEventsResponse> {
         return await self.client.unary(path: "/eventsease.v1.EventService/GetUserEvents", idempotencyLevel: .unknown, request: request, headers: headers)
     }
@@ -82,6 +98,8 @@ public final class Eventsease_V1_EventServiceClient: Eventsease_V1_EventServiceC
             public static let getEvent = Connect.MethodSpec(name: "GetEvent", service: "eventsease.v1.EventService", type: .unary)
             public static let getEventStats = Connect.MethodSpec(name: "GetEventStats", service: "eventsease.v1.EventService", type: .unary)
             public static let createEvent = Connect.MethodSpec(name: "CreateEvent", service: "eventsease.v1.EventService", type: .unary)
+            public static let updateEvent = Connect.MethodSpec(name: "UpdateEvent", service: "eventsease.v1.EventService", type: .unary)
+            public static let deleteEvent = Connect.MethodSpec(name: "DeleteEvent", service: "eventsease.v1.EventService", type: .unary)
             public static let getUserEvents = Connect.MethodSpec(name: "GetUserEvents", service: "eventsease.v1.EventService", type: .unary)
             public static let getSavedEvents = Connect.MethodSpec(name: "GetSavedEvents", service: "eventsease.v1.EventService", type: .unary)
             public static let toggleSavedEvent = Connect.MethodSpec(name: "ToggleSavedEvent", service: "eventsease.v1.EventService", type: .unary)

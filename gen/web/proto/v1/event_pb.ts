@@ -14,7 +14,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file proto/v1/event.proto.
  */
 export const file_proto_v1_event: GenFile = /*@__PURE__*/
-  fileDesc("ChRwcm90by92MS9ldmVudC5wcm90bxINZXZlbnRzZWFzZS52MSKBBQoFRXZlbnQSCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRITCgtkZXNjcmlwdGlvbhgDIAEoCRIMCgRzbHVnGAQgASgJEi4KCnN0YXJ0X2RhdGUYBSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEiwKCGVuZF9kYXRlGAYgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIpCghsb2NhdGlvbhgHIAEoCzIXLmV2ZW50c2Vhc2UudjEuTG9jYXRpb24SFAoMZXZlbnRfcGhvdG9zGAggAygJEg8KB3VzZXJfaWQYCSABKAkSEQoJb3JnYW5pemVyGAogASgJEhAKCGNhdGVnb3J5GAsgASgJEi4KC3RpY2tldF9pbmZvGAwgASgLMhkuZXZlbnRzZWFzZS52MS5UaWNrZXRJbmZvEikKBnNvY2lhbBgNIAMoCzIZLmV2ZW50c2Vhc2UudjEuU29jaWFsTGluaxIPCgdpc19wYWlkGA4gASgIEhMKC2lzX2FwcHJvdmVkGA8gASgIEhIKCmlzX3JlZ3VsYXIYECABKAgSEwoLaGVhcnRfY291bnQYESABKAUSEwoLc2F2ZWRfY291bnQYEiABKAUSLgoKY3JlYXRlZF9hdBgTIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLgoKdXBkYXRlZF9hdBgUIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASEQoJaXNfcGlubmVkGBUgASgJEjQKEG9yZ2FuaXplcl9kZXRhaWwYFiABKAsyGi5ldmVudHNlYXNlLnYxLlVzZXJQcm9maWxlIjUKCExvY2F0aW9uEg8KB2FkZHJlc3MYASABKAkSCwoDbGF0GAIgASgBEgsKA2xuZxgDIAEoASJmCgpUaWNrZXRJbmZvEg8KB2lzX2ZyZWUYASABKAgSEQoJZW50cnlfZmVlGAIgASgBEhYKDmVhcmx5X2JpcmRfZmVlGAMgASgBEhwKFGlzX2FwcG9pbnRtZW50X2Jhc2VkGAQgASgIIkQKClNvY2lhbExpbmsSJwoEdHlwZRgBIAEoDjIZLmV2ZW50c2Vhc2UudjEuU29jaWFsVHlwZRINCgV2YWx1ZRgCIAEoCSKAAgoQR2V0RXZlbnRzUmVxdWVzdBIlCgZyZWdpb24YASABKAsyFS5ldmVudHNlYXNlLnYxLlJlZ2lvbhISCgpjYXRlZ29yaWVzGAIgAygJEgwKBGRhdGUYAyABKAkSJgoHc29ydF9ieRgEIAEoDjIVLmV2ZW50c2Vhc2UudjEuU29ydEJ5EjQKDnNvcnRfZGlyZWN0aW9uGAUgASgOMhwuZXZlbnRzZWFzZS52MS5Tb3J0RGlyZWN0aW9uEhQKDHNlYXJjaF9xdWVyeRgGIAEoCRISCgppc19yZWd1bGFyGAcgASgIEgwKBHBhZ2UYCCABKAUSDQoFbGltaXQYCSABKAUiXgoGUmVnaW9uEhAKCGxhdGl0dWRlGAEgASgBEhEKCWxvbmdpdHVkZRgCIAEoARIWCg5sYXRpdHVkZV9kZWx0YRgDIAEoARIXCg9sb25naXR1ZGVfZGVsdGEYBCABKAEibwoRR2V0RXZlbnRzUmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCBIiCgRkYXRhGAIgAygLMhQuZXZlbnRzZWFzZS52MS5FdmVudBIlCgRtZXRhGAMgASgLMhcuZXZlbnRzZWFzZS52MS5NZXRhRGF0YSKLAQoITWV0YURhdGESEwoLdG90YWxfY291bnQYASABKAMSEwoLdG90YWxfcGFnZXMYAiABKAMSFAoMY3VycmVudF9wYWdlGAMgASgFEg0KBWxpbWl0GAQgASgFEhUKDWhhc19uZXh0X3BhZ2UYBSABKAgSGQoRaGFzX3ByZXZpb3VzX3BhZ2UYBiABKAgiJQoPR2V0RXZlbnRSZXF1ZXN0EhIKCmlkX29yX3NsdWcYASABKAkiRwoQR2V0RXZlbnRSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEiIKBGRhdGEYAiABKAsyFC5ldmVudHNlYXNlLnYxLkV2ZW50IjkKEkNyZWF0ZUV2ZW50UmVxdWVzdBIjCgVldmVudBgBIAEoCzIULmV2ZW50c2Vhc2UudjEuRXZlbnQiWwoTQ3JlYXRlRXZlbnRSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEg8KB21lc3NhZ2UYAiABKAkSIgoEZGF0YRgDIAEoCzIULmV2ZW50c2Vhc2UudjEuRXZlbnQiIgoUR2V0RXZlbnRTdGF0c1JlcXVlc3QSCgoCaWQYASABKAkiUQoVR2V0RXZlbnRTdGF0c1Jlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSJwoEZGF0YRgCIAEoCzIZLmV2ZW50c2Vhc2UudjEuRXZlbnRTdGF0cyI2CgpFdmVudFN0YXRzEhMKC2hlYXJ0X2NvdW50GAEgASgFEhMKC3NhdmVkX2NvdW50GAIgASgFIrkBChRHZXRVc2VyRXZlbnRzUmVxdWVzdBIMCgRwYWdlGAEgASgFEg0KBWxpbWl0GAIgASgFEhQKDHNlYXJjaF9xdWVyeRgDIAEoCRImCgdzb3J0X2J5GAQgASgOMhUuZXZlbnRzZWFzZS52MS5Tb3J0QnkSNAoOc29ydF9kaXJlY3Rpb24YBSABKA4yHC5ldmVudHNlYXNlLnYxLlNvcnREaXJlY3Rpb24SEAoIdXNlcm5hbWUYBiABKAkiqAEKFUdldFNhdmVkRXZlbnRzUmVxdWVzdBIMCgRwYWdlGAEgASgFEg0KBWxpbWl0GAIgASgFEhQKDHNlYXJjaF9xdWVyeRgDIAEoCRImCgdzb3J0X2J5GAQgASgOMhUuZXZlbnRzZWFzZS52MS5Tb3J0QnkSNAoOc29ydF9kaXJlY3Rpb24YBSABKA4yHC5ldmVudHNlYXNlLnYxLlNvcnREaXJlY3Rpb24iKwoXVG9nZ2xlU2F2ZWRFdmVudFJlcXVlc3QSEAoIZXZlbnRfaWQYASABKAkiPQoYVG9nZ2xlU2F2ZWRFdmVudFJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSEAoIaXNfc2F2ZWQYAiABKAgqhQEKBlNvcnRCeRIXChNTT1JUX0JZX1VOU1BFQ0lGSUVEEAASFgoSU09SVF9CWV9TVEFSVF9EQVRFEAESGAoUU09SVF9CWV9DUkVBVEVEX0RBVEUQAhIXChNTT1JUX0JZX0hFQVJUX0NPVU5UEAMSFwoTU09SVF9CWV9TQVZFRF9DT1VOVBAEKmAKDVNvcnREaXJlY3Rpb24SHgoaU09SVF9ESVJFQ1RJT05fVU5TUEVDSUZJRUQQABIWChJTT1JUX0RJUkVDVElPTl9BU0MQARIXChNTT1JUX0RJUkVDVElPTl9ERVNDEAIqogIKClNvY2lhbFR5cGUSGwoXU09DSUFMX1RZUEVfVU5TUEVDSUZJRUQQABIVChFTT0NJQUxfVFlQRV9QSE9ORRABEhkKFVNPQ0lBTF9UWVBFX0lOU1RBR1JBTRACEhgKFFNPQ0lBTF9UWVBFX0ZBQ0VCT09LEAMSGAoUU09DSUFMX1RZUEVfV0hBVFNBUFAQBBIXChNTT0NJQUxfVFlQRV9XRUJTSVRFEAUSFQoRU09DSUFMX1RZUEVfRU1BSUwQBhIXChNTT0NJQUxfVFlQRV9UV0lUVEVSEAcSGAoUU09DSUFMX1RZUEVfTElOS0VESU4QCBIXChNTT0NJQUxfVFlQRV9ZT1VUVUJFEAkSFQoRU09DSUFMX1RZUEVfT1RIRVIQCjL0BAoMRXZlbnRTZXJ2aWNlEk4KCUdldEV2ZW50cxIfLmV2ZW50c2Vhc2UudjEuR2V0RXZlbnRzUmVxdWVzdBogLmV2ZW50c2Vhc2UudjEuR2V0RXZlbnRzUmVzcG9uc2USSwoIR2V0RXZlbnQSHi5ldmVudHNlYXNlLnYxLkdldEV2ZW50UmVxdWVzdBofLmV2ZW50c2Vhc2UudjEuR2V0RXZlbnRSZXNwb25zZRJaCg1HZXRFdmVudFN0YXRzEiMuZXZlbnRzZWFzZS52MS5HZXRFdmVudFN0YXRzUmVxdWVzdBokLmV2ZW50c2Vhc2UudjEuR2V0RXZlbnRTdGF0c1Jlc3BvbnNlElQKC0NyZWF0ZUV2ZW50EiEuZXZlbnRzZWFzZS52MS5DcmVhdGVFdmVudFJlcXVlc3QaIi5ldmVudHNlYXNlLnYxLkNyZWF0ZUV2ZW50UmVzcG9uc2USVgoNR2V0VXNlckV2ZW50cxIjLmV2ZW50c2Vhc2UudjEuR2V0VXNlckV2ZW50c1JlcXVlc3QaIC5ldmVudHNlYXNlLnYxLkdldEV2ZW50c1Jlc3BvbnNlElgKDkdldFNhdmVkRXZlbnRzEiQuZXZlbnRzZWFzZS52MS5HZXRTYXZlZEV2ZW50c1JlcXVlc3QaIC5ldmVudHNlYXNlLnYxLkdldEV2ZW50c1Jlc3BvbnNlEmMKEFRvZ2dsZVNhdmVkRXZlbnQSJi5ldmVudHNlYXNlLnYxLlRvZ2dsZVNhdmVkRXZlbnRSZXF1ZXN0GicuZXZlbnRzZWFzZS52MS5Ub2dnbGVTYXZlZEV2ZW50UmVzcG9uc2VCbAoRY29tLmV2ZW50c2Vhc2UudjFCCkV2ZW50UHJvdG9QAVpJZ2l0aHViLmNvbS9UaGlzLUlzLVByaW5jZS9ldmVudHNlYXNlLXByb3Rvcy9nZW4vZ28vcHJvdG8vdjE7ZXZlbnRzZWFzZV92MWIGcHJvdG8z", [file_google_protobuf_timestamp, file_proto_v1_user]);
+  fileDesc("ChRwcm90by92MS9ldmVudC5wcm90bxINZXZlbnRzZWFzZS52MSLoBQoFRXZlbnQSCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRITCgtkZXNjcmlwdGlvbhgDIAEoCRIMCgRzbHVnGAQgASgJEi4KCnN0YXJ0X2RhdGUYBSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEiwKCGVuZF9kYXRlGAYgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIpCghsb2NhdGlvbhgHIAEoCzIXLmV2ZW50c2Vhc2UudjEuTG9jYXRpb24SFAoMZXZlbnRfcGhvdG9zGAggAygJEg8KB3VzZXJfaWQYCSABKAkSEQoJb3JnYW5pemVyGAogASgJEhAKCGNhdGVnb3J5GAsgASgJEi4KC3RpY2tldF9pbmZvGAwgASgLMhkuZXZlbnRzZWFzZS52MS5UaWNrZXRJbmZvEikKBnNvY2lhbBgNIAMoCzIZLmV2ZW50c2Vhc2UudjEuU29jaWFsTGluaxIPCgdpc19wYWlkGA4gASgIEhMKC2lzX2FwcHJvdmVkGA8gASgIEhIKCmlzX3JlZ3VsYXIYECABKAgSEwoLaGVhcnRfY291bnQYESABKAUSEwoLc2F2ZWRfY291bnQYEiABKAUSLgoKY3JlYXRlZF9hdBgTIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLgoKdXBkYXRlZF9hdBgUIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASEQoJaXNfcGlubmVkGBUgASgJEjQKEG9yZ2FuaXplcl9kZXRhaWwYFiABKAsyGi5ldmVudHNlYXNlLnYxLlVzZXJQcm9maWxlEhIKCmNhdGVnb3JpZXMYFyADKAkSDAoEdGFncxgYIAMoCRJDChN2ZXJpZmljYXRpb25fc3RhdHVzGBkgASgOMiYuZXZlbnRzZWFzZS52MS5FdmVudFZlcmlmaWNhdGlvblN0YXR1cyI1CghMb2NhdGlvbhIPCgdhZGRyZXNzGAEgASgJEgsKA2xhdBgCIAEoARILCgNsbmcYAyABKAEiZgoKVGlja2V0SW5mbxIPCgdpc19mcmVlGAEgASgIEhEKCWVudHJ5X2ZlZRgCIAEoARIWCg5lYXJseV9iaXJkX2ZlZRgDIAEoARIcChRpc19hcHBvaW50bWVudF9iYXNlZBgEIAEoCCJECgpTb2NpYWxMaW5rEicKBHR5cGUYASABKA4yGS5ldmVudHNlYXNlLnYxLlNvY2lhbFR5cGUSDQoFdmFsdWUYAiABKAkigAIKEEdldEV2ZW50c1JlcXVlc3QSJQoGcmVnaW9uGAEgASgLMhUuZXZlbnRzZWFzZS52MS5SZWdpb24SEgoKY2F0ZWdvcmllcxgCIAMoCRIMCgRkYXRlGAMgASgJEiYKB3NvcnRfYnkYBCABKA4yFS5ldmVudHNlYXNlLnYxLlNvcnRCeRI0Cg5zb3J0X2RpcmVjdGlvbhgFIAEoDjIcLmV2ZW50c2Vhc2UudjEuU29ydERpcmVjdGlvbhIUCgxzZWFyY2hfcXVlcnkYBiABKAkSEgoKaXNfcmVndWxhchgHIAEoCBIMCgRwYWdlGAggASgFEg0KBWxpbWl0GAkgASgFIl4KBlJlZ2lvbhIQCghsYXRpdHVkZRgBIAEoARIRCglsb25naXR1ZGUYAiABKAESFgoObGF0aXR1ZGVfZGVsdGEYAyABKAESFwoPbG9uZ2l0dWRlX2RlbHRhGAQgASgBIm8KEUdldEV2ZW50c1Jlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSIgoEZGF0YRgCIAMoCzIULmV2ZW50c2Vhc2UudjEuRXZlbnQSJQoEbWV0YRgDIAEoCzIXLmV2ZW50c2Vhc2UudjEuTWV0YURhdGEiiwEKCE1ldGFEYXRhEhMKC3RvdGFsX2NvdW50GAEgASgDEhMKC3RvdGFsX3BhZ2VzGAIgASgDEhQKDGN1cnJlbnRfcGFnZRgDIAEoBRINCgVsaW1pdBgEIAEoBRIVCg1oYXNfbmV4dF9wYWdlGAUgASgIEhkKEWhhc19wcmV2aW91c19wYWdlGAYgASgIIiUKD0dldEV2ZW50UmVxdWVzdBISCgppZF9vcl9zbHVnGAEgASgJIkcKEEdldEV2ZW50UmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCBIiCgRkYXRhGAIgASgLMhQuZXZlbnRzZWFzZS52MS5FdmVudCI5ChJDcmVhdGVFdmVudFJlcXVlc3QSIwoFZXZlbnQYASABKAsyFC5ldmVudHNlYXNlLnYxLkV2ZW50IlsKE0NyZWF0ZUV2ZW50UmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCBIPCgdtZXNzYWdlGAIgASgJEiIKBGRhdGEYAyABKAsyFC5ldmVudHNlYXNlLnYxLkV2ZW50IkUKElVwZGF0ZUV2ZW50UmVxdWVzdBIKCgJpZBgBIAEoCRIjCgVldmVudBgCIAEoCzIULmV2ZW50c2Vhc2UudjEuRXZlbnQiWwoTVXBkYXRlRXZlbnRSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEg8KB21lc3NhZ2UYAiABKAkSIgoEZGF0YRgDIAEoCzIULmV2ZW50c2Vhc2UudjEuRXZlbnQiIAoSRGVsZXRlRXZlbnRSZXF1ZXN0EgoKAmlkGAEgASgJIjcKE0RlbGV0ZUV2ZW50UmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCBIPCgdtZXNzYWdlGAIgASgJIiIKFEdldEV2ZW50U3RhdHNSZXF1ZXN0EgoKAmlkGAEgASgJIlEKFUdldEV2ZW50U3RhdHNSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEicKBGRhdGEYAiABKAsyGS5ldmVudHNlYXNlLnYxLkV2ZW50U3RhdHMiNgoKRXZlbnRTdGF0cxITCgtoZWFydF9jb3VudBgBIAEoBRITCgtzYXZlZF9jb3VudBgCIAEoBSK5AQoUR2V0VXNlckV2ZW50c1JlcXVlc3QSDAoEcGFnZRgBIAEoBRINCgVsaW1pdBgCIAEoBRIUCgxzZWFyY2hfcXVlcnkYAyABKAkSJgoHc29ydF9ieRgEIAEoDjIVLmV2ZW50c2Vhc2UudjEuU29ydEJ5EjQKDnNvcnRfZGlyZWN0aW9uGAUgASgOMhwuZXZlbnRzZWFzZS52MS5Tb3J0RGlyZWN0aW9uEhAKCHVzZXJuYW1lGAYgASgJIqgBChVHZXRTYXZlZEV2ZW50c1JlcXVlc3QSDAoEcGFnZRgBIAEoBRINCgVsaW1pdBgCIAEoBRIUCgxzZWFyY2hfcXVlcnkYAyABKAkSJgoHc29ydF9ieRgEIAEoDjIVLmV2ZW50c2Vhc2UudjEuU29ydEJ5EjQKDnNvcnRfZGlyZWN0aW9uGAUgASgOMhwuZXZlbnRzZWFzZS52MS5Tb3J0RGlyZWN0aW9uIisKF1RvZ2dsZVNhdmVkRXZlbnRSZXF1ZXN0EhAKCGV2ZW50X2lkGAEgASgJIj0KGFRvZ2dsZVNhdmVkRXZlbnRSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEhAKCGlzX3NhdmVkGAIgASgIKoUBCgZTb3J0QnkSFwoTU09SVF9CWV9VTlNQRUNJRklFRBAAEhYKElNPUlRfQllfU1RBUlRfREFURRABEhgKFFNPUlRfQllfQ1JFQVRFRF9EQVRFEAISFwoTU09SVF9CWV9IRUFSVF9DT1VOVBADEhcKE1NPUlRfQllfU0FWRURfQ09VTlQQBCpgCg1Tb3J0RGlyZWN0aW9uEh4KGlNPUlRfRElSRUNUSU9OX1VOU1BFQ0lGSUVEEAASFgoSU09SVF9ESVJFQ1RJT05fQVNDEAESFwoTU09SVF9ESVJFQ1RJT05fREVTQxACKqICCgpTb2NpYWxUeXBlEhsKF1NPQ0lBTF9UWVBFX1VOU1BFQ0lGSUVEEAASFQoRU09DSUFMX1RZUEVfUEhPTkUQARIZChVTT0NJQUxfVFlQRV9JTlNUQUdSQU0QAhIYChRTT0NJQUxfVFlQRV9GQUNFQk9PSxADEhgKFFNPQ0lBTF9UWVBFX1dIQVRTQVBQEAQSFwoTU09DSUFMX1RZUEVfV0VCU0lURRAFEhUKEVNPQ0lBTF9UWVBFX0VNQUlMEAYSFwoTU09DSUFMX1RZUEVfVFdJVFRFUhAHEhgKFFNPQ0lBTF9UWVBFX0xJTktFRElOEAgSFwoTU09DSUFMX1RZUEVfWU9VVFVCRRAJEhUKEVNPQ0lBTF9UWVBFX09USEVSEAoq5QEKF0V2ZW50VmVyaWZpY2F0aW9uU3RhdHVzEikKJUVWRU5UX1ZFUklGSUNBVElPTl9TVEFUVVNfVU5TUEVDSUZJRUQQABImCiJFVkVOVF9WRVJJRklDQVRJT05fU1RBVFVTX1ZFUklGSUVEEAESKAokRVZFTlRfVkVSSUZJQ0FUSU9OX1NUQVRVU19VTlZFUklGSUVEEAISJwojRVZFTlRfVkVSSUZJQ0FUSU9OX1NUQVRVU19JTl9SRVZJRVcQAxIkCiBFVkVOVF9WRVJJRklDQVRJT05fU1RBVFVTX0ZBSUxFRBAEMqAGCgxFdmVudFNlcnZpY2USTgoJR2V0RXZlbnRzEh8uZXZlbnRzZWFzZS52MS5HZXRFdmVudHNSZXF1ZXN0GiAuZXZlbnRzZWFzZS52MS5HZXRFdmVudHNSZXNwb25zZRJLCghHZXRFdmVudBIeLmV2ZW50c2Vhc2UudjEuR2V0RXZlbnRSZXF1ZXN0Gh8uZXZlbnRzZWFzZS52MS5HZXRFdmVudFJlc3BvbnNlEloKDUdldEV2ZW50U3RhdHMSIy5ldmVudHNlYXNlLnYxLkdldEV2ZW50U3RhdHNSZXF1ZXN0GiQuZXZlbnRzZWFzZS52MS5HZXRFdmVudFN0YXRzUmVzcG9uc2USVAoLQ3JlYXRlRXZlbnQSIS5ldmVudHNlYXNlLnYxLkNyZWF0ZUV2ZW50UmVxdWVzdBoiLmV2ZW50c2Vhc2UudjEuQ3JlYXRlRXZlbnRSZXNwb25zZRJUCgtVcGRhdGVFdmVudBIhLmV2ZW50c2Vhc2UudjEuVXBkYXRlRXZlbnRSZXF1ZXN0GiIuZXZlbnRzZWFzZS52MS5VcGRhdGVFdmVudFJlc3BvbnNlElQKC0RlbGV0ZUV2ZW50EiEuZXZlbnRzZWFzZS52MS5EZWxldGVFdmVudFJlcXVlc3QaIi5ldmVudHNlYXNlLnYxLkRlbGV0ZUV2ZW50UmVzcG9uc2USVgoNR2V0VXNlckV2ZW50cxIjLmV2ZW50c2Vhc2UudjEuR2V0VXNlckV2ZW50c1JlcXVlc3QaIC5ldmVudHNlYXNlLnYxLkdldEV2ZW50c1Jlc3BvbnNlElgKDkdldFNhdmVkRXZlbnRzEiQuZXZlbnRzZWFzZS52MS5HZXRTYXZlZEV2ZW50c1JlcXVlc3QaIC5ldmVudHNlYXNlLnYxLkdldEV2ZW50c1Jlc3BvbnNlEmMKEFRvZ2dsZVNhdmVkRXZlbnQSJi5ldmVudHNlYXNlLnYxLlRvZ2dsZVNhdmVkRXZlbnRSZXF1ZXN0GicuZXZlbnRzZWFzZS52MS5Ub2dnbGVTYXZlZEV2ZW50UmVzcG9uc2VCbAoRY29tLmV2ZW50c2Vhc2UudjFCCkV2ZW50UHJvdG9QAVpJZ2l0aHViLmNvbS9UaGlzLUlzLVByaW5jZS9ldmVudHNlYXNlLXByb3Rvcy9nZW4vZ28vcHJvdG8vdjE7ZXZlbnRzZWFzZV92MWIGcHJvdG8z", [file_google_protobuf_timestamp, file_proto_v1_user]);
 
 /**
  * @generated from message eventsease.v1.Event
@@ -129,6 +129,21 @@ export type Event = Message<"eventsease.v1.Event"> & {
    * @generated from field: eventsease.v1.UserProfile organizer_detail = 22;
    */
   organizerDetail?: UserProfile;
+
+  /**
+   * @generated from field: repeated string categories = 23;
+   */
+  categories: string[];
+
+  /**
+   * @generated from field: repeated string tags = 24;
+   */
+  tags: string[];
+
+  /**
+   * @generated from field: eventsease.v1.EventVerificationStatus verification_status = 25;
+   */
+  verificationStatus: EventVerificationStatus;
 };
 
 /**
@@ -461,6 +476,94 @@ export const CreateEventResponseSchema: GenMessage<CreateEventResponse> = /*@__P
   messageDesc(file_proto_v1_event, 11);
 
 /**
+ * @generated from message eventsease.v1.UpdateEventRequest
+ */
+export type UpdateEventRequest = Message<"eventsease.v1.UpdateEventRequest"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
+
+  /**
+   * @generated from field: eventsease.v1.Event event = 2;
+   */
+  event?: Event;
+};
+
+/**
+ * Describes the message eventsease.v1.UpdateEventRequest.
+ * Use `create(UpdateEventRequestSchema)` to create a new message.
+ */
+export const UpdateEventRequestSchema: GenMessage<UpdateEventRequest> = /*@__PURE__*/
+  messageDesc(file_proto_v1_event, 12);
+
+/**
+ * @generated from message eventsease.v1.UpdateEventResponse
+ */
+export type UpdateEventResponse = Message<"eventsease.v1.UpdateEventResponse"> & {
+  /**
+   * @generated from field: bool success = 1;
+   */
+  success: boolean;
+
+  /**
+   * @generated from field: string message = 2;
+   */
+  message: string;
+
+  /**
+   * @generated from field: eventsease.v1.Event data = 3;
+   */
+  data?: Event;
+};
+
+/**
+ * Describes the message eventsease.v1.UpdateEventResponse.
+ * Use `create(UpdateEventResponseSchema)` to create a new message.
+ */
+export const UpdateEventResponseSchema: GenMessage<UpdateEventResponse> = /*@__PURE__*/
+  messageDesc(file_proto_v1_event, 13);
+
+/**
+ * @generated from message eventsease.v1.DeleteEventRequest
+ */
+export type DeleteEventRequest = Message<"eventsease.v1.DeleteEventRequest"> & {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id: string;
+};
+
+/**
+ * Describes the message eventsease.v1.DeleteEventRequest.
+ * Use `create(DeleteEventRequestSchema)` to create a new message.
+ */
+export const DeleteEventRequestSchema: GenMessage<DeleteEventRequest> = /*@__PURE__*/
+  messageDesc(file_proto_v1_event, 14);
+
+/**
+ * @generated from message eventsease.v1.DeleteEventResponse
+ */
+export type DeleteEventResponse = Message<"eventsease.v1.DeleteEventResponse"> & {
+  /**
+   * @generated from field: bool success = 1;
+   */
+  success: boolean;
+
+  /**
+   * @generated from field: string message = 2;
+   */
+  message: string;
+};
+
+/**
+ * Describes the message eventsease.v1.DeleteEventResponse.
+ * Use `create(DeleteEventResponseSchema)` to create a new message.
+ */
+export const DeleteEventResponseSchema: GenMessage<DeleteEventResponse> = /*@__PURE__*/
+  messageDesc(file_proto_v1_event, 15);
+
+/**
  * @generated from message eventsease.v1.GetEventStatsRequest
  */
 export type GetEventStatsRequest = Message<"eventsease.v1.GetEventStatsRequest"> & {
@@ -475,7 +578,7 @@ export type GetEventStatsRequest = Message<"eventsease.v1.GetEventStatsRequest">
  * Use `create(GetEventStatsRequestSchema)` to create a new message.
  */
 export const GetEventStatsRequestSchema: GenMessage<GetEventStatsRequest> = /*@__PURE__*/
-  messageDesc(file_proto_v1_event, 12);
+  messageDesc(file_proto_v1_event, 16);
 
 /**
  * @generated from message eventsease.v1.GetEventStatsResponse
@@ -497,7 +600,7 @@ export type GetEventStatsResponse = Message<"eventsease.v1.GetEventStatsResponse
  * Use `create(GetEventStatsResponseSchema)` to create a new message.
  */
 export const GetEventStatsResponseSchema: GenMessage<GetEventStatsResponse> = /*@__PURE__*/
-  messageDesc(file_proto_v1_event, 13);
+  messageDesc(file_proto_v1_event, 17);
 
 /**
  * @generated from message eventsease.v1.EventStats
@@ -519,7 +622,7 @@ export type EventStats = Message<"eventsease.v1.EventStats"> & {
  * Use `create(EventStatsSchema)` to create a new message.
  */
 export const EventStatsSchema: GenMessage<EventStats> = /*@__PURE__*/
-  messageDesc(file_proto_v1_event, 14);
+  messageDesc(file_proto_v1_event, 18);
 
 /**
  * @generated from message eventsease.v1.GetUserEventsRequest
@@ -561,7 +664,7 @@ export type GetUserEventsRequest = Message<"eventsease.v1.GetUserEventsRequest">
  * Use `create(GetUserEventsRequestSchema)` to create a new message.
  */
 export const GetUserEventsRequestSchema: GenMessage<GetUserEventsRequest> = /*@__PURE__*/
-  messageDesc(file_proto_v1_event, 15);
+  messageDesc(file_proto_v1_event, 19);
 
 /**
  * @generated from message eventsease.v1.GetSavedEventsRequest
@@ -598,7 +701,7 @@ export type GetSavedEventsRequest = Message<"eventsease.v1.GetSavedEventsRequest
  * Use `create(GetSavedEventsRequestSchema)` to create a new message.
  */
 export const GetSavedEventsRequestSchema: GenMessage<GetSavedEventsRequest> = /*@__PURE__*/
-  messageDesc(file_proto_v1_event, 16);
+  messageDesc(file_proto_v1_event, 20);
 
 /**
  * @generated from message eventsease.v1.ToggleSavedEventRequest
@@ -615,7 +718,7 @@ export type ToggleSavedEventRequest = Message<"eventsease.v1.ToggleSavedEventReq
  * Use `create(ToggleSavedEventRequestSchema)` to create a new message.
  */
 export const ToggleSavedEventRequestSchema: GenMessage<ToggleSavedEventRequest> = /*@__PURE__*/
-  messageDesc(file_proto_v1_event, 17);
+  messageDesc(file_proto_v1_event, 21);
 
 /**
  * @generated from message eventsease.v1.ToggleSavedEventResponse
@@ -637,7 +740,7 @@ export type ToggleSavedEventResponse = Message<"eventsease.v1.ToggleSavedEventRe
  * Use `create(ToggleSavedEventResponseSchema)` to create a new message.
  */
 export const ToggleSavedEventResponseSchema: GenMessage<ToggleSavedEventResponse> = /*@__PURE__*/
-  messageDesc(file_proto_v1_event, 18);
+  messageDesc(file_proto_v1_event, 22);
 
 /**
  * @generated from enum eventsease.v1.SortBy
@@ -768,6 +871,42 @@ export const SocialTypeSchema: GenEnum<SocialType> = /*@__PURE__*/
   enumDesc(file_proto_v1_event, 2);
 
 /**
+ * @generated from enum eventsease.v1.EventVerificationStatus
+ */
+export enum EventVerificationStatus {
+  /**
+   * @generated from enum value: EVENT_VERIFICATION_STATUS_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: EVENT_VERIFICATION_STATUS_VERIFIED = 1;
+   */
+  VERIFIED = 1,
+
+  /**
+   * @generated from enum value: EVENT_VERIFICATION_STATUS_UNVERIFIED = 2;
+   */
+  UNVERIFIED = 2,
+
+  /**
+   * @generated from enum value: EVENT_VERIFICATION_STATUS_IN_REVIEW = 3;
+   */
+  IN_REVIEW = 3,
+
+  /**
+   * @generated from enum value: EVENT_VERIFICATION_STATUS_FAILED = 4;
+   */
+  FAILED = 4,
+}
+
+/**
+ * Describes the enum eventsease.v1.EventVerificationStatus.
+ */
+export const EventVerificationStatusSchema: GenEnum<EventVerificationStatus> = /*@__PURE__*/
+  enumDesc(file_proto_v1_event, 3);
+
+/**
  * @generated from service eventsease.v1.EventService
  */
 export const EventService: GenService<{
@@ -802,6 +941,22 @@ export const EventService: GenService<{
     methodKind: "unary";
     input: typeof CreateEventRequestSchema;
     output: typeof CreateEventResponseSchema;
+  },
+  /**
+   * @generated from rpc eventsease.v1.EventService.UpdateEvent
+   */
+  updateEvent: {
+    methodKind: "unary";
+    input: typeof UpdateEventRequestSchema;
+    output: typeof UpdateEventResponseSchema;
+  },
+  /**
+   * @generated from rpc eventsease.v1.EventService.DeleteEvent
+   */
+  deleteEvent: {
+    methodKind: "unary";
+    input: typeof DeleteEventRequestSchema;
+    output: typeof DeleteEventResponseSchema;
   },
   /**
    * @generated from rpc eventsease.v1.EventService.GetUserEvents

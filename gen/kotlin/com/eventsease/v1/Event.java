@@ -25,6 +25,8 @@ public  final class Event extends
     category_ = "";
     social_ = emptyProtobufList();
     isPinned_ = "";
+    categories_ = com.google.protobuf.GeneratedMessageLite.emptyProtobufList();
+    tags_ = com.google.protobuf.GeneratedMessageLite.emptyProtobufList();
   }
   private int bitField0_;
   public static final int ID_FIELD_NUMBER = 1;
@@ -1067,6 +1069,239 @@ public  final class Event extends
   private void clearOrganizerDetail() {
     organizerDetail_ = null;
     bitField0_ = (bitField0_ & ~0x00000040);
+  }
+
+  public static final int CATEGORIES_FIELD_NUMBER = 23;
+  private com.google.protobuf.Internal.ProtobufList<java.lang.String> categories_;
+  /**
+   * <code>repeated string categories = 23 [json_name = "categories"];</code>
+   * @return A list containing the categories.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.String> getCategoriesList() {
+    return categories_;
+  }
+  /**
+   * <code>repeated string categories = 23 [json_name = "categories"];</code>
+   * @return The count of categories.
+   */
+  @java.lang.Override
+  public int getCategoriesCount() {
+    return categories_.size();
+  }
+  /**
+   * <code>repeated string categories = 23 [json_name = "categories"];</code>
+   * @param index The index of the element to return.
+   * @return The categories at the given index.
+   */
+  @java.lang.Override
+  public java.lang.String getCategories(int index) {
+    return categories_.get(index);
+  }
+  /**
+   * <code>repeated string categories = 23 [json_name = "categories"];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the categories at the given index.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCategoriesBytes(int index) {
+    return com.google.protobuf.ByteString.copyFromUtf8(
+        categories_.get(index));
+  }
+  private void ensureCategoriesIsMutable() {
+    com.google.protobuf.Internal.ProtobufList<java.lang.String> tmp =
+        categories_;  if (!tmp.isModifiable()) {
+      categories_ =
+          com.google.protobuf.GeneratedMessageLite.mutableCopy(tmp);
+     }
+  }
+  /**
+   * <code>repeated string categories = 23 [json_name = "categories"];</code>
+   * @param index The index to set the value at.
+   * @param value The categories to set.
+   */
+  @java.lang.SuppressWarnings("ReturnValueIgnored")
+  private void setCategories(
+      int index, java.lang.String value) {
+    value.getClass();  // minimal bytecode null check
+    ensureCategoriesIsMutable();
+    categories_.set(index, value);
+  }
+  /**
+   * <code>repeated string categories = 23 [json_name = "categories"];</code>
+   * @param value The categories to add.
+   */
+  @java.lang.SuppressWarnings("ReturnValueIgnored")
+  private void addCategories(
+      java.lang.String value) {
+    value.getClass();  // minimal bytecode null check
+    ensureCategoriesIsMutable();
+    categories_.add(value);
+  }
+  /**
+   * <code>repeated string categories = 23 [json_name = "categories"];</code>
+   * @param values The categories to add.
+   */
+  private void addAllCategories(
+      java.lang.Iterable<java.lang.String> values) {
+    ensureCategoriesIsMutable();
+    com.google.protobuf.AbstractMessageLite.addAll(
+        values, categories_);
+  }
+  /**
+   * <code>repeated string categories = 23 [json_name = "categories"];</code>
+   */
+  private void clearCategories() {
+    categories_ = com.google.protobuf.GeneratedMessageLite.emptyProtobufList();
+  }
+  /**
+   * <code>repeated string categories = 23 [json_name = "categories"];</code>
+   * @param value The bytes of the categories to add.
+   */
+  private void addCategoriesBytes(
+      com.google.protobuf.ByteString value) {
+    checkByteStringIsUtf8(value);
+    ensureCategoriesIsMutable();
+    categories_.add(value.toStringUtf8());
+  }
+
+  public static final int TAGS_FIELD_NUMBER = 24;
+  private com.google.protobuf.Internal.ProtobufList<java.lang.String> tags_;
+  /**
+   * <code>repeated string tags = 24 [json_name = "tags"];</code>
+   * @return A list containing the tags.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.String> getTagsList() {
+    return tags_;
+  }
+  /**
+   * <code>repeated string tags = 24 [json_name = "tags"];</code>
+   * @return The count of tags.
+   */
+  @java.lang.Override
+  public int getTagsCount() {
+    return tags_.size();
+  }
+  /**
+   * <code>repeated string tags = 24 [json_name = "tags"];</code>
+   * @param index The index of the element to return.
+   * @return The tags at the given index.
+   */
+  @java.lang.Override
+  public java.lang.String getTags(int index) {
+    return tags_.get(index);
+  }
+  /**
+   * <code>repeated string tags = 24 [json_name = "tags"];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the tags at the given index.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTagsBytes(int index) {
+    return com.google.protobuf.ByteString.copyFromUtf8(
+        tags_.get(index));
+  }
+  private void ensureTagsIsMutable() {
+    com.google.protobuf.Internal.ProtobufList<java.lang.String> tmp =
+        tags_;  if (!tmp.isModifiable()) {
+      tags_ =
+          com.google.protobuf.GeneratedMessageLite.mutableCopy(tmp);
+     }
+  }
+  /**
+   * <code>repeated string tags = 24 [json_name = "tags"];</code>
+   * @param index The index to set the value at.
+   * @param value The tags to set.
+   */
+  @java.lang.SuppressWarnings("ReturnValueIgnored")
+  private void setTags(
+      int index, java.lang.String value) {
+    value.getClass();  // minimal bytecode null check
+    ensureTagsIsMutable();
+    tags_.set(index, value);
+  }
+  /**
+   * <code>repeated string tags = 24 [json_name = "tags"];</code>
+   * @param value The tags to add.
+   */
+  @java.lang.SuppressWarnings("ReturnValueIgnored")
+  private void addTags(
+      java.lang.String value) {
+    value.getClass();  // minimal bytecode null check
+    ensureTagsIsMutable();
+    tags_.add(value);
+  }
+  /**
+   * <code>repeated string tags = 24 [json_name = "tags"];</code>
+   * @param values The tags to add.
+   */
+  private void addAllTags(
+      java.lang.Iterable<java.lang.String> values) {
+    ensureTagsIsMutable();
+    com.google.protobuf.AbstractMessageLite.addAll(
+        values, tags_);
+  }
+  /**
+   * <code>repeated string tags = 24 [json_name = "tags"];</code>
+   */
+  private void clearTags() {
+    tags_ = com.google.protobuf.GeneratedMessageLite.emptyProtobufList();
+  }
+  /**
+   * <code>repeated string tags = 24 [json_name = "tags"];</code>
+   * @param value The bytes of the tags to add.
+   */
+  private void addTagsBytes(
+      com.google.protobuf.ByteString value) {
+    checkByteStringIsUtf8(value);
+    ensureTagsIsMutable();
+    tags_.add(value.toStringUtf8());
+  }
+
+  public static final int VERIFICATION_STATUS_FIELD_NUMBER = 25;
+  private int verificationStatus_;
+  /**
+   * <code>.eventsease.v1.EventVerificationStatus verification_status = 25 [json_name = "verificationStatus"];</code>
+   * @return The enum numeric value on the wire for verificationStatus.
+   */
+  @java.lang.Override
+  public int getVerificationStatusValue() {
+    return verificationStatus_;
+  }
+  /**
+   * <code>.eventsease.v1.EventVerificationStatus verification_status = 25 [json_name = "verificationStatus"];</code>
+   * @return The verificationStatus.
+   */
+  @java.lang.Override
+  public com.eventsease.v1.EventVerificationStatus getVerificationStatus() {
+    com.eventsease.v1.EventVerificationStatus result = com.eventsease.v1.EventVerificationStatus.forNumber(verificationStatus_);
+    return result == null ? com.eventsease.v1.EventVerificationStatus.UNRECOGNIZED : result;
+  }
+  /**
+   * <code>.eventsease.v1.EventVerificationStatus verification_status = 25 [json_name = "verificationStatus"];</code>
+   * @param value The enum numeric value on the wire for verificationStatus to set.
+   * @throws IllegalArgumentException if UNRECOGNIZED is provided.
+   */
+  private void setVerificationStatusValue(int value) {
+      verificationStatus_ = value;
+  }
+  /**
+   * <code>.eventsease.v1.EventVerificationStatus verification_status = 25 [json_name = "verificationStatus"];</code>
+   * @param value The verificationStatus to set.
+   */
+  private void setVerificationStatus(com.eventsease.v1.EventVerificationStatus value) {
+    verificationStatus_ = value.getNumber();
+
+  }
+  /**
+   * <code>.eventsease.v1.EventVerificationStatus verification_status = 25 [json_name = "verificationStatus"];</code>
+   */
+  private void clearVerificationStatus() {
+
+    verificationStatus_ = 0;
   }
 
   public static com.eventsease.v1.Event parseFrom(
@@ -2221,6 +2456,237 @@ public  final class Event extends
       return this;
     }
 
+    /**
+     * <code>repeated string categories = 23 [json_name = "categories"];</code>
+     * @return A list containing the categories.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.String>
+        getCategoriesList() {
+      return java.util.Collections.unmodifiableList(
+          instance.getCategoriesList());
+    }
+    /**
+     * <code>repeated string categories = 23 [json_name = "categories"];</code>
+     * @return The count of categories.
+     */
+    @java.lang.Override
+    public int getCategoriesCount() {
+      return instance.getCategoriesCount();
+    }
+    /**
+     * <code>repeated string categories = 23 [json_name = "categories"];</code>
+     * @param index The index of the element to return.
+     * @return The categories at the given index.
+     */
+    @java.lang.Override
+    public java.lang.String getCategories(int index) {
+      return instance.getCategories(index);
+    }
+    /**
+     * <code>repeated string categories = 23 [json_name = "categories"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the categories at the given index.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCategoriesBytes(int index) {
+      return instance.getCategoriesBytes(index);
+    }
+    /**
+     * <code>repeated string categories = 23 [json_name = "categories"];</code>
+     * @param index The index to set the value at.
+     * @param value The categories to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCategories(
+        int index, java.lang.String value) {
+      copyOnWrite();
+      instance.setCategories(index, value);
+      return this;
+    }
+    /**
+     * <code>repeated string categories = 23 [json_name = "categories"];</code>
+     * @param value The categories to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCategories(
+        java.lang.String value) {
+      copyOnWrite();
+      instance.addCategories(value);
+      return this;
+    }
+    /**
+     * <code>repeated string categories = 23 [json_name = "categories"];</code>
+     * @param values The categories to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllCategories(
+        java.lang.Iterable<java.lang.String> values) {
+      copyOnWrite();
+      instance.addAllCategories(values);
+      return this;
+    }
+    /**
+     * <code>repeated string categories = 23 [json_name = "categories"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCategories() {
+      copyOnWrite();
+      instance.clearCategories();
+      return this;
+    }
+    /**
+     * <code>repeated string categories = 23 [json_name = "categories"];</code>
+     * @param value The bytes of the categories to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCategoriesBytes(
+        com.google.protobuf.ByteString value) {
+      copyOnWrite();
+      instance.addCategoriesBytes(value);
+      return this;
+    }
+
+    /**
+     * <code>repeated string tags = 24 [json_name = "tags"];</code>
+     * @return A list containing the tags.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.String>
+        getTagsList() {
+      return java.util.Collections.unmodifiableList(
+          instance.getTagsList());
+    }
+    /**
+     * <code>repeated string tags = 24 [json_name = "tags"];</code>
+     * @return The count of tags.
+     */
+    @java.lang.Override
+    public int getTagsCount() {
+      return instance.getTagsCount();
+    }
+    /**
+     * <code>repeated string tags = 24 [json_name = "tags"];</code>
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    @java.lang.Override
+    public java.lang.String getTags(int index) {
+      return instance.getTags(index);
+    }
+    /**
+     * <code>repeated string tags = 24 [json_name = "tags"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTagsBytes(int index) {
+      return instance.getTagsBytes(index);
+    }
+    /**
+     * <code>repeated string tags = 24 [json_name = "tags"];</code>
+     * @param index The index to set the value at.
+     * @param value The tags to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTags(
+        int index, java.lang.String value) {
+      copyOnWrite();
+      instance.setTags(index, value);
+      return this;
+    }
+    /**
+     * <code>repeated string tags = 24 [json_name = "tags"];</code>
+     * @param value The tags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTags(
+        java.lang.String value) {
+      copyOnWrite();
+      instance.addTags(value);
+      return this;
+    }
+    /**
+     * <code>repeated string tags = 24 [json_name = "tags"];</code>
+     * @param values The tags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllTags(
+        java.lang.Iterable<java.lang.String> values) {
+      copyOnWrite();
+      instance.addAllTags(values);
+      return this;
+    }
+    /**
+     * <code>repeated string tags = 24 [json_name = "tags"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTags() {
+      copyOnWrite();
+      instance.clearTags();
+      return this;
+    }
+    /**
+     * <code>repeated string tags = 24 [json_name = "tags"];</code>
+     * @param value The bytes of the tags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTagsBytes(
+        com.google.protobuf.ByteString value) {
+      copyOnWrite();
+      instance.addTagsBytes(value);
+      return this;
+    }
+
+    /**
+     * <code>.eventsease.v1.EventVerificationStatus verification_status = 25 [json_name = "verificationStatus"];</code>
+     * @return The enum numeric value on the wire for verificationStatus.
+     */
+    @java.lang.Override
+    public int getVerificationStatusValue() {
+      return instance.getVerificationStatusValue();
+    }
+    /**
+     * <code>.eventsease.v1.EventVerificationStatus verification_status = 25 [json_name = "verificationStatus"];</code>
+     * @param value The verificationStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setVerificationStatusValue(int value) {
+      copyOnWrite();
+      instance.setVerificationStatusValue(value);
+      return this;
+    }
+    /**
+     * <code>.eventsease.v1.EventVerificationStatus verification_status = 25 [json_name = "verificationStatus"];</code>
+     * @return The verificationStatus.
+     */
+    @java.lang.Override
+    public com.eventsease.v1.EventVerificationStatus getVerificationStatus() {
+      return instance.getVerificationStatus();
+    }
+    /**
+     * <code>.eventsease.v1.EventVerificationStatus verification_status = 25 [json_name = "verificationStatus"];</code>
+     * @param value The enum numeric value on the wire for verificationStatus to set.
+     * @throws IllegalArgumentException if UNRECOGNIZED is provided.
+     * @return This builder for chaining.
+     */
+    public Builder setVerificationStatus(com.eventsease.v1.EventVerificationStatus value) {
+      copyOnWrite();
+      instance.setVerificationStatus(value);
+      return this;
+    }
+    /**
+     * <code>.eventsease.v1.EventVerificationStatus verification_status = 25 [json_name = "verificationStatus"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearVerificationStatus() {
+      copyOnWrite();
+      instance.clearVerificationStatus();
+      return this;
+    }
+
     // @@protoc_insertion_point(builder_scope:eventsease.v1.Event)
   }
   @java.lang.Override
@@ -2261,13 +2727,16 @@ public  final class Event extends
             "updatedAt_",
             "isPinned_",
             "organizerDetail_",
+            "categories_",
+            "tags_",
+            "verificationStatus_",
           };
           java.lang.String info =
-              "\u0000\u0016\u0000\u0001\u0001\u0016\u0016\u0000\u0002\u0000\u0001\u0208\u0002\u0208" +
+              "\u0000\u0019\u0000\u0001\u0001\u0019\u0019\u0000\u0004\u0000\u0001\u0208\u0002\u0208" +
               "\u0003\u0208\u0004\u0208\u0005\u1009\u0000\u0006\u1009\u0001\u0007\u1009\u0002\b" +
               "\u021a\t\u0208\n\u0208\u000b\u0208\f\u1009\u0003\r\u001b\u000e\u0007\u000f\u0007" +
               "\u0010\u0007\u0011\u0004\u0012\u0004\u0013\u1009\u0004\u0014\u1009\u0005\u0015\u0208" +
-              "\u0016\u1009\u0006";
+              "\u0016\u1009\u0006\u0017\u021a\u0018\u021a\u0019\f";
           return newMessageInfo(DEFAULT_INSTANCE, info, objects);
       }
       case GET_DEFAULT_INSTANCE: {
