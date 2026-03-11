@@ -12,6 +12,12 @@ import SwiftProtobuf
 public protocol Eventsease_V1_AdminServiceClientInterface: Sendable {
 
     @available(iOS 13, *)
+    func `login`(request: Eventsease_V1_AdminLoginRequest, headers: Connect.Headers) async -> ResponseMessage<Eventsease_V1_AdminLoginResponse>
+
+    @available(iOS 13, *)
+    func `logout`(request: Eventsease_V1_AdminLogoutRequest, headers: Connect.Headers) async -> ResponseMessage<Eventsease_V1_AdminLogoutResponse>
+
+    @available(iOS 13, *)
     func `dispatchEventCreatedNotification`(request: Eventsease_V1_DispatchEventCreatedNotificationRequest, headers: Connect.Headers) async -> ResponseMessage<Eventsease_V1_DispatchEventCreatedNotificationResponse>
 
     @available(iOS 13, *)
@@ -36,6 +42,16 @@ public final class Eventsease_V1_AdminServiceClient: Eventsease_V1_AdminServiceC
 
     public init(client: Connect.ProtocolClientInterface) {
         self.client = client
+    }
+
+    @available(iOS 13, *)
+    public func `login`(request: Eventsease_V1_AdminLoginRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_AdminLoginResponse> {
+        return await self.client.unary(path: "/eventsease.v1.AdminService/Login", idempotencyLevel: .unknown, request: request, headers: headers)
+    }
+
+    @available(iOS 13, *)
+    public func `logout`(request: Eventsease_V1_AdminLogoutRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_AdminLogoutResponse> {
+        return await self.client.unary(path: "/eventsease.v1.AdminService/Logout", idempotencyLevel: .unknown, request: request, headers: headers)
     }
 
     @available(iOS 13, *)
@@ -70,6 +86,8 @@ public final class Eventsease_V1_AdminServiceClient: Eventsease_V1_AdminServiceC
 
     public enum Metadata {
         public enum Methods {
+            public static let login = Connect.MethodSpec(name: "Login", service: "eventsease.v1.AdminService", type: .unary)
+            public static let logout = Connect.MethodSpec(name: "Logout", service: "eventsease.v1.AdminService", type: .unary)
             public static let dispatchEventCreatedNotification = Connect.MethodSpec(name: "DispatchEventCreatedNotification", service: "eventsease.v1.AdminService", type: .unary)
             public static let getEvents = Connect.MethodSpec(name: "GetEvents", service: "eventsease.v1.AdminService", type: .unary)
             public static let getUsers = Connect.MethodSpec(name: "GetUsers", service: "eventsease.v1.AdminService", type: .unary)

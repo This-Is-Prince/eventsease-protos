@@ -20,6 +20,60 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
+public struct Eventsease_V1_AdminLoginRequest: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var email: String = String()
+
+  public var password: String = String()
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+public struct Eventsease_V1_AdminLoginResponse: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var success: Bool = false
+
+  public var message: String = String()
+
+  public var authorizationHeader: String = String()
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+public struct Eventsease_V1_AdminLogoutRequest: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+public struct Eventsease_V1_AdminLogoutResponse: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var success: Bool = false
+
+  public var message: String = String()
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
 public struct Eventsease_V1_DispatchEventCreatedNotificationRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -439,6 +493,135 @@ public struct Eventsease_V1_AdminServiceDeleteEventResponse: Sendable {
 
 fileprivate let _protobuf_package = "eventsease.v1"
 
+extension Eventsease_V1_AdminLoginRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".AdminLoginRequest"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}email\0\u{1}password\0")
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.email) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.password) }()
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.email.isEmpty {
+      try visitor.visitSingularStringField(value: self.email, fieldNumber: 1)
+    }
+    if !self.password.isEmpty {
+      try visitor.visitSingularStringField(value: self.password, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Eventsease_V1_AdminLoginRequest, rhs: Eventsease_V1_AdminLoginRequest) -> Bool {
+    if lhs.email != rhs.email {return false}
+    if lhs.password != rhs.password {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Eventsease_V1_AdminLoginResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".AdminLoginResponse"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}success\0\u{1}message\0\u{3}authorization_header\0")
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularBoolField(value: &self.success) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.message) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.authorizationHeader) }()
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.success != false {
+      try visitor.visitSingularBoolField(value: self.success, fieldNumber: 1)
+    }
+    if !self.message.isEmpty {
+      try visitor.visitSingularStringField(value: self.message, fieldNumber: 2)
+    }
+    if !self.authorizationHeader.isEmpty {
+      try visitor.visitSingularStringField(value: self.authorizationHeader, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Eventsease_V1_AdminLoginResponse, rhs: Eventsease_V1_AdminLoginResponse) -> Bool {
+    if lhs.success != rhs.success {return false}
+    if lhs.message != rhs.message {return false}
+    if lhs.authorizationHeader != rhs.authorizationHeader {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Eventsease_V1_AdminLogoutRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".AdminLogoutRequest"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    // Load everything into unknown fields
+    while try decoder.nextFieldNumber() != nil {}
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Eventsease_V1_AdminLogoutRequest, rhs: Eventsease_V1_AdminLogoutRequest) -> Bool {
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension Eventsease_V1_AdminLogoutResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".AdminLogoutResponse"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}success\0\u{1}message\0")
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularBoolField(value: &self.success) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.message) }()
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.success != false {
+      try visitor.visitSingularBoolField(value: self.success, fieldNumber: 1)
+    }
+    if !self.message.isEmpty {
+      try visitor.visitSingularStringField(value: self.message, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Eventsease_V1_AdminLogoutResponse, rhs: Eventsease_V1_AdminLogoutResponse) -> Bool {
+    if lhs.success != rhs.success {return false}
+    if lhs.message != rhs.message {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
 extension Eventsease_V1_DispatchEventCreatedNotificationRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DispatchEventCreatedNotificationRequest"
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}event_id\0")
@@ -638,7 +821,7 @@ extension Eventsease_V1_AdminServiceGetEventsResponse: SwiftProtobuf.Message, Sw
 
 extension Eventsease_V1_AdminServiceGetUsersRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".AdminServiceGetUsersRequest"
-  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}page\0\u{1}limit\0\u{2}\u{2}roles\0\u{3}is_verified\0\u{3}is_event_creation_blocked\0\u{3}is_fraud\0\u{1}email\0\u{1}username\0\u{3}user_id\0")
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}page\0\u{1}limit\0\u{1}roles\0\u{3}is_verified\0\u{3}is_event_creation_blocked\0\u{3}is_fraud\0\u{1}email\0\u{1}username\0\u{3}user_id\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -648,13 +831,13 @@ extension Eventsease_V1_AdminServiceGetUsersRequest: SwiftProtobuf.Message, Swif
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularInt32Field(value: &self.page) }()
       case 2: try { try decoder.decodeSingularInt32Field(value: &self.limit) }()
-      case 4: try { try decoder.decodeRepeatedEnumField(value: &self.roles) }()
-      case 5: try { try decoder.decodeSingularBoolField(value: &self._isVerified) }()
-      case 6: try { try decoder.decodeSingularBoolField(value: &self._isEventCreationBlocked) }()
-      case 7: try { try decoder.decodeSingularBoolField(value: &self._isFraud) }()
-      case 8: try { try decoder.decodeSingularStringField(value: &self._email) }()
-      case 9: try { try decoder.decodeSingularStringField(value: &self._username) }()
-      case 10: try { try decoder.decodeSingularStringField(value: &self._userID) }()
+      case 3: try { try decoder.decodeRepeatedEnumField(value: &self.roles) }()
+      case 4: try { try decoder.decodeSingularBoolField(value: &self._isVerified) }()
+      case 5: try { try decoder.decodeSingularBoolField(value: &self._isEventCreationBlocked) }()
+      case 6: try { try decoder.decodeSingularBoolField(value: &self._isFraud) }()
+      case 7: try { try decoder.decodeSingularStringField(value: &self._email) }()
+      case 8: try { try decoder.decodeSingularStringField(value: &self._username) }()
+      case 9: try { try decoder.decodeSingularStringField(value: &self._userID) }()
       default: break
       }
     }
@@ -672,25 +855,25 @@ extension Eventsease_V1_AdminServiceGetUsersRequest: SwiftProtobuf.Message, Swif
       try visitor.visitSingularInt32Field(value: self.limit, fieldNumber: 2)
     }
     if !self.roles.isEmpty {
-      try visitor.visitPackedEnumField(value: self.roles, fieldNumber: 4)
+      try visitor.visitPackedEnumField(value: self.roles, fieldNumber: 3)
     }
     try { if let v = self._isVerified {
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 5)
+      try visitor.visitSingularBoolField(value: v, fieldNumber: 4)
     } }()
     try { if let v = self._isEventCreationBlocked {
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 6)
+      try visitor.visitSingularBoolField(value: v, fieldNumber: 5)
     } }()
     try { if let v = self._isFraud {
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 7)
+      try visitor.visitSingularBoolField(value: v, fieldNumber: 6)
     } }()
     try { if let v = self._email {
-      try visitor.visitSingularStringField(value: v, fieldNumber: 8)
+      try visitor.visitSingularStringField(value: v, fieldNumber: 7)
     } }()
     try { if let v = self._username {
-      try visitor.visitSingularStringField(value: v, fieldNumber: 9)
+      try visitor.visitSingularStringField(value: v, fieldNumber: 8)
     } }()
     try { if let v = self._userID {
-      try visitor.visitSingularStringField(value: v, fieldNumber: 10)
+      try visitor.visitSingularStringField(value: v, fieldNumber: 9)
     } }()
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -884,7 +1067,7 @@ extension Eventsease_V1_AdminServiceUpdateUserResponse: SwiftProtobuf.Message, S
 
 extension Eventsease_V1_AdminServiceUpdateEventRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".AdminServiceUpdateEventRequest"
-  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{4}\u{2}verification_status\0\u{3}is_approved\0\u{1}social\0\u{3}is_pinned\0\u{1}organizer\0")
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{3}verification_status\0\u{3}is_approved\0\u{1}social\0\u{3}is_pinned\0\u{1}organizer\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -893,11 +1076,11 @@ extension Eventsease_V1_AdminServiceUpdateEventRequest: SwiftProtobuf.Message, S
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularStringField(value: &self.id) }()
-      case 3: try { try decoder.decodeSingularEnumField(value: &self._verificationStatus) }()
-      case 4: try { try decoder.decodeSingularBoolField(value: &self._isApproved) }()
-      case 5: try { try decoder.decodeRepeatedMessageField(value: &self.social) }()
-      case 6: try { try decoder.decodeSingularStringField(value: &self._isPinned) }()
-      case 7: try { try decoder.decodeSingularStringField(value: &self._organizer) }()
+      case 2: try { try decoder.decodeSingularEnumField(value: &self._verificationStatus) }()
+      case 3: try { try decoder.decodeSingularBoolField(value: &self._isApproved) }()
+      case 4: try { try decoder.decodeRepeatedMessageField(value: &self.social) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self._isPinned) }()
+      case 6: try { try decoder.decodeSingularStringField(value: &self._organizer) }()
       default: break
       }
     }
@@ -912,19 +1095,19 @@ extension Eventsease_V1_AdminServiceUpdateEventRequest: SwiftProtobuf.Message, S
       try visitor.visitSingularStringField(value: self.id, fieldNumber: 1)
     }
     try { if let v = self._verificationStatus {
-      try visitor.visitSingularEnumField(value: v, fieldNumber: 3)
+      try visitor.visitSingularEnumField(value: v, fieldNumber: 2)
     } }()
     try { if let v = self._isApproved {
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 4)
+      try visitor.visitSingularBoolField(value: v, fieldNumber: 3)
     } }()
     if !self.social.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.social, fieldNumber: 5)
+      try visitor.visitRepeatedMessageField(value: self.social, fieldNumber: 4)
     }
     try { if let v = self._isPinned {
-      try visitor.visitSingularStringField(value: v, fieldNumber: 6)
+      try visitor.visitSingularStringField(value: v, fieldNumber: 5)
     } }()
     try { if let v = self._organizer {
-      try visitor.visitSingularStringField(value: v, fieldNumber: 7)
+      try visitor.visitSingularStringField(value: v, fieldNumber: 6)
     } }()
     try unknownFields.traverse(visitor: &visitor)
   }

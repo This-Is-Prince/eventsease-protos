@@ -11,12 +11,32 @@ option java_package = "com.eventsease.v1";
 option java_outer_classname = "AdminProto";
 
 service AdminService {
+  rpc Login (AdminLoginRequest) returns (AdminLoginResponse);
+  rpc Logout (AdminLogoutRequest) returns (AdminLogoutResponse);
   rpc DispatchEventCreatedNotification (DispatchEventCreatedNotificationRequest) returns (DispatchEventCreatedNotificationResponse);
   rpc GetEvents (AdminServiceGetEventsRequest) returns (AdminServiceGetEventsResponse);
   rpc GetUsers (AdminServiceGetUsersRequest) returns (AdminServiceGetUsersResponse);
   rpc UpdateUser (AdminServiceUpdateUserRequest) returns (AdminServiceUpdateUserResponse);
   rpc UpdateEvent (AdminServiceUpdateEventRequest) returns (AdminServiceUpdateEventResponse);
   rpc DeleteEvent (AdminServiceDeleteEventRequest) returns (AdminServiceDeleteEventResponse);
+}
+
+message AdminLoginRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message AdminLoginResponse {
+  bool success = 1;
+  string message = 2;
+  string authorization_header = 3;
+}
+
+message AdminLogoutRequest {}
+
+message AdminLogoutResponse {
+  bool success = 1;
+  string message = 2;
 }
 
 message DispatchEventCreatedNotificationRequest {
@@ -51,13 +71,13 @@ message AdminServiceGetEventsResponse {
 message AdminServiceGetUsersRequest {
   int32 page = 1;
   int32 limit = 2;
-  repeated UserRole roles = 4;
-  optional bool is_verified = 5;
-  optional bool is_event_creation_blocked = 6;
-  optional bool is_fraud = 7;
-  optional string email = 8;
-  optional string username = 9;
-  optional string user_id = 10;
+  repeated UserRole roles = 3;
+  optional bool is_verified = 4;
+  optional bool is_event_creation_blocked = 5;
+  optional bool is_fraud = 6;
+  optional string email = 7;
+  optional string username = 8;
+  optional string user_id = 9;
 }
 
 message AdminServiceGetUsersResponse {
@@ -86,11 +106,11 @@ message AdminServiceUpdateUserResponse {
 
 message AdminServiceUpdateEventRequest {
   string id = 1;
-  optional EventVerificationStatus verification_status = 3;
-  optional bool is_approved = 4;
-  repeated SocialLink social = 5;
-  optional string is_pinned = 6;
-  optional string organizer = 7;
+  optional EventVerificationStatus verification_status = 2;
+  optional bool is_approved = 3;
+  repeated SocialLink social = 4;
+  optional string is_pinned = 5;
+  optional string organizer = 6;
 }
 
 message AdminServiceUpdateEventResponse {

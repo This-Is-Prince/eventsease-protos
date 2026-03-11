@@ -13,6 +13,30 @@ import com.connectrpc.StreamType
 public class AdminServiceClient(
   private val client: ProtocolClientInterface,
 ) : AdminServiceClientInterface {
+  override suspend fun login(request: AdminLoginRequest, headers: Headers): ResponseMessage<AdminLoginResponse> = client.unary(
+    request,
+    headers,
+    MethodSpec(
+    "eventsease.v1.AdminService/Login",
+      com.eventsease.v1.AdminLoginRequest::class,
+      com.eventsease.v1.AdminLoginResponse::class,
+      StreamType.UNARY,
+    ),
+  )
+
+
+  override suspend fun logout(request: AdminLogoutRequest, headers: Headers): ResponseMessage<AdminLogoutResponse> = client.unary(
+    request,
+    headers,
+    MethodSpec(
+    "eventsease.v1.AdminService/Logout",
+      com.eventsease.v1.AdminLogoutRequest::class,
+      com.eventsease.v1.AdminLogoutResponse::class,
+      StreamType.UNARY,
+    ),
+  )
+
+
   override suspend fun dispatchEventCreatedNotification(request: DispatchEventCreatedNotificationRequest, headers: Headers): ResponseMessage<DispatchEventCreatedNotificationResponse> = client.unary(
     request,
     headers,

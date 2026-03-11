@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AdminServiceDeleteEventRequest, AdminServiceDeleteEventResponse, AdminServiceGetEventsRequest, AdminServiceGetEventsResponse, AdminServiceGetUsersRequest, AdminServiceGetUsersResponse, AdminServiceUpdateEventRequest, AdminServiceUpdateEventResponse, AdminServiceUpdateUserRequest, AdminServiceUpdateUserResponse, DispatchEventCreatedNotificationRequest, DispatchEventCreatedNotificationResponse } from "./admin_pb";
+import { AdminLoginRequest, AdminLoginResponse, AdminLogoutRequest, AdminLogoutResponse, AdminServiceDeleteEventRequest, AdminServiceDeleteEventResponse, AdminServiceGetEventsRequest, AdminServiceGetEventsResponse, AdminServiceGetUsersRequest, AdminServiceGetUsersResponse, AdminServiceUpdateEventRequest, AdminServiceUpdateEventResponse, AdminServiceUpdateUserRequest, AdminServiceUpdateUserResponse, DispatchEventCreatedNotificationRequest, DispatchEventCreatedNotificationResponse } from "./admin_pb";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -12,6 +12,24 @@ import { MethodKind } from "@bufbuild/protobuf";
 export const AdminService = {
   typeName: "eventsease.v1.AdminService",
   methods: {
+    /**
+     * @generated from rpc eventsease.v1.AdminService.Login
+     */
+    login: {
+      name: "Login",
+      I: AdminLoginRequest,
+      O: AdminLoginResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc eventsease.v1.AdminService.Logout
+     */
+    logout: {
+      name: "Logout",
+      I: AdminLogoutRequest,
+      O: AdminLogoutResponse,
+      kind: MethodKind.Unary,
+    },
     /**
      * @generated from rpc eventsease.v1.AdminService.DispatchEventCreatedNotification
      */

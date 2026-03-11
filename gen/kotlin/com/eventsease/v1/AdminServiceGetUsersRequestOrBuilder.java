@@ -23,113 +23,113 @@ public interface AdminServiceGetUsersRequestOrBuilder extends
   int getLimit();
 
   /**
-   * <code>repeated .eventsease.v1.UserRole roles = 4 [json_name = "roles"];</code>
+   * <code>repeated .eventsease.v1.UserRole roles = 3 [json_name = "roles"];</code>
    * @return A list containing the roles.
    */
   java.util.List<com.eventsease.v1.UserRole> getRolesList();
   /**
-   * <code>repeated .eventsease.v1.UserRole roles = 4 [json_name = "roles"];</code>
+   * <code>repeated .eventsease.v1.UserRole roles = 3 [json_name = "roles"];</code>
    * @return The count of roles.
    */
   int getRolesCount();
   /**
-   * <code>repeated .eventsease.v1.UserRole roles = 4 [json_name = "roles"];</code>
+   * <code>repeated .eventsease.v1.UserRole roles = 3 [json_name = "roles"];</code>
    * @param index The index of the element to return.
    * @return The roles at the given index.
    */
   com.eventsease.v1.UserRole getRoles(int index);
   /**
-   * <code>repeated .eventsease.v1.UserRole roles = 4 [json_name = "roles"];</code>
+   * <code>repeated .eventsease.v1.UserRole roles = 3 [json_name = "roles"];</code>
    * @return A list containing the enum numeric values on the wire for roles.
    */
   java.util.List<java.lang.Integer>
   getRolesValueList();
   /**
-   * <code>repeated .eventsease.v1.UserRole roles = 4 [json_name = "roles"];</code>
+   * <code>repeated .eventsease.v1.UserRole roles = 3 [json_name = "roles"];</code>
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of roles at the given index.
    */
   int getRolesValue(int index);
 
   /**
-   * <code>optional bool is_verified = 5 [json_name = "isVerified"];</code>
+   * <code>optional bool is_verified = 4 [json_name = "isVerified"];</code>
    * @return Whether the isVerified field is set.
    */
   boolean hasIsVerified();
   /**
-   * <code>optional bool is_verified = 5 [json_name = "isVerified"];</code>
+   * <code>optional bool is_verified = 4 [json_name = "isVerified"];</code>
    * @return The isVerified.
    */
   boolean getIsVerified();
 
   /**
-   * <code>optional bool is_event_creation_blocked = 6 [json_name = "isEventCreationBlocked"];</code>
+   * <code>optional bool is_event_creation_blocked = 5 [json_name = "isEventCreationBlocked"];</code>
    * @return Whether the isEventCreationBlocked field is set.
    */
   boolean hasIsEventCreationBlocked();
   /**
-   * <code>optional bool is_event_creation_blocked = 6 [json_name = "isEventCreationBlocked"];</code>
+   * <code>optional bool is_event_creation_blocked = 5 [json_name = "isEventCreationBlocked"];</code>
    * @return The isEventCreationBlocked.
    */
   boolean getIsEventCreationBlocked();
 
   /**
-   * <code>optional bool is_fraud = 7 [json_name = "isFraud"];</code>
+   * <code>optional bool is_fraud = 6 [json_name = "isFraud"];</code>
    * @return Whether the isFraud field is set.
    */
   boolean hasIsFraud();
   /**
-   * <code>optional bool is_fraud = 7 [json_name = "isFraud"];</code>
+   * <code>optional bool is_fraud = 6 [json_name = "isFraud"];</code>
    * @return The isFraud.
    */
   boolean getIsFraud();
 
   /**
-   * <code>optional string email = 8 [json_name = "email"];</code>
+   * <code>optional string email = 7 [json_name = "email"];</code>
    * @return Whether the email field is set.
    */
   boolean hasEmail();
   /**
-   * <code>optional string email = 8 [json_name = "email"];</code>
+   * <code>optional string email = 7 [json_name = "email"];</code>
    * @return The email.
    */
   java.lang.String getEmail();
   /**
-   * <code>optional string email = 8 [json_name = "email"];</code>
+   * <code>optional string email = 7 [json_name = "email"];</code>
    * @return The bytes for email.
    */
   com.google.protobuf.ByteString
       getEmailBytes();
 
   /**
-   * <code>optional string username = 9 [json_name = "username"];</code>
+   * <code>optional string username = 8 [json_name = "username"];</code>
    * @return Whether the username field is set.
    */
   boolean hasUsername();
   /**
-   * <code>optional string username = 9 [json_name = "username"];</code>
+   * <code>optional string username = 8 [json_name = "username"];</code>
    * @return The username.
    */
   java.lang.String getUsername();
   /**
-   * <code>optional string username = 9 [json_name = "username"];</code>
+   * <code>optional string username = 8 [json_name = "username"];</code>
    * @return The bytes for username.
    */
   com.google.protobuf.ByteString
       getUsernameBytes();
 
   /**
-   * <code>optional string user_id = 10 [json_name = "userId"];</code>
+   * <code>optional string user_id = 9 [json_name = "userId"];</code>
    * @return Whether the userId field is set.
    */
   boolean hasUserId();
   /**
-   * <code>optional string user_id = 10 [json_name = "userId"];</code>
+   * <code>optional string user_id = 9 [json_name = "userId"];</code>
    * @return The userId.
    */
   java.lang.String getUserId();
   /**
-   * <code>optional string user_id = 10 [json_name = "userId"];</code>
+   * <code>optional string user_id = 9 [json_name = "userId"];</code>
    * @return The bytes for userId.
    */
   com.google.protobuf.ByteString

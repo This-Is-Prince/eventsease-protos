@@ -73,7 +73,7 @@ public  final class AdminServiceGetUsersRequest extends
     limit_ = 0;
   }
 
-  public static final int ROLES_FIELD_NUMBER = 4;
+  public static final int ROLES_FIELD_NUMBER = 3;
   private com.google.protobuf.Internal.IntList roles_;
   private static final com.google.protobuf.Internal.IntListAdapter.IntConverter<
       com.eventsease.v1.UserRole> roles_converter_ =
@@ -86,7 +86,7 @@ public  final class AdminServiceGetUsersRequest extends
             }
           };
   /**
-   * <code>repeated .eventsease.v1.UserRole roles = 4 [json_name = "roles"];</code>
+   * <code>repeated .eventsease.v1.UserRole roles = 3 [json_name = "roles"];</code>
    * @return A list containing the roles.
    */
   @java.lang.Override
@@ -95,7 +95,7 @@ public  final class AdminServiceGetUsersRequest extends
         com.eventsease.v1.UserRole>(roles_, roles_converter_);
   }
   /**
-   * <code>repeated .eventsease.v1.UserRole roles = 4 [json_name = "roles"];</code>
+   * <code>repeated .eventsease.v1.UserRole roles = 3 [json_name = "roles"];</code>
    * @return The count of roles.
    */
   @java.lang.Override
@@ -103,7 +103,7 @@ public  final class AdminServiceGetUsersRequest extends
     return roles_.size();
   }
   /**
-   * <code>repeated .eventsease.v1.UserRole roles = 4 [json_name = "roles"];</code>
+   * <code>repeated .eventsease.v1.UserRole roles = 3 [json_name = "roles"];</code>
    * @param index The index of the element to return.
    * @return The roles at the given index.
    */
@@ -113,7 +113,7 @@ public  final class AdminServiceGetUsersRequest extends
     return result == null ? com.eventsease.v1.UserRole.UNRECOGNIZED : result;
   }
   /**
-   * <code>repeated .eventsease.v1.UserRole roles = 4 [json_name = "roles"];</code>
+   * <code>repeated .eventsease.v1.UserRole roles = 3 [json_name = "roles"];</code>
    * @return A list containing the enum numeric values on the wire for roles.
    */
   @java.lang.Override
@@ -122,7 +122,7 @@ public  final class AdminServiceGetUsersRequest extends
     return roles_;
   }
   /**
-   * <code>repeated .eventsease.v1.UserRole roles = 4 [json_name = "roles"];</code>
+   * <code>repeated .eventsease.v1.UserRole roles = 3 [json_name = "roles"];</code>
    * @param index The index of the value to return.
    * @return The enum numeric value on the wire of roles at the given index.
    */
@@ -139,7 +139,7 @@ public  final class AdminServiceGetUsersRequest extends
     }
   }
   /**
-   * <code>repeated .eventsease.v1.UserRole roles = 4 [json_name = "roles"];</code>
+   * <code>repeated .eventsease.v1.UserRole roles = 3 [json_name = "roles"];</code>
    * @param index The index to set the value at.
    * @param value The roles to set.
    */
@@ -151,7 +151,7 @@ public  final class AdminServiceGetUsersRequest extends
     roles_.setInt(index, value.getNumber());
   }
   /**
-   * <code>repeated .eventsease.v1.UserRole roles = 4 [json_name = "roles"];</code>
+   * <code>repeated .eventsease.v1.UserRole roles = 3 [json_name = "roles"];</code>
    * @param value The roles to add.
    */
   @java.lang.SuppressWarnings("ReturnValueIgnored")
@@ -161,7 +161,7 @@ public  final class AdminServiceGetUsersRequest extends
     roles_.addInt(value.getNumber());
   }
   /**
-   * <code>repeated .eventsease.v1.UserRole roles = 4 [json_name = "roles"];</code>
+   * <code>repeated .eventsease.v1.UserRole roles = 3 [json_name = "roles"];</code>
    * @param values The roles to add.
    */
   private void addAllRoles(
@@ -172,13 +172,13 @@ public  final class AdminServiceGetUsersRequest extends
     }
   }
   /**
-   * `repeated .eventsease.v1.UserRole roles = 4 [json_name = "roles"];`
+   * `repeated .eventsease.v1.UserRole roles = 3 [json_name = "roles"];`
    */
   private void clearRoles() {
     roles_ = emptyIntList();
   }
   /**
-   * <code>repeated .eventsease.v1.UserRole roles = 4 [json_name = "roles"];</code>
+   * <code>repeated .eventsease.v1.UserRole roles = 3 [json_name = "roles"];</code>
    * @param value The enum numeric value on the wire for roles to set.
    * @throws IllegalArgumentException if UNRECOGNIZED is provided.
    */
@@ -188,7 +188,7 @@ public  final class AdminServiceGetUsersRequest extends
     roles_.setInt(index, value);
   }
   /**
-   * <code>repeated .eventsease.v1.UserRole roles = 4 [json_name = "roles"];</code>
+   * <code>repeated .eventsease.v1.UserRole roles = 3 [json_name = "roles"];</code>
    * @param value The enum numeric value on the wire for roles to add.
    * @throws IllegalArgumentException if UNRECOGNIZED is provided.
    */
@@ -197,7 +197,7 @@ public  final class AdminServiceGetUsersRequest extends
     roles_.addInt(value);
   }
   /**
-   * <code>repeated .eventsease.v1.UserRole roles = 4 [json_name = "roles"];</code>
+   * <code>repeated .eventsease.v1.UserRole roles = 3 [json_name = "roles"];</code>
    * @param values The enum numeric values on the wire for roles to add.
    * @throws IllegalArgumentException if UNRECOGNIZED is provided.
    */
@@ -209,10 +209,10 @@ public  final class AdminServiceGetUsersRequest extends
     }
   }
 
-  public static final int IS_VERIFIED_FIELD_NUMBER = 5;
+  public static final int IS_VERIFIED_FIELD_NUMBER = 4;
   private boolean isVerified_;
   /**
-   * <code>optional bool is_verified = 5 [json_name = "isVerified"];</code>
+   * <code>optional bool is_verified = 4 [json_name = "isVerified"];</code>
    * @return Whether the isVerified field is set.
    */
   @java.lang.Override
@@ -220,7 +220,7 @@ public  final class AdminServiceGetUsersRequest extends
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>optional bool is_verified = 5 [json_name = "isVerified"];</code>
+   * <code>optional bool is_verified = 4 [json_name = "isVerified"];</code>
    * @return The isVerified.
    */
   @java.lang.Override
@@ -228,7 +228,7 @@ public  final class AdminServiceGetUsersRequest extends
     return isVerified_;
   }
   /**
-   * <code>optional bool is_verified = 5 [json_name = "isVerified"];</code>
+   * <code>optional bool is_verified = 4 [json_name = "isVerified"];</code>
    * @param value The isVerified to set.
    */
   private void setIsVerified(boolean value) {
@@ -236,17 +236,17 @@ public  final class AdminServiceGetUsersRequest extends
     isVerified_ = value;
   }
   /**
-   * <code>optional bool is_verified = 5 [json_name = "isVerified"];</code>
+   * <code>optional bool is_verified = 4 [json_name = "isVerified"];</code>
    */
   private void clearIsVerified() {
     bitField0_ = (bitField0_ & ~0x00000001);
     isVerified_ = false;
   }
 
-  public static final int IS_EVENT_CREATION_BLOCKED_FIELD_NUMBER = 6;
+  public static final int IS_EVENT_CREATION_BLOCKED_FIELD_NUMBER = 5;
   private boolean isEventCreationBlocked_;
   /**
-   * <code>optional bool is_event_creation_blocked = 6 [json_name = "isEventCreationBlocked"];</code>
+   * <code>optional bool is_event_creation_blocked = 5 [json_name = "isEventCreationBlocked"];</code>
    * @return Whether the isEventCreationBlocked field is set.
    */
   @java.lang.Override
@@ -254,7 +254,7 @@ public  final class AdminServiceGetUsersRequest extends
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>optional bool is_event_creation_blocked = 6 [json_name = "isEventCreationBlocked"];</code>
+   * <code>optional bool is_event_creation_blocked = 5 [json_name = "isEventCreationBlocked"];</code>
    * @return The isEventCreationBlocked.
    */
   @java.lang.Override
@@ -262,7 +262,7 @@ public  final class AdminServiceGetUsersRequest extends
     return isEventCreationBlocked_;
   }
   /**
-   * <code>optional bool is_event_creation_blocked = 6 [json_name = "isEventCreationBlocked"];</code>
+   * <code>optional bool is_event_creation_blocked = 5 [json_name = "isEventCreationBlocked"];</code>
    * @param value The isEventCreationBlocked to set.
    */
   private void setIsEventCreationBlocked(boolean value) {
@@ -270,17 +270,17 @@ public  final class AdminServiceGetUsersRequest extends
     isEventCreationBlocked_ = value;
   }
   /**
-   * <code>optional bool is_event_creation_blocked = 6 [json_name = "isEventCreationBlocked"];</code>
+   * <code>optional bool is_event_creation_blocked = 5 [json_name = "isEventCreationBlocked"];</code>
    */
   private void clearIsEventCreationBlocked() {
     bitField0_ = (bitField0_ & ~0x00000002);
     isEventCreationBlocked_ = false;
   }
 
-  public static final int IS_FRAUD_FIELD_NUMBER = 7;
+  public static final int IS_FRAUD_FIELD_NUMBER = 6;
   private boolean isFraud_;
   /**
-   * <code>optional bool is_fraud = 7 [json_name = "isFraud"];</code>
+   * <code>optional bool is_fraud = 6 [json_name = "isFraud"];</code>
    * @return Whether the isFraud field is set.
    */
   @java.lang.Override
@@ -288,7 +288,7 @@ public  final class AdminServiceGetUsersRequest extends
     return ((bitField0_ & 0x00000004) != 0);
   }
   /**
-   * <code>optional bool is_fraud = 7 [json_name = "isFraud"];</code>
+   * <code>optional bool is_fraud = 6 [json_name = "isFraud"];</code>
    * @return The isFraud.
    */
   @java.lang.Override
@@ -296,7 +296,7 @@ public  final class AdminServiceGetUsersRequest extends
     return isFraud_;
   }
   /**
-   * <code>optional bool is_fraud = 7 [json_name = "isFraud"];</code>
+   * <code>optional bool is_fraud = 6 [json_name = "isFraud"];</code>
    * @param value The isFraud to set.
    */
   private void setIsFraud(boolean value) {
@@ -304,17 +304,17 @@ public  final class AdminServiceGetUsersRequest extends
     isFraud_ = value;
   }
   /**
-   * <code>optional bool is_fraud = 7 [json_name = "isFraud"];</code>
+   * <code>optional bool is_fraud = 6 [json_name = "isFraud"];</code>
    */
   private void clearIsFraud() {
     bitField0_ = (bitField0_ & ~0x00000004);
     isFraud_ = false;
   }
 
-  public static final int EMAIL_FIELD_NUMBER = 8;
+  public static final int EMAIL_FIELD_NUMBER = 7;
   private java.lang.String email_;
   /**
-   * <code>optional string email = 8 [json_name = "email"];</code>
+   * <code>optional string email = 7 [json_name = "email"];</code>
    * @return Whether the email field is set.
    */
   @java.lang.Override
@@ -322,7 +322,7 @@ public  final class AdminServiceGetUsersRequest extends
     return ((bitField0_ & 0x00000008) != 0);
   }
   /**
-   * <code>optional string email = 8 [json_name = "email"];</code>
+   * <code>optional string email = 7 [json_name = "email"];</code>
    * @return The email.
    */
   @java.lang.Override
@@ -330,7 +330,7 @@ public  final class AdminServiceGetUsersRequest extends
     return email_;
   }
   /**
-   * <code>optional string email = 8 [json_name = "email"];</code>
+   * <code>optional string email = 7 [json_name = "email"];</code>
    * @return The bytes for email.
    */
   @java.lang.Override
@@ -339,7 +339,7 @@ public  final class AdminServiceGetUsersRequest extends
     return com.google.protobuf.ByteString.copyFromUtf8(email_);
   }
   /**
-   * <code>optional string email = 8 [json_name = "email"];</code>
+   * <code>optional string email = 7 [json_name = "email"];</code>
    * @param value The email to set.
    */
   @java.lang.SuppressWarnings("ReturnValueIgnored")
@@ -350,14 +350,14 @@ public  final class AdminServiceGetUsersRequest extends
     email_ = value;
   }
   /**
-   * <code>optional string email = 8 [json_name = "email"];</code>
+   * <code>optional string email = 7 [json_name = "email"];</code>
    */
   private void clearEmail() {
     bitField0_ = (bitField0_ & ~0x00000008);
     email_ = getDefaultInstance().getEmail();
   }
   /**
-   * <code>optional string email = 8 [json_name = "email"];</code>
+   * <code>optional string email = 7 [json_name = "email"];</code>
    * @param value The bytes for email to set.
    */
   private void setEmailBytes(
@@ -367,10 +367,10 @@ public  final class AdminServiceGetUsersRequest extends
     bitField0_ |= 0x00000008;
   }
 
-  public static final int USERNAME_FIELD_NUMBER = 9;
+  public static final int USERNAME_FIELD_NUMBER = 8;
   private java.lang.String username_;
   /**
-   * <code>optional string username = 9 [json_name = "username"];</code>
+   * <code>optional string username = 8 [json_name = "username"];</code>
    * @return Whether the username field is set.
    */
   @java.lang.Override
@@ -378,7 +378,7 @@ public  final class AdminServiceGetUsersRequest extends
     return ((bitField0_ & 0x00000010) != 0);
   }
   /**
-   * <code>optional string username = 9 [json_name = "username"];</code>
+   * <code>optional string username = 8 [json_name = "username"];</code>
    * @return The username.
    */
   @java.lang.Override
@@ -386,7 +386,7 @@ public  final class AdminServiceGetUsersRequest extends
     return username_;
   }
   /**
-   * <code>optional string username = 9 [json_name = "username"];</code>
+   * <code>optional string username = 8 [json_name = "username"];</code>
    * @return The bytes for username.
    */
   @java.lang.Override
@@ -395,7 +395,7 @@ public  final class AdminServiceGetUsersRequest extends
     return com.google.protobuf.ByteString.copyFromUtf8(username_);
   }
   /**
-   * <code>optional string username = 9 [json_name = "username"];</code>
+   * <code>optional string username = 8 [json_name = "username"];</code>
    * @param value The username to set.
    */
   @java.lang.SuppressWarnings("ReturnValueIgnored")
@@ -406,14 +406,14 @@ public  final class AdminServiceGetUsersRequest extends
     username_ = value;
   }
   /**
-   * <code>optional string username = 9 [json_name = "username"];</code>
+   * <code>optional string username = 8 [json_name = "username"];</code>
    */
   private void clearUsername() {
     bitField0_ = (bitField0_ & ~0x00000010);
     username_ = getDefaultInstance().getUsername();
   }
   /**
-   * <code>optional string username = 9 [json_name = "username"];</code>
+   * <code>optional string username = 8 [json_name = "username"];</code>
    * @param value The bytes for username to set.
    */
   private void setUsernameBytes(
@@ -423,10 +423,10 @@ public  final class AdminServiceGetUsersRequest extends
     bitField0_ |= 0x00000010;
   }
 
-  public static final int USER_ID_FIELD_NUMBER = 10;
+  public static final int USER_ID_FIELD_NUMBER = 9;
   private java.lang.String userId_;
   /**
-   * <code>optional string user_id = 10 [json_name = "userId"];</code>
+   * <code>optional string user_id = 9 [json_name = "userId"];</code>
    * @return Whether the userId field is set.
    */
   @java.lang.Override
@@ -434,7 +434,7 @@ public  final class AdminServiceGetUsersRequest extends
     return ((bitField0_ & 0x00000020) != 0);
   }
   /**
-   * <code>optional string user_id = 10 [json_name = "userId"];</code>
+   * <code>optional string user_id = 9 [json_name = "userId"];</code>
    * @return The userId.
    */
   @java.lang.Override
@@ -442,7 +442,7 @@ public  final class AdminServiceGetUsersRequest extends
     return userId_;
   }
   /**
-   * <code>optional string user_id = 10 [json_name = "userId"];</code>
+   * <code>optional string user_id = 9 [json_name = "userId"];</code>
    * @return The bytes for userId.
    */
   @java.lang.Override
@@ -451,7 +451,7 @@ public  final class AdminServiceGetUsersRequest extends
     return com.google.protobuf.ByteString.copyFromUtf8(userId_);
   }
   /**
-   * <code>optional string user_id = 10 [json_name = "userId"];</code>
+   * <code>optional string user_id = 9 [json_name = "userId"];</code>
    * @param value The userId to set.
    */
   @java.lang.SuppressWarnings("ReturnValueIgnored")
@@ -462,14 +462,14 @@ public  final class AdminServiceGetUsersRequest extends
     userId_ = value;
   }
   /**
-   * <code>optional string user_id = 10 [json_name = "userId"];</code>
+   * <code>optional string user_id = 9 [json_name = "userId"];</code>
    */
   private void clearUserId() {
     bitField0_ = (bitField0_ & ~0x00000020);
     userId_ = getDefaultInstance().getUserId();
   }
   /**
-   * <code>optional string user_id = 10 [json_name = "userId"];</code>
+   * <code>optional string user_id = 9 [json_name = "userId"];</code>
    * @param value The bytes for userId to set.
    */
   private void setUserIdBytes(
@@ -633,7 +633,7 @@ public  final class AdminServiceGetUsersRequest extends
     }
 
     /**
-     * <code>repeated .eventsease.v1.UserRole roles = 4 [json_name = "roles"];</code>
+     * <code>repeated .eventsease.v1.UserRole roles = 3 [json_name = "roles"];</code>
      * @return A list containing the roles.
      */
     @java.lang.Override
@@ -641,7 +641,7 @@ public  final class AdminServiceGetUsersRequest extends
       return instance.getRolesList();
     }
     /**
-     * <code>repeated .eventsease.v1.UserRole roles = 4 [json_name = "roles"];</code>
+     * <code>repeated .eventsease.v1.UserRole roles = 3 [json_name = "roles"];</code>
      * @return The count of roles.
      */
     @java.lang.Override
@@ -649,7 +649,7 @@ public  final class AdminServiceGetUsersRequest extends
       return instance.getRolesCount();
     }
     /**
-     * <code>repeated .eventsease.v1.UserRole roles = 4 [json_name = "roles"];</code>
+     * <code>repeated .eventsease.v1.UserRole roles = 3 [json_name = "roles"];</code>
      * @param index The index of the element to return.
      * @return The roles at the given index.
      */
@@ -658,7 +658,7 @@ public  final class AdminServiceGetUsersRequest extends
       return instance.getRoles(index);
     }
     /**
-     * <code>repeated .eventsease.v1.UserRole roles = 4 [json_name = "roles"];</code>
+     * <code>repeated .eventsease.v1.UserRole roles = 3 [json_name = "roles"];</code>
      * @param index The index to set the value at.
      * @param value The roles to set.
      * @return This builder for chaining.
@@ -670,7 +670,7 @@ public  final class AdminServiceGetUsersRequest extends
       return this;
     }
     /**
-     * <code>repeated .eventsease.v1.UserRole roles = 4 [json_name = "roles"];</code>
+     * <code>repeated .eventsease.v1.UserRole roles = 3 [json_name = "roles"];</code>
      * @param value The roles to add.
      * @return This builder for chaining.
      */
@@ -680,7 +680,7 @@ public  final class AdminServiceGetUsersRequest extends
       return this;
     }
     /**
-     * <code>repeated .eventsease.v1.UserRole roles = 4 [json_name = "roles"];</code>
+     * <code>repeated .eventsease.v1.UserRole roles = 3 [json_name = "roles"];</code>
      * @param values The roles to add.
      * @return This builder for chaining.
      */
@@ -690,7 +690,7 @@ public  final class AdminServiceGetUsersRequest extends
       instance.addAllRoles(values);  return this;
     }
     /**
-     * <code>repeated .eventsease.v1.UserRole roles = 4 [json_name = "roles"];</code>
+     * <code>repeated .eventsease.v1.UserRole roles = 3 [json_name = "roles"];</code>
      * @return This builder for chaining.
      */
     public Builder clearRoles() {
@@ -699,7 +699,7 @@ public  final class AdminServiceGetUsersRequest extends
       return this;
     }
     /**
-     * <code>repeated .eventsease.v1.UserRole roles = 4 [json_name = "roles"];</code>
+     * <code>repeated .eventsease.v1.UserRole roles = 3 [json_name = "roles"];</code>
      * @return A list containing the enum numeric values on the wire for roles.
      */
     @java.lang.Override
@@ -709,7 +709,7 @@ public  final class AdminServiceGetUsersRequest extends
           instance.getRolesValueList());
     }
     /**
-     * <code>repeated .eventsease.v1.UserRole roles = 4 [json_name = "roles"];</code>
+     * <code>repeated .eventsease.v1.UserRole roles = 3 [json_name = "roles"];</code>
      * @param index The index of the value to return.
      * @return The enum numeric value on the wire of roles at the given index.
      */
@@ -718,7 +718,7 @@ public  final class AdminServiceGetUsersRequest extends
       return instance.getRolesValue(index);
     }
     /**
-     * <code>repeated .eventsease.v1.UserRole roles = 4 [json_name = "roles"];</code>
+     * <code>repeated .eventsease.v1.UserRole roles = 3 [json_name = "roles"];</code>
      * @param index The index to set the value at.
      * @param value The enum numeric value on the wire for roles to set.
      * @return This builder for chaining.
@@ -730,7 +730,7 @@ public  final class AdminServiceGetUsersRequest extends
       return this;
     }
     /**
-     * <code>repeated .eventsease.v1.UserRole roles = 4 [json_name = "roles"];</code>
+     * <code>repeated .eventsease.v1.UserRole roles = 3 [json_name = "roles"];</code>
      * @param value The enum numeric value on the wire for roles to add.
      * @throws IllegalArgumentException if UNRECOGNIZED is provided.
      * @return This builder for chaining.
@@ -741,7 +741,7 @@ public  final class AdminServiceGetUsersRequest extends
       return this;
     }
     /**
-     * <code>repeated .eventsease.v1.UserRole roles = 4 [json_name = "roles"];</code>
+     * <code>repeated .eventsease.v1.UserRole roles = 3 [json_name = "roles"];</code>
      * @param values The enum numeric values on the wire for roles to add.
      * @throws IllegalArgumentException if UNRECOGNIZED is provided.
      * @return This builder for chaining.
@@ -754,7 +754,7 @@ public  final class AdminServiceGetUsersRequest extends
     }
 
     /**
-     * <code>optional bool is_verified = 5 [json_name = "isVerified"];</code>
+     * <code>optional bool is_verified = 4 [json_name = "isVerified"];</code>
      * @return Whether the isVerified field is set.
      */
     @java.lang.Override
@@ -762,7 +762,7 @@ public  final class AdminServiceGetUsersRequest extends
       return instance.hasIsVerified();
     }
     /**
-     * <code>optional bool is_verified = 5 [json_name = "isVerified"];</code>
+     * <code>optional bool is_verified = 4 [json_name = "isVerified"];</code>
      * @return The isVerified.
      */
     @java.lang.Override
@@ -770,7 +770,7 @@ public  final class AdminServiceGetUsersRequest extends
       return instance.getIsVerified();
     }
     /**
-     * <code>optional bool is_verified = 5 [json_name = "isVerified"];</code>
+     * <code>optional bool is_verified = 4 [json_name = "isVerified"];</code>
      * @param value The isVerified to set.
      * @return This builder for chaining.
      */
@@ -780,7 +780,7 @@ public  final class AdminServiceGetUsersRequest extends
       return this;
     }
     /**
-     * <code>optional bool is_verified = 5 [json_name = "isVerified"];</code>
+     * <code>optional bool is_verified = 4 [json_name = "isVerified"];</code>
      * @return This builder for chaining.
      */
     public Builder clearIsVerified() {
@@ -790,7 +790,7 @@ public  final class AdminServiceGetUsersRequest extends
     }
 
     /**
-     * <code>optional bool is_event_creation_blocked = 6 [json_name = "isEventCreationBlocked"];</code>
+     * <code>optional bool is_event_creation_blocked = 5 [json_name = "isEventCreationBlocked"];</code>
      * @return Whether the isEventCreationBlocked field is set.
      */
     @java.lang.Override
@@ -798,7 +798,7 @@ public  final class AdminServiceGetUsersRequest extends
       return instance.hasIsEventCreationBlocked();
     }
     /**
-     * <code>optional bool is_event_creation_blocked = 6 [json_name = "isEventCreationBlocked"];</code>
+     * <code>optional bool is_event_creation_blocked = 5 [json_name = "isEventCreationBlocked"];</code>
      * @return The isEventCreationBlocked.
      */
     @java.lang.Override
@@ -806,7 +806,7 @@ public  final class AdminServiceGetUsersRequest extends
       return instance.getIsEventCreationBlocked();
     }
     /**
-     * <code>optional bool is_event_creation_blocked = 6 [json_name = "isEventCreationBlocked"];</code>
+     * <code>optional bool is_event_creation_blocked = 5 [json_name = "isEventCreationBlocked"];</code>
      * @param value The isEventCreationBlocked to set.
      * @return This builder for chaining.
      */
@@ -816,7 +816,7 @@ public  final class AdminServiceGetUsersRequest extends
       return this;
     }
     /**
-     * <code>optional bool is_event_creation_blocked = 6 [json_name = "isEventCreationBlocked"];</code>
+     * <code>optional bool is_event_creation_blocked = 5 [json_name = "isEventCreationBlocked"];</code>
      * @return This builder for chaining.
      */
     public Builder clearIsEventCreationBlocked() {
@@ -826,7 +826,7 @@ public  final class AdminServiceGetUsersRequest extends
     }
 
     /**
-     * <code>optional bool is_fraud = 7 [json_name = "isFraud"];</code>
+     * <code>optional bool is_fraud = 6 [json_name = "isFraud"];</code>
      * @return Whether the isFraud field is set.
      */
     @java.lang.Override
@@ -834,7 +834,7 @@ public  final class AdminServiceGetUsersRequest extends
       return instance.hasIsFraud();
     }
     /**
-     * <code>optional bool is_fraud = 7 [json_name = "isFraud"];</code>
+     * <code>optional bool is_fraud = 6 [json_name = "isFraud"];</code>
      * @return The isFraud.
      */
     @java.lang.Override
@@ -842,7 +842,7 @@ public  final class AdminServiceGetUsersRequest extends
       return instance.getIsFraud();
     }
     /**
-     * <code>optional bool is_fraud = 7 [json_name = "isFraud"];</code>
+     * <code>optional bool is_fraud = 6 [json_name = "isFraud"];</code>
      * @param value The isFraud to set.
      * @return This builder for chaining.
      */
@@ -852,7 +852,7 @@ public  final class AdminServiceGetUsersRequest extends
       return this;
     }
     /**
-     * <code>optional bool is_fraud = 7 [json_name = "isFraud"];</code>
+     * <code>optional bool is_fraud = 6 [json_name = "isFraud"];</code>
      * @return This builder for chaining.
      */
     public Builder clearIsFraud() {
@@ -862,7 +862,7 @@ public  final class AdminServiceGetUsersRequest extends
     }
 
     /**
-     * <code>optional string email = 8 [json_name = "email"];</code>
+     * <code>optional string email = 7 [json_name = "email"];</code>
      * @return Whether the email field is set.
      */
     @java.lang.Override
@@ -870,7 +870,7 @@ public  final class AdminServiceGetUsersRequest extends
       return instance.hasEmail();
     }
     /**
-     * <code>optional string email = 8 [json_name = "email"];</code>
+     * <code>optional string email = 7 [json_name = "email"];</code>
      * @return The email.
      */
     @java.lang.Override
@@ -878,7 +878,7 @@ public  final class AdminServiceGetUsersRequest extends
       return instance.getEmail();
     }
     /**
-     * <code>optional string email = 8 [json_name = "email"];</code>
+     * <code>optional string email = 7 [json_name = "email"];</code>
      * @return The bytes for email.
      */
     @java.lang.Override
@@ -887,7 +887,7 @@ public  final class AdminServiceGetUsersRequest extends
       return instance.getEmailBytes();
     }
     /**
-     * <code>optional string email = 8 [json_name = "email"];</code>
+     * <code>optional string email = 7 [json_name = "email"];</code>
      * @param value The email to set.
      * @return This builder for chaining.
      */
@@ -898,7 +898,7 @@ public  final class AdminServiceGetUsersRequest extends
       return this;
     }
     /**
-     * <code>optional string email = 8 [json_name = "email"];</code>
+     * <code>optional string email = 7 [json_name = "email"];</code>
      * @return This builder for chaining.
      */
     public Builder clearEmail() {
@@ -907,7 +907,7 @@ public  final class AdminServiceGetUsersRequest extends
       return this;
     }
     /**
-     * <code>optional string email = 8 [json_name = "email"];</code>
+     * <code>optional string email = 7 [json_name = "email"];</code>
      * @param value The bytes for email to set.
      * @return This builder for chaining.
      */
@@ -919,7 +919,7 @@ public  final class AdminServiceGetUsersRequest extends
     }
 
     /**
-     * <code>optional string username = 9 [json_name = "username"];</code>
+     * <code>optional string username = 8 [json_name = "username"];</code>
      * @return Whether the username field is set.
      */
     @java.lang.Override
@@ -927,7 +927,7 @@ public  final class AdminServiceGetUsersRequest extends
       return instance.hasUsername();
     }
     /**
-     * <code>optional string username = 9 [json_name = "username"];</code>
+     * <code>optional string username = 8 [json_name = "username"];</code>
      * @return The username.
      */
     @java.lang.Override
@@ -935,7 +935,7 @@ public  final class AdminServiceGetUsersRequest extends
       return instance.getUsername();
     }
     /**
-     * <code>optional string username = 9 [json_name = "username"];</code>
+     * <code>optional string username = 8 [json_name = "username"];</code>
      * @return The bytes for username.
      */
     @java.lang.Override
@@ -944,7 +944,7 @@ public  final class AdminServiceGetUsersRequest extends
       return instance.getUsernameBytes();
     }
     /**
-     * <code>optional string username = 9 [json_name = "username"];</code>
+     * <code>optional string username = 8 [json_name = "username"];</code>
      * @param value The username to set.
      * @return This builder for chaining.
      */
@@ -955,7 +955,7 @@ public  final class AdminServiceGetUsersRequest extends
       return this;
     }
     /**
-     * <code>optional string username = 9 [json_name = "username"];</code>
+     * <code>optional string username = 8 [json_name = "username"];</code>
      * @return This builder for chaining.
      */
     public Builder clearUsername() {
@@ -964,7 +964,7 @@ public  final class AdminServiceGetUsersRequest extends
       return this;
     }
     /**
-     * <code>optional string username = 9 [json_name = "username"];</code>
+     * <code>optional string username = 8 [json_name = "username"];</code>
      * @param value The bytes for username to set.
      * @return This builder for chaining.
      */
@@ -976,7 +976,7 @@ public  final class AdminServiceGetUsersRequest extends
     }
 
     /**
-     * <code>optional string user_id = 10 [json_name = "userId"];</code>
+     * <code>optional string user_id = 9 [json_name = "userId"];</code>
      * @return Whether the userId field is set.
      */
     @java.lang.Override
@@ -984,7 +984,7 @@ public  final class AdminServiceGetUsersRequest extends
       return instance.hasUserId();
     }
     /**
-     * <code>optional string user_id = 10 [json_name = "userId"];</code>
+     * <code>optional string user_id = 9 [json_name = "userId"];</code>
      * @return The userId.
      */
     @java.lang.Override
@@ -992,7 +992,7 @@ public  final class AdminServiceGetUsersRequest extends
       return instance.getUserId();
     }
     /**
-     * <code>optional string user_id = 10 [json_name = "userId"];</code>
+     * <code>optional string user_id = 9 [json_name = "userId"];</code>
      * @return The bytes for userId.
      */
     @java.lang.Override
@@ -1001,7 +1001,7 @@ public  final class AdminServiceGetUsersRequest extends
       return instance.getUserIdBytes();
     }
     /**
-     * <code>optional string user_id = 10 [json_name = "userId"];</code>
+     * <code>optional string user_id = 9 [json_name = "userId"];</code>
      * @param value The userId to set.
      * @return This builder for chaining.
      */
@@ -1012,7 +1012,7 @@ public  final class AdminServiceGetUsersRequest extends
       return this;
     }
     /**
-     * <code>optional string user_id = 10 [json_name = "userId"];</code>
+     * <code>optional string user_id = 9 [json_name = "userId"];</code>
      * @return This builder for chaining.
      */
     public Builder clearUserId() {
@@ -1021,7 +1021,7 @@ public  final class AdminServiceGetUsersRequest extends
       return this;
     }
     /**
-     * <code>optional string user_id = 10 [json_name = "userId"];</code>
+     * <code>optional string user_id = 9 [json_name = "userId"];</code>
      * @param value The bytes for userId to set.
      * @return This builder for chaining.
      */
@@ -1060,9 +1060,9 @@ public  final class AdminServiceGetUsersRequest extends
             "userId_",
           };
           java.lang.String info =
-              "\u0000\t\u0000\u0001\u0001\n\t\u0000\u0001\u0000\u0001\u0004\u0002\u0004\u0004,\u0005" +
-              "\u1007\u0000\u0006\u1007\u0001\u0007\u1007\u0002\b\u1208\u0003\t\u1208\u0004\n\u1208" +
-              "\u0005";
+              "\u0000\t\u0000\u0001\u0001\t\t\u0000\u0001\u0000\u0001\u0004\u0002\u0004\u0003,\u0004" +
+              "\u1007\u0000\u0005\u1007\u0001\u0006\u1007\u0002\u0007\u1208\u0003\b\u1208\u0004" +
+              "\t\u1208\u0005";
           return newMessageInfo(DEFAULT_INSTANCE, info, objects);
       }
       case GET_DEFAULT_INSTANCE: {

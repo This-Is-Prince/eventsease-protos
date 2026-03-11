@@ -23,75 +23,75 @@ public interface AdminServiceUpdateEventRequestOrBuilder extends
       getIdBytes();
 
   /**
-   * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 3 [json_name = "verificationStatus"];</code>
+   * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 2 [json_name = "verificationStatus"];</code>
    * @return Whether the verificationStatus field is set.
    */
   boolean hasVerificationStatus();
   /**
-   * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 3 [json_name = "verificationStatus"];</code>
+   * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 2 [json_name = "verificationStatus"];</code>
    * @return The enum numeric value on the wire for verificationStatus.
    */
   int getVerificationStatusValue();
   /**
-   * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 3 [json_name = "verificationStatus"];</code>
+   * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 2 [json_name = "verificationStatus"];</code>
    * @return The verificationStatus.
    */
   com.eventsease.v1.EventVerificationStatus getVerificationStatus();
 
   /**
-   * <code>optional bool is_approved = 4 [json_name = "isApproved"];</code>
+   * <code>optional bool is_approved = 3 [json_name = "isApproved"];</code>
    * @return Whether the isApproved field is set.
    */
   boolean hasIsApproved();
   /**
-   * <code>optional bool is_approved = 4 [json_name = "isApproved"];</code>
+   * <code>optional bool is_approved = 3 [json_name = "isApproved"];</code>
    * @return The isApproved.
    */
   boolean getIsApproved();
 
   /**
-   * <code>repeated .eventsease.v1.SocialLink social = 5 [json_name = "social"];</code>
+   * <code>repeated .eventsease.v1.SocialLink social = 4 [json_name = "social"];</code>
    */
   java.util.List<com.eventsease.v1.SocialLink> 
       getSocialList();
   /**
-   * <code>repeated .eventsease.v1.SocialLink social = 5 [json_name = "social"];</code>
+   * <code>repeated .eventsease.v1.SocialLink social = 4 [json_name = "social"];</code>
    */
   com.eventsease.v1.SocialLink getSocial(int index);
   /**
-   * <code>repeated .eventsease.v1.SocialLink social = 5 [json_name = "social"];</code>
+   * <code>repeated .eventsease.v1.SocialLink social = 4 [json_name = "social"];</code>
    */
   int getSocialCount();
 
   /**
-   * <code>optional string is_pinned = 6 [json_name = "isPinned"];</code>
+   * <code>optional string is_pinned = 5 [json_name = "isPinned"];</code>
    * @return Whether the isPinned field is set.
    */
   boolean hasIsPinned();
   /**
-   * <code>optional string is_pinned = 6 [json_name = "isPinned"];</code>
+   * <code>optional string is_pinned = 5 [json_name = "isPinned"];</code>
    * @return The isPinned.
    */
   java.lang.String getIsPinned();
   /**
-   * <code>optional string is_pinned = 6 [json_name = "isPinned"];</code>
+   * <code>optional string is_pinned = 5 [json_name = "isPinned"];</code>
    * @return The bytes for isPinned.
    */
   com.google.protobuf.ByteString
       getIsPinnedBytes();
 
   /**
-   * <code>optional string organizer = 7 [json_name = "organizer"];</code>
+   * <code>optional string organizer = 6 [json_name = "organizer"];</code>
    * @return Whether the organizer field is set.
    */
   boolean hasOrganizer();
   /**
-   * <code>optional string organizer = 7 [json_name = "organizer"];</code>
+   * <code>optional string organizer = 6 [json_name = "organizer"];</code>
    * @return The organizer.
    */
   java.lang.String getOrganizer();
   /**
-   * <code>optional string organizer = 7 [json_name = "organizer"];</code>
+   * <code>optional string organizer = 6 [json_name = "organizer"];</code>
    * @return The bytes for organizer.
    */
   com.google.protobuf.ByteString

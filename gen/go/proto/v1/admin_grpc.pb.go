@@ -19,6 +19,8 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
+	AdminService_Login_FullMethodName                            = "/eventsease.v1.AdminService/Login"
+	AdminService_Logout_FullMethodName                           = "/eventsease.v1.AdminService/Logout"
 	AdminService_DispatchEventCreatedNotification_FullMethodName = "/eventsease.v1.AdminService/DispatchEventCreatedNotification"
 	AdminService_GetEvents_FullMethodName                        = "/eventsease.v1.AdminService/GetEvents"
 	AdminService_GetUsers_FullMethodName                         = "/eventsease.v1.AdminService/GetUsers"
@@ -31,6 +33,8 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type AdminServiceClient interface {
+	Login(ctx context.Context, in *AdminLoginRequest, opts ...grpc.CallOption) (*AdminLoginResponse, error)
+	Logout(ctx context.Context, in *AdminLogoutRequest, opts ...grpc.CallOption) (*AdminLogoutResponse, error)
 	DispatchEventCreatedNotification(ctx context.Context, in *DispatchEventCreatedNotificationRequest, opts ...grpc.CallOption) (*DispatchEventCreatedNotificationResponse, error)
 	GetEvents(ctx context.Context, in *AdminServiceGetEventsRequest, opts ...grpc.CallOption) (*AdminServiceGetEventsResponse, error)
 	GetUsers(ctx context.Context, in *AdminServiceGetUsersRequest, opts ...grpc.CallOption) (*AdminServiceGetUsersResponse, error)
@@ -45,6 +49,26 @@ type adminServiceClient struct {
 
 func NewAdminServiceClient(cc grpc.ClientConnInterface) AdminServiceClient {
 	return &adminServiceClient{cc}
+}
+
+func (c *adminServiceClient) Login(ctx context.Context, in *AdminLoginRequest, opts ...grpc.CallOption) (*AdminLoginResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminLoginResponse)
+	err := c.cc.Invoke(ctx, AdminService_Login_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) Logout(ctx context.Context, in *AdminLogoutRequest, opts ...grpc.CallOption) (*AdminLogoutResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminLogoutResponse)
+	err := c.cc.Invoke(ctx, AdminService_Logout_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *adminServiceClient) DispatchEventCreatedNotification(ctx context.Context, in *DispatchEventCreatedNotificationRequest, opts ...grpc.CallOption) (*DispatchEventCreatedNotificationResponse, error) {
@@ -111,6 +135,8 @@ func (c *adminServiceClient) DeleteEvent(ctx context.Context, in *AdminServiceDe
 // All implementations must embed UnimplementedAdminServiceServer
 // for forward compatibility.
 type AdminServiceServer interface {
+	Login(context.Context, *AdminLoginRequest) (*AdminLoginResponse, error)
+	Logout(context.Context, *AdminLogoutRequest) (*AdminLogoutResponse, error)
 	DispatchEventCreatedNotification(context.Context, *DispatchEventCreatedNotificationRequest) (*DispatchEventCreatedNotificationResponse, error)
 	GetEvents(context.Context, *AdminServiceGetEventsRequest) (*AdminServiceGetEventsResponse, error)
 	GetUsers(context.Context, *AdminServiceGetUsersRequest) (*AdminServiceGetUsersResponse, error)
@@ -127,6 +153,12 @@ type AdminServiceServer interface {
 // pointer dereference when methods are called.
 type UnimplementedAdminServiceServer struct{}
 
+func (UnimplementedAdminServiceServer) Login(context.Context, *AdminLoginRequest) (*AdminLoginResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Login not implemented")
+}
+func (UnimplementedAdminServiceServer) Logout(context.Context, *AdminLogoutRequest) (*AdminLogoutResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Logout not implemented")
+}
 func (UnimplementedAdminServiceServer) DispatchEventCreatedNotification(context.Context, *DispatchEventCreatedNotificationRequest) (*DispatchEventCreatedNotificationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DispatchEventCreatedNotification not implemented")
 }
@@ -164,6 +196,42 @@ func RegisterAdminServiceServer(s grpc.ServiceRegistrar, srv AdminServiceServer)
 		t.testEmbeddedByValue()
 	}
 	s.RegisterService(&AdminService_ServiceDesc, srv)
+}
+
+func _AdminService_Login_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminLoginRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).Login(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_Login_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).Login(ctx, req.(*AdminLoginRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_Logout_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminLogoutRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).Logout(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_Logout_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).Logout(ctx, req.(*AdminLogoutRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _AdminService_DispatchEventCreatedNotification_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -281,6 +349,14 @@ var AdminService_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "eventsease.v1.AdminService",
 	HandlerType: (*AdminServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "Login",
+			Handler:    _AdminService_Login_Handler,
+		},
+		{
+			MethodName: "Logout",
+			Handler:    _AdminService_Logout_Handler,
+		},
 		{
 			MethodName: "DispatchEventCreatedNotification",
 			Handler:    _AdminService_DispatchEventCreatedNotification_Handler,

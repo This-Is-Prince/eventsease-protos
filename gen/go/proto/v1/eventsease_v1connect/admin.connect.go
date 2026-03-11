@@ -33,6 +33,10 @@ const (
 // reflection-formatted method names, remove the leading slash and convert the remaining slash to a
 // period.
 const (
+	// AdminServiceLoginProcedure is the fully-qualified name of the AdminService's Login RPC.
+	AdminServiceLoginProcedure = "/eventsease.v1.AdminService/Login"
+	// AdminServiceLogoutProcedure is the fully-qualified name of the AdminService's Logout RPC.
+	AdminServiceLogoutProcedure = "/eventsease.v1.AdminService/Logout"
 	// AdminServiceDispatchEventCreatedNotificationProcedure is the fully-qualified name of the
 	// AdminService's DispatchEventCreatedNotification RPC.
 	AdminServiceDispatchEventCreatedNotificationProcedure = "/eventsease.v1.AdminService/DispatchEventCreatedNotification"
@@ -52,6 +56,8 @@ const (
 
 // AdminServiceClient is a client for the eventsease.v1.AdminService service.
 type AdminServiceClient interface {
+	Login(context.Context, *connect.Request[v1.AdminLoginRequest]) (*connect.Response[v1.AdminLoginResponse], error)
+	Logout(context.Context, *connect.Request[v1.AdminLogoutRequest]) (*connect.Response[v1.AdminLogoutResponse], error)
 	DispatchEventCreatedNotification(context.Context, *connect.Request[v1.DispatchEventCreatedNotificationRequest]) (*connect.Response[v1.DispatchEventCreatedNotificationResponse], error)
 	GetEvents(context.Context, *connect.Request[v1.AdminServiceGetEventsRequest]) (*connect.Response[v1.AdminServiceGetEventsResponse], error)
 	GetUsers(context.Context, *connect.Request[v1.AdminServiceGetUsersRequest]) (*connect.Response[v1.AdminServiceGetUsersResponse], error)
@@ -71,6 +77,18 @@ func NewAdminServiceClient(httpClient connect.HTTPClient, baseURL string, opts .
 	baseURL = strings.TrimRight(baseURL, "/")
 	adminServiceMethods := v1.File_proto_v1_admin_proto.Services().ByName("AdminService").Methods()
 	return &adminServiceClient{
+		login: connect.NewClient[v1.AdminLoginRequest, v1.AdminLoginResponse](
+			httpClient,
+			baseURL+AdminServiceLoginProcedure,
+			connect.WithSchema(adminServiceMethods.ByName("Login")),
+			connect.WithClientOptions(opts...),
+		),
+		logout: connect.NewClient[v1.AdminLogoutRequest, v1.AdminLogoutResponse](
+			httpClient,
+			baseURL+AdminServiceLogoutProcedure,
+			connect.WithSchema(adminServiceMethods.ByName("Logout")),
+			connect.WithClientOptions(opts...),
+		),
 		dispatchEventCreatedNotification: connect.NewClient[v1.DispatchEventCreatedNotificationRequest, v1.DispatchEventCreatedNotificationResponse](
 			httpClient,
 			baseURL+AdminServiceDispatchEventCreatedNotificationProcedure,
@@ -112,12 +130,24 @@ func NewAdminServiceClient(httpClient connect.HTTPClient, baseURL string, opts .
 
 // adminServiceClient implements AdminServiceClient.
 type adminServiceClient struct {
+	login                            *connect.Client[v1.AdminLoginRequest, v1.AdminLoginResponse]
+	logout                           *connect.Client[v1.AdminLogoutRequest, v1.AdminLogoutResponse]
 	dispatchEventCreatedNotification *connect.Client[v1.DispatchEventCreatedNotificationRequest, v1.DispatchEventCreatedNotificationResponse]
 	getEvents                        *connect.Client[v1.AdminServiceGetEventsRequest, v1.AdminServiceGetEventsResponse]
 	getUsers                         *connect.Client[v1.AdminServiceGetUsersRequest, v1.AdminServiceGetUsersResponse]
 	updateUser                       *connect.Client[v1.AdminServiceUpdateUserRequest, v1.AdminServiceUpdateUserResponse]
 	updateEvent                      *connect.Client[v1.AdminServiceUpdateEventRequest, v1.AdminServiceUpdateEventResponse]
 	deleteEvent                      *connect.Client[v1.AdminServiceDeleteEventRequest, v1.AdminServiceDeleteEventResponse]
+}
+
+// Login calls eventsease.v1.AdminService.Login.
+func (c *adminServiceClient) Login(ctx context.Context, req *connect.Request[v1.AdminLoginRequest]) (*connect.Response[v1.AdminLoginResponse], error) {
+	return c.login.CallUnary(ctx, req)
+}
+
+// Logout calls eventsease.v1.AdminService.Logout.
+func (c *adminServiceClient) Logout(ctx context.Context, req *connect.Request[v1.AdminLogoutRequest]) (*connect.Response[v1.AdminLogoutResponse], error) {
+	return c.logout.CallUnary(ctx, req)
 }
 
 // DispatchEventCreatedNotification calls
@@ -153,6 +183,8 @@ func (c *adminServiceClient) DeleteEvent(ctx context.Context, req *connect.Reque
 
 // AdminServiceHandler is an implementation of the eventsease.v1.AdminService service.
 type AdminServiceHandler interface {
+	Login(context.Context, *connect.Request[v1.AdminLoginRequest]) (*connect.Response[v1.AdminLoginResponse], error)
+	Logout(context.Context, *connect.Request[v1.AdminLogoutRequest]) (*connect.Response[v1.AdminLogoutResponse], error)
 	DispatchEventCreatedNotification(context.Context, *connect.Request[v1.DispatchEventCreatedNotificationRequest]) (*connect.Response[v1.DispatchEventCreatedNotificationResponse], error)
 	GetEvents(context.Context, *connect.Request[v1.AdminServiceGetEventsRequest]) (*connect.Response[v1.AdminServiceGetEventsResponse], error)
 	GetUsers(context.Context, *connect.Request[v1.AdminServiceGetUsersRequest]) (*connect.Response[v1.AdminServiceGetUsersResponse], error)
@@ -168,6 +200,18 @@ type AdminServiceHandler interface {
 // and JSON codecs. They also support gzip compression.
 func NewAdminServiceHandler(svc AdminServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
 	adminServiceMethods := v1.File_proto_v1_admin_proto.Services().ByName("AdminService").Methods()
+	adminServiceLoginHandler := connect.NewUnaryHandler(
+		AdminServiceLoginProcedure,
+		svc.Login,
+		connect.WithSchema(adminServiceMethods.ByName("Login")),
+		connect.WithHandlerOptions(opts...),
+	)
+	adminServiceLogoutHandler := connect.NewUnaryHandler(
+		AdminServiceLogoutProcedure,
+		svc.Logout,
+		connect.WithSchema(adminServiceMethods.ByName("Logout")),
+		connect.WithHandlerOptions(opts...),
+	)
 	adminServiceDispatchEventCreatedNotificationHandler := connect.NewUnaryHandler(
 		AdminServiceDispatchEventCreatedNotificationProcedure,
 		svc.DispatchEventCreatedNotification,
@@ -206,6 +250,10 @@ func NewAdminServiceHandler(svc AdminServiceHandler, opts ...connect.HandlerOpti
 	)
 	return "/eventsease.v1.AdminService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		switch r.URL.Path {
+		case AdminServiceLoginProcedure:
+			adminServiceLoginHandler.ServeHTTP(w, r)
+		case AdminServiceLogoutProcedure:
+			adminServiceLogoutHandler.ServeHTTP(w, r)
 		case AdminServiceDispatchEventCreatedNotificationProcedure:
 			adminServiceDispatchEventCreatedNotificationHandler.ServeHTTP(w, r)
 		case AdminServiceGetEventsProcedure:
@@ -226,6 +274,14 @@ func NewAdminServiceHandler(svc AdminServiceHandler, opts ...connect.HandlerOpti
 
 // UnimplementedAdminServiceHandler returns CodeUnimplemented from all methods.
 type UnimplementedAdminServiceHandler struct{}
+
+func (UnimplementedAdminServiceHandler) Login(context.Context, *connect.Request[v1.AdminLoginRequest]) (*connect.Response[v1.AdminLoginResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("eventsease.v1.AdminService.Login is not implemented"))
+}
+
+func (UnimplementedAdminServiceHandler) Logout(context.Context, *connect.Request[v1.AdminLogoutRequest]) (*connect.Response[v1.AdminLogoutResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("eventsease.v1.AdminService.Logout is not implemented"))
+}
 
 func (UnimplementedAdminServiceHandler) DispatchEventCreatedNotification(context.Context, *connect.Request[v1.DispatchEventCreatedNotificationRequest]) (*connect.Response[v1.DispatchEventCreatedNotificationResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("eventsease.v1.AdminService.DispatchEventCreatedNotification is not implemented"))
