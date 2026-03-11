@@ -51,6 +51,10 @@ public enum UserRole
    * <code>USER_ROLE_OTHER = 9;</code>
    */
   USER_ROLE_OTHER(9),
+  /**
+   * <code>USER_ROLE_ADMIN = 10;</code>
+   */
+  USER_ROLE_ADMIN(10),
   UNRECOGNIZED(-1),
   ;
 
@@ -94,6 +98,10 @@ public enum UserRole
    * <code>USER_ROLE_OTHER = 9;</code>
    */
   public static final int USER_ROLE_OTHER_VALUE = 9;
+  /**
+   * <code>USER_ROLE_ADMIN = 10;</code>
+   */
+  public static final int USER_ROLE_ADMIN_VALUE = 10;
 
 
   @java.lang.Override
@@ -127,6 +135,7 @@ public enum UserRole
       case 7: return USER_ROLE_VENUE_PARTNER;
       case 8: return USER_ROLE_VOLUNTEER;
       case 9: return USER_ROLE_OTHER;
+      case 10: return USER_ROLE_ADMIN;
       default: return null;
     }
   }

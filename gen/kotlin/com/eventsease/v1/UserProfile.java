@@ -1134,30 +1134,30 @@ public  final class UserProfile extends
     isEventCreationBlocked_ = false;
   }
 
-  public static final int IS_FRAUD_ORGANIZER_FIELD_NUMBER = 21;
-  private boolean isFraudOrganizer_;
+  public static final int IS_FRAUD_FIELD_NUMBER = 21;
+  private boolean isFraud_;
   /**
-   * <code>bool is_fraud_organizer = 21 [json_name = "isFraudOrganizer"];</code>
-   * @return The isFraudOrganizer.
+   * <code>bool is_fraud = 21 [json_name = "isFraud"];</code>
+   * @return The isFraud.
    */
   @java.lang.Override
-  public boolean getIsFraudOrganizer() {
-    return isFraudOrganizer_;
+  public boolean getIsFraud() {
+    return isFraud_;
   }
   /**
-   * <code>bool is_fraud_organizer = 21 [json_name = "isFraudOrganizer"];</code>
-   * @param value The isFraudOrganizer to set.
+   * <code>bool is_fraud = 21 [json_name = "isFraud"];</code>
+   * @param value The isFraud to set.
    */
-  private void setIsFraudOrganizer(boolean value) {
+  private void setIsFraud(boolean value) {
     
-    isFraudOrganizer_ = value;
+    isFraud_ = value;
   }
   /**
-   * <code>bool is_fraud_organizer = 21 [json_name = "isFraudOrganizer"];</code>
+   * <code>bool is_fraud = 21 [json_name = "isFraud"];</code>
    */
-  private void clearIsFraudOrganizer() {
+  private void clearIsFraud() {
 
-    isFraudOrganizer_ = false;
+    isFraud_ = false;
   }
 
   public static com.eventsease.v1.UserProfile parseFrom(
@@ -2361,30 +2361,30 @@ public  final class UserProfile extends
     }
 
     /**
-     * <code>bool is_fraud_organizer = 21 [json_name = "isFraudOrganizer"];</code>
-     * @return The isFraudOrganizer.
+     * <code>bool is_fraud = 21 [json_name = "isFraud"];</code>
+     * @return The isFraud.
      */
     @java.lang.Override
-    public boolean getIsFraudOrganizer() {
-      return instance.getIsFraudOrganizer();
+    public boolean getIsFraud() {
+      return instance.getIsFraud();
     }
     /**
-     * <code>bool is_fraud_organizer = 21 [json_name = "isFraudOrganizer"];</code>
-     * @param value The isFraudOrganizer to set.
+     * <code>bool is_fraud = 21 [json_name = "isFraud"];</code>
+     * @param value The isFraud to set.
      * @return This builder for chaining.
      */
-    public Builder setIsFraudOrganizer(boolean value) {
+    public Builder setIsFraud(boolean value) {
       copyOnWrite();
-      instance.setIsFraudOrganizer(value);
+      instance.setIsFraud(value);
       return this;
     }
     /**
-     * <code>bool is_fraud_organizer = 21 [json_name = "isFraudOrganizer"];</code>
+     * <code>bool is_fraud = 21 [json_name = "isFraud"];</code>
      * @return This builder for chaining.
      */
-    public Builder clearIsFraudOrganizer() {
+    public Builder clearIsFraud() {
       copyOnWrite();
-      instance.clearIsFraudOrganizer();
+      instance.clearIsFraud();
       return this;
     }
 
@@ -2426,7 +2426,7 @@ public  final class UserProfile extends
             "isVerified_",
             "roles_",
             "isEventCreationBlocked_",
-            "isFraudOrganizer_",
+            "isFraud_",
           };
           java.lang.String info =
               "\u0000\u0015\u0000\u0001\u0001\u0015\u0015\u0000\u0004\u0000\u0001\u0208\u0002\u0208" +

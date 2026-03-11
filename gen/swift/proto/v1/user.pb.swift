@@ -102,6 +102,7 @@ public enum Eventsease_V1_UserRole: SwiftProtobuf.Enum, Swift.CaseIterable {
   case venuePartner // = 7
   case volunteer // = 8
   case other // = 9
+  case admin // = 10
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -120,6 +121,7 @@ public enum Eventsease_V1_UserRole: SwiftProtobuf.Enum, Swift.CaseIterable {
     case 7: self = .venuePartner
     case 8: self = .volunteer
     case 9: self = .other
+    case 10: self = .admin
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -136,6 +138,7 @@ public enum Eventsease_V1_UserRole: SwiftProtobuf.Enum, Swift.CaseIterable {
     case .venuePartner: return 7
     case .volunteer: return 8
     case .other: return 9
+    case .admin: return 10
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -152,6 +155,7 @@ public enum Eventsease_V1_UserRole: SwiftProtobuf.Enum, Swift.CaseIterable {
     .venuePartner,
     .volunteer,
     .other,
+    .admin,
   ]
 
 }
@@ -403,9 +407,9 @@ public struct Eventsease_V1_UserProfile: @unchecked Sendable {
     set {_uniqueStorage()._isEventCreationBlocked = newValue}
   }
 
-  public var isFraudOrganizer: Bool {
-    get {return _storage._isFraudOrganizer}
-    set {_uniqueStorage()._isFraudOrganizer = newValue}
+  public var isFraud: Bool {
+    get {return _storage._isFraud}
+    set {_uniqueStorage()._isFraud = newValue}
   }
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -510,7 +514,7 @@ extension Eventsease_V1_ProfileSocialType: SwiftProtobuf._ProtoNameProviding {
 }
 
 extension Eventsease_V1_UserRole: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0USER_ROLE_UNSPECIFIED\0\u{1}USER_ROLE_NORMAL\0\u{1}USER_ROLE_ARTIST\0\u{1}USER_ROLE_ORGANIZER\0\u{1}USER_ROLE_EVENT_MANAGER\0\u{1}USER_ROLE_VENDOR\0\u{1}USER_ROLE_SPONSOR\0\u{1}USER_ROLE_VENUE_PARTNER\0\u{1}USER_ROLE_VOLUNTEER\0\u{1}USER_ROLE_OTHER\0")
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0USER_ROLE_UNSPECIFIED\0\u{1}USER_ROLE_NORMAL\0\u{1}USER_ROLE_ARTIST\0\u{1}USER_ROLE_ORGANIZER\0\u{1}USER_ROLE_EVENT_MANAGER\0\u{1}USER_ROLE_VENDOR\0\u{1}USER_ROLE_SPONSOR\0\u{1}USER_ROLE_VENUE_PARTNER\0\u{1}USER_ROLE_VOLUNTEER\0\u{1}USER_ROLE_OTHER\0\u{1}USER_ROLE_ADMIN\0")
 }
 
 extension Eventsease_V1_CheckUserRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
@@ -793,7 +797,7 @@ extension Eventsease_V1_ProfileSocialLink: SwiftProtobuf.Message, SwiftProtobuf.
 
 extension Eventsease_V1_UserProfile: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".UserProfile"
-  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{1}uid\0\u{1}email\0\u{3}display_name\0\u{3}photo_url\0\u{1}provider\0\u{1}photos\0\u{3}background_photos\0\u{1}about\0\u{1}name\0\u{3}social_links\0\u{1}location\0\u{3}created_at\0\u{3}updated_at\0\u{3}is_deleted\0\u{1}username\0\u{3}is_own_profile\0\u{3}is_verified\0\u{1}roles\0\u{3}is_event_creation_blocked\0\u{3}is_fraud_organizer\0")
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{1}uid\0\u{1}email\0\u{3}display_name\0\u{3}photo_url\0\u{1}provider\0\u{1}photos\0\u{3}background_photos\0\u{1}about\0\u{1}name\0\u{3}social_links\0\u{1}location\0\u{3}created_at\0\u{3}updated_at\0\u{3}is_deleted\0\u{1}username\0\u{3}is_own_profile\0\u{3}is_verified\0\u{1}roles\0\u{3}is_event_creation_blocked\0\u{3}is_fraud\0")
 
   fileprivate class _StorageClass {
     var _id: String = String()
@@ -816,7 +820,7 @@ extension Eventsease_V1_UserProfile: SwiftProtobuf.Message, SwiftProtobuf._Messa
     var _isVerified: Bool = false
     var _roles: [Eventsease_V1_UserRole] = []
     var _isEventCreationBlocked: Bool = false
-    var _isFraudOrganizer: Bool = false
+    var _isFraud: Bool = false
 
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
@@ -847,7 +851,7 @@ extension Eventsease_V1_UserProfile: SwiftProtobuf.Message, SwiftProtobuf._Messa
       _isVerified = source._isVerified
       _roles = source._roles
       _isEventCreationBlocked = source._isEventCreationBlocked
-      _isFraudOrganizer = source._isFraudOrganizer
+      _isFraud = source._isFraud
     }
   }
 
@@ -886,7 +890,7 @@ extension Eventsease_V1_UserProfile: SwiftProtobuf.Message, SwiftProtobuf._Messa
         case 18: try { try decoder.decodeSingularBoolField(value: &_storage._isVerified) }()
         case 19: try { try decoder.decodeRepeatedEnumField(value: &_storage._roles) }()
         case 20: try { try decoder.decodeSingularBoolField(value: &_storage._isEventCreationBlocked) }()
-        case 21: try { try decoder.decodeSingularBoolField(value: &_storage._isFraudOrganizer) }()
+        case 21: try { try decoder.decodeSingularBoolField(value: &_storage._isFraud) }()
         default: break
         }
       }
@@ -959,8 +963,8 @@ extension Eventsease_V1_UserProfile: SwiftProtobuf.Message, SwiftProtobuf._Messa
       if _storage._isEventCreationBlocked != false {
         try visitor.visitSingularBoolField(value: _storage._isEventCreationBlocked, fieldNumber: 20)
       }
-      if _storage._isFraudOrganizer != false {
-        try visitor.visitSingularBoolField(value: _storage._isFraudOrganizer, fieldNumber: 21)
+      if _storage._isFraud != false {
+        try visitor.visitSingularBoolField(value: _storage._isFraud, fieldNumber: 21)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -991,7 +995,7 @@ extension Eventsease_V1_UserProfile: SwiftProtobuf.Message, SwiftProtobuf._Messa
         if _storage._isVerified != rhs_storage._isVerified {return false}
         if _storage._roles != rhs_storage._roles {return false}
         if _storage._isEventCreationBlocked != rhs_storage._isEventCreationBlocked {return false}
-        if _storage._isFraudOrganizer != rhs_storage._isFraudOrganizer {return false}
+        if _storage._isFraud != rhs_storage._isFraud {return false}
         return true
       }
       if !storagesAreEqual {return false}

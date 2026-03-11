@@ -270,8 +270,8 @@ public interface UserProfileOrBuilder extends
   boolean getIsEventCreationBlocked();
 
   /**
-   * <code>bool is_fraud_organizer = 21 [json_name = "isFraudOrganizer"];</code>
-   * @return The isFraudOrganizer.
+   * <code>bool is_fraud = 21 [json_name = "isFraud"];</code>
+   * @return The isFraud.
    */
-  boolean getIsFraudOrganizer();
+  boolean getIsFraud();
 }

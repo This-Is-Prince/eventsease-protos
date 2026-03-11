@@ -1,0 +1,109 @@
+syntax = "proto3";
+
+package eventsease.v1;
+
+import "proto/v1/event.proto";
+import "proto/v1/user.proto";
+
+option go_package = "github.com/This-Is-Prince/eventsease-protos/gen/go/proto/v1;eventsease_v1";
+option java_multiple_files = true;
+option java_package = "com.eventsease.v1";
+option java_outer_classname = "AdminProto";
+
+service AdminService {
+  rpc DispatchEventCreatedNotification (DispatchEventCreatedNotificationRequest) returns (DispatchEventCreatedNotificationResponse);
+  rpc GetEvents (AdminServiceGetEventsRequest) returns (AdminServiceGetEventsResponse);
+  rpc GetUsers (AdminServiceGetUsersRequest) returns (AdminServiceGetUsersResponse);
+  rpc UpdateUser (AdminServiceUpdateUserRequest) returns (AdminServiceUpdateUserResponse);
+  rpc UpdateEvent (AdminServiceUpdateEventRequest) returns (AdminServiceUpdateEventResponse);
+  rpc DeleteEvent (AdminServiceDeleteEventRequest) returns (AdminServiceDeleteEventResponse);
+}
+
+message DispatchEventCreatedNotificationRequest {
+  optional string event_id = 1;
+}
+
+message DispatchEventCreatedNotificationResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message AdminServiceGetEventsRequest {
+  int32 page = 1;
+  int32 limit = 2;
+  string search_query = 3;
+  SortBy sort_by = 4;
+  SortDirection sort_direction = 5;
+  repeated string categories = 6;
+  optional bool is_regular = 7;
+  optional bool is_approved = 8;
+  optional EventVerificationStatus verification_status = 9;
+  repeated string user_ids = 11;
+  repeated string event_ids = 12;
+}
+
+message AdminServiceGetEventsResponse {
+  bool success = 1;
+  repeated Event data = 2;
+  MetaData meta = 3;
+}
+
+message AdminServiceGetUsersRequest {
+  int32 page = 1;
+  int32 limit = 2;
+  repeated UserRole roles = 4;
+  optional bool is_verified = 5;
+  optional bool is_event_creation_blocked = 6;
+  optional bool is_fraud = 7;
+  optional string email = 8;
+  optional string username = 9;
+  optional string user_id = 10;
+}
+
+message AdminServiceGetUsersResponse {
+  bool success = 1;
+  repeated UserProfile data = 2;
+  MetaData meta = 3;
+}
+
+message UserRoles {
+  repeated UserRole values = 1;
+}
+
+message AdminServiceUpdateUserRequest {
+  string user_id = 1;
+  UserRoles roles = 2;
+  optional bool is_verified = 3;
+  optional bool is_event_creation_blocked = 4;
+  optional bool is_fraud = 5;
+}
+
+message AdminServiceUpdateUserResponse {
+  bool success = 1;
+  string message = 2;
+  UserProfile data = 3;
+}
+
+message AdminServiceUpdateEventRequest {
+  string id = 1;
+  optional EventVerificationStatus verification_status = 3;
+  optional bool is_approved = 4;
+  repeated SocialLink social = 5;
+  optional string is_pinned = 6;
+  optional string organizer = 7;
+}
+
+message AdminServiceUpdateEventResponse {
+  bool success = 1;
+  string message = 2;
+  Event data = 3;
+}
+
+message AdminServiceDeleteEventRequest {
+  string id = 1;
+}
+
+message AdminServiceDeleteEventResponse {
+  bool success = 1;
+  string message = 2;
+}

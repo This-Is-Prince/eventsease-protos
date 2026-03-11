@@ -77,6 +77,7 @@ enum UserRole {
   USER_ROLE_VENUE_PARTNER = 7;
   USER_ROLE_VOLUNTEER = 8;
   USER_ROLE_OTHER = 9;
+  USER_ROLE_ADMIN = 10;
 }
 
 message ProfileSocialLink {
@@ -105,7 +106,7 @@ message UserProfile {
   bool is_verified = 18;
   repeated UserRole roles = 19;
   bool is_event_creation_blocked = 20;
-  bool is_fraud_organizer = 21;
+  bool is_fraud = 21;
 }
 
 message GetProfileRequest {
