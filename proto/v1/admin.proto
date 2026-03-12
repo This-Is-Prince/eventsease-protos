@@ -108,8 +108,8 @@ message AdminServiceUpdateEventRequest {
   string id = 1;
   optional EventVerificationStatus verification_status = 2;
   optional bool is_approved = 3;
+  optional bool is_pinned = 5;
   repeated SocialLink social = 4;
-  optional string is_pinned = 5;
   optional string organizer = 6;
 }
 

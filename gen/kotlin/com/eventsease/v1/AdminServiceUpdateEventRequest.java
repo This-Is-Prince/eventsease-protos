@@ -17,7 +17,6 @@ public  final class AdminServiceUpdateEventRequest extends
   private AdminServiceUpdateEventRequest() {
     id_ = "";
     social_ = emptyProtobufList();
-    isPinned_ = "";
     organizer_ = "";
   }
   private int bitField0_;
@@ -154,6 +153,40 @@ public  final class AdminServiceUpdateEventRequest extends
     isApproved_ = false;
   }
 
+  public static final int IS_PINNED_FIELD_NUMBER = 5;
+  private boolean isPinned_;
+  /**
+   * <code>optional bool is_pinned = 5 [json_name = "isPinned"];</code>
+   * @return Whether the isPinned field is set.
+   */
+  @java.lang.Override
+  public boolean hasIsPinned() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <code>optional bool is_pinned = 5 [json_name = "isPinned"];</code>
+   * @return The isPinned.
+   */
+  @java.lang.Override
+  public boolean getIsPinned() {
+    return isPinned_;
+  }
+  /**
+   * <code>optional bool is_pinned = 5 [json_name = "isPinned"];</code>
+   * @param value The isPinned to set.
+   */
+  private void setIsPinned(boolean value) {
+    bitField0_ |= 0x00000004;
+    isPinned_ = value;
+  }
+  /**
+   * <code>optional bool is_pinned = 5 [json_name = "isPinned"];</code>
+   */
+  private void clearIsPinned() {
+    bitField0_ = (bitField0_ & ~0x00000004);
+    isPinned_ = false;
+  }
+
   public static final int SOCIAL_FIELD_NUMBER = 4;
   private com.google.protobuf.Internal.ProtobufList<com.eventsease.v1.SocialLink> social_;
   /**
@@ -249,62 +282,6 @@ public  final class AdminServiceUpdateEventRequest extends
   private void removeSocial(int index) {
     ensureSocialIsMutable();
     social_.remove(index);
-  }
-
-  public static final int IS_PINNED_FIELD_NUMBER = 5;
-  private java.lang.String isPinned_;
-  /**
-   * <code>optional string is_pinned = 5 [json_name = "isPinned"];</code>
-   * @return Whether the isPinned field is set.
-   */
-  @java.lang.Override
-  public boolean hasIsPinned() {
-    return ((bitField0_ & 0x00000004) != 0);
-  }
-  /**
-   * <code>optional string is_pinned = 5 [json_name = "isPinned"];</code>
-   * @return The isPinned.
-   */
-  @java.lang.Override
-  public java.lang.String getIsPinned() {
-    return isPinned_;
-  }
-  /**
-   * <code>optional string is_pinned = 5 [json_name = "isPinned"];</code>
-   * @return The bytes for isPinned.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getIsPinnedBytes() {
-    return com.google.protobuf.ByteString.copyFromUtf8(isPinned_);
-  }
-  /**
-   * <code>optional string is_pinned = 5 [json_name = "isPinned"];</code>
-   * @param value The isPinned to set.
-   */
-  @java.lang.SuppressWarnings("ReturnValueIgnored")
-  private void setIsPinned(
-      java.lang.String value) {
-    value.getClass();  // minimal bytecode null check
-    bitField0_ |= 0x00000004;
-    isPinned_ = value;
-  }
-  /**
-   * <code>optional string is_pinned = 5 [json_name = "isPinned"];</code>
-   */
-  private void clearIsPinned() {
-    bitField0_ = (bitField0_ & ~0x00000004);
-    isPinned_ = getDefaultInstance().getIsPinned();
-  }
-  /**
-   * <code>optional string is_pinned = 5 [json_name = "isPinned"];</code>
-   * @param value The bytes for isPinned to set.
-   */
-  private void setIsPinnedBytes(
-      com.google.protobuf.ByteString value) {
-    checkByteStringIsUtf8(value);
-    isPinned_ = value.toStringUtf8();
-    bitField0_ |= 0x00000004;
   }
 
   public static final int ORGANIZER_FIELD_NUMBER = 6;
@@ -601,6 +578,42 @@ public  final class AdminServiceUpdateEventRequest extends
     }
 
     /**
+     * <code>optional bool is_pinned = 5 [json_name = "isPinned"];</code>
+     * @return Whether the isPinned field is set.
+     */
+    @java.lang.Override
+    public boolean hasIsPinned() {
+      return instance.hasIsPinned();
+    }
+    /**
+     * <code>optional bool is_pinned = 5 [json_name = "isPinned"];</code>
+     * @return The isPinned.
+     */
+    @java.lang.Override
+    public boolean getIsPinned() {
+      return instance.getIsPinned();
+    }
+    /**
+     * <code>optional bool is_pinned = 5 [json_name = "isPinned"];</code>
+     * @param value The isPinned to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsPinned(boolean value) {
+      copyOnWrite();
+      instance.setIsPinned(value);
+      return this;
+    }
+    /**
+     * <code>optional bool is_pinned = 5 [json_name = "isPinned"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsPinned() {
+      copyOnWrite();
+      instance.clearIsPinned();
+      return this;
+    }
+
+    /**
      * <code>repeated .eventsease.v1.SocialLink social = 4 [json_name = "social"];</code>
      */
     @java.lang.Override
@@ -703,63 +716,6 @@ public  final class AdminServiceUpdateEventRequest extends
     }
 
     /**
-     * <code>optional string is_pinned = 5 [json_name = "isPinned"];</code>
-     * @return Whether the isPinned field is set.
-     */
-    @java.lang.Override
-    public boolean hasIsPinned() {
-      return instance.hasIsPinned();
-    }
-    /**
-     * <code>optional string is_pinned = 5 [json_name = "isPinned"];</code>
-     * @return The isPinned.
-     */
-    @java.lang.Override
-    public java.lang.String getIsPinned() {
-      return instance.getIsPinned();
-    }
-    /**
-     * <code>optional string is_pinned = 5 [json_name = "isPinned"];</code>
-     * @return The bytes for isPinned.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getIsPinnedBytes() {
-      return instance.getIsPinnedBytes();
-    }
-    /**
-     * <code>optional string is_pinned = 5 [json_name = "isPinned"];</code>
-     * @param value The isPinned to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIsPinned(
-        java.lang.String value) {
-      copyOnWrite();
-      instance.setIsPinned(value);
-      return this;
-    }
-    /**
-     * <code>optional string is_pinned = 5 [json_name = "isPinned"];</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearIsPinned() {
-      copyOnWrite();
-      instance.clearIsPinned();
-      return this;
-    }
-    /**
-     * <code>optional string is_pinned = 5 [json_name = "isPinned"];</code>
-     * @param value The bytes for isPinned to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIsPinnedBytes(
-        com.google.protobuf.ByteString value) {
-      copyOnWrite();
-      instance.setIsPinnedBytes(value);
-      return this;
-    }
-
-    /**
      * <code>optional string organizer = 6 [json_name = "organizer"];</code>
      * @return Whether the organizer field is set.
      */
@@ -843,7 +799,7 @@ public  final class AdminServiceUpdateEventRequest extends
           };
           java.lang.String info =
               "\u0000\u0006\u0000\u0001\u0001\u0006\u0006\u0000\u0001\u0000\u0001\u0208\u0002\u100c" +
-              "\u0000\u0003\u1007\u0001\u0004\u001b\u0005\u1208\u0002\u0006\u1208\u0003";
+              "\u0000\u0003\u1007\u0001\u0004\u001b\u0005\u1007\u0002\u0006\u1208\u0003";
           return newMessageInfo(DEFAULT_INSTANCE, info, objects);
       }
       case GET_DEFAULT_INSTANCE: {

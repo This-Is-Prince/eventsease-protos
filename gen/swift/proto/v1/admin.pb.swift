@@ -408,16 +408,16 @@ public struct Eventsease_V1_AdminServiceUpdateEventRequest: Sendable {
   /// Clears the value of `isApproved`. Subsequent reads from it will return its default value.
   public mutating func clearIsApproved() {self._isApproved = nil}
 
-  public var social: [Eventsease_V1_SocialLink] = []
-
-  public var isPinned: String {
-    get {return _isPinned ?? String()}
+  public var isPinned: Bool {
+    get {return _isPinned ?? false}
     set {_isPinned = newValue}
   }
   /// Returns true if `isPinned` has been explicitly set.
   public var hasIsPinned: Bool {return self._isPinned != nil}
   /// Clears the value of `isPinned`. Subsequent reads from it will return its default value.
   public mutating func clearIsPinned() {self._isPinned = nil}
+
+  public var social: [Eventsease_V1_SocialLink] = []
 
   public var organizer: String {
     get {return _organizer ?? String()}
@@ -434,7 +434,7 @@ public struct Eventsease_V1_AdminServiceUpdateEventRequest: Sendable {
 
   fileprivate var _verificationStatus: Eventsease_V1_EventVerificationStatus? = nil
   fileprivate var _isApproved: Bool? = nil
-  fileprivate var _isPinned: String? = nil
+  fileprivate var _isPinned: Bool? = nil
   fileprivate var _organizer: String? = nil
 }
 
@@ -1079,7 +1079,7 @@ extension Eventsease_V1_AdminServiceUpdateEventRequest: SwiftProtobuf.Message, S
       case 2: try { try decoder.decodeSingularEnumField(value: &self._verificationStatus) }()
       case 3: try { try decoder.decodeSingularBoolField(value: &self._isApproved) }()
       case 4: try { try decoder.decodeRepeatedMessageField(value: &self.social) }()
-      case 5: try { try decoder.decodeSingularStringField(value: &self._isPinned) }()
+      case 5: try { try decoder.decodeSingularBoolField(value: &self._isPinned) }()
       case 6: try { try decoder.decodeSingularStringField(value: &self._organizer) }()
       default: break
       }
@@ -1104,7 +1104,7 @@ extension Eventsease_V1_AdminServiceUpdateEventRequest: SwiftProtobuf.Message, S
       try visitor.visitRepeatedMessageField(value: self.social, fieldNumber: 4)
     }
     try { if let v = self._isPinned {
-      try visitor.visitSingularStringField(value: v, fieldNumber: 5)
+      try visitor.visitSingularBoolField(value: v, fieldNumber: 5)
     } }()
     try { if let v = self._organizer {
       try visitor.visitSingularStringField(value: v, fieldNumber: 6)
@@ -1116,8 +1116,8 @@ extension Eventsease_V1_AdminServiceUpdateEventRequest: SwiftProtobuf.Message, S
     if lhs.id != rhs.id {return false}
     if lhs._verificationStatus != rhs._verificationStatus {return false}
     if lhs._isApproved != rhs._isApproved {return false}
-    if lhs.social != rhs.social {return false}
     if lhs._isPinned != rhs._isPinned {return false}
+    if lhs.social != rhs.social {return false}
     if lhs._organizer != rhs._organizer {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

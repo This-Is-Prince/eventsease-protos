@@ -50,6 +50,17 @@ public interface AdminServiceUpdateEventRequestOrBuilder extends
   boolean getIsApproved();
 
   /**
+   * <code>optional bool is_pinned = 5 [json_name = "isPinned"];</code>
+   * @return Whether the isPinned field is set.
+   */
+  boolean hasIsPinned();
+  /**
+   * <code>optional bool is_pinned = 5 [json_name = "isPinned"];</code>
+   * @return The isPinned.
+   */
+  boolean getIsPinned();
+
+  /**
    * <code>repeated .eventsease.v1.SocialLink social = 4 [json_name = "social"];</code>
    */
   java.util.List<com.eventsease.v1.SocialLink> 
@@ -62,23 +73,6 @@ public interface AdminServiceUpdateEventRequestOrBuilder extends
    * <code>repeated .eventsease.v1.SocialLink social = 4 [json_name = "social"];</code>
    */
   int getSocialCount();
-
-  /**
-   * <code>optional string is_pinned = 5 [json_name = "isPinned"];</code>
-   * @return Whether the isPinned field is set.
-   */
-  boolean hasIsPinned();
-  /**
-   * <code>optional string is_pinned = 5 [json_name = "isPinned"];</code>
-   * @return The isPinned.
-   */
-  java.lang.String getIsPinned();
-  /**
-   * <code>optional string is_pinned = 5 [json_name = "isPinned"];</code>
-   * @return The bytes for isPinned.
-   */
-  com.google.protobuf.ByteString
-      getIsPinnedBytes();
 
   /**
    * <code>optional string organizer = 6 [json_name = "organizer"];</code>
