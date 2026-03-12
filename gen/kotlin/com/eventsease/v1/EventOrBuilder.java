@@ -230,16 +230,10 @@ public interface EventOrBuilder extends
   com.google.protobuf.Timestamp getUpdatedAt();
 
   /**
-   * <code>string is_pinned = 21 [json_name = "isPinned"];</code>
+   * <code>bool is_pinned = 21 [json_name = "isPinned"];</code>
    * @return The isPinned.
    */
-  java.lang.String getIsPinned();
-  /**
-   * <code>string is_pinned = 21 [json_name = "isPinned"];</code>
-   * @return The bytes for isPinned.
-   */
-  com.google.protobuf.ByteString
-      getIsPinnedBytes();
+  boolean getIsPinned();
 
   /**
    * <code>.eventsease.v1.UserProfile organizer_detail = 22 [json_name = "organizerDetail"];</code>

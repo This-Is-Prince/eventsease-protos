@@ -24,7 +24,6 @@ public  final class Event extends
     organizer_ = "";
     category_ = "";
     social_ = emptyProtobufList();
-    isPinned_ = "";
     categories_ = com.google.protobuf.GeneratedMessageLite.emptyProtobufList();
     tags_ = com.google.protobuf.GeneratedMessageLite.emptyProtobufList();
   }
@@ -976,51 +975,29 @@ public  final class Event extends
   }
 
   public static final int IS_PINNED_FIELD_NUMBER = 21;
-  private java.lang.String isPinned_;
+  private boolean isPinned_;
   /**
-   * <code>string is_pinned = 21 [json_name = "isPinned"];</code>
+   * <code>bool is_pinned = 21 [json_name = "isPinned"];</code>
    * @return The isPinned.
    */
   @java.lang.Override
-  public java.lang.String getIsPinned() {
+  public boolean getIsPinned() {
     return isPinned_;
   }
   /**
-   * <code>string is_pinned = 21 [json_name = "isPinned"];</code>
-   * @return The bytes for isPinned.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getIsPinnedBytes() {
-    return com.google.protobuf.ByteString.copyFromUtf8(isPinned_);
-  }
-  /**
-   * <code>string is_pinned = 21 [json_name = "isPinned"];</code>
+   * <code>bool is_pinned = 21 [json_name = "isPinned"];</code>
    * @param value The isPinned to set.
    */
-  @java.lang.SuppressWarnings("ReturnValueIgnored")
-  private void setIsPinned(
-      java.lang.String value) {
-    value.getClass();  // minimal bytecode null check
-
+  private void setIsPinned(boolean value) {
+    
     isPinned_ = value;
   }
   /**
-   * <code>string is_pinned = 21 [json_name = "isPinned"];</code>
+   * <code>bool is_pinned = 21 [json_name = "isPinned"];</code>
    */
   private void clearIsPinned() {
 
-    isPinned_ = getDefaultInstance().getIsPinned();
-  }
-  /**
-   * <code>string is_pinned = 21 [json_name = "isPinned"];</code>
-   * @param value The bytes for isPinned to set.
-   */
-  private void setIsPinnedBytes(
-      com.google.protobuf.ByteString value) {
-    checkByteStringIsUtf8(value);
-    isPinned_ = value.toStringUtf8();
-
+    isPinned_ = false;
   }
 
   public static final int ORGANIZER_DETAIL_FIELD_NUMBER = 22;
@@ -2361,51 +2338,30 @@ public  final class Event extends
     }
 
     /**
-     * <code>string is_pinned = 21 [json_name = "isPinned"];</code>
+     * <code>bool is_pinned = 21 [json_name = "isPinned"];</code>
      * @return The isPinned.
      */
     @java.lang.Override
-    public java.lang.String getIsPinned() {
+    public boolean getIsPinned() {
       return instance.getIsPinned();
     }
     /**
-     * <code>string is_pinned = 21 [json_name = "isPinned"];</code>
-     * @return The bytes for isPinned.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getIsPinnedBytes() {
-      return instance.getIsPinnedBytes();
-    }
-    /**
-     * <code>string is_pinned = 21 [json_name = "isPinned"];</code>
+     * <code>bool is_pinned = 21 [json_name = "isPinned"];</code>
      * @param value The isPinned to set.
      * @return This builder for chaining.
      */
-    public Builder setIsPinned(
-        java.lang.String value) {
+    public Builder setIsPinned(boolean value) {
       copyOnWrite();
       instance.setIsPinned(value);
       return this;
     }
     /**
-     * <code>string is_pinned = 21 [json_name = "isPinned"];</code>
+     * <code>bool is_pinned = 21 [json_name = "isPinned"];</code>
      * @return This builder for chaining.
      */
     public Builder clearIsPinned() {
       copyOnWrite();
       instance.clearIsPinned();
-      return this;
-    }
-    /**
-     * <code>string is_pinned = 21 [json_name = "isPinned"];</code>
-     * @param value The bytes for isPinned to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIsPinnedBytes(
-        com.google.protobuf.ByteString value) {
-      copyOnWrite();
-      instance.setIsPinnedBytes(value);
       return this;
     }
 
@@ -2735,7 +2691,7 @@ public  final class Event extends
               "\u0000\u0019\u0000\u0001\u0001\u0019\u0019\u0000\u0004\u0000\u0001\u0208\u0002\u0208" +
               "\u0003\u0208\u0004\u0208\u0005\u1009\u0000\u0006\u1009\u0001\u0007\u1009\u0002\b" +
               "\u021a\t\u0208\n\u0208\u000b\u0208\f\u1009\u0003\r\u001b\u000e\u0007\u000f\u0007" +
-              "\u0010\u0007\u0011\u0004\u0012\u0004\u0013\u1009\u0004\u0014\u1009\u0005\u0015\u0208" +
+              "\u0010\u0007\u0011\u0004\u0012\u0004\u0013\u1009\u0004\u0014\u1009\u0005\u0015\u0007" +
               "\u0016\u1009\u0006\u0017\u021a\u0018\u021a\u0019\f";
           return newMessageInfo(DEFAULT_INSTANCE, info, objects);
       }

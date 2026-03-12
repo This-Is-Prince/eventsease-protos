@@ -349,7 +349,7 @@ public struct Eventsease_V1_Event: @unchecked Sendable {
   /// Clears the value of `updatedAt`. Subsequent reads from it will return its default value.
   public mutating func clearUpdatedAt() {_uniqueStorage()._updatedAt = nil}
 
-  public var isPinned: String {
+  public var isPinned: Bool {
     get {return _storage._isPinned}
     set {_uniqueStorage()._isPinned = newValue}
   }
@@ -852,7 +852,7 @@ extension Eventsease_V1_Event: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     var _savedCount: Int32 = 0
     var _createdAt: SwiftProtobuf.Google_Protobuf_Timestamp? = nil
     var _updatedAt: SwiftProtobuf.Google_Protobuf_Timestamp? = nil
-    var _isPinned: String = String()
+    var _isPinned: Bool = false
     var _organizerDetail: Eventsease_V1_UserProfile? = nil
     var _categories: [String] = []
     var _tags: [String] = []
@@ -930,7 +930,7 @@ extension Eventsease_V1_Event: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
         case 18: try { try decoder.decodeSingularInt32Field(value: &_storage._savedCount) }()
         case 19: try { try decoder.decodeSingularMessageField(value: &_storage._createdAt) }()
         case 20: try { try decoder.decodeSingularMessageField(value: &_storage._updatedAt) }()
-        case 21: try { try decoder.decodeSingularStringField(value: &_storage._isPinned) }()
+        case 21: try { try decoder.decodeSingularBoolField(value: &_storage._isPinned) }()
         case 22: try { try decoder.decodeSingularMessageField(value: &_storage._organizerDetail) }()
         case 23: try { try decoder.decodeRepeatedStringField(value: &_storage._categories) }()
         case 24: try { try decoder.decodeRepeatedStringField(value: &_storage._tags) }()
@@ -1007,8 +1007,8 @@ extension Eventsease_V1_Event: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
       try { if let v = _storage._updatedAt {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 20)
       } }()
-      if !_storage._isPinned.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._isPinned, fieldNumber: 21)
+      if _storage._isPinned != false {
+        try visitor.visitSingularBoolField(value: _storage._isPinned, fieldNumber: 21)
       }
       try { if let v = _storage._organizerDetail {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 22)
