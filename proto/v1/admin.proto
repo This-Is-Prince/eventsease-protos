@@ -13,6 +13,7 @@ option java_outer_classname = "AdminProto";
 service AdminService {
   rpc Login (AdminLoginRequest) returns (AdminLoginResponse);
   rpc Logout (AdminLogoutRequest) returns (AdminLogoutResponse);
+  rpc RegisterFCM (AdminRegisterFCMRequest) returns (AdminRegisterFCMResponse);
   rpc DispatchEventCreatedNotification (DispatchEventCreatedNotificationRequest) returns (DispatchEventCreatedNotificationResponse);
   rpc GetEvents (AdminServiceGetEventsRequest) returns (AdminServiceGetEventsResponse);
   rpc GetUsers (AdminServiceGetUsersRequest) returns (AdminServiceGetUsersResponse);
@@ -35,6 +36,15 @@ message AdminLoginResponse {
 message AdminLogoutRequest {}
 
 message AdminLogoutResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message AdminRegisterFCMRequest {
+  string fcm_token = 1;
+}
+
+message AdminRegisterFCMResponse {
   bool success = 1;
   string message = 2;
 }

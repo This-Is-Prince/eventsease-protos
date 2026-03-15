@@ -37,6 +37,18 @@ public class AdminServiceClient(
   )
 
 
+  override suspend fun registerFCM(request: AdminRegisterFCMRequest, headers: Headers): ResponseMessage<AdminRegisterFCMResponse> = client.unary(
+    request,
+    headers,
+    MethodSpec(
+    "eventsease.v1.AdminService/RegisterFCM",
+      com.eventsease.v1.AdminRegisterFCMRequest::class,
+      com.eventsease.v1.AdminRegisterFCMResponse::class,
+      StreamType.UNARY,
+    ),
+  )
+
+
   override suspend fun dispatchEventCreatedNotification(request: DispatchEventCreatedNotificationRequest, headers: Headers): ResponseMessage<DispatchEventCreatedNotificationResponse> = client.unary(
     request,
     headers,

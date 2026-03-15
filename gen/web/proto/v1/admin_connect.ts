@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AdminLoginRequest, AdminLoginResponse, AdminLogoutRequest, AdminLogoutResponse, AdminServiceDeleteEventRequest, AdminServiceDeleteEventResponse, AdminServiceGetEventsRequest, AdminServiceGetEventsResponse, AdminServiceGetUsersRequest, AdminServiceGetUsersResponse, AdminServiceUpdateEventRequest, AdminServiceUpdateEventResponse, AdminServiceUpdateUserRequest, AdminServiceUpdateUserResponse, DispatchEventCreatedNotificationRequest, DispatchEventCreatedNotificationResponse } from "./admin_pb";
+import { AdminLoginRequest, AdminLoginResponse, AdminLogoutRequest, AdminLogoutResponse, AdminRegisterFCMRequest, AdminRegisterFCMResponse, AdminServiceDeleteEventRequest, AdminServiceDeleteEventResponse, AdminServiceGetEventsRequest, AdminServiceGetEventsResponse, AdminServiceGetUsersRequest, AdminServiceGetUsersResponse, AdminServiceUpdateEventRequest, AdminServiceUpdateEventResponse, AdminServiceUpdateUserRequest, AdminServiceUpdateUserResponse, DispatchEventCreatedNotificationRequest, DispatchEventCreatedNotificationResponse } from "./admin_pb";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -28,6 +28,15 @@ export const AdminService = {
       name: "Logout",
       I: AdminLogoutRequest,
       O: AdminLogoutResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc eventsease.v1.AdminService.RegisterFCM
+     */
+    registerFCM: {
+      name: "RegisterFCM",
+      I: AdminRegisterFCMRequest,
+      O: AdminRegisterFCMResponse,
       kind: MethodKind.Unary,
     },
     /**

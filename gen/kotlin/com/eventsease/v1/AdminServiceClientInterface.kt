@@ -12,6 +12,8 @@ public interface AdminServiceClientInterface {
 
   public suspend fun logout(request: AdminLogoutRequest, headers: Headers = emptyMap()): ResponseMessage<AdminLogoutResponse>
 
+  public suspend fun registerFCM(request: AdminRegisterFCMRequest, headers: Headers = emptyMap()): ResponseMessage<AdminRegisterFCMResponse>
+
   public suspend fun dispatchEventCreatedNotification(request: DispatchEventCreatedNotificationRequest, headers: Headers = emptyMap()): ResponseMessage<DispatchEventCreatedNotificationResponse>
 
   public suspend fun getEvents(request: AdminServiceGetEventsRequest, headers: Headers = emptyMap()): ResponseMessage<AdminServiceGetEventsResponse>

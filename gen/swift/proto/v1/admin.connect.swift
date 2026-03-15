@@ -18,6 +18,9 @@ public protocol Eventsease_V1_AdminServiceClientInterface: Sendable {
     func `logout`(request: Eventsease_V1_AdminLogoutRequest, headers: Connect.Headers) async -> ResponseMessage<Eventsease_V1_AdminLogoutResponse>
 
     @available(iOS 13, *)
+    func `registerFcm`(request: Eventsease_V1_AdminRegisterFCMRequest, headers: Connect.Headers) async -> ResponseMessage<Eventsease_V1_AdminRegisterFCMResponse>
+
+    @available(iOS 13, *)
     func `dispatchEventCreatedNotification`(request: Eventsease_V1_DispatchEventCreatedNotificationRequest, headers: Connect.Headers) async -> ResponseMessage<Eventsease_V1_DispatchEventCreatedNotificationResponse>
 
     @available(iOS 13, *)
@@ -55,6 +58,11 @@ public final class Eventsease_V1_AdminServiceClient: Eventsease_V1_AdminServiceC
     }
 
     @available(iOS 13, *)
+    public func `registerFcm`(request: Eventsease_V1_AdminRegisterFCMRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_AdminRegisterFCMResponse> {
+        return await self.client.unary(path: "/eventsease.v1.AdminService/RegisterFCM", idempotencyLevel: .unknown, request: request, headers: headers)
+    }
+
+    @available(iOS 13, *)
     public func `dispatchEventCreatedNotification`(request: Eventsease_V1_DispatchEventCreatedNotificationRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Eventsease_V1_DispatchEventCreatedNotificationResponse> {
         return await self.client.unary(path: "/eventsease.v1.AdminService/DispatchEventCreatedNotification", idempotencyLevel: .unknown, request: request, headers: headers)
     }
@@ -88,6 +96,7 @@ public final class Eventsease_V1_AdminServiceClient: Eventsease_V1_AdminServiceC
         public enum Methods {
             public static let login = Connect.MethodSpec(name: "Login", service: "eventsease.v1.AdminService", type: .unary)
             public static let logout = Connect.MethodSpec(name: "Logout", service: "eventsease.v1.AdminService", type: .unary)
+            public static let registerFcm = Connect.MethodSpec(name: "RegisterFCM", service: "eventsease.v1.AdminService", type: .unary)
             public static let dispatchEventCreatedNotification = Connect.MethodSpec(name: "DispatchEventCreatedNotification", service: "eventsease.v1.AdminService", type: .unary)
             public static let getEvents = Connect.MethodSpec(name: "GetEvents", service: "eventsease.v1.AdminService", type: .unary)
             public static let getUsers = Connect.MethodSpec(name: "GetUsers", service: "eventsease.v1.AdminService", type: .unary)

@@ -14,7 +14,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file proto/v1/admin.proto.
  */
 export const file_proto_v1_admin: GenFile = /*@__PURE__*/
-  fileDesc("ChRwcm90by92MS9hZG1pbi5wcm90bxINZXZlbnRzZWFzZS52MSI0ChFBZG1pbkxvZ2luUmVxdWVzdBINCgVlbWFpbBgBIAEoCRIQCghwYXNzd29yZBgCIAEoCSJUChJBZG1pbkxvZ2luUmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCBIPCgdtZXNzYWdlGAIgASgJEhwKFGF1dGhvcml6YXRpb25faGVhZGVyGAMgASgJIhQKEkFkbWluTG9nb3V0UmVxdWVzdCI3ChNBZG1pbkxvZ291dFJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCSJNCidEaXNwYXRjaEV2ZW50Q3JlYXRlZE5vdGlmaWNhdGlvblJlcXVlc3QSFQoIZXZlbnRfaWQYASABKAlIAIgBAUILCglfZXZlbnRfaWQiTAooRGlzcGF0Y2hFdmVudENyZWF0ZWROb3RpZmljYXRpb25SZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEg8KB21lc3NhZ2UYAiABKAkinAMKHEFkbWluU2VydmljZUdldEV2ZW50c1JlcXVlc3QSDAoEcGFnZRgBIAEoBRINCgVsaW1pdBgCIAEoBRIUCgxzZWFyY2hfcXVlcnkYAyABKAkSJgoHc29ydF9ieRgEIAEoDjIVLmV2ZW50c2Vhc2UudjEuU29ydEJ5EjQKDnNvcnRfZGlyZWN0aW9uGAUgASgOMhwuZXZlbnRzZWFzZS52MS5Tb3J0RGlyZWN0aW9uEhIKCmNhdGVnb3JpZXMYBiADKAkSFwoKaXNfcmVndWxhchgHIAEoCEgAiAEBEhgKC2lzX2FwcHJvdmVkGAggASgISAGIAQESSAoTdmVyaWZpY2F0aW9uX3N0YXR1cxgJIAEoDjImLmV2ZW50c2Vhc2UudjEuRXZlbnRWZXJpZmljYXRpb25TdGF0dXNIAogBARIQCgh1c2VyX2lkcxgLIAMoCRIRCglldmVudF9pZHMYDCADKAlCDQoLX2lzX3JlZ3VsYXJCDgoMX2lzX2FwcHJvdmVkQhYKFF92ZXJpZmljYXRpb25fc3RhdHVzInsKHUFkbWluU2VydmljZUdldEV2ZW50c1Jlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSIgoEZGF0YRgCIAMoCzIULmV2ZW50c2Vhc2UudjEuRXZlbnQSJQoEbWV0YRgDIAEoCzIXLmV2ZW50c2Vhc2UudjEuTWV0YURhdGEi2gIKG0FkbWluU2VydmljZUdldFVzZXJzUmVxdWVzdBIMCgRwYWdlGAEgASgFEg0KBWxpbWl0GAIgASgFEiYKBXJvbGVzGAMgAygOMhcuZXZlbnRzZWFzZS52MS5Vc2VyUm9sZRIYCgtpc192ZXJpZmllZBgEIAEoCEgAiAEBEiYKGWlzX2V2ZW50X2NyZWF0aW9uX2Jsb2NrZWQYBSABKAhIAYgBARIVCghpc19mcmF1ZBgGIAEoCEgCiAEBEhIKBWVtYWlsGAcgASgJSAOIAQESFQoIdXNlcm5hbWUYCCABKAlIBIgBARIUCgd1c2VyX2lkGAkgASgJSAWIAQFCDgoMX2lzX3ZlcmlmaWVkQhwKGl9pc19ldmVudF9jcmVhdGlvbl9ibG9ja2VkQgsKCV9pc19mcmF1ZEIICgZfZW1haWxCCwoJX3VzZXJuYW1lQgoKCF91c2VyX2lkIoABChxBZG1pblNlcnZpY2VHZXRVc2Vyc1Jlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSKAoEZGF0YRgCIAMoCzIaLmV2ZW50c2Vhc2UudjEuVXNlclByb2ZpbGUSJQoEbWV0YRgDIAEoCzIXLmV2ZW50c2Vhc2UudjEuTWV0YURhdGEiNAoJVXNlclJvbGVzEicKBnZhbHVlcxgBIAMoDjIXLmV2ZW50c2Vhc2UudjEuVXNlclJvbGUi7QEKHUFkbWluU2VydmljZVVwZGF0ZVVzZXJSZXF1ZXN0Eg8KB3VzZXJfaWQYASABKAkSJwoFcm9sZXMYAiABKAsyGC5ldmVudHNlYXNlLnYxLlVzZXJSb2xlcxIYCgtpc192ZXJpZmllZBgDIAEoCEgAiAEBEiYKGWlzX2V2ZW50X2NyZWF0aW9uX2Jsb2NrZWQYBCABKAhIAYgBARIVCghpc19mcmF1ZBgFIAEoCEgCiAEBQg4KDF9pc192ZXJpZmllZEIcChpfaXNfZXZlbnRfY3JlYXRpb25fYmxvY2tlZEILCglfaXNfZnJhdWQibAoeQWRtaW5TZXJ2aWNlVXBkYXRlVXNlclJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCRIoCgRkYXRhGAMgASgLMhouZXZlbnRzZWFzZS52MS5Vc2VyUHJvZmlsZSKvAgoeQWRtaW5TZXJ2aWNlVXBkYXRlRXZlbnRSZXF1ZXN0EgoKAmlkGAEgASgJEkgKE3ZlcmlmaWNhdGlvbl9zdGF0dXMYAiABKA4yJi5ldmVudHNlYXNlLnYxLkV2ZW50VmVyaWZpY2F0aW9uU3RhdHVzSACIAQESGAoLaXNfYXBwcm92ZWQYAyABKAhIAYgBARIWCglpc19waW5uZWQYBSABKAhIAogBARIpCgZzb2NpYWwYBCADKAsyGS5ldmVudHNlYXNlLnYxLlNvY2lhbExpbmsSFgoJb3JnYW5pemVyGAYgASgJSAOIAQFCFgoUX3ZlcmlmaWNhdGlvbl9zdGF0dXNCDgoMX2lzX2FwcHJvdmVkQgwKCl9pc19waW5uZWRCDAoKX29yZ2FuaXplciJnCh9BZG1pblNlcnZpY2VVcGRhdGVFdmVudFJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCRIiCgRkYXRhGAMgASgLMhQuZXZlbnRzZWFzZS52MS5FdmVudCIsCh5BZG1pblNlcnZpY2VEZWxldGVFdmVudFJlcXVlc3QSCgoCaWQYASABKAkiQwofQWRtaW5TZXJ2aWNlRGVsZXRlRXZlbnRSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEg8KB21lc3NhZ2UYAiABKAky1wYKDEFkbWluU2VydmljZRJMCgVMb2dpbhIgLmV2ZW50c2Vhc2UudjEuQWRtaW5Mb2dpblJlcXVlc3QaIS5ldmVudHNlYXNlLnYxLkFkbWluTG9naW5SZXNwb25zZRJPCgZMb2dvdXQSIS5ldmVudHNlYXNlLnYxLkFkbWluTG9nb3V0UmVxdWVzdBoiLmV2ZW50c2Vhc2UudjEuQWRtaW5Mb2dvdXRSZXNwb25zZRKTAQogRGlzcGF0Y2hFdmVudENyZWF0ZWROb3RpZmljYXRpb24SNi5ldmVudHNlYXNlLnYxLkRpc3BhdGNoRXZlbnRDcmVhdGVkTm90aWZpY2F0aW9uUmVxdWVzdBo3LmV2ZW50c2Vhc2UudjEuRGlzcGF0Y2hFdmVudENyZWF0ZWROb3RpZmljYXRpb25SZXNwb25zZRJmCglHZXRFdmVudHMSKy5ldmVudHNlYXNlLnYxLkFkbWluU2VydmljZUdldEV2ZW50c1JlcXVlc3QaLC5ldmVudHNlYXNlLnYxLkFkbWluU2VydmljZUdldEV2ZW50c1Jlc3BvbnNlEmMKCEdldFVzZXJzEiouZXZlbnRzZWFzZS52MS5BZG1pblNlcnZpY2VHZXRVc2Vyc1JlcXVlc3QaKy5ldmVudHNlYXNlLnYxLkFkbWluU2VydmljZUdldFVzZXJzUmVzcG9uc2USaQoKVXBkYXRlVXNlchIsLmV2ZW50c2Vhc2UudjEuQWRtaW5TZXJ2aWNlVXBkYXRlVXNlclJlcXVlc3QaLS5ldmVudHNlYXNlLnYxLkFkbWluU2VydmljZVVwZGF0ZVVzZXJSZXNwb25zZRJsCgtVcGRhdGVFdmVudBItLmV2ZW50c2Vhc2UudjEuQWRtaW5TZXJ2aWNlVXBkYXRlRXZlbnRSZXF1ZXN0Gi4uZXZlbnRzZWFzZS52MS5BZG1pblNlcnZpY2VVcGRhdGVFdmVudFJlc3BvbnNlEmwKC0RlbGV0ZUV2ZW50Ei0uZXZlbnRzZWFzZS52MS5BZG1pblNlcnZpY2VEZWxldGVFdmVudFJlcXVlc3QaLi5ldmVudHNlYXNlLnYxLkFkbWluU2VydmljZURlbGV0ZUV2ZW50UmVzcG9uc2VCbAoRY29tLmV2ZW50c2Vhc2UudjFCCkFkbWluUHJvdG9QAVpJZ2l0aHViLmNvbS9UaGlzLUlzLVByaW5jZS9ldmVudHNlYXNlLXByb3Rvcy9nZW4vZ28vcHJvdG8vdjE7ZXZlbnRzZWFzZV92MWIGcHJvdG8z", [file_proto_v1_event, file_proto_v1_user]);
+  fileDesc("ChRwcm90by92MS9hZG1pbi5wcm90bxINZXZlbnRzZWFzZS52MSI0ChFBZG1pbkxvZ2luUmVxdWVzdBINCgVlbWFpbBgBIAEoCRIQCghwYXNzd29yZBgCIAEoCSJUChJBZG1pbkxvZ2luUmVzcG9uc2USDwoHc3VjY2VzcxgBIAEoCBIPCgdtZXNzYWdlGAIgASgJEhwKFGF1dGhvcml6YXRpb25faGVhZGVyGAMgASgJIhQKEkFkbWluTG9nb3V0UmVxdWVzdCI3ChNBZG1pbkxvZ291dFJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCSIsChdBZG1pblJlZ2lzdGVyRkNNUmVxdWVzdBIRCglmY21fdG9rZW4YASABKAkiPAoYQWRtaW5SZWdpc3RlckZDTVJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCSJNCidEaXNwYXRjaEV2ZW50Q3JlYXRlZE5vdGlmaWNhdGlvblJlcXVlc3QSFQoIZXZlbnRfaWQYASABKAlIAIgBAUILCglfZXZlbnRfaWQiTAooRGlzcGF0Y2hFdmVudENyZWF0ZWROb3RpZmljYXRpb25SZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEg8KB21lc3NhZ2UYAiABKAkinAMKHEFkbWluU2VydmljZUdldEV2ZW50c1JlcXVlc3QSDAoEcGFnZRgBIAEoBRINCgVsaW1pdBgCIAEoBRIUCgxzZWFyY2hfcXVlcnkYAyABKAkSJgoHc29ydF9ieRgEIAEoDjIVLmV2ZW50c2Vhc2UudjEuU29ydEJ5EjQKDnNvcnRfZGlyZWN0aW9uGAUgASgOMhwuZXZlbnRzZWFzZS52MS5Tb3J0RGlyZWN0aW9uEhIKCmNhdGVnb3JpZXMYBiADKAkSFwoKaXNfcmVndWxhchgHIAEoCEgAiAEBEhgKC2lzX2FwcHJvdmVkGAggASgISAGIAQESSAoTdmVyaWZpY2F0aW9uX3N0YXR1cxgJIAEoDjImLmV2ZW50c2Vhc2UudjEuRXZlbnRWZXJpZmljYXRpb25TdGF0dXNIAogBARIQCgh1c2VyX2lkcxgLIAMoCRIRCglldmVudF9pZHMYDCADKAlCDQoLX2lzX3JlZ3VsYXJCDgoMX2lzX2FwcHJvdmVkQhYKFF92ZXJpZmljYXRpb25fc3RhdHVzInsKHUFkbWluU2VydmljZUdldEV2ZW50c1Jlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSIgoEZGF0YRgCIAMoCzIULmV2ZW50c2Vhc2UudjEuRXZlbnQSJQoEbWV0YRgDIAEoCzIXLmV2ZW50c2Vhc2UudjEuTWV0YURhdGEi2gIKG0FkbWluU2VydmljZUdldFVzZXJzUmVxdWVzdBIMCgRwYWdlGAEgASgFEg0KBWxpbWl0GAIgASgFEiYKBXJvbGVzGAMgAygOMhcuZXZlbnRzZWFzZS52MS5Vc2VyUm9sZRIYCgtpc192ZXJpZmllZBgEIAEoCEgAiAEBEiYKGWlzX2V2ZW50X2NyZWF0aW9uX2Jsb2NrZWQYBSABKAhIAYgBARIVCghpc19mcmF1ZBgGIAEoCEgCiAEBEhIKBWVtYWlsGAcgASgJSAOIAQESFQoIdXNlcm5hbWUYCCABKAlIBIgBARIUCgd1c2VyX2lkGAkgASgJSAWIAQFCDgoMX2lzX3ZlcmlmaWVkQhwKGl9pc19ldmVudF9jcmVhdGlvbl9ibG9ja2VkQgsKCV9pc19mcmF1ZEIICgZfZW1haWxCCwoJX3VzZXJuYW1lQgoKCF91c2VyX2lkIoABChxBZG1pblNlcnZpY2VHZXRVc2Vyc1Jlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSKAoEZGF0YRgCIAMoCzIaLmV2ZW50c2Vhc2UudjEuVXNlclByb2ZpbGUSJQoEbWV0YRgDIAEoCzIXLmV2ZW50c2Vhc2UudjEuTWV0YURhdGEiNAoJVXNlclJvbGVzEicKBnZhbHVlcxgBIAMoDjIXLmV2ZW50c2Vhc2UudjEuVXNlclJvbGUi7QEKHUFkbWluU2VydmljZVVwZGF0ZVVzZXJSZXF1ZXN0Eg8KB3VzZXJfaWQYASABKAkSJwoFcm9sZXMYAiABKAsyGC5ldmVudHNlYXNlLnYxLlVzZXJSb2xlcxIYCgtpc192ZXJpZmllZBgDIAEoCEgAiAEBEiYKGWlzX2V2ZW50X2NyZWF0aW9uX2Jsb2NrZWQYBCABKAhIAYgBARIVCghpc19mcmF1ZBgFIAEoCEgCiAEBQg4KDF9pc192ZXJpZmllZEIcChpfaXNfZXZlbnRfY3JlYXRpb25fYmxvY2tlZEILCglfaXNfZnJhdWQibAoeQWRtaW5TZXJ2aWNlVXBkYXRlVXNlclJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCRIoCgRkYXRhGAMgASgLMhouZXZlbnRzZWFzZS52MS5Vc2VyUHJvZmlsZSKvAgoeQWRtaW5TZXJ2aWNlVXBkYXRlRXZlbnRSZXF1ZXN0EgoKAmlkGAEgASgJEkgKE3ZlcmlmaWNhdGlvbl9zdGF0dXMYAiABKA4yJi5ldmVudHNlYXNlLnYxLkV2ZW50VmVyaWZpY2F0aW9uU3RhdHVzSACIAQESGAoLaXNfYXBwcm92ZWQYAyABKAhIAYgBARIWCglpc19waW5uZWQYBSABKAhIAogBARIpCgZzb2NpYWwYBCADKAsyGS5ldmVudHNlYXNlLnYxLlNvY2lhbExpbmsSFgoJb3JnYW5pemVyGAYgASgJSAOIAQFCFgoUX3ZlcmlmaWNhdGlvbl9zdGF0dXNCDgoMX2lzX2FwcHJvdmVkQgwKCl9pc19waW5uZWRCDAoKX29yZ2FuaXplciJnCh9BZG1pblNlcnZpY2VVcGRhdGVFdmVudFJlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgSDwoHbWVzc2FnZRgCIAEoCRIiCgRkYXRhGAMgASgLMhQuZXZlbnRzZWFzZS52MS5FdmVudCIsCh5BZG1pblNlcnZpY2VEZWxldGVFdmVudFJlcXVlc3QSCgoCaWQYASABKAkiQwofQWRtaW5TZXJ2aWNlRGVsZXRlRXZlbnRSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEg8KB21lc3NhZ2UYAiABKAkytwcKDEFkbWluU2VydmljZRJMCgVMb2dpbhIgLmV2ZW50c2Vhc2UudjEuQWRtaW5Mb2dpblJlcXVlc3QaIS5ldmVudHNlYXNlLnYxLkFkbWluTG9naW5SZXNwb25zZRJPCgZMb2dvdXQSIS5ldmVudHNlYXNlLnYxLkFkbWluTG9nb3V0UmVxdWVzdBoiLmV2ZW50c2Vhc2UudjEuQWRtaW5Mb2dvdXRSZXNwb25zZRJeCgtSZWdpc3RlckZDTRImLmV2ZW50c2Vhc2UudjEuQWRtaW5SZWdpc3RlckZDTVJlcXVlc3QaJy5ldmVudHNlYXNlLnYxLkFkbWluUmVnaXN0ZXJGQ01SZXNwb25zZRKTAQogRGlzcGF0Y2hFdmVudENyZWF0ZWROb3RpZmljYXRpb24SNi5ldmVudHNlYXNlLnYxLkRpc3BhdGNoRXZlbnRDcmVhdGVkTm90aWZpY2F0aW9uUmVxdWVzdBo3LmV2ZW50c2Vhc2UudjEuRGlzcGF0Y2hFdmVudENyZWF0ZWROb3RpZmljYXRpb25SZXNwb25zZRJmCglHZXRFdmVudHMSKy5ldmVudHNlYXNlLnYxLkFkbWluU2VydmljZUdldEV2ZW50c1JlcXVlc3QaLC5ldmVudHNlYXNlLnYxLkFkbWluU2VydmljZUdldEV2ZW50c1Jlc3BvbnNlEmMKCEdldFVzZXJzEiouZXZlbnRzZWFzZS52MS5BZG1pblNlcnZpY2VHZXRVc2Vyc1JlcXVlc3QaKy5ldmVudHNlYXNlLnYxLkFkbWluU2VydmljZUdldFVzZXJzUmVzcG9uc2USaQoKVXBkYXRlVXNlchIsLmV2ZW50c2Vhc2UudjEuQWRtaW5TZXJ2aWNlVXBkYXRlVXNlclJlcXVlc3QaLS5ldmVudHNlYXNlLnYxLkFkbWluU2VydmljZVVwZGF0ZVVzZXJSZXNwb25zZRJsCgtVcGRhdGVFdmVudBItLmV2ZW50c2Vhc2UudjEuQWRtaW5TZXJ2aWNlVXBkYXRlRXZlbnRSZXF1ZXN0Gi4uZXZlbnRzZWFzZS52MS5BZG1pblNlcnZpY2VVcGRhdGVFdmVudFJlc3BvbnNlEmwKC0RlbGV0ZUV2ZW50Ei0uZXZlbnRzZWFzZS52MS5BZG1pblNlcnZpY2VEZWxldGVFdmVudFJlcXVlc3QaLi5ldmVudHNlYXNlLnYxLkFkbWluU2VydmljZURlbGV0ZUV2ZW50UmVzcG9uc2VCbAoRY29tLmV2ZW50c2Vhc2UudjFCCkFkbWluUHJvdG9QAVpJZ2l0aHViLmNvbS9UaGlzLUlzLVByaW5jZS9ldmVudHNlYXNlLXByb3Rvcy9nZW4vZ28vcHJvdG8vdjE7ZXZlbnRzZWFzZV92MWIGcHJvdG8z", [file_proto_v1_event, file_proto_v1_user]);
 
 /**
  * @generated from message eventsease.v1.AdminLoginRequest
@@ -101,6 +101,45 @@ export const AdminLogoutResponseSchema: GenMessage<AdminLogoutResponse> = /*@__P
   messageDesc(file_proto_v1_admin, 3);
 
 /**
+ * @generated from message eventsease.v1.AdminRegisterFCMRequest
+ */
+export type AdminRegisterFCMRequest = Message<"eventsease.v1.AdminRegisterFCMRequest"> & {
+  /**
+   * @generated from field: string fcm_token = 1;
+   */
+  fcmToken: string;
+};
+
+/**
+ * Describes the message eventsease.v1.AdminRegisterFCMRequest.
+ * Use `create(AdminRegisterFCMRequestSchema)` to create a new message.
+ */
+export const AdminRegisterFCMRequestSchema: GenMessage<AdminRegisterFCMRequest> = /*@__PURE__*/
+  messageDesc(file_proto_v1_admin, 4);
+
+/**
+ * @generated from message eventsease.v1.AdminRegisterFCMResponse
+ */
+export type AdminRegisterFCMResponse = Message<"eventsease.v1.AdminRegisterFCMResponse"> & {
+  /**
+   * @generated from field: bool success = 1;
+   */
+  success: boolean;
+
+  /**
+   * @generated from field: string message = 2;
+   */
+  message: string;
+};
+
+/**
+ * Describes the message eventsease.v1.AdminRegisterFCMResponse.
+ * Use `create(AdminRegisterFCMResponseSchema)` to create a new message.
+ */
+export const AdminRegisterFCMResponseSchema: GenMessage<AdminRegisterFCMResponse> = /*@__PURE__*/
+  messageDesc(file_proto_v1_admin, 5);
+
+/**
  * @generated from message eventsease.v1.DispatchEventCreatedNotificationRequest
  */
 export type DispatchEventCreatedNotificationRequest = Message<"eventsease.v1.DispatchEventCreatedNotificationRequest"> & {
@@ -115,7 +154,7 @@ export type DispatchEventCreatedNotificationRequest = Message<"eventsease.v1.Dis
  * Use `create(DispatchEventCreatedNotificationRequestSchema)` to create a new message.
  */
 export const DispatchEventCreatedNotificationRequestSchema: GenMessage<DispatchEventCreatedNotificationRequest> = /*@__PURE__*/
-  messageDesc(file_proto_v1_admin, 4);
+  messageDesc(file_proto_v1_admin, 6);
 
 /**
  * @generated from message eventsease.v1.DispatchEventCreatedNotificationResponse
@@ -137,7 +176,7 @@ export type DispatchEventCreatedNotificationResponse = Message<"eventsease.v1.Di
  * Use `create(DispatchEventCreatedNotificationResponseSchema)` to create a new message.
  */
 export const DispatchEventCreatedNotificationResponseSchema: GenMessage<DispatchEventCreatedNotificationResponse> = /*@__PURE__*/
-  messageDesc(file_proto_v1_admin, 5);
+  messageDesc(file_proto_v1_admin, 7);
 
 /**
  * @generated from message eventsease.v1.AdminServiceGetEventsRequest
@@ -204,7 +243,7 @@ export type AdminServiceGetEventsRequest = Message<"eventsease.v1.AdminServiceGe
  * Use `create(AdminServiceGetEventsRequestSchema)` to create a new message.
  */
 export const AdminServiceGetEventsRequestSchema: GenMessage<AdminServiceGetEventsRequest> = /*@__PURE__*/
-  messageDesc(file_proto_v1_admin, 6);
+  messageDesc(file_proto_v1_admin, 8);
 
 /**
  * @generated from message eventsease.v1.AdminServiceGetEventsResponse
@@ -231,7 +270,7 @@ export type AdminServiceGetEventsResponse = Message<"eventsease.v1.AdminServiceG
  * Use `create(AdminServiceGetEventsResponseSchema)` to create a new message.
  */
 export const AdminServiceGetEventsResponseSchema: GenMessage<AdminServiceGetEventsResponse> = /*@__PURE__*/
-  messageDesc(file_proto_v1_admin, 7);
+  messageDesc(file_proto_v1_admin, 9);
 
 /**
  * @generated from message eventsease.v1.AdminServiceGetUsersRequest
@@ -288,7 +327,7 @@ export type AdminServiceGetUsersRequest = Message<"eventsease.v1.AdminServiceGet
  * Use `create(AdminServiceGetUsersRequestSchema)` to create a new message.
  */
 export const AdminServiceGetUsersRequestSchema: GenMessage<AdminServiceGetUsersRequest> = /*@__PURE__*/
-  messageDesc(file_proto_v1_admin, 8);
+  messageDesc(file_proto_v1_admin, 10);
 
 /**
  * @generated from message eventsease.v1.AdminServiceGetUsersResponse
@@ -315,7 +354,7 @@ export type AdminServiceGetUsersResponse = Message<"eventsease.v1.AdminServiceGe
  * Use `create(AdminServiceGetUsersResponseSchema)` to create a new message.
  */
 export const AdminServiceGetUsersResponseSchema: GenMessage<AdminServiceGetUsersResponse> = /*@__PURE__*/
-  messageDesc(file_proto_v1_admin, 9);
+  messageDesc(file_proto_v1_admin, 11);
 
 /**
  * @generated from message eventsease.v1.UserRoles
@@ -332,7 +371,7 @@ export type UserRoles = Message<"eventsease.v1.UserRoles"> & {
  * Use `create(UserRolesSchema)` to create a new message.
  */
 export const UserRolesSchema: GenMessage<UserRoles> = /*@__PURE__*/
-  messageDesc(file_proto_v1_admin, 10);
+  messageDesc(file_proto_v1_admin, 12);
 
 /**
  * @generated from message eventsease.v1.AdminServiceUpdateUserRequest
@@ -369,7 +408,7 @@ export type AdminServiceUpdateUserRequest = Message<"eventsease.v1.AdminServiceU
  * Use `create(AdminServiceUpdateUserRequestSchema)` to create a new message.
  */
 export const AdminServiceUpdateUserRequestSchema: GenMessage<AdminServiceUpdateUserRequest> = /*@__PURE__*/
-  messageDesc(file_proto_v1_admin, 11);
+  messageDesc(file_proto_v1_admin, 13);
 
 /**
  * @generated from message eventsease.v1.AdminServiceUpdateUserResponse
@@ -396,7 +435,7 @@ export type AdminServiceUpdateUserResponse = Message<"eventsease.v1.AdminService
  * Use `create(AdminServiceUpdateUserResponseSchema)` to create a new message.
  */
 export const AdminServiceUpdateUserResponseSchema: GenMessage<AdminServiceUpdateUserResponse> = /*@__PURE__*/
-  messageDesc(file_proto_v1_admin, 12);
+  messageDesc(file_proto_v1_admin, 14);
 
 /**
  * @generated from message eventsease.v1.AdminServiceUpdateEventRequest
@@ -438,7 +477,7 @@ export type AdminServiceUpdateEventRequest = Message<"eventsease.v1.AdminService
  * Use `create(AdminServiceUpdateEventRequestSchema)` to create a new message.
  */
 export const AdminServiceUpdateEventRequestSchema: GenMessage<AdminServiceUpdateEventRequest> = /*@__PURE__*/
-  messageDesc(file_proto_v1_admin, 13);
+  messageDesc(file_proto_v1_admin, 15);
 
 /**
  * @generated from message eventsease.v1.AdminServiceUpdateEventResponse
@@ -465,7 +504,7 @@ export type AdminServiceUpdateEventResponse = Message<"eventsease.v1.AdminServic
  * Use `create(AdminServiceUpdateEventResponseSchema)` to create a new message.
  */
 export const AdminServiceUpdateEventResponseSchema: GenMessage<AdminServiceUpdateEventResponse> = /*@__PURE__*/
-  messageDesc(file_proto_v1_admin, 14);
+  messageDesc(file_proto_v1_admin, 16);
 
 /**
  * @generated from message eventsease.v1.AdminServiceDeleteEventRequest
@@ -482,7 +521,7 @@ export type AdminServiceDeleteEventRequest = Message<"eventsease.v1.AdminService
  * Use `create(AdminServiceDeleteEventRequestSchema)` to create a new message.
  */
 export const AdminServiceDeleteEventRequestSchema: GenMessage<AdminServiceDeleteEventRequest> = /*@__PURE__*/
-  messageDesc(file_proto_v1_admin, 15);
+  messageDesc(file_proto_v1_admin, 17);
 
 /**
  * @generated from message eventsease.v1.AdminServiceDeleteEventResponse
@@ -504,7 +543,7 @@ export type AdminServiceDeleteEventResponse = Message<"eventsease.v1.AdminServic
  * Use `create(AdminServiceDeleteEventResponseSchema)` to create a new message.
  */
 export const AdminServiceDeleteEventResponseSchema: GenMessage<AdminServiceDeleteEventResponse> = /*@__PURE__*/
-  messageDesc(file_proto_v1_admin, 16);
+  messageDesc(file_proto_v1_admin, 18);
 
 /**
  * @generated from service eventsease.v1.AdminService
@@ -525,6 +564,14 @@ export const AdminService: GenService<{
     methodKind: "unary";
     input: typeof AdminLogoutRequestSchema;
     output: typeof AdminLogoutResponseSchema;
+  },
+  /**
+   * @generated from rpc eventsease.v1.AdminService.RegisterFCM
+   */
+  registerFCM: {
+    methodKind: "unary";
+    input: typeof AdminRegisterFCMRequestSchema;
+    output: typeof AdminRegisterFCMResponseSchema;
   },
   /**
    * @generated from rpc eventsease.v1.AdminService.DispatchEventCreatedNotification

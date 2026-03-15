@@ -37,6 +37,9 @@ const (
 	AdminServiceLoginProcedure = "/eventsease.v1.AdminService/Login"
 	// AdminServiceLogoutProcedure is the fully-qualified name of the AdminService's Logout RPC.
 	AdminServiceLogoutProcedure = "/eventsease.v1.AdminService/Logout"
+	// AdminServiceRegisterFCMProcedure is the fully-qualified name of the AdminService's RegisterFCM
+	// RPC.
+	AdminServiceRegisterFCMProcedure = "/eventsease.v1.AdminService/RegisterFCM"
 	// AdminServiceDispatchEventCreatedNotificationProcedure is the fully-qualified name of the
 	// AdminService's DispatchEventCreatedNotification RPC.
 	AdminServiceDispatchEventCreatedNotificationProcedure = "/eventsease.v1.AdminService/DispatchEventCreatedNotification"
@@ -58,6 +61,7 @@ const (
 type AdminServiceClient interface {
 	Login(context.Context, *connect.Request[v1.AdminLoginRequest]) (*connect.Response[v1.AdminLoginResponse], error)
 	Logout(context.Context, *connect.Request[v1.AdminLogoutRequest]) (*connect.Response[v1.AdminLogoutResponse], error)
+	RegisterFCM(context.Context, *connect.Request[v1.AdminRegisterFCMRequest]) (*connect.Response[v1.AdminRegisterFCMResponse], error)
 	DispatchEventCreatedNotification(context.Context, *connect.Request[v1.DispatchEventCreatedNotificationRequest]) (*connect.Response[v1.DispatchEventCreatedNotificationResponse], error)
 	GetEvents(context.Context, *connect.Request[v1.AdminServiceGetEventsRequest]) (*connect.Response[v1.AdminServiceGetEventsResponse], error)
 	GetUsers(context.Context, *connect.Request[v1.AdminServiceGetUsersRequest]) (*connect.Response[v1.AdminServiceGetUsersResponse], error)
@@ -87,6 +91,12 @@ func NewAdminServiceClient(httpClient connect.HTTPClient, baseURL string, opts .
 			httpClient,
 			baseURL+AdminServiceLogoutProcedure,
 			connect.WithSchema(adminServiceMethods.ByName("Logout")),
+			connect.WithClientOptions(opts...),
+		),
+		registerFCM: connect.NewClient[v1.AdminRegisterFCMRequest, v1.AdminRegisterFCMResponse](
+			httpClient,
+			baseURL+AdminServiceRegisterFCMProcedure,
+			connect.WithSchema(adminServiceMethods.ByName("RegisterFCM")),
 			connect.WithClientOptions(opts...),
 		),
 		dispatchEventCreatedNotification: connect.NewClient[v1.DispatchEventCreatedNotificationRequest, v1.DispatchEventCreatedNotificationResponse](
@@ -132,6 +142,7 @@ func NewAdminServiceClient(httpClient connect.HTTPClient, baseURL string, opts .
 type adminServiceClient struct {
 	login                            *connect.Client[v1.AdminLoginRequest, v1.AdminLoginResponse]
 	logout                           *connect.Client[v1.AdminLogoutRequest, v1.AdminLogoutResponse]
+	registerFCM                      *connect.Client[v1.AdminRegisterFCMRequest, v1.AdminRegisterFCMResponse]
 	dispatchEventCreatedNotification *connect.Client[v1.DispatchEventCreatedNotificationRequest, v1.DispatchEventCreatedNotificationResponse]
 	getEvents                        *connect.Client[v1.AdminServiceGetEventsRequest, v1.AdminServiceGetEventsResponse]
 	getUsers                         *connect.Client[v1.AdminServiceGetUsersRequest, v1.AdminServiceGetUsersResponse]
@@ -148,6 +159,11 @@ func (c *adminServiceClient) Login(ctx context.Context, req *connect.Request[v1.
 // Logout calls eventsease.v1.AdminService.Logout.
 func (c *adminServiceClient) Logout(ctx context.Context, req *connect.Request[v1.AdminLogoutRequest]) (*connect.Response[v1.AdminLogoutResponse], error) {
 	return c.logout.CallUnary(ctx, req)
+}
+
+// RegisterFCM calls eventsease.v1.AdminService.RegisterFCM.
+func (c *adminServiceClient) RegisterFCM(ctx context.Context, req *connect.Request[v1.AdminRegisterFCMRequest]) (*connect.Response[v1.AdminRegisterFCMResponse], error) {
+	return c.registerFCM.CallUnary(ctx, req)
 }
 
 // DispatchEventCreatedNotification calls
@@ -185,6 +201,7 @@ func (c *adminServiceClient) DeleteEvent(ctx context.Context, req *connect.Reque
 type AdminServiceHandler interface {
 	Login(context.Context, *connect.Request[v1.AdminLoginRequest]) (*connect.Response[v1.AdminLoginResponse], error)
 	Logout(context.Context, *connect.Request[v1.AdminLogoutRequest]) (*connect.Response[v1.AdminLogoutResponse], error)
+	RegisterFCM(context.Context, *connect.Request[v1.AdminRegisterFCMRequest]) (*connect.Response[v1.AdminRegisterFCMResponse], error)
 	DispatchEventCreatedNotification(context.Context, *connect.Request[v1.DispatchEventCreatedNotificationRequest]) (*connect.Response[v1.DispatchEventCreatedNotificationResponse], error)
 	GetEvents(context.Context, *connect.Request[v1.AdminServiceGetEventsRequest]) (*connect.Response[v1.AdminServiceGetEventsResponse], error)
 	GetUsers(context.Context, *connect.Request[v1.AdminServiceGetUsersRequest]) (*connect.Response[v1.AdminServiceGetUsersResponse], error)
@@ -210,6 +227,12 @@ func NewAdminServiceHandler(svc AdminServiceHandler, opts ...connect.HandlerOpti
 		AdminServiceLogoutProcedure,
 		svc.Logout,
 		connect.WithSchema(adminServiceMethods.ByName("Logout")),
+		connect.WithHandlerOptions(opts...),
+	)
+	adminServiceRegisterFCMHandler := connect.NewUnaryHandler(
+		AdminServiceRegisterFCMProcedure,
+		svc.RegisterFCM,
+		connect.WithSchema(adminServiceMethods.ByName("RegisterFCM")),
 		connect.WithHandlerOptions(opts...),
 	)
 	adminServiceDispatchEventCreatedNotificationHandler := connect.NewUnaryHandler(
@@ -254,6 +277,8 @@ func NewAdminServiceHandler(svc AdminServiceHandler, opts ...connect.HandlerOpti
 			adminServiceLoginHandler.ServeHTTP(w, r)
 		case AdminServiceLogoutProcedure:
 			adminServiceLogoutHandler.ServeHTTP(w, r)
+		case AdminServiceRegisterFCMProcedure:
+			adminServiceRegisterFCMHandler.ServeHTTP(w, r)
 		case AdminServiceDispatchEventCreatedNotificationProcedure:
 			adminServiceDispatchEventCreatedNotificationHandler.ServeHTTP(w, r)
 		case AdminServiceGetEventsProcedure:
@@ -281,6 +306,10 @@ func (UnimplementedAdminServiceHandler) Login(context.Context, *connect.Request[
 
 func (UnimplementedAdminServiceHandler) Logout(context.Context, *connect.Request[v1.AdminLogoutRequest]) (*connect.Response[v1.AdminLogoutResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("eventsease.v1.AdminService.Logout is not implemented"))
+}
+
+func (UnimplementedAdminServiceHandler) RegisterFCM(context.Context, *connect.Request[v1.AdminRegisterFCMRequest]) (*connect.Response[v1.AdminRegisterFCMResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("eventsease.v1.AdminService.RegisterFCM is not implemented"))
 }
 
 func (UnimplementedAdminServiceHandler) DispatchEventCreatedNotification(context.Context, *connect.Request[v1.DispatchEventCreatedNotificationRequest]) (*connect.Response[v1.DispatchEventCreatedNotificationResponse], error) {

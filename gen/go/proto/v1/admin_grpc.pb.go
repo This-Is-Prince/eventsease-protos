@@ -21,6 +21,7 @@ const _ = grpc.SupportPackageIsVersion9
 const (
 	AdminService_Login_FullMethodName                            = "/eventsease.v1.AdminService/Login"
 	AdminService_Logout_FullMethodName                           = "/eventsease.v1.AdminService/Logout"
+	AdminService_RegisterFCM_FullMethodName                      = "/eventsease.v1.AdminService/RegisterFCM"
 	AdminService_DispatchEventCreatedNotification_FullMethodName = "/eventsease.v1.AdminService/DispatchEventCreatedNotification"
 	AdminService_GetEvents_FullMethodName                        = "/eventsease.v1.AdminService/GetEvents"
 	AdminService_GetUsers_FullMethodName                         = "/eventsease.v1.AdminService/GetUsers"
@@ -35,6 +36,7 @@ const (
 type AdminServiceClient interface {
 	Login(ctx context.Context, in *AdminLoginRequest, opts ...grpc.CallOption) (*AdminLoginResponse, error)
 	Logout(ctx context.Context, in *AdminLogoutRequest, opts ...grpc.CallOption) (*AdminLogoutResponse, error)
+	RegisterFCM(ctx context.Context, in *AdminRegisterFCMRequest, opts ...grpc.CallOption) (*AdminRegisterFCMResponse, error)
 	DispatchEventCreatedNotification(ctx context.Context, in *DispatchEventCreatedNotificationRequest, opts ...grpc.CallOption) (*DispatchEventCreatedNotificationResponse, error)
 	GetEvents(ctx context.Context, in *AdminServiceGetEventsRequest, opts ...grpc.CallOption) (*AdminServiceGetEventsResponse, error)
 	GetUsers(ctx context.Context, in *AdminServiceGetUsersRequest, opts ...grpc.CallOption) (*AdminServiceGetUsersResponse, error)
@@ -65,6 +67,16 @@ func (c *adminServiceClient) Logout(ctx context.Context, in *AdminLogoutRequest,
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(AdminLogoutResponse)
 	err := c.cc.Invoke(ctx, AdminService_Logout_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *adminServiceClient) RegisterFCM(ctx context.Context, in *AdminRegisterFCMRequest, opts ...grpc.CallOption) (*AdminRegisterFCMResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(AdminRegisterFCMResponse)
+	err := c.cc.Invoke(ctx, AdminService_RegisterFCM_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -137,6 +149,7 @@ func (c *adminServiceClient) DeleteEvent(ctx context.Context, in *AdminServiceDe
 type AdminServiceServer interface {
 	Login(context.Context, *AdminLoginRequest) (*AdminLoginResponse, error)
 	Logout(context.Context, *AdminLogoutRequest) (*AdminLogoutResponse, error)
+	RegisterFCM(context.Context, *AdminRegisterFCMRequest) (*AdminRegisterFCMResponse, error)
 	DispatchEventCreatedNotification(context.Context, *DispatchEventCreatedNotificationRequest) (*DispatchEventCreatedNotificationResponse, error)
 	GetEvents(context.Context, *AdminServiceGetEventsRequest) (*AdminServiceGetEventsResponse, error)
 	GetUsers(context.Context, *AdminServiceGetUsersRequest) (*AdminServiceGetUsersResponse, error)
@@ -158,6 +171,9 @@ func (UnimplementedAdminServiceServer) Login(context.Context, *AdminLoginRequest
 }
 func (UnimplementedAdminServiceServer) Logout(context.Context, *AdminLogoutRequest) (*AdminLogoutResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Logout not implemented")
+}
+func (UnimplementedAdminServiceServer) RegisterFCM(context.Context, *AdminRegisterFCMRequest) (*AdminRegisterFCMResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RegisterFCM not implemented")
 }
 func (UnimplementedAdminServiceServer) DispatchEventCreatedNotification(context.Context, *DispatchEventCreatedNotificationRequest) (*DispatchEventCreatedNotificationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DispatchEventCreatedNotification not implemented")
@@ -230,6 +246,24 @@ func _AdminService_Logout_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AdminServiceServer).Logout(ctx, req.(*AdminLogoutRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_RegisterFCM_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AdminRegisterFCMRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).RegisterFCM(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: AdminService_RegisterFCM_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).RegisterFCM(ctx, req.(*AdminRegisterFCMRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -356,6 +390,10 @@ var AdminService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Logout",
 			Handler:    _AdminService_Logout_Handler,
+		},
+		{
+			MethodName: "RegisterFCM",
+			Handler:    _AdminService_RegisterFCM_Handler,
 		},
 		{
 			MethodName: "DispatchEventCreatedNotification",
