@@ -93,28 +93,39 @@ public interface AdminServiceGetEventsRequestOrBuilder extends
   boolean getIsRegular();
 
   /**
-   * <code>optional bool is_approved = 8 [json_name = "isApproved"];</code>
+   * <code>optional bool is_deleted = 8 [json_name = "isDeleted"];</code>
+   * @return Whether the isDeleted field is set.
+   */
+  boolean hasIsDeleted();
+  /**
+   * <code>optional bool is_deleted = 8 [json_name = "isDeleted"];</code>
+   * @return The isDeleted.
+   */
+  boolean getIsDeleted();
+
+  /**
+   * <code>optional bool is_approved = 9 [json_name = "isApproved"];</code>
    * @return Whether the isApproved field is set.
    */
   boolean hasIsApproved();
   /**
-   * <code>optional bool is_approved = 8 [json_name = "isApproved"];</code>
+   * <code>optional bool is_approved = 9 [json_name = "isApproved"];</code>
    * @return The isApproved.
    */
   boolean getIsApproved();
 
   /**
-   * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 9 [json_name = "verificationStatus"];</code>
+   * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 10 [json_name = "verificationStatus"];</code>
    * @return Whether the verificationStatus field is set.
    */
   boolean hasVerificationStatus();
   /**
-   * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 9 [json_name = "verificationStatus"];</code>
+   * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 10 [json_name = "verificationStatus"];</code>
    * @return The enum numeric value on the wire for verificationStatus.
    */
   int getVerificationStatusValue();
   /**
-   * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 9 [json_name = "verificationStatus"];</code>
+   * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 10 [json_name = "verificationStatus"];</code>
    * @return The verificationStatus.
    */
   com.eventsease.v1.EventVerificationStatus getVerificationStatus();

@@ -66,8 +66,9 @@ message AdminServiceGetEventsRequest {
   SortDirection sort_direction = 5;
   repeated string categories = 6;
   optional bool is_regular = 7;
-  optional bool is_approved = 8;
-  optional EventVerificationStatus verification_status = 9;
+  optional bool is_deleted = 8;
+  optional bool is_approved = 9;
+  optional EventVerificationStatus verification_status = 10;
   repeated string user_ids = 11;
   repeated string event_ids = 12;
 }
@@ -118,9 +119,8 @@ message AdminServiceUpdateEventRequest {
   string id = 1;
   optional EventVerificationStatus verification_status = 2;
   optional bool is_approved = 3;
-  optional bool is_pinned = 5;
-  repeated SocialLink social = 4;
-  optional string organizer = 6;
+  optional bool is_pinned = 4;
+  optional string organizer = 5;
 }
 
 message AdminServiceUpdateEventResponse {

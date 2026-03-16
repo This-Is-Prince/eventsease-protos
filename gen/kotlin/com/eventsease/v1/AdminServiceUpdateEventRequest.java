@@ -16,7 +16,6 @@ public  final class AdminServiceUpdateEventRequest extends
     AdminServiceUpdateEventRequestOrBuilder {
   private AdminServiceUpdateEventRequest() {
     id_ = "";
-    social_ = emptyProtobufList();
     organizer_ = "";
   }
   private int bitField0_;
@@ -153,10 +152,10 @@ public  final class AdminServiceUpdateEventRequest extends
     isApproved_ = false;
   }
 
-  public static final int IS_PINNED_FIELD_NUMBER = 5;
+  public static final int IS_PINNED_FIELD_NUMBER = 4;
   private boolean isPinned_;
   /**
-   * <code>optional bool is_pinned = 5 [json_name = "isPinned"];</code>
+   * <code>optional bool is_pinned = 4 [json_name = "isPinned"];</code>
    * @return Whether the isPinned field is set.
    */
   @java.lang.Override
@@ -164,7 +163,7 @@ public  final class AdminServiceUpdateEventRequest extends
     return ((bitField0_ & 0x00000004) != 0);
   }
   /**
-   * <code>optional bool is_pinned = 5 [json_name = "isPinned"];</code>
+   * <code>optional bool is_pinned = 4 [json_name = "isPinned"];</code>
    * @return The isPinned.
    */
   @java.lang.Override
@@ -172,7 +171,7 @@ public  final class AdminServiceUpdateEventRequest extends
     return isPinned_;
   }
   /**
-   * <code>optional bool is_pinned = 5 [json_name = "isPinned"];</code>
+   * <code>optional bool is_pinned = 4 [json_name = "isPinned"];</code>
    * @param value The isPinned to set.
    */
   private void setIsPinned(boolean value) {
@@ -180,114 +179,17 @@ public  final class AdminServiceUpdateEventRequest extends
     isPinned_ = value;
   }
   /**
-   * <code>optional bool is_pinned = 5 [json_name = "isPinned"];</code>
+   * <code>optional bool is_pinned = 4 [json_name = "isPinned"];</code>
    */
   private void clearIsPinned() {
     bitField0_ = (bitField0_ & ~0x00000004);
     isPinned_ = false;
   }
 
-  public static final int SOCIAL_FIELD_NUMBER = 4;
-  private com.google.protobuf.Internal.ProtobufList<com.eventsease.v1.SocialLink> social_;
-  /**
-   * <code>repeated .eventsease.v1.SocialLink social = 4 [json_name = "social"];</code>
-   */
-  @java.lang.Override
-  public java.util.List<com.eventsease.v1.SocialLink> getSocialList() {
-    return social_;
-  }
-  /**
-   * <code>repeated .eventsease.v1.SocialLink social = 4 [json_name = "social"];</code>
-   */
-  public java.util.List<? extends com.eventsease.v1.SocialLinkOrBuilder> 
-      getSocialOrBuilderList() {
-    return social_;
-  }
-  /**
-   * <code>repeated .eventsease.v1.SocialLink social = 4 [json_name = "social"];</code>
-   */
-  @java.lang.Override
-  public int getSocialCount() {
-    return social_.size();
-  }
-  /**
-   * <code>repeated .eventsease.v1.SocialLink social = 4 [json_name = "social"];</code>
-   */
-  @java.lang.Override
-  public com.eventsease.v1.SocialLink getSocial(int index) {
-    return social_.get(index);
-  }
-  /**
-   * <code>repeated .eventsease.v1.SocialLink social = 4 [json_name = "social"];</code>
-   */
-  public com.eventsease.v1.SocialLinkOrBuilder getSocialOrBuilder(
-      int index) {
-    return social_.get(index);
-  }
-  private void ensureSocialIsMutable() {
-    com.google.protobuf.Internal.ProtobufList<com.eventsease.v1.SocialLink> tmp = social_;
-    if (!tmp.isModifiable()) {
-      social_ =
-          com.google.protobuf.GeneratedMessageLite.mutableCopy(tmp);
-     }
-  }
-
-  /**
-   * <code>repeated .eventsease.v1.SocialLink social = 4 [json_name = "social"];</code>
-   */
-  @java.lang.SuppressWarnings("ReturnValueIgnored")
-  private void setSocial(
-      int index, com.eventsease.v1.SocialLink value) {
-    value.getClass();  // minimal bytecode null check
-    ensureSocialIsMutable();
-    social_.set(index, value);
-  }
-  /**
-   * <code>repeated .eventsease.v1.SocialLink social = 4 [json_name = "social"];</code>
-   */
-  @java.lang.SuppressWarnings("ReturnValueIgnored")
-  private void addSocial(com.eventsease.v1.SocialLink value) {
-    value.getClass();  // minimal bytecode null check
-    ensureSocialIsMutable();
-    social_.add(value);
-  }
-  /**
-   * <code>repeated .eventsease.v1.SocialLink social = 4 [json_name = "social"];</code>
-   */
-  @java.lang.SuppressWarnings("ReturnValueIgnored")
-  private void addSocial(
-      int index, com.eventsease.v1.SocialLink value) {
-    value.getClass();  // minimal bytecode null check
-    ensureSocialIsMutable();
-    social_.add(index, value);
-  }
-  /**
-   * <code>repeated .eventsease.v1.SocialLink social = 4 [json_name = "social"];</code>
-   */
-  private void addAllSocial(
-      java.lang.Iterable<? extends com.eventsease.v1.SocialLink> values) {
-    ensureSocialIsMutable();
-    com.google.protobuf.AbstractMessageLite.addAll(
-        values, social_);
-  }
-  /**
-   * <code>repeated .eventsease.v1.SocialLink social = 4 [json_name = "social"];</code>
-   */
-  private void clearSocial() {
-    social_ = emptyProtobufList();
-  }
-  /**
-   * <code>repeated .eventsease.v1.SocialLink social = 4 [json_name = "social"];</code>
-   */
-  private void removeSocial(int index) {
-    ensureSocialIsMutable();
-    social_.remove(index);
-  }
-
-  public static final int ORGANIZER_FIELD_NUMBER = 6;
+  public static final int ORGANIZER_FIELD_NUMBER = 5;
   private java.lang.String organizer_;
   /**
-   * <code>optional string organizer = 6 [json_name = "organizer"];</code>
+   * <code>optional string organizer = 5 [json_name = "organizer"];</code>
    * @return Whether the organizer field is set.
    */
   @java.lang.Override
@@ -295,7 +197,7 @@ public  final class AdminServiceUpdateEventRequest extends
     return ((bitField0_ & 0x00000008) != 0);
   }
   /**
-   * <code>optional string organizer = 6 [json_name = "organizer"];</code>
+   * <code>optional string organizer = 5 [json_name = "organizer"];</code>
    * @return The organizer.
    */
   @java.lang.Override
@@ -303,7 +205,7 @@ public  final class AdminServiceUpdateEventRequest extends
     return organizer_;
   }
   /**
-   * <code>optional string organizer = 6 [json_name = "organizer"];</code>
+   * <code>optional string organizer = 5 [json_name = "organizer"];</code>
    * @return The bytes for organizer.
    */
   @java.lang.Override
@@ -312,7 +214,7 @@ public  final class AdminServiceUpdateEventRequest extends
     return com.google.protobuf.ByteString.copyFromUtf8(organizer_);
   }
   /**
-   * <code>optional string organizer = 6 [json_name = "organizer"];</code>
+   * <code>optional string organizer = 5 [json_name = "organizer"];</code>
    * @param value The organizer to set.
    */
   @java.lang.SuppressWarnings("ReturnValueIgnored")
@@ -323,14 +225,14 @@ public  final class AdminServiceUpdateEventRequest extends
     organizer_ = value;
   }
   /**
-   * <code>optional string organizer = 6 [json_name = "organizer"];</code>
+   * <code>optional string organizer = 5 [json_name = "organizer"];</code>
    */
   private void clearOrganizer() {
     bitField0_ = (bitField0_ & ~0x00000008);
     organizer_ = getDefaultInstance().getOrganizer();
   }
   /**
-   * <code>optional string organizer = 6 [json_name = "organizer"];</code>
+   * <code>optional string organizer = 5 [json_name = "organizer"];</code>
    * @param value The bytes for organizer to set.
    */
   private void setOrganizerBytes(
@@ -578,7 +480,7 @@ public  final class AdminServiceUpdateEventRequest extends
     }
 
     /**
-     * <code>optional bool is_pinned = 5 [json_name = "isPinned"];</code>
+     * <code>optional bool is_pinned = 4 [json_name = "isPinned"];</code>
      * @return Whether the isPinned field is set.
      */
     @java.lang.Override
@@ -586,7 +488,7 @@ public  final class AdminServiceUpdateEventRequest extends
       return instance.hasIsPinned();
     }
     /**
-     * <code>optional bool is_pinned = 5 [json_name = "isPinned"];</code>
+     * <code>optional bool is_pinned = 4 [json_name = "isPinned"];</code>
      * @return The isPinned.
      */
     @java.lang.Override
@@ -594,7 +496,7 @@ public  final class AdminServiceUpdateEventRequest extends
       return instance.getIsPinned();
     }
     /**
-     * <code>optional bool is_pinned = 5 [json_name = "isPinned"];</code>
+     * <code>optional bool is_pinned = 4 [json_name = "isPinned"];</code>
      * @param value The isPinned to set.
      * @return This builder for chaining.
      */
@@ -604,7 +506,7 @@ public  final class AdminServiceUpdateEventRequest extends
       return this;
     }
     /**
-     * <code>optional bool is_pinned = 5 [json_name = "isPinned"];</code>
+     * <code>optional bool is_pinned = 4 [json_name = "isPinned"];</code>
      * @return This builder for chaining.
      */
     public Builder clearIsPinned() {
@@ -614,109 +516,7 @@ public  final class AdminServiceUpdateEventRequest extends
     }
 
     /**
-     * <code>repeated .eventsease.v1.SocialLink social = 4 [json_name = "social"];</code>
-     */
-    @java.lang.Override
-    public java.util.List<com.eventsease.v1.SocialLink> getSocialList() {
-      return java.util.Collections.unmodifiableList(
-          instance.getSocialList());
-    }
-    /**
-     * <code>repeated .eventsease.v1.SocialLink social = 4 [json_name = "social"];</code>
-     */
-    @java.lang.Override
-    public int getSocialCount() {
-      return instance.getSocialCount();
-    }/**
-     * <code>repeated .eventsease.v1.SocialLink social = 4 [json_name = "social"];</code>
-     */
-    @java.lang.Override
-    public com.eventsease.v1.SocialLink getSocial(int index) {
-      return instance.getSocial(index);
-    }
-    /**
-     * <code>repeated .eventsease.v1.SocialLink social = 4 [json_name = "social"];</code>
-     */
-    public Builder setSocial(
-        int index, com.eventsease.v1.SocialLink value) {
-      copyOnWrite();
-      instance.setSocial(index, value);
-      return this;
-    }
-    /**
-     * <code>repeated .eventsease.v1.SocialLink social = 4 [json_name = "social"];</code>
-     */
-    public Builder setSocial(
-        int index, com.eventsease.v1.SocialLink.Builder builderForValue) {
-      copyOnWrite();
-      instance.setSocial(index,
-          builderForValue.build());
-      return this;
-    }
-    /**
-     * <code>repeated .eventsease.v1.SocialLink social = 4 [json_name = "social"];</code>
-     */
-    public Builder addSocial(com.eventsease.v1.SocialLink value) {
-      copyOnWrite();
-      instance.addSocial(value);
-      return this;
-    }
-    /**
-     * <code>repeated .eventsease.v1.SocialLink social = 4 [json_name = "social"];</code>
-     */
-    public Builder addSocial(
-        int index, com.eventsease.v1.SocialLink value) {
-      copyOnWrite();
-      instance.addSocial(index, value);
-      return this;
-    }
-    /**
-     * <code>repeated .eventsease.v1.SocialLink social = 4 [json_name = "social"];</code>
-     */
-    public Builder addSocial(
-        com.eventsease.v1.SocialLink.Builder builderForValue) {
-      copyOnWrite();
-      instance.addSocial(builderForValue.build());
-      return this;
-    }
-    /**
-     * <code>repeated .eventsease.v1.SocialLink social = 4 [json_name = "social"];</code>
-     */
-    public Builder addSocial(
-        int index, com.eventsease.v1.SocialLink.Builder builderForValue) {
-      copyOnWrite();
-      instance.addSocial(index,
-          builderForValue.build());
-      return this;
-    }
-    /**
-     * <code>repeated .eventsease.v1.SocialLink social = 4 [json_name = "social"];</code>
-     */
-    public Builder addAllSocial(
-        java.lang.Iterable<? extends com.eventsease.v1.SocialLink> values) {
-      copyOnWrite();
-      instance.addAllSocial(values);
-      return this;
-    }
-    /**
-     * <code>repeated .eventsease.v1.SocialLink social = 4 [json_name = "social"];</code>
-     */
-    public Builder clearSocial() {
-      copyOnWrite();
-      instance.clearSocial();
-      return this;
-    }
-    /**
-     * <code>repeated .eventsease.v1.SocialLink social = 4 [json_name = "social"];</code>
-     */
-    public Builder removeSocial(int index) {
-      copyOnWrite();
-      instance.removeSocial(index);
-      return this;
-    }
-
-    /**
-     * <code>optional string organizer = 6 [json_name = "organizer"];</code>
+     * <code>optional string organizer = 5 [json_name = "organizer"];</code>
      * @return Whether the organizer field is set.
      */
     @java.lang.Override
@@ -724,7 +524,7 @@ public  final class AdminServiceUpdateEventRequest extends
       return instance.hasOrganizer();
     }
     /**
-     * <code>optional string organizer = 6 [json_name = "organizer"];</code>
+     * <code>optional string organizer = 5 [json_name = "organizer"];</code>
      * @return The organizer.
      */
     @java.lang.Override
@@ -732,7 +532,7 @@ public  final class AdminServiceUpdateEventRequest extends
       return instance.getOrganizer();
     }
     /**
-     * <code>optional string organizer = 6 [json_name = "organizer"];</code>
+     * <code>optional string organizer = 5 [json_name = "organizer"];</code>
      * @return The bytes for organizer.
      */
     @java.lang.Override
@@ -741,7 +541,7 @@ public  final class AdminServiceUpdateEventRequest extends
       return instance.getOrganizerBytes();
     }
     /**
-     * <code>optional string organizer = 6 [json_name = "organizer"];</code>
+     * <code>optional string organizer = 5 [json_name = "organizer"];</code>
      * @param value The organizer to set.
      * @return This builder for chaining.
      */
@@ -752,7 +552,7 @@ public  final class AdminServiceUpdateEventRequest extends
       return this;
     }
     /**
-     * <code>optional string organizer = 6 [json_name = "organizer"];</code>
+     * <code>optional string organizer = 5 [json_name = "organizer"];</code>
      * @return This builder for chaining.
      */
     public Builder clearOrganizer() {
@@ -761,7 +561,7 @@ public  final class AdminServiceUpdateEventRequest extends
       return this;
     }
     /**
-     * <code>optional string organizer = 6 [json_name = "organizer"];</code>
+     * <code>optional string organizer = 5 [json_name = "organizer"];</code>
      * @param value The bytes for organizer to set.
      * @return This builder for chaining.
      */
@@ -792,14 +592,12 @@ public  final class AdminServiceUpdateEventRequest extends
             "id_",
             "verificationStatus_",
             "isApproved_",
-            "social_",
-            com.eventsease.v1.SocialLink.class,
             "isPinned_",
             "organizer_",
           };
           java.lang.String info =
-              "\u0000\u0006\u0000\u0001\u0001\u0006\u0006\u0000\u0001\u0000\u0001\u0208\u0002\u100c" +
-              "\u0000\u0003\u1007\u0001\u0004\u001b\u0005\u1007\u0002\u0006\u1208\u0003";
+              "\u0000\u0005\u0000\u0001\u0001\u0005\u0005\u0000\u0000\u0000\u0001\u0208\u0002\u100c" +
+              "\u0000\u0003\u1007\u0001\u0004\u1007\u0002\u0005\u1208\u0003";
           return newMessageInfo(DEFAULT_INSTANCE, info, objects);
       }
       case GET_DEFAULT_INSTANCE: {

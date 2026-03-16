@@ -161,6 +161,15 @@ public struct Eventsease_V1_AdminServiceGetEventsRequest: Sendable {
   /// Clears the value of `isRegular`. Subsequent reads from it will return its default value.
   public mutating func clearIsRegular() {self._isRegular = nil}
 
+  public var isDeleted: Bool {
+    get {return _isDeleted ?? false}
+    set {_isDeleted = newValue}
+  }
+  /// Returns true if `isDeleted` has been explicitly set.
+  public var hasIsDeleted: Bool {return self._isDeleted != nil}
+  /// Clears the value of `isDeleted`. Subsequent reads from it will return its default value.
+  public mutating func clearIsDeleted() {self._isDeleted = nil}
+
   public var isApproved: Bool {
     get {return _isApproved ?? false}
     set {_isApproved = newValue}
@@ -188,6 +197,7 @@ public struct Eventsease_V1_AdminServiceGetEventsRequest: Sendable {
   public init() {}
 
   fileprivate var _isRegular: Bool? = nil
+  fileprivate var _isDeleted: Bool? = nil
   fileprivate var _isApproved: Bool? = nil
   fileprivate var _verificationStatus: Eventsease_V1_EventVerificationStatus? = nil
 }
@@ -442,8 +452,6 @@ public struct Eventsease_V1_AdminServiceUpdateEventRequest: Sendable {
   public var hasIsPinned: Bool {return self._isPinned != nil}
   /// Clears the value of `isPinned`. Subsequent reads from it will return its default value.
   public mutating func clearIsPinned() {self._isPinned = nil}
-
-  public var social: [Eventsease_V1_SocialLink] = []
 
   public var organizer: String {
     get {return _organizer ?? String()}
@@ -784,7 +792,7 @@ extension Eventsease_V1_DispatchEventCreatedNotificationResponse: SwiftProtobuf.
 
 extension Eventsease_V1_AdminServiceGetEventsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".AdminServiceGetEventsRequest"
-  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}page\0\u{1}limit\0\u{3}search_query\0\u{3}sort_by\0\u{3}sort_direction\0\u{1}categories\0\u{3}is_regular\0\u{3}is_approved\0\u{3}verification_status\0\u{4}\u{2}user_ids\0\u{3}event_ids\0")
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}page\0\u{1}limit\0\u{3}search_query\0\u{3}sort_by\0\u{3}sort_direction\0\u{1}categories\0\u{3}is_regular\0\u{3}is_deleted\0\u{3}is_approved\0\u{3}verification_status\0\u{3}user_ids\0\u{3}event_ids\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -799,8 +807,9 @@ extension Eventsease_V1_AdminServiceGetEventsRequest: SwiftProtobuf.Message, Swi
       case 5: try { try decoder.decodeSingularEnumField(value: &self.sortDirection) }()
       case 6: try { try decoder.decodeRepeatedStringField(value: &self.categories) }()
       case 7: try { try decoder.decodeSingularBoolField(value: &self._isRegular) }()
-      case 8: try { try decoder.decodeSingularBoolField(value: &self._isApproved) }()
-      case 9: try { try decoder.decodeSingularEnumField(value: &self._verificationStatus) }()
+      case 8: try { try decoder.decodeSingularBoolField(value: &self._isDeleted) }()
+      case 9: try { try decoder.decodeSingularBoolField(value: &self._isApproved) }()
+      case 10: try { try decoder.decodeSingularEnumField(value: &self._verificationStatus) }()
       case 11: try { try decoder.decodeRepeatedStringField(value: &self.userIds) }()
       case 12: try { try decoder.decodeRepeatedStringField(value: &self.eventIds) }()
       default: break
@@ -834,11 +843,14 @@ extension Eventsease_V1_AdminServiceGetEventsRequest: SwiftProtobuf.Message, Swi
     try { if let v = self._isRegular {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 7)
     } }()
-    try { if let v = self._isApproved {
+    try { if let v = self._isDeleted {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 8)
     } }()
+    try { if let v = self._isApproved {
+      try visitor.visitSingularBoolField(value: v, fieldNumber: 9)
+    } }()
     try { if let v = self._verificationStatus {
-      try visitor.visitSingularEnumField(value: v, fieldNumber: 9)
+      try visitor.visitSingularEnumField(value: v, fieldNumber: 10)
     } }()
     if !self.userIds.isEmpty {
       try visitor.visitRepeatedStringField(value: self.userIds, fieldNumber: 11)
@@ -857,6 +869,7 @@ extension Eventsease_V1_AdminServiceGetEventsRequest: SwiftProtobuf.Message, Swi
     if lhs.sortDirection != rhs.sortDirection {return false}
     if lhs.categories != rhs.categories {return false}
     if lhs._isRegular != rhs._isRegular {return false}
+    if lhs._isDeleted != rhs._isDeleted {return false}
     if lhs._isApproved != rhs._isApproved {return false}
     if lhs._verificationStatus != rhs._verificationStatus {return false}
     if lhs.userIds != rhs.userIds {return false}
@@ -1158,7 +1171,7 @@ extension Eventsease_V1_AdminServiceUpdateUserResponse: SwiftProtobuf.Message, S
 
 extension Eventsease_V1_AdminServiceUpdateEventRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".AdminServiceUpdateEventRequest"
-  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{3}verification_status\0\u{3}is_approved\0\u{1}social\0\u{3}is_pinned\0\u{1}organizer\0")
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}id\0\u{3}verification_status\0\u{3}is_approved\0\u{3}is_pinned\0\u{1}organizer\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1169,9 +1182,8 @@ extension Eventsease_V1_AdminServiceUpdateEventRequest: SwiftProtobuf.Message, S
       case 1: try { try decoder.decodeSingularStringField(value: &self.id) }()
       case 2: try { try decoder.decodeSingularEnumField(value: &self._verificationStatus) }()
       case 3: try { try decoder.decodeSingularBoolField(value: &self._isApproved) }()
-      case 4: try { try decoder.decodeRepeatedMessageField(value: &self.social) }()
-      case 5: try { try decoder.decodeSingularBoolField(value: &self._isPinned) }()
-      case 6: try { try decoder.decodeSingularStringField(value: &self._organizer) }()
+      case 4: try { try decoder.decodeSingularBoolField(value: &self._isPinned) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self._organizer) }()
       default: break
       }
     }
@@ -1191,14 +1203,11 @@ extension Eventsease_V1_AdminServiceUpdateEventRequest: SwiftProtobuf.Message, S
     try { if let v = self._isApproved {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 3)
     } }()
-    if !self.social.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.social, fieldNumber: 4)
-    }
     try { if let v = self._isPinned {
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 5)
+      try visitor.visitSingularBoolField(value: v, fieldNumber: 4)
     } }()
     try { if let v = self._organizer {
-      try visitor.visitSingularStringField(value: v, fieldNumber: 6)
+      try visitor.visitSingularStringField(value: v, fieldNumber: 5)
     } }()
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1208,7 +1217,6 @@ extension Eventsease_V1_AdminServiceUpdateEventRequest: SwiftProtobuf.Message, S
     if lhs._verificationStatus != rhs._verificationStatus {return false}
     if lhs._isApproved != rhs._isApproved {return false}
     if lhs._isPinned != rhs._isPinned {return false}
-    if lhs.social != rhs.social {return false}
     if lhs._organizer != rhs._organizer {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

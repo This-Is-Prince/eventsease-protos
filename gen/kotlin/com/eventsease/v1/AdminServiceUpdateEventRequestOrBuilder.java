@@ -50,42 +50,28 @@ public interface AdminServiceUpdateEventRequestOrBuilder extends
   boolean getIsApproved();
 
   /**
-   * <code>optional bool is_pinned = 5 [json_name = "isPinned"];</code>
+   * <code>optional bool is_pinned = 4 [json_name = "isPinned"];</code>
    * @return Whether the isPinned field is set.
    */
   boolean hasIsPinned();
   /**
-   * <code>optional bool is_pinned = 5 [json_name = "isPinned"];</code>
+   * <code>optional bool is_pinned = 4 [json_name = "isPinned"];</code>
    * @return The isPinned.
    */
   boolean getIsPinned();
 
   /**
-   * <code>repeated .eventsease.v1.SocialLink social = 4 [json_name = "social"];</code>
-   */
-  java.util.List<com.eventsease.v1.SocialLink> 
-      getSocialList();
-  /**
-   * <code>repeated .eventsease.v1.SocialLink social = 4 [json_name = "social"];</code>
-   */
-  com.eventsease.v1.SocialLink getSocial(int index);
-  /**
-   * <code>repeated .eventsease.v1.SocialLink social = 4 [json_name = "social"];</code>
-   */
-  int getSocialCount();
-
-  /**
-   * <code>optional string organizer = 6 [json_name = "organizer"];</code>
+   * <code>optional string organizer = 5 [json_name = "organizer"];</code>
    * @return Whether the organizer field is set.
    */
   boolean hasOrganizer();
   /**
-   * <code>optional string organizer = 6 [json_name = "organizer"];</code>
+   * <code>optional string organizer = 5 [json_name = "organizer"];</code>
    * @return The organizer.
    */
   java.lang.String getOrganizer();
   /**
-   * <code>optional string organizer = 6 [json_name = "organizer"];</code>
+   * <code>optional string organizer = 5 [json_name = "organizer"];</code>
    * @return The bytes for organizer.
    */
   com.google.protobuf.ByteString
