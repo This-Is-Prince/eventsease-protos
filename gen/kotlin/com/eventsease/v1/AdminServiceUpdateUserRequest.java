@@ -69,21 +69,21 @@ public  final class AdminServiceUpdateUserRequest extends
   public static final int ROLES_FIELD_NUMBER = 2;
   private com.eventsease.v1.UserRoles roles_;
   /**
-   * <code>.eventsease.v1.UserRoles roles = 2 [json_name = "roles"];</code>
+   * <code>optional .eventsease.v1.UserRoles roles = 2 [json_name = "roles"];</code>
    */
   @java.lang.Override
   public boolean hasRoles() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.eventsease.v1.UserRoles roles = 2 [json_name = "roles"];</code>
+   * <code>optional .eventsease.v1.UserRoles roles = 2 [json_name = "roles"];</code>
    */
   @java.lang.Override
   public com.eventsease.v1.UserRoles getRoles() {
     return roles_ == null ? com.eventsease.v1.UserRoles.getDefaultInstance() : roles_;
   }
   /**
-   * <code>.eventsease.v1.UserRoles roles = 2 [json_name = "roles"];</code>
+   * <code>optional .eventsease.v1.UserRoles roles = 2 [json_name = "roles"];</code>
    */
   @java.lang.SuppressWarnings("ReturnValueIgnored")
   private void setRoles(com.eventsease.v1.UserRoles value) {
@@ -92,7 +92,7 @@ public  final class AdminServiceUpdateUserRequest extends
     bitField0_ |= 0x00000001;
   }
   /**
-   * <code>.eventsease.v1.UserRoles roles = 2 [json_name = "roles"];</code>
+   * <code>optional .eventsease.v1.UserRoles roles = 2 [json_name = "roles"];</code>
    */
   @java.lang.SuppressWarnings({"ReferenceEquality", "ReturnValueIgnored"})
   private void mergeRoles(com.eventsease.v1.UserRoles value) {
@@ -107,7 +107,7 @@ public  final class AdminServiceUpdateUserRequest extends
     bitField0_ |= 0x00000001;
   }
   /**
-   * <code>.eventsease.v1.UserRoles roles = 2 [json_name = "roles"];</code>
+   * <code>optional .eventsease.v1.UserRoles roles = 2 [json_name = "roles"];</code>
    */
   private void clearRoles() {
     roles_ = null;
@@ -363,21 +363,21 @@ public  final class AdminServiceUpdateUserRequest extends
     }
 
     /**
-     * <code>.eventsease.v1.UserRoles roles = 2 [json_name = "roles"];</code>
+     * <code>optional .eventsease.v1.UserRoles roles = 2 [json_name = "roles"];</code>
      */
     @java.lang.Override
     public boolean hasRoles() {
       return instance.hasRoles();
     }
     /**
-     * <code>.eventsease.v1.UserRoles roles = 2 [json_name = "roles"];</code>
+     * <code>optional .eventsease.v1.UserRoles roles = 2 [json_name = "roles"];</code>
      */
     @java.lang.Override
     public com.eventsease.v1.UserRoles getRoles() {
       return instance.getRoles();
     }
     /**
-     * <code>.eventsease.v1.UserRoles roles = 2 [json_name = "roles"];</code>
+     * <code>optional .eventsease.v1.UserRoles roles = 2 [json_name = "roles"];</code>
      */
     public Builder setRoles(com.eventsease.v1.UserRoles value) {
       copyOnWrite();
@@ -385,7 +385,7 @@ public  final class AdminServiceUpdateUserRequest extends
       return this;
       }
     /**
-     * <code>.eventsease.v1.UserRoles roles = 2 [json_name = "roles"];</code>
+     * <code>optional .eventsease.v1.UserRoles roles = 2 [json_name = "roles"];</code>
      */
     public Builder setRoles(
         com.eventsease.v1.UserRoles.Builder builderForValue) {
@@ -394,7 +394,7 @@ public  final class AdminServiceUpdateUserRequest extends
       return this;
     }
     /**
-     * <code>.eventsease.v1.UserRoles roles = 2 [json_name = "roles"];</code>
+     * <code>optional .eventsease.v1.UserRoles roles = 2 [json_name = "roles"];</code>
      */
     public Builder mergeRoles(com.eventsease.v1.UserRoles value) {
       copyOnWrite();
@@ -402,7 +402,7 @@ public  final class AdminServiceUpdateUserRequest extends
       return this;
     }
     /**
-     * <code>.eventsease.v1.UserRoles roles = 2 [json_name = "roles"];</code>
+     * <code>optional .eventsease.v1.UserRoles roles = 2 [json_name = "roles"];</code>
      */
     public Builder clearRoles() {  copyOnWrite();
       instance.clearRoles();

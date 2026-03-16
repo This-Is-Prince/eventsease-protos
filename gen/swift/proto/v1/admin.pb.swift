@@ -144,7 +144,14 @@ public struct Eventsease_V1_AdminServiceGetEventsRequest: Sendable {
 
   public var limit: Int32 = 0
 
-  public var searchQuery: String = String()
+  public var searchQuery: String {
+    get {return _searchQuery ?? String()}
+    set {_searchQuery = newValue}
+  }
+  /// Returns true if `searchQuery` has been explicitly set.
+  public var hasSearchQuery: Bool {return self._searchQuery != nil}
+  /// Clears the value of `searchQuery`. Subsequent reads from it will return its default value.
+  public mutating func clearSearchQuery() {self._searchQuery = nil}
 
   public var sortBy: Eventsease_V1_SortBy = .unspecified
 
@@ -179,6 +186,15 @@ public struct Eventsease_V1_AdminServiceGetEventsRequest: Sendable {
   /// Clears the value of `isApproved`. Subsequent reads from it will return its default value.
   public mutating func clearIsApproved() {self._isApproved = nil}
 
+  public var isActiveEvent: Bool {
+    get {return _isActiveEvent ?? false}
+    set {_isActiveEvent = newValue}
+  }
+  /// Returns true if `isActiveEvent` has been explicitly set.
+  public var hasIsActiveEvent: Bool {return self._isActiveEvent != nil}
+  /// Clears the value of `isActiveEvent`. Subsequent reads from it will return its default value.
+  public mutating func clearIsActiveEvent() {self._isActiveEvent = nil}
+
   public var verificationStatus: Eventsease_V1_EventVerificationStatus {
     get {return _verificationStatus ?? .unspecified}
     set {_verificationStatus = newValue}
@@ -196,9 +212,11 @@ public struct Eventsease_V1_AdminServiceGetEventsRequest: Sendable {
 
   public init() {}
 
+  fileprivate var _searchQuery: String? = nil
   fileprivate var _isRegular: Bool? = nil
   fileprivate var _isDeleted: Bool? = nil
   fileprivate var _isApproved: Bool? = nil
+  fileprivate var _isActiveEvent: Bool? = nil
   fileprivate var _verificationStatus: Eventsease_V1_EventVerificationStatus? = nil
 }
 
@@ -792,7 +810,7 @@ extension Eventsease_V1_DispatchEventCreatedNotificationResponse: SwiftProtobuf.
 
 extension Eventsease_V1_AdminServiceGetEventsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".AdminServiceGetEventsRequest"
-  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}page\0\u{1}limit\0\u{3}search_query\0\u{3}sort_by\0\u{3}sort_direction\0\u{1}categories\0\u{3}is_regular\0\u{3}is_deleted\0\u{3}is_approved\0\u{3}verification_status\0\u{3}user_ids\0\u{3}event_ids\0")
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}page\0\u{1}limit\0\u{3}search_query\0\u{3}sort_by\0\u{3}sort_direction\0\u{1}categories\0\u{3}is_regular\0\u{3}is_deleted\0\u{3}is_approved\0\u{3}is_active_event\0\u{3}verification_status\0\u{3}user_ids\0\u{3}event_ids\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -802,16 +820,17 @@ extension Eventsease_V1_AdminServiceGetEventsRequest: SwiftProtobuf.Message, Swi
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularInt32Field(value: &self.page) }()
       case 2: try { try decoder.decodeSingularInt32Field(value: &self.limit) }()
-      case 3: try { try decoder.decodeSingularStringField(value: &self.searchQuery) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self._searchQuery) }()
       case 4: try { try decoder.decodeSingularEnumField(value: &self.sortBy) }()
       case 5: try { try decoder.decodeSingularEnumField(value: &self.sortDirection) }()
       case 6: try { try decoder.decodeRepeatedStringField(value: &self.categories) }()
       case 7: try { try decoder.decodeSingularBoolField(value: &self._isRegular) }()
       case 8: try { try decoder.decodeSingularBoolField(value: &self._isDeleted) }()
       case 9: try { try decoder.decodeSingularBoolField(value: &self._isApproved) }()
-      case 10: try { try decoder.decodeSingularEnumField(value: &self._verificationStatus) }()
-      case 11: try { try decoder.decodeRepeatedStringField(value: &self.userIds) }()
-      case 12: try { try decoder.decodeRepeatedStringField(value: &self.eventIds) }()
+      case 10: try { try decoder.decodeSingularBoolField(value: &self._isActiveEvent) }()
+      case 11: try { try decoder.decodeSingularEnumField(value: &self._verificationStatus) }()
+      case 12: try { try decoder.decodeRepeatedStringField(value: &self.userIds) }()
+      case 13: try { try decoder.decodeRepeatedStringField(value: &self.eventIds) }()
       default: break
       }
     }
@@ -828,9 +847,9 @@ extension Eventsease_V1_AdminServiceGetEventsRequest: SwiftProtobuf.Message, Swi
     if self.limit != 0 {
       try visitor.visitSingularInt32Field(value: self.limit, fieldNumber: 2)
     }
-    if !self.searchQuery.isEmpty {
-      try visitor.visitSingularStringField(value: self.searchQuery, fieldNumber: 3)
-    }
+    try { if let v = self._searchQuery {
+      try visitor.visitSingularStringField(value: v, fieldNumber: 3)
+    } }()
     if self.sortBy != .unspecified {
       try visitor.visitSingularEnumField(value: self.sortBy, fieldNumber: 4)
     }
@@ -849,14 +868,17 @@ extension Eventsease_V1_AdminServiceGetEventsRequest: SwiftProtobuf.Message, Swi
     try { if let v = self._isApproved {
       try visitor.visitSingularBoolField(value: v, fieldNumber: 9)
     } }()
+    try { if let v = self._isActiveEvent {
+      try visitor.visitSingularBoolField(value: v, fieldNumber: 10)
+    } }()
     try { if let v = self._verificationStatus {
-      try visitor.visitSingularEnumField(value: v, fieldNumber: 10)
+      try visitor.visitSingularEnumField(value: v, fieldNumber: 11)
     } }()
     if !self.userIds.isEmpty {
-      try visitor.visitRepeatedStringField(value: self.userIds, fieldNumber: 11)
+      try visitor.visitRepeatedStringField(value: self.userIds, fieldNumber: 12)
     }
     if !self.eventIds.isEmpty {
-      try visitor.visitRepeatedStringField(value: self.eventIds, fieldNumber: 12)
+      try visitor.visitRepeatedStringField(value: self.eventIds, fieldNumber: 13)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -864,13 +886,14 @@ extension Eventsease_V1_AdminServiceGetEventsRequest: SwiftProtobuf.Message, Swi
   public static func ==(lhs: Eventsease_V1_AdminServiceGetEventsRequest, rhs: Eventsease_V1_AdminServiceGetEventsRequest) -> Bool {
     if lhs.page != rhs.page {return false}
     if lhs.limit != rhs.limit {return false}
-    if lhs.searchQuery != rhs.searchQuery {return false}
+    if lhs._searchQuery != rhs._searchQuery {return false}
     if lhs.sortBy != rhs.sortBy {return false}
     if lhs.sortDirection != rhs.sortDirection {return false}
     if lhs.categories != rhs.categories {return false}
     if lhs._isRegular != rhs._isRegular {return false}
     if lhs._isDeleted != rhs._isDeleted {return false}
     if lhs._isApproved != rhs._isApproved {return false}
+    if lhs._isActiveEvent != rhs._isActiveEvent {return false}
     if lhs._verificationStatus != rhs._verificationStatus {return false}
     if lhs.userIds != rhs.userIds {return false}
     if lhs.eventIds != rhs.eventIds {return false}

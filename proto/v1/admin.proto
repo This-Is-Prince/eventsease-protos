@@ -61,16 +61,17 @@ message DispatchEventCreatedNotificationResponse {
 message AdminServiceGetEventsRequest {
   int32 page = 1;
   int32 limit = 2;
-  string search_query = 3;
+  optional string search_query = 3;
   SortBy sort_by = 4;
   SortDirection sort_direction = 5;
   repeated string categories = 6;
   optional bool is_regular = 7;
   optional bool is_deleted = 8;
   optional bool is_approved = 9;
-  optional EventVerificationStatus verification_status = 10;
-  repeated string user_ids = 11;
-  repeated string event_ids = 12;
+  optional bool is_active_event = 10;
+  optional EventVerificationStatus verification_status = 11;
+  repeated string user_ids = 12;
+  repeated string event_ids = 13;
 }
 
 message AdminServiceGetEventsResponse {
@@ -103,7 +104,7 @@ message UserRoles {
 
 message AdminServiceUpdateUserRequest {
   string user_id = 1;
-  UserRoles roles = 2;
+  optional UserRoles roles = 2;
   optional bool is_verified = 3;
   optional bool is_event_creation_blocked = 4;
   optional bool is_fraud = 5;

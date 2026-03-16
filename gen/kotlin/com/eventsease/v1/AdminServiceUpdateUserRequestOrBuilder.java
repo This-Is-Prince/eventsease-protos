@@ -23,12 +23,12 @@ public interface AdminServiceUpdateUserRequestOrBuilder extends
       getUserIdBytes();
 
   /**
-   * <code>.eventsease.v1.UserRoles roles = 2 [json_name = "roles"];</code>
+   * <code>optional .eventsease.v1.UserRoles roles = 2 [json_name = "roles"];</code>
    * @return Whether the roles field is set.
    */
   boolean hasRoles();
   /**
-   * <code>.eventsease.v1.UserRoles roles = 2 [json_name = "roles"];</code>
+   * <code>optional .eventsease.v1.UserRoles roles = 2 [json_name = "roles"];</code>
    * @return The roles.
    */
   com.eventsease.v1.UserRoles getRoles();

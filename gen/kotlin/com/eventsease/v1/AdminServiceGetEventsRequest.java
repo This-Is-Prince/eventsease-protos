@@ -76,7 +76,15 @@ public  final class AdminServiceGetEventsRequest extends
   public static final int SEARCH_QUERY_FIELD_NUMBER = 3;
   private java.lang.String searchQuery_;
   /**
-   * <code>string search_query = 3 [json_name = "searchQuery"];</code>
+   * <code>optional string search_query = 3 [json_name = "searchQuery"];</code>
+   * @return Whether the searchQuery field is set.
+   */
+  @java.lang.Override
+  public boolean hasSearchQuery() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>optional string search_query = 3 [json_name = "searchQuery"];</code>
    * @return The searchQuery.
    */
   @java.lang.Override
@@ -84,7 +92,7 @@ public  final class AdminServiceGetEventsRequest extends
     return searchQuery_;
   }
   /**
-   * <code>string search_query = 3 [json_name = "searchQuery"];</code>
+   * <code>optional string search_query = 3 [json_name = "searchQuery"];</code>
    * @return The bytes for searchQuery.
    */
   @java.lang.Override
@@ -93,32 +101,32 @@ public  final class AdminServiceGetEventsRequest extends
     return com.google.protobuf.ByteString.copyFromUtf8(searchQuery_);
   }
   /**
-   * <code>string search_query = 3 [json_name = "searchQuery"];</code>
+   * <code>optional string search_query = 3 [json_name = "searchQuery"];</code>
    * @param value The searchQuery to set.
    */
   @java.lang.SuppressWarnings("ReturnValueIgnored")
   private void setSearchQuery(
       java.lang.String value) {
     value.getClass();  // minimal bytecode null check
-
+    bitField0_ |= 0x00000001;
     searchQuery_ = value;
   }
   /**
-   * <code>string search_query = 3 [json_name = "searchQuery"];</code>
+   * <code>optional string search_query = 3 [json_name = "searchQuery"];</code>
    */
   private void clearSearchQuery() {
-
+    bitField0_ = (bitField0_ & ~0x00000001);
     searchQuery_ = getDefaultInstance().getSearchQuery();
   }
   /**
-   * <code>string search_query = 3 [json_name = "searchQuery"];</code>
+   * <code>optional string search_query = 3 [json_name = "searchQuery"];</code>
    * @param value The bytes for searchQuery to set.
    */
   private void setSearchQueryBytes(
       com.google.protobuf.ByteString value) {
     checkByteStringIsUtf8(value);
     searchQuery_ = value.toStringUtf8();
-
+    bitField0_ |= 0x00000001;
   }
 
   public static final int SORT_BY_FIELD_NUMBER = 4;
@@ -310,7 +318,7 @@ public  final class AdminServiceGetEventsRequest extends
    */
   @java.lang.Override
   public boolean hasIsRegular() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    * <code>optional bool is_regular = 7 [json_name = "isRegular"];</code>
@@ -325,14 +333,14 @@ public  final class AdminServiceGetEventsRequest extends
    * @param value The isRegular to set.
    */
   private void setIsRegular(boolean value) {
-    bitField0_ |= 0x00000001;
+    bitField0_ |= 0x00000002;
     isRegular_ = value;
   }
   /**
    * <code>optional bool is_regular = 7 [json_name = "isRegular"];</code>
    */
   private void clearIsRegular() {
-    bitField0_ = (bitField0_ & ~0x00000001);
+    bitField0_ = (bitField0_ & ~0x00000002);
     isRegular_ = false;
   }
 
@@ -344,7 +352,7 @@ public  final class AdminServiceGetEventsRequest extends
    */
   @java.lang.Override
   public boolean hasIsDeleted() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    * <code>optional bool is_deleted = 8 [json_name = "isDeleted"];</code>
@@ -359,14 +367,14 @@ public  final class AdminServiceGetEventsRequest extends
    * @param value The isDeleted to set.
    */
   private void setIsDeleted(boolean value) {
-    bitField0_ |= 0x00000002;
+    bitField0_ |= 0x00000004;
     isDeleted_ = value;
   }
   /**
    * <code>optional bool is_deleted = 8 [json_name = "isDeleted"];</code>
    */
   private void clearIsDeleted() {
-    bitField0_ = (bitField0_ & ~0x00000002);
+    bitField0_ = (bitField0_ & ~0x00000004);
     isDeleted_ = false;
   }
 
@@ -378,7 +386,7 @@ public  final class AdminServiceGetEventsRequest extends
    */
   @java.lang.Override
   public boolean hasIsApproved() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    * <code>optional bool is_approved = 9 [json_name = "isApproved"];</code>
@@ -393,29 +401,63 @@ public  final class AdminServiceGetEventsRequest extends
    * @param value The isApproved to set.
    */
   private void setIsApproved(boolean value) {
-    bitField0_ |= 0x00000004;
+    bitField0_ |= 0x00000008;
     isApproved_ = value;
   }
   /**
    * <code>optional bool is_approved = 9 [json_name = "isApproved"];</code>
    */
   private void clearIsApproved() {
-    bitField0_ = (bitField0_ & ~0x00000004);
+    bitField0_ = (bitField0_ & ~0x00000008);
     isApproved_ = false;
   }
 
-  public static final int VERIFICATION_STATUS_FIELD_NUMBER = 10;
+  public static final int IS_ACTIVE_EVENT_FIELD_NUMBER = 10;
+  private boolean isActiveEvent_;
+  /**
+   * <code>optional bool is_active_event = 10 [json_name = "isActiveEvent"];</code>
+   * @return Whether the isActiveEvent field is set.
+   */
+  @java.lang.Override
+  public boolean hasIsActiveEvent() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   * <code>optional bool is_active_event = 10 [json_name = "isActiveEvent"];</code>
+   * @return The isActiveEvent.
+   */
+  @java.lang.Override
+  public boolean getIsActiveEvent() {
+    return isActiveEvent_;
+  }
+  /**
+   * <code>optional bool is_active_event = 10 [json_name = "isActiveEvent"];</code>
+   * @param value The isActiveEvent to set.
+   */
+  private void setIsActiveEvent(boolean value) {
+    bitField0_ |= 0x00000010;
+    isActiveEvent_ = value;
+  }
+  /**
+   * <code>optional bool is_active_event = 10 [json_name = "isActiveEvent"];</code>
+   */
+  private void clearIsActiveEvent() {
+    bitField0_ = (bitField0_ & ~0x00000010);
+    isActiveEvent_ = false;
+  }
+
+  public static final int VERIFICATION_STATUS_FIELD_NUMBER = 11;
   private int verificationStatus_;
   /**
-   * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 10 [json_name = "verificationStatus"];</code>
+   * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 11 [json_name = "verificationStatus"];</code>
    * @return Whether the verificationStatus field is set.
    */
   @java.lang.Override
   public boolean hasVerificationStatus() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
-   * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 10 [json_name = "verificationStatus"];</code>
+   * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 11 [json_name = "verificationStatus"];</code>
    * @return The enum numeric value on the wire for verificationStatus.
    */
   @java.lang.Override
@@ -423,7 +465,7 @@ public  final class AdminServiceGetEventsRequest extends
     return verificationStatus_;
   }
   /**
-   * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 10 [json_name = "verificationStatus"];</code>
+   * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 11 [json_name = "verificationStatus"];</code>
    * @return The verificationStatus.
    */
   @java.lang.Override
@@ -432,33 +474,33 @@ public  final class AdminServiceGetEventsRequest extends
     return result == null ? com.eventsease.v1.EventVerificationStatus.UNRECOGNIZED : result;
   }
   /**
-   * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 10 [json_name = "verificationStatus"];</code>
+   * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 11 [json_name = "verificationStatus"];</code>
    * @param value The enum numeric value on the wire for verificationStatus to set.
    * @throws IllegalArgumentException if UNRECOGNIZED is provided.
    */
   private void setVerificationStatusValue(int value) {
-    bitField0_ |= 0x00000008;  verificationStatus_ = value;
+    bitField0_ |= 0x00000020;  verificationStatus_ = value;
   }
   /**
-   * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 10 [json_name = "verificationStatus"];</code>
+   * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 11 [json_name = "verificationStatus"];</code>
    * @param value The verificationStatus to set.
    */
   private void setVerificationStatus(com.eventsease.v1.EventVerificationStatus value) {
     verificationStatus_ = value.getNumber();
-    bitField0_ |= 0x00000008;
+    bitField0_ |= 0x00000020;
   }
   /**
-   * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 10 [json_name = "verificationStatus"];</code>
+   * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 11 [json_name = "verificationStatus"];</code>
    */
   private void clearVerificationStatus() {
-    bitField0_ = (bitField0_ & ~0x00000008);
+    bitField0_ = (bitField0_ & ~0x00000020);
     verificationStatus_ = 0;
   }
 
-  public static final int USER_IDS_FIELD_NUMBER = 11;
+  public static final int USER_IDS_FIELD_NUMBER = 12;
   private com.google.protobuf.Internal.ProtobufList<java.lang.String> userIds_;
   /**
-   * <code>repeated string user_ids = 11 [json_name = "userIds"];</code>
+   * <code>repeated string user_ids = 12 [json_name = "userIds"];</code>
    * @return A list containing the userIds.
    */
   @java.lang.Override
@@ -466,7 +508,7 @@ public  final class AdminServiceGetEventsRequest extends
     return userIds_;
   }
   /**
-   * <code>repeated string user_ids = 11 [json_name = "userIds"];</code>
+   * <code>repeated string user_ids = 12 [json_name = "userIds"];</code>
    * @return The count of userIds.
    */
   @java.lang.Override
@@ -474,7 +516,7 @@ public  final class AdminServiceGetEventsRequest extends
     return userIds_.size();
   }
   /**
-   * <code>repeated string user_ids = 11 [json_name = "userIds"];</code>
+   * <code>repeated string user_ids = 12 [json_name = "userIds"];</code>
    * @param index The index of the element to return.
    * @return The userIds at the given index.
    */
@@ -483,7 +525,7 @@ public  final class AdminServiceGetEventsRequest extends
     return userIds_.get(index);
   }
   /**
-   * <code>repeated string user_ids = 11 [json_name = "userIds"];</code>
+   * <code>repeated string user_ids = 12 [json_name = "userIds"];</code>
    * @param index The index of the value to return.
    * @return The bytes of the userIds at the given index.
    */
@@ -501,7 +543,7 @@ public  final class AdminServiceGetEventsRequest extends
      }
   }
   /**
-   * <code>repeated string user_ids = 11 [json_name = "userIds"];</code>
+   * <code>repeated string user_ids = 12 [json_name = "userIds"];</code>
    * @param index The index to set the value at.
    * @param value The userIds to set.
    */
@@ -513,7 +555,7 @@ public  final class AdminServiceGetEventsRequest extends
     userIds_.set(index, value);
   }
   /**
-   * <code>repeated string user_ids = 11 [json_name = "userIds"];</code>
+   * <code>repeated string user_ids = 12 [json_name = "userIds"];</code>
    * @param value The userIds to add.
    */
   @java.lang.SuppressWarnings("ReturnValueIgnored")
@@ -524,7 +566,7 @@ public  final class AdminServiceGetEventsRequest extends
     userIds_.add(value);
   }
   /**
-   * <code>repeated string user_ids = 11 [json_name = "userIds"];</code>
+   * <code>repeated string user_ids = 12 [json_name = "userIds"];</code>
    * @param values The userIds to add.
    */
   private void addAllUserIds(
@@ -534,13 +576,13 @@ public  final class AdminServiceGetEventsRequest extends
         values, userIds_);
   }
   /**
-   * <code>repeated string user_ids = 11 [json_name = "userIds"];</code>
+   * <code>repeated string user_ids = 12 [json_name = "userIds"];</code>
    */
   private void clearUserIds() {
     userIds_ = com.google.protobuf.GeneratedMessageLite.emptyProtobufList();
   }
   /**
-   * <code>repeated string user_ids = 11 [json_name = "userIds"];</code>
+   * <code>repeated string user_ids = 12 [json_name = "userIds"];</code>
    * @param value The bytes of the userIds to add.
    */
   private void addUserIdsBytes(
@@ -550,10 +592,10 @@ public  final class AdminServiceGetEventsRequest extends
     userIds_.add(value.toStringUtf8());
   }
 
-  public static final int EVENT_IDS_FIELD_NUMBER = 12;
+  public static final int EVENT_IDS_FIELD_NUMBER = 13;
   private com.google.protobuf.Internal.ProtobufList<java.lang.String> eventIds_;
   /**
-   * <code>repeated string event_ids = 12 [json_name = "eventIds"];</code>
+   * <code>repeated string event_ids = 13 [json_name = "eventIds"];</code>
    * @return A list containing the eventIds.
    */
   @java.lang.Override
@@ -561,7 +603,7 @@ public  final class AdminServiceGetEventsRequest extends
     return eventIds_;
   }
   /**
-   * <code>repeated string event_ids = 12 [json_name = "eventIds"];</code>
+   * <code>repeated string event_ids = 13 [json_name = "eventIds"];</code>
    * @return The count of eventIds.
    */
   @java.lang.Override
@@ -569,7 +611,7 @@ public  final class AdminServiceGetEventsRequest extends
     return eventIds_.size();
   }
   /**
-   * <code>repeated string event_ids = 12 [json_name = "eventIds"];</code>
+   * <code>repeated string event_ids = 13 [json_name = "eventIds"];</code>
    * @param index The index of the element to return.
    * @return The eventIds at the given index.
    */
@@ -578,7 +620,7 @@ public  final class AdminServiceGetEventsRequest extends
     return eventIds_.get(index);
   }
   /**
-   * <code>repeated string event_ids = 12 [json_name = "eventIds"];</code>
+   * <code>repeated string event_ids = 13 [json_name = "eventIds"];</code>
    * @param index The index of the value to return.
    * @return The bytes of the eventIds at the given index.
    */
@@ -596,7 +638,7 @@ public  final class AdminServiceGetEventsRequest extends
      }
   }
   /**
-   * <code>repeated string event_ids = 12 [json_name = "eventIds"];</code>
+   * <code>repeated string event_ids = 13 [json_name = "eventIds"];</code>
    * @param index The index to set the value at.
    * @param value The eventIds to set.
    */
@@ -608,7 +650,7 @@ public  final class AdminServiceGetEventsRequest extends
     eventIds_.set(index, value);
   }
   /**
-   * <code>repeated string event_ids = 12 [json_name = "eventIds"];</code>
+   * <code>repeated string event_ids = 13 [json_name = "eventIds"];</code>
    * @param value The eventIds to add.
    */
   @java.lang.SuppressWarnings("ReturnValueIgnored")
@@ -619,7 +661,7 @@ public  final class AdminServiceGetEventsRequest extends
     eventIds_.add(value);
   }
   /**
-   * <code>repeated string event_ids = 12 [json_name = "eventIds"];</code>
+   * <code>repeated string event_ids = 13 [json_name = "eventIds"];</code>
    * @param values The eventIds to add.
    */
   private void addAllEventIds(
@@ -629,13 +671,13 @@ public  final class AdminServiceGetEventsRequest extends
         values, eventIds_);
   }
   /**
-   * <code>repeated string event_ids = 12 [json_name = "eventIds"];</code>
+   * <code>repeated string event_ids = 13 [json_name = "eventIds"];</code>
    */
   private void clearEventIds() {
     eventIds_ = com.google.protobuf.GeneratedMessageLite.emptyProtobufList();
   }
   /**
-   * <code>repeated string event_ids = 12 [json_name = "eventIds"];</code>
+   * <code>repeated string event_ids = 13 [json_name = "eventIds"];</code>
    * @param value The bytes of the eventIds to add.
    */
   private void addEventIdsBytes(
@@ -799,7 +841,15 @@ public  final class AdminServiceGetEventsRequest extends
     }
 
     /**
-     * <code>string search_query = 3 [json_name = "searchQuery"];</code>
+     * <code>optional string search_query = 3 [json_name = "searchQuery"];</code>
+     * @return Whether the searchQuery field is set.
+     */
+    @java.lang.Override
+    public boolean hasSearchQuery() {
+      return instance.hasSearchQuery();
+    }
+    /**
+     * <code>optional string search_query = 3 [json_name = "searchQuery"];</code>
      * @return The searchQuery.
      */
     @java.lang.Override
@@ -807,7 +857,7 @@ public  final class AdminServiceGetEventsRequest extends
       return instance.getSearchQuery();
     }
     /**
-     * <code>string search_query = 3 [json_name = "searchQuery"];</code>
+     * <code>optional string search_query = 3 [json_name = "searchQuery"];</code>
      * @return The bytes for searchQuery.
      */
     @java.lang.Override
@@ -816,7 +866,7 @@ public  final class AdminServiceGetEventsRequest extends
       return instance.getSearchQueryBytes();
     }
     /**
-     * <code>string search_query = 3 [json_name = "searchQuery"];</code>
+     * <code>optional string search_query = 3 [json_name = "searchQuery"];</code>
      * @param value The searchQuery to set.
      * @return This builder for chaining.
      */
@@ -827,7 +877,7 @@ public  final class AdminServiceGetEventsRequest extends
       return this;
     }
     /**
-     * <code>string search_query = 3 [json_name = "searchQuery"];</code>
+     * <code>optional string search_query = 3 [json_name = "searchQuery"];</code>
      * @return This builder for chaining.
      */
     public Builder clearSearchQuery() {
@@ -836,7 +886,7 @@ public  final class AdminServiceGetEventsRequest extends
       return this;
     }
     /**
-     * <code>string search_query = 3 [json_name = "searchQuery"];</code>
+     * <code>optional string search_query = 3 [json_name = "searchQuery"];</code>
      * @param value The bytes for searchQuery to set.
      * @return This builder for chaining.
      */
@@ -1142,7 +1192,43 @@ public  final class AdminServiceGetEventsRequest extends
     }
 
     /**
-     * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 10 [json_name = "verificationStatus"];</code>
+     * <code>optional bool is_active_event = 10 [json_name = "isActiveEvent"];</code>
+     * @return Whether the isActiveEvent field is set.
+     */
+    @java.lang.Override
+    public boolean hasIsActiveEvent() {
+      return instance.hasIsActiveEvent();
+    }
+    /**
+     * <code>optional bool is_active_event = 10 [json_name = "isActiveEvent"];</code>
+     * @return The isActiveEvent.
+     */
+    @java.lang.Override
+    public boolean getIsActiveEvent() {
+      return instance.getIsActiveEvent();
+    }
+    /**
+     * <code>optional bool is_active_event = 10 [json_name = "isActiveEvent"];</code>
+     * @param value The isActiveEvent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsActiveEvent(boolean value) {
+      copyOnWrite();
+      instance.setIsActiveEvent(value);
+      return this;
+    }
+    /**
+     * <code>optional bool is_active_event = 10 [json_name = "isActiveEvent"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsActiveEvent() {
+      copyOnWrite();
+      instance.clearIsActiveEvent();
+      return this;
+    }
+
+    /**
+     * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 11 [json_name = "verificationStatus"];</code>
      * @return Whether the verificationStatus field is set.
      */
     @java.lang.Override
@@ -1150,7 +1236,7 @@ public  final class AdminServiceGetEventsRequest extends
       return instance.hasVerificationStatus();
     }
     /**
-     * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 10 [json_name = "verificationStatus"];</code>
+     * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 11 [json_name = "verificationStatus"];</code>
      * @return The enum numeric value on the wire for verificationStatus.
      */
     @java.lang.Override
@@ -1158,7 +1244,7 @@ public  final class AdminServiceGetEventsRequest extends
       return instance.getVerificationStatusValue();
     }
     /**
-     * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 10 [json_name = "verificationStatus"];</code>
+     * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 11 [json_name = "verificationStatus"];</code>
      * @param value The verificationStatus to set.
      * @return This builder for chaining.
      */
@@ -1168,7 +1254,7 @@ public  final class AdminServiceGetEventsRequest extends
       return this;
     }
     /**
-     * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 10 [json_name = "verificationStatus"];</code>
+     * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 11 [json_name = "verificationStatus"];</code>
      * @return The verificationStatus.
      */
     @java.lang.Override
@@ -1176,7 +1262,7 @@ public  final class AdminServiceGetEventsRequest extends
       return instance.getVerificationStatus();
     }
     /**
-     * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 10 [json_name = "verificationStatus"];</code>
+     * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 11 [json_name = "verificationStatus"];</code>
      * @param value The enum numeric value on the wire for verificationStatus to set.
      * @throws IllegalArgumentException if UNRECOGNIZED is provided.
      * @return This builder for chaining.
@@ -1187,7 +1273,7 @@ public  final class AdminServiceGetEventsRequest extends
       return this;
     }
     /**
-     * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 10 [json_name = "verificationStatus"];</code>
+     * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 11 [json_name = "verificationStatus"];</code>
      * @return This builder for chaining.
      */
     public Builder clearVerificationStatus() {
@@ -1197,7 +1283,7 @@ public  final class AdminServiceGetEventsRequest extends
     }
 
     /**
-     * <code>repeated string user_ids = 11 [json_name = "userIds"];</code>
+     * <code>repeated string user_ids = 12 [json_name = "userIds"];</code>
      * @return A list containing the userIds.
      */
     @java.lang.Override
@@ -1207,7 +1293,7 @@ public  final class AdminServiceGetEventsRequest extends
           instance.getUserIdsList());
     }
     /**
-     * <code>repeated string user_ids = 11 [json_name = "userIds"];</code>
+     * <code>repeated string user_ids = 12 [json_name = "userIds"];</code>
      * @return The count of userIds.
      */
     @java.lang.Override
@@ -1215,7 +1301,7 @@ public  final class AdminServiceGetEventsRequest extends
       return instance.getUserIdsCount();
     }
     /**
-     * <code>repeated string user_ids = 11 [json_name = "userIds"];</code>
+     * <code>repeated string user_ids = 12 [json_name = "userIds"];</code>
      * @param index The index of the element to return.
      * @return The userIds at the given index.
      */
@@ -1224,7 +1310,7 @@ public  final class AdminServiceGetEventsRequest extends
       return instance.getUserIds(index);
     }
     /**
-     * <code>repeated string user_ids = 11 [json_name = "userIds"];</code>
+     * <code>repeated string user_ids = 12 [json_name = "userIds"];</code>
      * @param index The index of the value to return.
      * @return The bytes of the userIds at the given index.
      */
@@ -1234,7 +1320,7 @@ public  final class AdminServiceGetEventsRequest extends
       return instance.getUserIdsBytes(index);
     }
     /**
-     * <code>repeated string user_ids = 11 [json_name = "userIds"];</code>
+     * <code>repeated string user_ids = 12 [json_name = "userIds"];</code>
      * @param index The index to set the value at.
      * @param value The userIds to set.
      * @return This builder for chaining.
@@ -1246,7 +1332,7 @@ public  final class AdminServiceGetEventsRequest extends
       return this;
     }
     /**
-     * <code>repeated string user_ids = 11 [json_name = "userIds"];</code>
+     * <code>repeated string user_ids = 12 [json_name = "userIds"];</code>
      * @param value The userIds to add.
      * @return This builder for chaining.
      */
@@ -1257,7 +1343,7 @@ public  final class AdminServiceGetEventsRequest extends
       return this;
     }
     /**
-     * <code>repeated string user_ids = 11 [json_name = "userIds"];</code>
+     * <code>repeated string user_ids = 12 [json_name = "userIds"];</code>
      * @param values The userIds to add.
      * @return This builder for chaining.
      */
@@ -1268,7 +1354,7 @@ public  final class AdminServiceGetEventsRequest extends
       return this;
     }
     /**
-     * <code>repeated string user_ids = 11 [json_name = "userIds"];</code>
+     * <code>repeated string user_ids = 12 [json_name = "userIds"];</code>
      * @return This builder for chaining.
      */
     public Builder clearUserIds() {
@@ -1277,7 +1363,7 @@ public  final class AdminServiceGetEventsRequest extends
       return this;
     }
     /**
-     * <code>repeated string user_ids = 11 [json_name = "userIds"];</code>
+     * <code>repeated string user_ids = 12 [json_name = "userIds"];</code>
      * @param value The bytes of the userIds to add.
      * @return This builder for chaining.
      */
@@ -1289,7 +1375,7 @@ public  final class AdminServiceGetEventsRequest extends
     }
 
     /**
-     * <code>repeated string event_ids = 12 [json_name = "eventIds"];</code>
+     * <code>repeated string event_ids = 13 [json_name = "eventIds"];</code>
      * @return A list containing the eventIds.
      */
     @java.lang.Override
@@ -1299,7 +1385,7 @@ public  final class AdminServiceGetEventsRequest extends
           instance.getEventIdsList());
     }
     /**
-     * <code>repeated string event_ids = 12 [json_name = "eventIds"];</code>
+     * <code>repeated string event_ids = 13 [json_name = "eventIds"];</code>
      * @return The count of eventIds.
      */
     @java.lang.Override
@@ -1307,7 +1393,7 @@ public  final class AdminServiceGetEventsRequest extends
       return instance.getEventIdsCount();
     }
     /**
-     * <code>repeated string event_ids = 12 [json_name = "eventIds"];</code>
+     * <code>repeated string event_ids = 13 [json_name = "eventIds"];</code>
      * @param index The index of the element to return.
      * @return The eventIds at the given index.
      */
@@ -1316,7 +1402,7 @@ public  final class AdminServiceGetEventsRequest extends
       return instance.getEventIds(index);
     }
     /**
-     * <code>repeated string event_ids = 12 [json_name = "eventIds"];</code>
+     * <code>repeated string event_ids = 13 [json_name = "eventIds"];</code>
      * @param index The index of the value to return.
      * @return The bytes of the eventIds at the given index.
      */
@@ -1326,7 +1412,7 @@ public  final class AdminServiceGetEventsRequest extends
       return instance.getEventIdsBytes(index);
     }
     /**
-     * <code>repeated string event_ids = 12 [json_name = "eventIds"];</code>
+     * <code>repeated string event_ids = 13 [json_name = "eventIds"];</code>
      * @param index The index to set the value at.
      * @param value The eventIds to set.
      * @return This builder for chaining.
@@ -1338,7 +1424,7 @@ public  final class AdminServiceGetEventsRequest extends
       return this;
     }
     /**
-     * <code>repeated string event_ids = 12 [json_name = "eventIds"];</code>
+     * <code>repeated string event_ids = 13 [json_name = "eventIds"];</code>
      * @param value The eventIds to add.
      * @return This builder for chaining.
      */
@@ -1349,7 +1435,7 @@ public  final class AdminServiceGetEventsRequest extends
       return this;
     }
     /**
-     * <code>repeated string event_ids = 12 [json_name = "eventIds"];</code>
+     * <code>repeated string event_ids = 13 [json_name = "eventIds"];</code>
      * @param values The eventIds to add.
      * @return This builder for chaining.
      */
@@ -1360,7 +1446,7 @@ public  final class AdminServiceGetEventsRequest extends
       return this;
     }
     /**
-     * <code>repeated string event_ids = 12 [json_name = "eventIds"];</code>
+     * <code>repeated string event_ids = 13 [json_name = "eventIds"];</code>
      * @return This builder for chaining.
      */
     public Builder clearEventIds() {
@@ -1369,7 +1455,7 @@ public  final class AdminServiceGetEventsRequest extends
       return this;
     }
     /**
-     * <code>repeated string event_ids = 12 [json_name = "eventIds"];</code>
+     * <code>repeated string event_ids = 13 [json_name = "eventIds"];</code>
      * @param value The bytes of the eventIds to add.
      * @return This builder for chaining.
      */
@@ -1406,14 +1492,15 @@ public  final class AdminServiceGetEventsRequest extends
             "isRegular_",
             "isDeleted_",
             "isApproved_",
+            "isActiveEvent_",
             "verificationStatus_",
             "userIds_",
             "eventIds_",
           };
           java.lang.String info =
-              "\u0000\f\u0000\u0001\u0001\f\f\u0000\u0003\u0000\u0001\u0004\u0002\u0004\u0003\u0208" +
-              "\u0004\f\u0005\f\u0006\u021a\u0007\u1007\u0000\b\u1007\u0001\t\u1007\u0002\n\u100c" +
-              "\u0003\u000b\u021a\f\u021a";
+              "\u0000\r\u0000\u0001\u0001\r\r\u0000\u0003\u0000\u0001\u0004\u0002\u0004\u0003\u1208" +
+              "\u0000\u0004\f\u0005\f\u0006\u021a\u0007\u1007\u0001\b\u1007\u0002\t\u1007\u0003" +
+              "\n\u1007\u0004\u000b\u100c\u0005\f\u021a\r\u021a";
           return newMessageInfo(DEFAULT_INSTANCE, info, objects);
       }
       case GET_DEFAULT_INSTANCE: {

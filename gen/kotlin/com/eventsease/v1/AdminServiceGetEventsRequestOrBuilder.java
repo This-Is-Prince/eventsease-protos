@@ -23,12 +23,17 @@ public interface AdminServiceGetEventsRequestOrBuilder extends
   int getLimit();
 
   /**
-   * <code>string search_query = 3 [json_name = "searchQuery"];</code>
+   * <code>optional string search_query = 3 [json_name = "searchQuery"];</code>
+   * @return Whether the searchQuery field is set.
+   */
+  boolean hasSearchQuery();
+  /**
+   * <code>optional string search_query = 3 [json_name = "searchQuery"];</code>
    * @return The searchQuery.
    */
   java.lang.String getSearchQuery();
   /**
-   * <code>string search_query = 3 [json_name = "searchQuery"];</code>
+   * <code>optional string search_query = 3 [json_name = "searchQuery"];</code>
    * @return The bytes for searchQuery.
    */
   com.google.protobuf.ByteString
@@ -115,40 +120,51 @@ public interface AdminServiceGetEventsRequestOrBuilder extends
   boolean getIsApproved();
 
   /**
-   * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 10 [json_name = "verificationStatus"];</code>
+   * <code>optional bool is_active_event = 10 [json_name = "isActiveEvent"];</code>
+   * @return Whether the isActiveEvent field is set.
+   */
+  boolean hasIsActiveEvent();
+  /**
+   * <code>optional bool is_active_event = 10 [json_name = "isActiveEvent"];</code>
+   * @return The isActiveEvent.
+   */
+  boolean getIsActiveEvent();
+
+  /**
+   * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 11 [json_name = "verificationStatus"];</code>
    * @return Whether the verificationStatus field is set.
    */
   boolean hasVerificationStatus();
   /**
-   * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 10 [json_name = "verificationStatus"];</code>
+   * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 11 [json_name = "verificationStatus"];</code>
    * @return The enum numeric value on the wire for verificationStatus.
    */
   int getVerificationStatusValue();
   /**
-   * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 10 [json_name = "verificationStatus"];</code>
+   * <code>optional .eventsease.v1.EventVerificationStatus verification_status = 11 [json_name = "verificationStatus"];</code>
    * @return The verificationStatus.
    */
   com.eventsease.v1.EventVerificationStatus getVerificationStatus();
 
   /**
-   * <code>repeated string user_ids = 11 [json_name = "userIds"];</code>
+   * <code>repeated string user_ids = 12 [json_name = "userIds"];</code>
    * @return A list containing the userIds.
    */
   java.util.List<java.lang.String>
       getUserIdsList();
   /**
-   * <code>repeated string user_ids = 11 [json_name = "userIds"];</code>
+   * <code>repeated string user_ids = 12 [json_name = "userIds"];</code>
    * @return The count of userIds.
    */
   int getUserIdsCount();
   /**
-   * <code>repeated string user_ids = 11 [json_name = "userIds"];</code>
+   * <code>repeated string user_ids = 12 [json_name = "userIds"];</code>
    * @param index The index of the element to return.
    * @return The userIds at the given index.
    */
   java.lang.String getUserIds(int index);
   /**
-   * <code>repeated string user_ids = 11 [json_name = "userIds"];</code>
+   * <code>repeated string user_ids = 12 [json_name = "userIds"];</code>
    * @param index The index of the element to return.
    * @return The userIds at the given index.
    */
@@ -156,24 +172,24 @@ public interface AdminServiceGetEventsRequestOrBuilder extends
       getUserIdsBytes(int index);
 
   /**
-   * <code>repeated string event_ids = 12 [json_name = "eventIds"];</code>
+   * <code>repeated string event_ids = 13 [json_name = "eventIds"];</code>
    * @return A list containing the eventIds.
    */
   java.util.List<java.lang.String>
       getEventIdsList();
   /**
-   * <code>repeated string event_ids = 12 [json_name = "eventIds"];</code>
+   * <code>repeated string event_ids = 13 [json_name = "eventIds"];</code>
    * @return The count of eventIds.
    */
   int getEventIdsCount();
   /**
-   * <code>repeated string event_ids = 12 [json_name = "eventIds"];</code>
+   * <code>repeated string event_ids = 13 [json_name = "eventIds"];</code>
    * @param index The index of the element to return.
    * @return The eventIds at the given index.
    */
   java.lang.String getEventIds(int index);
   /**
-   * <code>repeated string event_ids = 12 [json_name = "eventIds"];</code>
+   * <code>repeated string event_ids = 13 [json_name = "eventIds"];</code>
    * @param index The index of the element to return.
    * @return The eventIds at the given index.
    */
