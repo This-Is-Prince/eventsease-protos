@@ -14,12 +14,15 @@ plugins:
     opt:
       - paths=source_relative
 
-  - remote: buf.build/protocolbuffers/java
+  - remote: buf.build/protocolbuffers/java:v34.0
     out: gen/kotlin
     opt:
       - lite
 
-  - remote: buf.build/connectrpc/kotlin
+  - remote: buf.build/protocolbuffers/kotlin:v34.0
+    out: gen/kotlin
+
+  - remote: buf.build/connectrpc/kotlin:v0.8.0
     out: gen/kotlin
 
   - remote: buf.build/apple/swift:v1.33.3
